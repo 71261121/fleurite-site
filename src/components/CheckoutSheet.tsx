@@ -128,7 +128,7 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
                     </div>
                   </div>
 
-                  <h3 className="font-semibold text-foreground">SecureLoop — Stop Chasing System</h3>
+                  <h3 className="font-semibold text-foreground">Fleurite — Stop Chasing System</h3>
                   <p className="text-xs text-muted-foreground mt-1">2-Part System + Bonuses — Instant Digital Download</p>
 
                   {/* What's included — compact */}
@@ -245,7 +245,7 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
                   <CheckCircle2 className="h-10 w-10 text-green-600" />
                 </div>
               </motion.div>
-              <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground">Welcome to SecureLoop!</h2>
+              <h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground">Welcome to Fleurite!</h2>
               {orderNumber && <p className="text-muted-foreground text-sm">Order #{orderNumber}</p>}
               <p className="text-muted-foreground">Check your email for instant access to all 3 guides + bonuses.</p>
               <Button variant="outline" className="w-full rounded-full border-rose-700 text-rose-700 hover:bg-rose-50" onClick={() => onOpenChange(false)}>

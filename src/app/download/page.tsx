@@ -130,7 +130,7 @@ function DownloadContent() {
         <div className="text-center mb-8">
           <Link href="/" className="inline-block">
             <span className="font-serif italic text-3xl font-bold text-rose tracking-tight">
-              SecureLoop
+              Fleurite
             </span>
           </Link>
           <p className="mt-2 text-sm text-muted-foreground">
@@ -182,7 +182,7 @@ function DownloadContent() {
                 variant="outline"
                 className="h-12 rounded-xl border-rose/20 text-rose hover:bg-rose-light/40"
               >
-                <a href="mailto:support@secureloop.me">
+                <a href="mailto:support@fleurite.me">
                   <Mail className="mr-2 h-4 w-4" />
                   Contact Support
                 </a>
@@ -207,7 +207,7 @@ function DownloadContent() {
                     Payment Verified
                   </span>
                   <h1 className="mt-3 font-[family-name:var(--font-playfair)] text-2xl font-bold text-foreground sm:text-3xl">
-                    Your SecureLoop Guide is Ready
+                    Your Fleurite Guide is Ready
                   </h1>
                   <p className="mt-1 text-sm text-muted-foreground">
                     Order #{order.orderNumber} &bull; Paid
@@ -330,8 +330,8 @@ function DownloadContent() {
                 </Link>
                 <p className="text-xs text-muted-foreground">
                   Questions? Reach out to{' '}
-                  <a href="mailto:support@secureloop.me" className="text-rose underline">
-                    support@secureloop.me
+                  <a href="mailto:support@fleurite.me" className="text-rose underline">
+                    support@fleurite.me
                   </a>
                 </p>
               </div>

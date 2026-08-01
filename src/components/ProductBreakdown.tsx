@@ -11,7 +11,7 @@ export default function ProductBreakdown() {
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
             What's Inside the{' '}
-            <span className="text-rose-600">SecureLoop System</span>
+            <span className="text-rose-600">Fleurite System</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             One complete system with two parts that work together

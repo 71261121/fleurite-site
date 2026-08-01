@@ -6,7 +6,7 @@ export default function AnnouncementBar() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const dismissed = localStorage.getItem('secureloop-announcement-dismissed');
+    const dismissed = localStorage.getItem('fleurite-announcement-dismissed');
     if (!dismissed) {
       setIsVisible(true);
     }
@@ -14,7 +14,7 @@ export default function AnnouncementBar() {
 
   const dismiss = () => {
     setIsVisible(false);
-    localStorage.setItem('secureloop-announcement-dismissed', '1');
+    localStorage.setItem('fleurite-announcement-dismissed', '1');
   };
 
   if (!isVisible) return null;

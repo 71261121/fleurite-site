@@ -19,7 +19,7 @@ export default function FinalCTA() {
         {/* What You Get - Simple */}
         <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-12">
           <h3 className="text-2xl font-bold text-gray-900 mb-6">
-            The Complete SecureLoop System
+            The Complete Fleurite System
           </h3>
 
           <div className="grid md:grid-cols-2 gap-6 text-left mb-8">

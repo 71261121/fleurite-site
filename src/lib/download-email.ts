@@ -12,7 +12,7 @@ export interface DownloadEmailParams {
 }
 
 export function getDownloadEmailHtml(params: DownloadEmailParams): string {
-  const { name, orderNumber, downloadUrl, productNames = ['SecureLoop Digital Guide'] } = params
+  const { name, orderNumber, downloadUrl, productNames = ['Fleurite Digital Guide'] } = params
   const greeting = name ? `Hi ${name}` : 'Hi there'
   const productList = productNames.join(', ')
 
@@ -21,21 +21,21 @@ export function getDownloadEmailHtml(params: DownloadEmailParams): string {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your SecureLoop Guide is Ready</title>
+  <title>Your Fleurite Guide is Ready</title>
 </head>
 <body style="margin:0;padding:0;background-color:#FFFBF7;font-family:system-ui,-apple-system,sans-serif;">
   <table width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;margin:0 auto;padding:40px 20px;">
     <tr>
       <td style="text-align:center;padding-bottom:30px;">
         <h1 style="color:#9B1B4E;font-family:Georgia,serif;font-style:italic;margin:0;font-size:28px;">
-          SecureLoop
+          Fleurite
         </h1>
       </td>
     </tr>
     <tr>
       <td style="background:white;border-radius:16px;padding:40px;box-shadow:0 2px 20px rgba(155,27,78,0.08);">
         <div style="text-align:center;margin-bottom:24px;">
-          <h2 style="color:#1a1a1a;margin:12px 0 4px 0;font-size:22px;">Your SecureLoop Guide is Ready</h2>
+          <h2 style="color:#1a1a1a;margin:12px 0 4px 0;font-size:22px;">Your Fleurite Guide is Ready</h2>
           <p style="color:#999;font-size:13px;">Order ${orderNumber}</p>
         </div>
         
@@ -61,7 +61,7 @@ export function getDownloadEmailHtml(params: DownloadEmailParams): string {
 
         <div style="margin-top:24px;padding-top:20px;border-top:1px solid #F0DDE5;">
           <p style="color:#999;font-size:13px;line-height:1.6;margin:0 0 8px 0;">
-            <strong>Need assistance?</strong> Contact our support team at <a href="mailto:support@secureloop.me" style="color:#9B1B4E;">support@secureloop.me</a>.
+            <strong>Need assistance?</strong> Contact our support team at <a href="mailto:support@fleurite.me" style="color:#9B1B4E;">support@fleurite.me</a>.
           </p>
           <p style="color:#999;font-size:13px;line-height:1.6;margin:0;">
             <strong>30-Day Money-Back Guarantee</strong> — If you are not completely satisfied, contact us within 30 days for a full refund.
@@ -76,7 +76,7 @@ export function getDownloadEmailHtml(params: DownloadEmailParams): string {
           <a href="${BASE_URL}/library" style="color:#9B1B4E;text-decoration:none;margin:0 10px;">My Library</a> |
           <a href="${BASE_URL}/terms" style="color:#9B1B4E;text-decoration:none;margin:0 10px;">Terms</a>
         </p>
-        <p style="margin-top:12px;">With care, the SecureLoop team</p>
+        <p style="margin-top:12px;">With care, the Fleurite team</p>
       </td>
     </tr>
   </table>
@@ -117,12 +117,12 @@ export async function createAndSendDownloadEmail(params: {
 
     await sendEmail({
       to: customerEmail,
-      subject: 'Your SecureLoop Guide is Ready — SecureLoop',
+      subject: 'Your Fleurite Guide is Ready — Fleurite',
       html: getDownloadEmailHtml({
         name: customerName || undefined,
         orderNumber,
         downloadUrl,
-        productNames: productNames && productNames.length > 0 ? productNames : ['SecureLoop Digital Guide'],
+        productNames: productNames && productNames.length > 0 ? productNames : ['Fleurite Digital Guide'],
       }),
     })
 

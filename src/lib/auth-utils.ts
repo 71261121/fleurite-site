@@ -3,7 +3,7 @@ import { cookies, headers } from 'next/headers'
 import { db } from '@/lib/db'
 
 const JWT_SECRET = new TextEncoder().encode(
-  process.env.JWT_SECRET || 'secureloop-jwt-secret'
+  process.env.JWT_SECRET || 'fleurite-jwt-secret'
 )
 
 export const COOKIE_NAME = 'session_token'

@@ -103,7 +103,7 @@ export default function Header() {
                 href="/"
                 className="font-display text-2xl font-bold text-rose-700 hover:text-rose-800 transition-colors tracking-tight focus:outline-none focus:ring-2 focus:ring-rose-500 rounded-sm"
               >
-                SecureLoop.me
+                Fleurite.me
               </a>
             </div>
 

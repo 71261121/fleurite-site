@@ -105,7 +105,7 @@ export default function CartSidebar({ onCheckout }: CartSidebarProps) {
                   Your cart is empty
                 </h3>
                 <p className="mt-1.5 text-sm text-muted-foreground/70">
-                  Explore SecureLoop guides and resources
+                  Explore Fleurite guides and resources
                 </p>
                 <Button
                   variant="outline"

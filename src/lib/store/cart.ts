@@ -97,7 +97,7 @@ export const useCartStore = create<CartStore>()(
       closeCart: () => set({ isOpen: false }),
     }),
     {
-      name: 'secureloop-cart',
+      name: 'fleurite-cart',
       partialize: (state) => ({ items: state.items }),
     }
   )

@@ -84,7 +84,7 @@ export async function POST(request: NextRequest) {
       date.getFullYear().toString() +
       (date.getMonth() + 1).toString().padStart(2, '0') +
       date.getDate().toString().padStart(2, '0')
-    const orderNum = `SL-${dateStr}-${Math.floor(1000 + Math.random() * 9000)}`
+    const orderNum = `FL-${dateStr}-${Math.floor(1000 + Math.random() * 9000)}`
 
     const order = await db.order.create({
       data: {
@@ -141,7 +141,7 @@ export async function POST(request: NextRequest) {
       import('@/lib/email').then(({ sendEmail, getOrderConfirmationHtml }) => {
         sendEmail({
           to: recipientEmail,
-          subject: `Order Confirmed: ${orderNum} — SecureLoop™`,
+          subject: `Order Confirmed: ${orderNum} — Fleurite™`,
           html: getOrderConfirmationHtml({
             name: recipientName,
             orderNumber: orderNum,

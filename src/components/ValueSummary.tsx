@@ -13,7 +13,7 @@ export default function ValueSummary() {
             <span className="text-rose-600">Getting Today</span>
           </h2>
           <p className="text-xl text-gray-600">
-            Everything inside the SecureLoop System
+            Everything inside the Fleurite System
           </p>
         </div>
 

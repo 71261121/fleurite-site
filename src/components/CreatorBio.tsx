@@ -17,7 +17,7 @@ export default function CreatorBio() {
               <span className="text-white font-bold text-xl">S</span>
             </div>
             <div>
-              <p className="font-bold text-gray-900">The SecureLoop Team</p>
+              <p className="font-bold text-gray-900">The Fleurite Team</p>
               <p className="text-sm text-gray-500">Created by people who&apos;ve been there</p>
             </div>
           </div>
@@ -49,7 +49,7 @@ export default function CreatorBio() {
               what you need without panic or people-pleasing.
             </p>
             <p className="font-medium text-gray-900">
-              The SecureLoop System isn&apos;t magic. It&apos;s practice. And it works.
+              The Fleurite System isn&apos;t magic. It&apos;s practice. And it works.
             </p>
           </div>
 

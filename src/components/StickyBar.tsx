@@ -54,7 +54,7 @@ export default function StickyBar() {
         {/* Left side: Product name & honest price */}
         <div className="flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-2">
           <span className="font-semibold text-gray-900 text-sm sm:text-base tracking-tight">
-            SecureLoop System
+            Fleurite System
           </span>
           <span className="text-rose-700 font-bold text-base sm:text-lg">
             $27 <span className="text-xs sm:text-sm font-normal text-gray-600">one-time</span>

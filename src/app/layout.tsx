@@ -17,19 +17,19 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Break the Anxious Attachment Cycle | SecureLoop.me",
+  title: "Break the Anxious Attachment Cycle | Fleurite.me",
   description: "Psychology-backed system to break anxious attachment cycles. 35+ word-for-word scripts, 7-Day Anxiety Reset, and secure relationship tools.",
   keywords: ["relationship advice", "avoidant partner", "anxious attachment", "secure attachment", "relationship anxiety", "dating tips", "psychology", "attachment theory"],
   openGraph: {
-    title: "Break the Anxious Attachment Cycle | SecureLoop.me",
+    title: "Break the Anxious Attachment Cycle | Fleurite.me",
     description: "Psychology-backed system to break anxious attachment cycles. 35+ word-for-word scripts included.",
     type: "website",
     locale: "en_US",
-    siteName: "SecureLoop.me",
+    siteName: "Fleurite.me",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Break the Anxious Attachment Cycle | SecureLoop.me",
+    title: "Break the Anxious Attachment Cycle | Fleurite.me",
     description: "Psychology-backed system to break anxious attachment cycles. 35+ word-for-word scripts included.",
   },
   robots: {

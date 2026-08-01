@@ -38,7 +38,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'Is this a replacement for therapy?',
-    answer: 'No. The SecureLoop System is designed to complement professional therapy, not replace it. If you\'re dealing with severe anxiety or trauma, we recommend working with a licensed therapist alongside these tools.'
+    answer: 'No. The Fleurite System is designed to complement professional therapy, not replace it. If you\'re dealing with severe anxiety or trauma, we recommend working with a licensed therapist alongside these tools.'
   }
 ];
 
@@ -117,7 +117,7 @@ export default function FAQ() {
         <div className="text-center mt-12">
           <p className="text-gray-600 mb-4">Still have questions?</p>
           <a
-            href="mailto:support@secureloop.me"
+            href="mailto:support@fleurite.me"
             className="text-rose-700 font-semibold hover:text-rose-800 transition-colors"
           >
             Contact Support

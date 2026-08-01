@@ -97,7 +97,7 @@ async function handleCheckoutCompleted(session: any, _stripeClient: any) {
     const dateStr = date.getFullYear().toString() +
       (date.getMonth() + 1).toString().padStart(2, '0') +
       date.getDate().toString().padStart(2, '0')
-    const orderNum = `SL-${dateStr}-${Math.floor(1000 + Math.random() * 9000)}`
+    const orderNum = `FL-${dateStr}-${Math.floor(1000 + Math.random() * 9000)}`
     const totalAmount = session.amount_total ? session.amount_total / 100 : items.reduce((sum: number, i: { price: number }) => sum + i.price, 0)
 
     const order = await db.order.create({
@@ -140,7 +140,7 @@ async function handleCheckoutCompleted(session: any, _stripeClient: any) {
       import('@/lib/email').then(({ sendEmail, getOrderConfirmationHtml }) => {
         sendEmail({
           to: customerEmail,
-          subject: `Order Confirmed: ${orderNum} — SecureLoop™`,
+          subject: `Order Confirmed: ${orderNum} — Fleurite™`,
           html: getOrderConfirmationHtml({
             name: customerName || undefined,
             orderNumber: orderNum,

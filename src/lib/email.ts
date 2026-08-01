@@ -5,7 +5,7 @@ const resend = process.env.RESEND_API_KEY
   : null
 
 const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev'
-const FROM_DISPLAY = process.env.EMAIL_FROM || 'SecureLoop'
+const FROM_DISPLAY = process.env.EMAIL_FROM || 'Fleurite'
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3005'
 
 export interface SendEmailOptions {
@@ -73,7 +73,7 @@ export function getEmailVerificationHtml(verificationUrl: string, name?: string)
     <tr>
       <td style="text-align:center;padding-bottom:30px;">
         <h1 style="color:#9B1B4E;font-family:Georgia,serif;font-style:italic;margin:0;font-size:28px;">
-          SecureLoop
+          Fleurite
         </h1>
       </td>
     </tr>
@@ -81,7 +81,7 @@ export function getEmailVerificationHtml(verificationUrl: string, name?: string)
       <td style="background:white;border-radius:16px;padding:40px;box-shadow:0 2px 20px rgba(155,27,78,0.08);">
         <h2 style="color:#1a1a1a;margin:0 0 16px 0;font-size:22px;">Verify Your Email</h2>
         <p style="color:#666;line-height:1.6;margin:0 0 24px 0;">${greeting},<br/><br/>
-          Welcome to SecureLoop! To get started, please verify your email address.
+          Welcome to Fleurite! To get started, please verify your email address.
         </p>
         <table width="100%" cellpadding="0" cellspacing="0">
           <tr>
@@ -102,7 +102,7 @@ export function getEmailVerificationHtml(verificationUrl: string, name?: string)
     <tr>
       <td style="text-align:center;padding-top:30px;color:#999;font-size:12px;">
         <p>This link expires in 24 hours.</p>
-        <p>With care, the SecureLoop team</p>
+        <p>With care, the Fleurite team</p>
       </td>
     </tr>
   </table>
@@ -124,7 +124,7 @@ export function getPasswordResetHtml(resetUrl: string, name?: string): string {
     <tr>
       <td style="text-align:center;padding-bottom:30px;">
         <h1 style="color:#9B1B4E;font-family:Georgia,serif;font-style:italic;margin:0;font-size:28px;">
-          SecureLoop
+          Fleurite
         </h1>
       </td>
     </tr>
@@ -156,7 +156,7 @@ export function getPasswordResetHtml(resetUrl: string, name?: string): string {
     <tr>
       <td style="text-align:center;padding-top:30px;color:#999;font-size:12px;">
         <p>This link expires in 1 hour.</p>
-        <p>With care, the SecureLoop team</p>
+        <p>With care, the Fleurite team</p>
       </td>
     </tr>
   </table>
@@ -174,14 +174,14 @@ export function getWelcomeHtml(name?: string): string {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to SecureLoop</title>
+  <title>Welcome to Fleurite</title>
 </head>
 <body style="margin:0;padding:0;background-color:#FFFBF7;font-family:system-ui,-apple-system,sans-serif;">
   <table width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;margin:0 auto;padding:40px 20px;">
     <tr>
       <td style="text-align:center;padding-bottom:30px;">
         <h1 style="color:#9B1B4E;font-family:Georgia,serif;font-style:italic;margin:0;font-size:28px;">
-          SecureLoop
+          Fleurite
         </h1>
       </td>
     </tr>
@@ -189,7 +189,7 @@ export function getWelcomeHtml(name?: string): string {
       <td style="background:white;border-radius:16px;padding:40px;box-shadow:0 2px 20px rgba(155,27,78,0.08);">
         <h2 style="color:#1a1a1a;margin:0 0 16px 0;font-size:22px;">Welcome to Your Healing Journey</h2>
         <p style="color:#666;line-height:1.7;margin:0 0 20px 0;">${greeting},<br/><br/>
-          Thank you for joining <strong style="color:#9B1B4E;">SecureLoop</strong>. You've taken a beautiful step toward understanding yourself more deeply and building the relationships you deserve.
+          Thank you for joining <strong style="color:#9B1B4E;">Fleurite</strong>. You've taken a beautiful step toward understanding yourself more deeply and building the relationships you deserve.
         </p>
         <div style="background:#FDF2F8;border-radius:12px;padding:20px;margin:0 0 24px 0;border-left:4px solid #9B1B4E;">
           <p style="color:#2D1B2E;margin:0 0 8px 0;font-weight:600;font-size:15px;">What you can do now:</p>
@@ -215,7 +215,7 @@ export function getWelcomeHtml(name?: string): string {
     <tr>
       <td style="text-align:center;padding-top:30px;color:#999;font-size:12px;line-height:1.6;">
         <p>Remember: healing isn't linear, and every step counts.</p>
-        <p>With care, the SecureLoop team</p>
+        <p>With care, the Fleurite team</p>
       </td>
     </tr>
   </table>
@@ -256,7 +256,7 @@ export function getOrderConfirmationHtml(params: {
     <tr>
       <td style="text-align:center;padding-bottom:30px;">
         <h1 style="color:#9B1B4E;font-family:Georgia,serif;font-style:italic;margin:0;font-size:28px;">
-          SecureLoop
+          Fleurite
         </h1>
       </td>
     </tr>
@@ -303,7 +303,7 @@ export function getOrderConfirmationHtml(params: {
     <tr>
       <td style="text-align:center;padding-top:30px;color:#999;font-size:12px;line-height:1.6;">
         <p>Thank you for choosing to invest in yourself.</p>
-        <p>With care, the SecureLoop team</p>
+        <p>With care, the Fleurite team</p>
       </td>
     </tr>
   </table>
@@ -333,7 +333,7 @@ export function getReferralRewardHtml(params: {
     <tr>
       <td style="text-align:center;padding-bottom:30px;">
         <h1 style="color:#9B1B4E;font-family:Georgia,serif;font-style:italic;margin:0;font-size:28px;">
-          SecureLoop
+          Fleurite
         </h1>
       </td>
     </tr>
@@ -345,7 +345,7 @@ export function getReferralRewardHtml(params: {
           <p style="color:#999;font-size:14px;">Your referral made a difference</p>
         </div>
         <p style="color:#666;line-height:1.7;margin:0 0 24px 0;">${greeting},<br/><br/>
-          Great news! <strong style="color:#9B1B4E;">${referredName || 'Someone'}</strong> joined SecureLoop using your referral link. As a thank-you, you've earned <strong style="color:#D4A574;">${rewardDescription}</strong>.
+          Great news! <strong style="color:#9B1B4E;">${referredName || 'Someone'}</strong> joined Fleurite using your referral link. As a thank-you, you've earned <strong style="color:#D4A574;">${rewardDescription}</strong>.
         </p>
         <div style="background:#FFFBF7;border-radius:12px;padding:20px;margin:0 0 24px 0;border-left:4px solid #D4A574;">
           <p style="color:#2D1B2E;margin:0;font-size:14px;line-height:1.7;">
@@ -368,7 +368,7 @@ export function getReferralRewardHtml(params: {
     <tr>
       <td style="text-align:center;padding-top:30px;color:#999;font-size:12px;line-height:1.6;">
         <p>Keep spreading the love. Every referral counts.</p>
-        <p>With care, the SecureLoop team</p>
+        <p>With care, the Fleurite team</p>
       </td>
     </tr>
   </table>
@@ -386,14 +386,14 @@ export function getNewsletterWelcomeHtml(name?: string): string {
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to the SecureLoop community</title>
+  <title>Welcome to the Fleurite community</title>
 </head>
 <body style="margin:0;padding:0;background-color:#FFFBF7;font-family:system-ui,-apple-system,sans-serif;">
   <table width="100%" cellpadding="0" cellspacing="0" style="max-width:600px;margin:0 auto;padding:40px 20px;">
     <tr>
       <td style="text-align:center;padding-bottom:30px;">
         <h1 style="color:#9B1B4E;font-family:Georgia,serif;font-style:italic;margin:0;font-size:28px;">
-          SecureLoop
+          Fleurite
         </h1>
       </td>
     </tr>
@@ -401,7 +401,7 @@ export function getNewsletterWelcomeHtml(name?: string): string {
       <td style="background:white;border-radius:16px;padding:40px;box-shadow:0 2px 20px rgba(155,27,78,0.08);">
         <h2 style="color:#1a1a1a;margin:0 0 16px 0;font-size:22px;">You're In!</h2>
         <p style="color:#666;line-height:1.7;margin:0 0 20px 0;">${greeting},<br/><br/>
-          Welcome to the <strong style="color:#9B1B4E;">SecureLoop</strong> community. You'll receive curated insights on attachment healing, relationship growth, and emotional wellness — straight to your inbox.
+          Welcome to the <strong style="color:#9B1B4E;">Fleurite</strong> community. You'll receive curated insights on attachment healing, relationship growth, and emotional wellness — straight to your inbox.
         </p>
         <div style="background:#FDF2F8;border-radius:12px;padding:20px;margin:0 0 20px 0;">
           <p style="color:#2D1B2E;margin:0;font-size:14px;line-height:1.7;">
@@ -427,7 +427,7 @@ export function getNewsletterWelcomeHtml(name?: string): string {
     <tr>
       <td style="text-align:center;padding-top:30px;color:#999;font-size:12px;line-height:1.6;">
         <p>You can unsubscribe anytime. We respect your inbox.</p>
-        <p>With care, the SecureLoop team</p>
+        <p>With care, the Fleurite team</p>
       </td>
     </tr>
   </table>

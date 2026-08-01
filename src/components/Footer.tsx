@@ -8,7 +8,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <h3 className="text-2xl font-display font-bold text-white mb-4">
-              SecureLoop.me
+              Fleurite.me
             </h3>
             <p className="text-gray-400 mb-4 max-w-md">
               Digital guides for understanding attachment patterns and building
@@ -36,7 +36,7 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="mailto:support@secureloop.me" className="text-gray-400 hover:text-white transition-colors">
+                <a href="mailto:support@fleurite.me" className="text-gray-400 hover:text-white transition-colors">
                   Contact
                 </a>
               </li>
@@ -68,7 +68,7 @@ export default function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
-          <p>&copy; 2026 SecureLoop.me. All rights reserved.</p>
+          <p>&copy; 2026 Fleurite.me. All rights reserved.</p>
           <p className="mt-2">
             This site is not a part of Facebook, Instagram, or Meta Platforms, Inc.
           </p>

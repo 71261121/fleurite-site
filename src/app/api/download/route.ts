@@ -71,12 +71,12 @@ export async function POST(request: NextRequest) {
     const productNames = order.items.map(i => i.productName)
     await sendEmail({
       to: email,
-      subject: 'Your SecureLoop Guide is Ready — SecureLoop™',
+      subject: 'Your Fleurite Guide is Ready — Fleurite™',
       html: getDownloadEmailHtml({
         name: order.customerName || undefined,
         orderNumber: order.orderNumber,
         downloadUrl,
-        productNames: productNames.length > 0 ? productNames : ['SecureLoop Digital Guide'],
+        productNames: productNames.length > 0 ? productNames : ['Fleurite Digital Guide'],
       }),
     }).catch(err => console.error('[Download API] Failed to send download email:', err))
 
@@ -177,7 +177,7 @@ stream
 BT
 /F1 24 Tf
 100 700 Td
-(SecureLoop Digital Guide - Order ${order.orderNumber}) Tj
+(Fleurite Digital Guide - Order ${order.orderNumber}) Tj
 ET
 endstream
 endobj
@@ -197,7 +197,7 @@ startxref
       return new NextResponse(pdfContent, {
         headers: {
           'Content-Type': 'application/pdf',
-          'Content-Disposition': `attachment; filename="SecureLoop-Guide-${order.orderNumber}.pdf"`,
+          'Content-Disposition': `attachment; filename="Fleurite-Guide-${order.orderNumber}.pdf"`,
         },
       })
     }
