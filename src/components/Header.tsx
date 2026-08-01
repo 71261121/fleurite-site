@@ -12,6 +12,7 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState<string>('');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [barHeight, setBarHeight] = useState(0);
 
   // Track scroll position for glassmorphism header style (scrolled > 50px)
   useEffect(() => {
@@ -22,6 +23,37 @@ export default function Header() {
     handleScroll();
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  // Dynamically measure announcement bar height + observe changes
+  useEffect(() => {
+    const bar = document.querySelector('[data-announcement-bar]') as HTMLElement | null;
+    if (!bar) {
+      setBarHeight(0);
+      return;
+    }
+
+    // Measure actual height
+    setBarHeight(bar.offsetHeight);
+
+    // Watch for height changes (responsive) and removal
+    const resizeObs = new ResizeObserver(([entry]) => {
+      setBarHeight(entry.contentRect.height);
+    });
+    resizeObs.observe(bar);
+
+    // Watch for bar dismissal (removed from DOM)
+    const checkDismissed = setInterval(() => {
+      const currentBar = document.querySelector('[data-announcement-bar]');
+      if (!currentBar) {
+        setBarHeight(0);
+      }
+    }, 1000);
+
+    return () => {
+      resizeObs.disconnect();
+      clearInterval(checkDismissed);
+    };
   }, []);
 
   // Highlight active section using IntersectionObserver
@@ -89,11 +121,12 @@ export default function Header() {
       )}
 
       <header
-        className={`sticky top-0 z-50 transition-all duration-300 ${
+        className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
             ? 'backdrop-blur-md bg-white/80 shadow-sm border-b border-rose-100/60 py-3'
             : 'bg-transparent py-5'
         }`}
+        style={{ top: `${barHeight}px` }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-12">
