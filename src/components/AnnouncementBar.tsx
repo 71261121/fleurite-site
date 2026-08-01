@@ -1,0 +1,38 @@
+'use client';
+
+import { useState, useEffect } from 'react';
+
+export default function AnnouncementBar() {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const dismissed = localStorage.getItem('secureloop-announcement-dismissed');
+    if (!dismissed) {
+      setIsVisible(true);
+    }
+  }, []);
+
+  const dismiss = () => {
+    setIsVisible(false);
+    localStorage.setItem('secureloop-announcement-dismissed', '1');
+  };
+
+  if (!isVisible) return null;
+
+  return (
+    <div className="w-full bg-rose-700 text-white py-2.5 px-4 text-center text-xs md:text-sm font-medium tracking-wide relative">
+      <a href="#get-access" className="hover:underline">
+        Join 7,700+ women who stopped chasing — Learn how ↓
+      </a>
+      <button
+        onClick={dismiss}
+        className="absolute right-3 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors"
+        aria-label="Dismiss announcement"
+      >
+        <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  );
+}

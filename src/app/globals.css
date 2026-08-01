@@ -1,0 +1,176 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f9f5f0;
+  --foreground: #1a1a1a;
+  --card: #ffffff;
+  --muted: #f3ede7;
+  --border: #e0d8d0;
+  --dark: #2d2a33;
+  --blush: #edd7cd;
+}
+
+@theme inline {
+  --color-cream: #f9f5f0;
+  --color-card: #ffffff;
+  --color-muted: #f3ede7;
+  --color-border: #e0d8d0;
+  --color-foreground: #1a1a1a;
+  --color-dark: #2d2a33;
+  --color-blush: #edd7cd;
+
+  --color-rose-50: #fef2f2;
+  --color-rose-100: #fee2e2;
+  --color-rose-200: #fecaca;
+  --color-rose-300: #fca5a5;
+  --color-rose-400: #f87171;
+  --color-rose-500: #ef4444;
+  --color-rose-600: #dc2626;
+  --color-rose-700: #9b1c1c;
+  --color-rose-800: #991b1b;
+  --color-rose-900: #7f1d1d;
+
+  --color-gold-50: #fdfbf3;
+  --color-gold-100: #fbf5e6;
+  --color-gold-200: #f6e7be;
+  --color-gold-300: #edd590;
+  --color-gold-400: #d4af37;
+  --color-gold-500: #bfa13a;
+  --color-gold-600: #a18422;
+  --color-gold-700: #85691c;
+  --color-gold-800: #6b5218;
+  --color-gold-900: #4a3811;
+
+  --color-primary-50: #fef2f2;
+  --color-primary-100: #fee2e2;
+  --color-primary-200: #fecaca;
+  --color-primary-300: #fca5a5;
+  --color-primary-400: #f87171;
+  --color-primary-500: #ef4444;
+  --color-primary-600: #dc2626;
+  --color-primary-700: #9b1c1c;
+  --color-primary-800: #991b1b;
+  --color-primary-900: #7f1d1d;
+  --color-primary: #9b1c1c;
+
+  --color-secondary-50: #fdfbf3;
+  --color-secondary-100: #fbf5e6;
+  --color-secondary-200: #f6e7be;
+  --color-secondary-300: #edd590;
+  --color-secondary-400: #d4af37;
+  --color-secondary-500: #bfa13a;
+  --color-secondary-600: #a18422;
+  --color-secondary-700: #85691c;
+  --color-secondary-800: #6b5218;
+  --color-secondary-900: #4a3811;
+  --color-secondary: #d4af37;
+
+  --color-teal-50: #fef2f2;
+  --color-teal-100: #fee2e2;
+  --color-teal-200: #fecaca;
+  --color-teal-300: #fca5a5;
+  --color-teal-400: #f87171;
+  --color-teal-500: #ef4444;
+  --color-teal-600: #dc2626;
+  --color-teal-700: #9b1c1c;
+  --color-teal-800: #991b1b;
+  --color-teal-900: #7f1d1d;
+  --color-teal: #9b1c1c;
+
+  --color-coral-50: #fdfbf3;
+  --color-coral-100: #fbf5e6;
+  --color-coral-200: #f6e7be;
+  --color-coral-300: #edd590;
+  --color-coral-400: #d4af37;
+  --color-coral-500: #bfa13a;
+  --color-coral-600: #a18422;
+  --color-coral-700: #85691c;
+  --color-coral-800: #6b5218;
+  --color-coral-900: #4a3811;
+  --color-coral: #d4af37;
+
+  --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
+  --font-display: var(--font-playfair), 'Playfair Display', Georgia, serif;
+}
+
+/* Dark mode is not yet implemented. The boutique cream aesthetic is intentional across themes. */
+
+body {
+  background-color: #f9f5f0;
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(155, 28, 28, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 45%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.015'/%3E%3C/svg%3E");
+  color: #1a1a1a;
+  font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f3ede7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #edd7cd;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
+}
+
+/* Selection color */
+::selection {
+  background-color: #fee2e2;
+  color: #9b1c1c;
+}
+
+/* Button Glow Effect */
+@keyframes spin-glow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.btn-glow {
+  position: relative;
+  isolation: isolate;
+}
+
+.btn-glow::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(from 0deg, #9b1c1c, #d4af37, #ef4444, #9b1c1c);
+  filter: blur(12px);
+  opacity: 0.6;
+  z-index: -1;
+  animation: spin-glow 6s linear infinite;
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
