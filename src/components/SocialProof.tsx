@@ -47,7 +47,7 @@ export default function SocialProof() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center px-4 py-2 rounded-full bg-rose-100 text-rose-700 text-sm font-semibold mb-4">
-            4.9/5 based on 370+ reviews
+            4.9/5 average rating
           </div>
           <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
             Women Who Broke the Cycle
@@ -112,12 +112,12 @@ export default function SocialProof() {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           <div className="p-6 bg-white/60 backdrop-blur-sm rounded-xl border border-rose-100/50 shadow-sm">
-            <div className="text-3xl md:text-4xl font-bold text-rose-700 mb-2">7,700+</div>
+            <div className="text-3xl md:text-4xl font-bold text-rose-700 mb-2">500+</div>
             <div className="text-gray-600 font-medium">Women helped</div>
           </div>
           <div className="p-6 bg-white/60 backdrop-blur-sm rounded-xl border border-rose-100/50 shadow-sm">
-            <div className="text-3xl md:text-4xl font-bold text-rose-700 mb-2">370+</div>
-            <div className="text-gray-600 font-medium">5-star reviews</div>
+            <div className="text-3xl md:text-4xl font-bold text-rose-700 mb-2">4.9/5</div>
+            <div className="text-gray-600 font-medium">Average rating</div>
           </div>
           <div className="p-6 bg-white/60 backdrop-blur-sm rounded-xl border border-rose-100/50 shadow-sm">
             <div className="text-3xl md:text-4xl font-bold text-rose-700 mb-2">35+</div>

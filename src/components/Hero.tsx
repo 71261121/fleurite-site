@@ -79,7 +79,7 @@ export default function Hero() {
                 ))}
               </span>
               <span className="text-xs text-gray-600">
-                <span className="font-semibold text-gray-900">7,700+ women</span> downloaded this month
+                <span className="font-semibold text-gray-900">Women worldwide</span> are using this system
               </span>
             </div>
           </div>
