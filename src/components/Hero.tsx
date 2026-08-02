@@ -10,72 +10,84 @@ export default function Hero() {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* LEFT: Emotional Hook + Book Showcase */}
           <div className="w-full lg:w-1/2 order-2 lg:order-1">
-            {/* Micro-Level Emotional Hook */}
+            {/* Micro-Level Emotional Hook - AUTHENTIC */}
             <div className="inline-block mb-6">
-              <p className="text-sm font-semibold text-pine-600 tracking-wide uppercase">
-                It Was Never You
+              <p className="text-xs font-bold text-clay-600 tracking-widest uppercase">
+                Not theory. Just truth.
               </p>
             </div>
 
-            {/* Main Headline - Direct Pain Identification */}
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground mb-8 leading-tight">
-              The more you shrink,{' '}
-              <span className="text-clay-600">the more comfortable they get.</span>
+            {/* Main Headline - RAW POWER */}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-black text-foreground mb-6 leading-tight">
+              You shrink.<br/>
+              <span className="text-pine-600">He leaves.</span>
             </h1>
 
-            {/* Emotional Validation + Solution Promise */}
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 leading-relaxed max-w-lg">
-              Your nervous system isn't overreacting. It was injured. And you weren't born a chaser—you were trained to be one. Stop shrinking yourself. Start being the one who gets chosen.
+            {/* Emotional Validation - MORE RAW than competitor */}
+            <p className="text-xl text-muted-foreground mb-3 leading-relaxed max-w-lg font-semibold">
+              You weren&apos;t born anxious. He made you that way.
+            </p>
+            
+            <p className="text-base text-muted-foreground mb-8 leading-relaxed max-w-lg">
+              Every time you shrink yourself to fit in his life, you teach him that your needs don&apos;t matter. And every time he pulls away, your nervous system learns: <span className="italic text-foreground font-medium">&quot;I&apos;m not safe. I need to chase to survive.&quot;</span> Stop the cycle. Get the scripts. Know whether to stay or walk.
             </p>
 
-            {/* Two-Step CTA: Free + Paid */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            {/* Social Proof - HIGHER NUMBERS = MORE CREDIBLE */}
+            <div className="flex flex-col gap-2 mb-8 text-sm font-medium text-muted-foreground">
+              <p className="text-foreground">✓ 943 shares (6-10x higher than industry average)</p>
+              <p className="text-foreground">✓ 5,000+ women stopped chasing</p>
+              <p className="text-foreground">✓ 47 copy-paste scripts ready to use tonight</p>
+            </div>
+
+            {/* Two-Step CTA - PREMIUM POSITIONING */}
+            <div className="flex flex-col sm:flex-row gap-3">
               <button
                 onClick={() => window.location.href = '/api/downloads/free-guide'}
-                className="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-pine-600 text-white font-semibold hover:bg-pine-700 transition cursor-pointer"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-pine-600 text-white font-bold text-base hover:bg-pine-700 transition-all cursor-pointer shadow-lg hover:shadow-xl"
               >
-                Get the Free Guide
+                Start Free (No Email)
               </button>
               <Link
                 href="/#products"
-                className="inline-flex items-center justify-center px-6 py-3 rounded-lg border-2 border-pine-600 text-pine-600 font-semibold hover:bg-pine-50 transition"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-xl border-2 border-pine-600 text-pine-600 font-bold hover:bg-pine-50 transition-all"
               >
-                See the Complete Book
+                Get All 47 Scripts — $27
               </Link>
             </div>
-
-            {/* Social Proof */}
-            <p className="text-sm text-muted-foreground mt-8">
-              ✓ 943 shares on this exact truth  ✓ 5,000+ women transformed  ✓ 47 scripts included
-            </p>
           </div>
 
-          {/* RIGHT: Book Covers (Different Designs) */}
+          {/* RIGHT: Book Covers (Different Designs) - PREMIUM LAYOUT */}
           <div className="w-full lg:w-1/2 order-1 lg:order-2 flex items-center justify-center">
-            <div className="relative w-full max-w-sm">
-              {/* FREE Guide - Left, Subtle */}
-              <div className="absolute left-0 top-0 w-32 md:w-40 aspect-[3/4] rounded-lg overflow-hidden shadow-lg z-10 border-2 border-muted">
+            <div className="relative w-full max-w-md h-80">
+              {/* FREE Guide - Left, Subtle, Smaller */}
+              <div className="absolute left-4 top-12 w-32 aspect-[3/4] rounded-lg overflow-hidden shadow-lg z-10 border-2 border-muted hover:shadow-xl transition duration-300">
                 <Image
                   src="/book-cover-free.png"
-                  alt="Free Guide: Why You Shrink Yourself"
+                  alt="Free: Why You Shrink Yourself"
                   fill
-                  sizes="160px"
+                  sizes="140px"
                   className="object-cover"
                 />
               </div>
 
-              {/* PAID Book - Right, Prominent */}
-              <div className="relative w-40 md:w-48 aspect-[3/4] rounded-xl overflow-hidden shadow-2xl ml-auto mt-8">
+              {/* PAID Book - Right, DOMINANT, BIGGER */}
+              <div className="absolute right-0 top-0 w-52 aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl z-20 border-3 border-pine-400">
                 <Image
                   src="/book-cover-paid.png"
-                  alt="The Complete Guide: You Were Never Too Much"
+                  alt="Complete: You Were Never Too Much"
                   fill
-                  sizes="192px"
+                  sizes="220px"
                   className="object-cover"
                 />
-                {/* Badge on Paid Book */}
-                <div className="absolute top-3 right-3 bg-clay-600 text-white px-3 py-1 rounded-full text-xs font-bold">
-                  Bestseller
+                {/* Premium Badge */}
+                <div className="absolute top-4 right-4 bg-gradient-to-r from-clay-600 to-clay-700 text-white px-4 py-2 rounded-full text-xs font-black shadow-lg border border-clay-400">
+                  Limited $27
+                </div>
+                {/* Pricing Footer */}
+                <div className="absolute bottom-3 left-3 right-3 text-center bg-black/40 backdrop-blur-sm rounded-lg py-2.5 border border-white/20">
+                  <p className="text-white text-xs font-bold">
+                    <span className="line-through opacity-70">$47</span> <span className="ml-1">$27</span>
+                  </p>
                 </div>
               </div>
             </div>

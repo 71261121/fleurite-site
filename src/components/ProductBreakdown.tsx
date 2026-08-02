@@ -7,14 +7,14 @@ export default function ProductBreakdown() {
   return (
     <section className="py-20 bg-card scroll-mt-20" id="products">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        {/* Section Header - UNIQUE, POWERFUL */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-            Two Books, One Path{' '}
-            <span className="text-pine-600">from Pain to Power</span>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">
+            The Scripts Won&apos;t Work{' '}
+            <span className="text-pine-600">If Your Nervous System Doesn&apos;t Change</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Start free. Go deeper if you're ready. Both are designed for women who want answers, not theories.
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto font-medium">
+            That&apos;s why we give you both: The exact words to say. And the 3-day reset that lets you actually stay calm long enough to say them without panicking or chasing.
           </p>
         </div>
 
@@ -40,24 +40,20 @@ export default function ProductBreakdown() {
                 <p className="text-muted-foreground mt-1">The 3-Day Reset</p>
               </div>
 
-              <p className="text-foreground mb-6">A free guide that reveals exactly why you're chasing and gives you a practical 3-day reset your nervous system actually needs.</p>
+              <p className="text-foreground mb-6 font-medium">No email required. No theory. Just the three days that actually rewire how your nervous system responds to his distance.</p>
 
-              <ul className="space-y-2 mb-8">
-                <li className="flex items-start gap-2 text-foreground">
-                  <span className="text-pine-600 font-bold mt-0.5">✓</span>
-                  <span>Why you shrink yourself (the psychological truth)</span>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start gap-3 text-foreground">
+                  <span className="text-clay-600 font-bold text-lg mt-0.5">→</span>
+                  <span className="font-medium">Day 1: Why You Chase (It's Not Your Fault)</span>
                 </li>
-                <li className="flex items-start gap-2 text-foreground">
-                  <span className="text-pine-600 font-bold mt-0.5">✓</span>
-                  <span>Your nervous system isn't broken—it was injured</span>
+                <li className="flex items-start gap-3 text-foreground">
+                  <span className="text-clay-600 font-bold text-lg mt-0.5">→</span>
+                  <span className="font-medium">Day 2: The 90-Second Nervous System Reset</span>
                 </li>
-                <li className="flex items-start gap-2 text-foreground">
-                  <span className="text-pine-600 font-bold mt-0.5">✓</span>
-                  <span>3-day reset protocol (actually works)</span>
-                </li>
-                <li className="flex items-start gap-2 text-foreground">
-                  <span className="text-pine-600 font-bold mt-0.5">✓</span>
-                  <span>Email delivery + instant PDF</span>
+                <li className="flex items-start gap-3 text-foreground">
+                  <span className="text-clay-600 font-bold text-lg mt-0.5">→</span>
+                  <span className="font-medium">Day 3: Your Move (What You Actually Say Next)</span>
                 </li>
               </ul>
 
@@ -93,24 +89,20 @@ export default function ProductBreakdown() {
                 <p className="text-muted-foreground mt-1">The Complete Guide + 47 Scripts</p>
               </div>
 
-              <p className="text-foreground mb-6">The full system: Understanding why, exactly what to say in 47 different scenarios, and the binary clarity framework that tells you if he'll change or if you should leave.</p>
+              <p className="text-foreground mb-6 font-medium">Everything your nervous system needs to stay calm. Every script your mouth needs to say. Plus the one question that tells you whether to stay and fight or leave with your head high.</p>
 
-              <ul className="space-y-2 mb-8">
-                <li className="flex items-start gap-2 text-foreground">
-                  <span className="text-clay-600 font-bold mt-0.5">✓</span>
-                  <span>47 copy-paste scripts (I've tested them all)</span>
+              <ul className="space-y-3 mb-8">
+                <li className="flex items-start gap-3 text-foreground">
+                  <span className="text-clay-600 font-bold text-lg mt-0.5">→</span>
+                  <span className="font-medium">47 Scripts (He pulls away, ghosted, needs space, etc.)</span>
                 </li>
-                <li className="flex items-start gap-2 text-foreground">
-                  <span className="text-clay-600 font-bold mt-0.5">✓</span>
-                  <span>The binary clarity question (is he willing?)</span>
+                <li className="flex items-start gap-3 text-foreground">
+                  <span className="text-clay-600 font-bold text-lg mt-0.5">→</span>
+                  <span className="font-medium">The Binary Question (Will He Actually Change?)</span>
                 </li>
-                <li className="flex items-start gap-2 text-foreground">
-                  <span className="text-clay-600 font-bold mt-0.5">✓</span>
-                  <span>Leave with dignity OR rebuild with boundaries</span>
-                </li>
-                <li className="flex items-start gap-2 text-foreground">
-                  <span className="text-clay-600 font-bold mt-0.5">✓</span>
-                  <span>Instant access + email backup</span>
+                <li className="flex items-start gap-3 text-foreground">
+                  <span className="text-clay-600 font-bold text-lg mt-0.5">→</span>
+                  <span className="font-medium">The Full 7-Day Reset Protocol (Inside the Book)</span>
                 </li>
               </ul>
 
