@@ -11,16 +11,12 @@ export async function POST(request: NextRequest) {
     }
     const { items, amount, customerEmail, customerName } = validation.data
 
-    // Email is required for guest checkout
-    if (!customerEmail) {
-      return NextResponse.json({ error: 'Email address is required for checkout' }, { status: 400 })
-    }
-
-    // Auto-create or find guest user
+    // Auto-create or find guest user (email optional — Stripe collects it)
+    const email = customerEmail || `guest-${Date.now()}@fleurite.me`
     const user = await db.user.upsert({
-      where: { email: customerEmail.toLowerCase() },
+      where: { email: email.toLowerCase() },
       create: {
-        email: customerEmail.toLowerCase(),
+        email: email.toLowerCase(),
         name: customerName || 'Guest Customer',
         role: 'user',
       },
@@ -63,7 +59,7 @@ export async function POST(request: NextRequest) {
         expires_at: Math.floor(expiresAt.getTime() / 1000),
         metadata: {
           userId: user.id,
-          customerEmail: customerEmail.toLowerCase(),
+          customerEmail: email.toLowerCase(),
           customerName: customerName || '',
           itemsJson: JSON.stringify(items),
         },

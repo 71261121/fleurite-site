@@ -11,26 +11,18 @@ type CheckoutStep = 'review' | 'processing' | 'success' | 'error'
 export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolean; onOpenChange: (open: boolean) => void }) {
   const [step, setStep] = useState<CheckoutStep>('review')
   const [error, setError] = useState('')
-  const [email, setEmail] = useState('')
   const [orderNumber, setOrderNumber] = useState('')
 
   const handleOpenChange = useCallback((open: boolean) => {
     if (!open && step !== 'processing') {
       setStep('review')
       setError('')
-      setEmail('')
     }
     onOpenChange(open)
   }, [onOpenChange, step])
 
   const handlePayNow = useCallback(async () => {
     setError('')
-
-    if (!email || !email.includes('@')) {
-      setError('Please enter a valid email address')
-      return
-    }
-
     setStep('processing')
 
     try {
@@ -43,7 +35,7 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
             price: 27,
           }],
           amount: 27,
-          customerEmail: email,
+          customerEmail: 'guest@fleurite.me',
         }),
       })
 
@@ -60,7 +52,7 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
         return
       }
 
-      // Simulated mode — auto-confirm
+      // Simulated mode
       await new Promise((r) => setTimeout(r, 2000))
       const confirmRes = await fetch('/api/checkout/confirm', {
         method: 'POST',
@@ -69,7 +61,6 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
           sessionId: data.sessionId,
           items: [{ productName: 'Fleurite — Stop Chasing System', price: 27 }],
           amount: 27,
-          customerEmail: email,
         }),
       })
       const confirmData = await confirmRes.json()
@@ -84,7 +75,7 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
       setError('Network error. Please try again.')
       setStep('review')
     }
-  }, [email])
+  }, [])
 
   return (
     <Sheet open={isOpen} onOpenChange={handleOpenChange}>
@@ -124,28 +115,13 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
                   </div>
                 </div>
 
-                {/* Email Input */}
-                <div>
-                  <label htmlFor="checkout-email" className="block text-sm font-medium text-gray-700 mb-1">Email address</label>
-                  <input
-                    id="checkout-email"
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="you@example.com"
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-rose-500 focus:ring-2 focus:ring-rose-200 outline-none transition-all text-sm"
-                    required
-                  />
-                  <p className="text-xs text-gray-400 mt-1">We&apos;ll send your download link here</p>
-                </div>
-
                 {/* Price */}
                 <div className="rounded-xl bg-white p-4 border border-gray-200 flex justify-between items-center">
                   <span className="font-semibold text-gray-900">You Pay</span>
                   <span className="text-2xl font-black text-rose-700">$27</span>
                 </div>
 
-                {/* Pay Button */}
+                {/* Pay Button — no email required */}
                 <button
                   onClick={handlePayNow}
                   className="w-full h-14 rounded-xl bg-rose-700 text-white text-base font-bold shadow-lg hover:bg-rose-800 transition-colors flex items-center justify-center gap-2"
@@ -177,8 +153,8 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
           {step === 'processing' && (
             <motion.div key="processing" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col items-center justify-center min-h-[400px] gap-6">
               <Loader2 className="h-10 w-10 animate-spin text-rose-600" />
-              <p className="text-lg font-medium text-gray-900">Processing payment...</p>
-              <p className="text-sm text-gray-500">Securing your access now</p>
+              <p className="text-lg font-medium text-gray-900">Redirecting to payment...</p>
+              <p className="text-sm text-gray-500">You&apos;ll complete payment on Stripe&apos;s secure page</p>
             </motion.div>
           )}
 
