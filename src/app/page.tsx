@@ -7,6 +7,7 @@ import AttachmentStyleQuiz from '@/components/AttachmentStyleQuiz';
 import ScienceSection from '@/components/ScienceSection';
 import SocialProof from '@/components/SocialProof';
 import ProductBreakdown from '@/components/ProductBreakdown';
+import ProductComparison from '@/components/ProductComparison';
 import Differentiation from '@/components/Differentiation';
 import TransformationMatrix from '@/components/TransformationMatrix';
 import FinalCTA from '@/components/FinalCTA';
@@ -40,6 +41,7 @@ export default function Home() {
         <FadeIn>
           <TransformationMatrix />
         </FadeIn>
+        <ProductComparison />
         <SocialProof />
         <FadeIn>
           <FinalCTA />
