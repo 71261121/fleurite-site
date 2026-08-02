@@ -18,20 +18,20 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Break the Anxious Attachment Cycle | Fleurite.me",
-  description: "Psychology-backed system to break anxious attachment cycles. 35+ word-for-word scripts, 7-Day Anxiety Reset, and secure relationship tools.",
-  keywords: ["relationship advice", "avoidant partner", "anxious attachment", "secure attachment", "relationship anxiety", "dating tips", "psychology", "attachment theory"],
+  title: "Stop Shrinking Yourself | Relationship Clarity & Scripts | Fleurite",
+  description: "Break the anxiety cycle with 47 tested scripts, the Binary Question framework, and nervous system science. Know whether to rebuild with boundaries or leave with dignity.",
+  keywords: ["relationship advice", "avoidant partner", "anxious attachment", "relationship anxiety", "attachment theory", "nervous system", "relationship scripts", "breakup advice", "secure relationships"],
   openGraph: {
-    title: "Break the Anxious Attachment Cycle | Fleurite.me",
-    description: "Psychology-backed system to break anxious attachment cycles. 35+ word-for-word scripts included.",
+    title: "Stop Shrinking Yourself | Relationship Clarity & Scripts | Fleurite",
+    description: "Break the anxiety cycle with 47 tested scripts, the Binary Question framework, and nervous system science.",
     type: "website",
     locale: "en_US",
-    siteName: "Fleurite.me",
+    siteName: "Fleurite",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Break the Anxious Attachment Cycle | Fleurite.me",
-    description: "Psychology-backed system to break anxious attachment cycles. 35+ word-for-word scripts included.",
+    title: "Stop Shrinking Yourself | Relationship Clarity & Scripts | Fleurite",
+    description: "Break the anxiety cycle with 47 tested scripts, the Binary Question framework, and nervous system science.",
   },
   robots: {
     index: true,
