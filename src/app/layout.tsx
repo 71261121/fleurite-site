@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Inter, Fraunces } from "next/font/google";
 import "./globals.css";
 import CheckoutGateway from "@/components/CheckoutGateway";
 
@@ -10,28 +10,43 @@ const inter = Inter({
   display: "swap",
 });
 
-const playfair = Playfair_Display({
-  variable: "--font-playfair",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Break the Anxious Attachment Cycle | Fleurite.me",
-  description: "Psychology-backed system to break anxious attachment cycles. 35+ word-for-word scripts, 7-Day Anxiety Reset, and secure relationship tools.",
-  keywords: ["relationship advice", "avoidant partner", "anxious attachment", "secure attachment", "relationship anxiety", "dating tips", "psychology", "attachment theory"],
+  metadataBase: new URL("https://fleurite.me"),
+  title: "You Were Never Too Much | Fleurite",
+  description:
+    "You weren't born a chaser — you were trained to be one. The Rooted Method helps you stop chasing an avoidant partner, quiet the 2am anxiety, and come home to yourself. A gentle, psychology-backed book for women who love too hard.",
+  keywords: [
+    "you were never too much",
+    "anxious attachment healing",
+    "avoidant partner",
+    "stop chasing",
+    "relationship anxiety",
+    "nervous system regulation",
+    "attachment theory",
+    "secure attachment",
+    "the rooted method",
+  ],
   openGraph: {
-    title: "Break the Anxious Attachment Cycle | Fleurite.me",
-    description: "Psychology-backed system to break anxious attachment cycles. 35+ word-for-word scripts included.",
+    title: "You Were Never Too Much | Fleurite",
+    description:
+      "Stop chasing, stop shrinking, and come home to yourself. A gentle, psychology-backed book for women loving an emotionally unavailable partner.",
     type: "website",
     locale: "en_US",
-    siteName: "Fleurite.me",
+    siteName: "Fleurite",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Break the Anxious Attachment Cycle | Fleurite.me",
-    description: "Psychology-backed system to break anxious attachment cycles. 35+ word-for-word scripts included.",
+    title: "You Were Never Too Much | Fleurite",
+    description:
+      "It was never that you were too much. Safety was never available. The Rooted Method — a gentle path back to yourself.",
   },
   robots: {
     index: true,
@@ -42,6 +57,11 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#2f4a3c",
+  colorScheme: "light",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -50,7 +70,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${playfair.variable} h-full antialiased`}
+      className={`${inter.variable} ${fraunces.variable} h-full antialiased bg-cream`}
     >
       <body className="min-h-full flex flex-col">
         {children}
