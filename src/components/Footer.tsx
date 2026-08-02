@@ -67,7 +67,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="border-t border-gray-800 pt-8 text-center text-gray-500 text-sm">
+        <div className="border-t border-gray-800 pt-8 text-center text-muted-foreground text-sm">
           <p>&copy; 2026 Fleurite.me. All rights reserved.</p>
           <p className="mt-2">
             This site is not a part of Facebook, Instagram, or Meta Platforms, Inc.

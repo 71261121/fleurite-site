@@ -53,11 +53,11 @@ export default function StickyBar() {
       <div className="max-w-6xl mx-auto flex items-center justify-between gap-4">
         {/* Left side: Product name & honest price */}
         <div className="flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-2">
-          <span className="font-semibold text-gray-900 text-sm sm:text-base tracking-tight">
+          <span className="font-semibold text-foreground text-sm sm:text-base tracking-tight">
             Fleurite System
           </span>
-          <span className="text-rose-700 font-bold text-base sm:text-lg">
-            $27 <span className="text-xs sm:text-sm font-normal text-gray-600">one-time</span>
+          <span className="text-pine-600 font-bold text-base sm:text-lg">
+            $27 <span className="text-xs sm:text-sm font-normal text-muted-foreground">one-time</span>
           </span>
         </div>
 
@@ -65,7 +65,7 @@ export default function StickyBar() {
         <a
           onClick={() => window.dispatchEvent(new Event("open-checkout"))}
           tabIndex={isVisible ? 0 : -1}
-          className="bg-rose-700 text-white rounded-full px-6 py-3 font-bold text-sm hover:bg-rose-800 transition-colors shadow-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-rose-700 focus:ring-offset-2"
+          className="bg-pine-600 text-white rounded-full px-6 py-3 font-bold text-sm hover:bg-pine-700 transition-colors shadow-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-rose-700 focus:ring-offset-2"
         >
           Get Instant Access
         </a>

@@ -55,16 +55,16 @@ function FAQAccordion({ faq, isOpen, onToggle }: { faq: FAQItem; isOpen: boolean
   const id = `faq-answer-${faq.question.replace(/[^a-z0-9]/gi, '-').toLowerCase()}`;
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+    <div className="bg-card rounded-xl shadow-sm border border-muted overflow-hidden">
       <button
         onClick={onToggle}
-        className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+        className="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-muted transition-colors"
         aria-expanded={isOpen}
         aria-controls={id}
       >
-        <span className="font-semibold text-gray-900 pr-4">{faq.question}</span>
+        <span className="font-semibold text-foreground pr-4">{faq.question}</span>
         <svg
-          className={`h-5 w-5 text-rose-500 flex-shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+          className={`h-5 w-5 text-pine-500 flex-shrink-0 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -81,7 +81,7 @@ function FAQAccordion({ faq, isOpen, onToggle }: { faq: FAQItem; isOpen: boolean
         className="transition-all duration-300 ease-in-out overflow-hidden"
       >
         <div ref={contentRef} className="px-6 pb-4">
-          <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+          <p className="text-muted-foreground leading-relaxed">{faq.answer}</p>
         </div>
       </div>
     </div>
@@ -92,13 +92,13 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-20 bg-gray-50 scroll-mt-20" id="faq">
+    <section className="py-20 bg-muted scroll-mt-20" id="faq">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
             Common Questions
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-muted-foreground">
             Everything you need to know before getting started
           </p>
         </div>
@@ -115,10 +115,10 @@ export default function FAQ() {
         </div>
 
         <div className="text-center mt-12">
-          <p className="text-gray-600 mb-4">Still have questions?</p>
+          <p className="text-muted-foreground mb-4">Still have questions?</p>
           <a
             href="mailto:support@fleurite.me"
-            className="text-rose-700 font-semibold hover:text-rose-800 transition-colors"
+            className="text-pine-600 font-semibold hover:text-pine-700 transition-colors"
           >
             Contact Support
           </a>

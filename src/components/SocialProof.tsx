@@ -46,13 +46,13 @@ export default function SocialProof() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-rose-100 text-rose-700 text-sm font-semibold mb-4">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-pine-100 text-pine-600 text-sm font-semibold mb-4">
             4.9/5 average rating
           </div>
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
             Women Who Broke the Cycle
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Real stories from women who were exactly where you are right now
           </p>
         </div>
@@ -62,7 +62,7 @@ export default function SocialProof() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 flex flex-col justify-between"
+              className="bg-card rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow border border-muted flex flex-col justify-between"
             >
               <div>
                 {/* Rating & Verified Badge */}
@@ -83,21 +83,21 @@ export default function SocialProof() {
                 </div>
 
                 {/* Quote */}
-                <p className="text-gray-600 italic mb-6 leading-relaxed">
+                <p className="text-muted-foreground italic mb-6 leading-relaxed">
                   "{testimonial.text}"
                 </p>
               </div>
 
               {/* Author Details & Date */}
               <div className="flex items-center pt-4 border-t border-gray-50">
-                <div className="w-12 h-12 bg-gradient-to-br from-rose-400 to-amber-400 rounded-full flex items-center justify-center mr-4 shrink-0 shadow-sm">
+                <div className="w-12 h-12 bg-gradient-to-br from-clay-400 to-clay-400 rounded-full flex items-center justify-center mr-4 shrink-0 shadow-sm">
                   <span className="text-white font-bold text-lg">
                     {testimonial.name.charAt(0)}
                   </span>
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900">{testimonial.name}</p>
-                  <p className="text-sm text-gray-500">
+                  <p className="font-semibold text-foreground">{testimonial.name}</p>
+                  <p className="text-sm text-muted-foreground">
                     {testimonial.age} • {testimonial.location}
                   </p>
                   <p className="text-xs text-gray-400 mt-0.5">
@@ -111,21 +111,21 @@ export default function SocialProof() {
 
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          <div className="p-6 bg-white/60 backdrop-blur-sm rounded-xl border border-rose-100/50 shadow-sm">
-            <div className="text-3xl md:text-4xl font-bold text-rose-700 mb-2">500+</div>
-            <div className="text-gray-600 font-medium">Women helped</div>
+          <div className="p-6 bg-card/60 backdrop-blur-sm rounded-xl border border-rose-100/50 shadow-sm">
+            <div className="text-3xl md:text-4xl font-bold text-pine-600 mb-2">500+</div>
+            <div className="text-muted-foreground font-medium">Women helped</div>
           </div>
-          <div className="p-6 bg-white/60 backdrop-blur-sm rounded-xl border border-rose-100/50 shadow-sm">
-            <div className="text-3xl md:text-4xl font-bold text-rose-700 mb-2">4.9/5</div>
-            <div className="text-gray-600 font-medium">Average rating</div>
+          <div className="p-6 bg-card/60 backdrop-blur-sm rounded-xl border border-rose-100/50 shadow-sm">
+            <div className="text-3xl md:text-4xl font-bold text-pine-600 mb-2">4.9/5</div>
+            <div className="text-muted-foreground font-medium">Average rating</div>
           </div>
-          <div className="p-6 bg-white/60 backdrop-blur-sm rounded-xl border border-rose-100/50 shadow-sm">
-            <div className="text-3xl md:text-4xl font-bold text-rose-700 mb-2">35+</div>
-            <div className="text-gray-600 font-medium">Scripts included</div>
+          <div className="p-6 bg-card/60 backdrop-blur-sm rounded-xl border border-rose-100/50 shadow-sm">
+            <div className="text-3xl md:text-4xl font-bold text-pine-600 mb-2">35+</div>
+            <div className="text-muted-foreground font-medium">Scripts included</div>
           </div>
-          <div className="p-6 bg-white/60 backdrop-blur-sm rounded-xl border border-rose-100/50 shadow-sm">
-            <div className="text-3xl md:text-4xl font-bold text-rose-700 mb-2">$27</div>
-            <div className="text-gray-600 font-medium">One-time payment</div>
+          <div className="p-6 bg-card/60 backdrop-blur-sm rounded-xl border border-rose-100/50 shadow-sm">
+            <div className="text-3xl md:text-4xl font-bold text-pine-600 mb-2">$27</div>
+            <div className="text-muted-foreground font-medium">One-time payment</div>
           </div>
         </div>
       </div>

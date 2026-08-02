@@ -106,22 +106,22 @@ export default function AttachmentStyleQuiz() {
   if (showResult) {
     const result = getAttachmentStyle();
     return (
-      <div className="bg-white rounded-2xl p-8 shadow-xl max-w-2xl mx-auto">
+      <div className="bg-card rounded-2xl p-8 shadow-xl max-w-2xl mx-auto">
         <div className="text-center mb-6">
           <p className="text-sm text-gray-400 text-center mb-4">An informal self-reflection — not a clinical assessment.</p>
-          <h3 className="text-2xl font-bold text-gray-900 mb-2">Your Attachment Style:</h3>
+          <h3 className="text-2xl font-bold text-foreground mb-2">Your Attachment Style:</h3>
           <p className={`text-3xl font-bold ${
-            result.color === 'rose' ? 'text-rose-500' : 'text-green-500'
+            result.color === 'rose' ? 'text-pine-500' : 'text-green-500'
           }`}>
             {result.type}
           </p>
         </div>
-        <p className="text-gray-600 text-center mb-6">{result.description}</p>
+        <p className="text-muted-foreground text-center mb-6">{result.description}</p>
         <p className="text-sm text-gray-400 text-center mb-4">Attachment patterns are complex — this is a starting point for reflection, not a diagnosis.</p>
         <div className="text-center">
           <a
             href="#get-access"
-            className="inline-block bg-rose-700 text-white px-8 py-3 rounded-full font-semibold hover:bg-rose-800 transition-colors"
+            className="inline-block bg-pine-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-pine-700 transition-colors"
           >
             Get Scripts for Your Style
           </a>
@@ -131,18 +131,18 @@ export default function AttachmentStyleQuiz() {
   }
 
   return (
-    <div className="bg-white rounded-2xl p-8 shadow-xl max-w-2xl mx-auto">
+    <div className="bg-card rounded-2xl p-8 shadow-xl max-w-2xl mx-auto">
       <div className="text-center mb-6">
         <p className="text-sm text-gray-400 text-center mb-4">An informal self-reflection — not a clinical assessment.</p>
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">What's Your Attachment Style?</h3>
-        <p className="text-gray-600">Answer 5 quick questions to understand your pattern</p>
+        <h3 className="text-2xl font-bold text-foreground mb-2">What's Your Attachment Style?</h3>
+        <p className="text-muted-foreground">Answer 5 quick questions to understand your pattern</p>
         <div className="mt-4 bg-gray-200 rounded-full h-2">
           <div
-            className="bg-rose-500 h-2 rounded-full transition-all duration-300"
+            className="bg-pine-500 h-2 rounded-full transition-all duration-300"
             style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
           />
         </div>
-        <p className="text-sm text-gray-500 mt-2">Question {currentQuestion + 1} of {questions.length}</p>
+        <p className="text-sm text-muted-foreground mt-2">Question {currentQuestion + 1} of {questions.length}</p>
       </div>
 
       <div className="mb-6">
@@ -152,7 +152,7 @@ export default function AttachmentStyleQuiz() {
             <button
               key={index}
               onClick={() => handleAnswer(index)}
-              className="w-full text-left px-4 py-3 rounded-lg border border-gray-200 hover:border-rose-500 hover:bg-rose-50 transition-colors"
+              className="w-full text-left px-4 py-3 rounded-lg border border-muted hover:border-rose-500 hover:bg-pine-50 transition-colors"
             >
               {option}
             </button>

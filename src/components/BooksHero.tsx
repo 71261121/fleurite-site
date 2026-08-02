@@ -30,7 +30,7 @@ export default function BooksHero() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* LEFT: FREE GUIDE */}
           <div className="group">
-            <div className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow p-8 h-full flex flex-col">
+            <div className="bg-card rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow p-8 h-full flex flex-col">
               {/* Badge */}
               <div className="mb-6">
                 <span className="inline-block px-3 py-1 bg-[#f3ede7] text-[#2d2a33] text-xs font-semibold rounded-full">
@@ -96,7 +96,7 @@ export default function BooksHero() {
 
           {/* RIGHT: PAID BOOK */}
           <div className="group">
-            <div className="bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow p-8 h-full flex flex-col border-2 border-[#d4af37] relative">
+            <div className="bg-card rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-shadow p-8 h-full flex flex-col border-2 border-[#d4af37] relative">
               {/* BESTSELLER BADGE */}
               <div className="absolute -top-3 left-6 bg-[#d4af37] text-[#2d2a33] px-4 py-1.5 rounded-full font-bold text-sm">
                 BESTSELLER

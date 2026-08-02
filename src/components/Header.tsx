@@ -123,7 +123,7 @@ export default function Header() {
       <header
         className={`fixed left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'backdrop-blur-md bg-white/80 shadow-sm border-b border-rose-100/60 py-3'
+            ? 'backdrop-blur-md bg-card/80 shadow-sm border-b border-rose-100/60 py-3'
             : 'bg-transparent py-5'
         }`}
         style={{ top: `${barHeight}px` }}
@@ -134,7 +134,7 @@ export default function Header() {
             <div className="flex-shrink-0">
               <a
                 href="/"
-                className="font-display text-2xl font-bold text-rose-700 hover:text-rose-800 transition-colors tracking-tight focus:outline-none focus:ring-2 focus:ring-rose-500 rounded-sm"
+                className="font-display text-2xl font-bold text-pine-600 hover:text-pine-700 transition-colors tracking-tight focus:outline-none focus:ring-2 focus:ring-rose-500 rounded-sm"
               >
                 Fleurite.me
               </a>
@@ -150,20 +150,20 @@ export default function Header() {
                     href={`#${item.id}`}
                     onClick={(e) => handleScrollTo(e, item.id)}
                     className={`text-sm font-medium transition-colors relative py-1 focus:outline-none focus:ring-2 focus:ring-rose-500 rounded-xs ${
-                      isActive ? 'text-rose-700 font-semibold' : 'text-gray-600 hover:text-rose-700'
+                      isActive ? 'text-pine-600 font-semibold' : 'text-muted-foreground hover:text-pine-600'
                     }`}
                     aria-current={isActive ? 'page' : undefined}
                   >
                     {item.label}
                     {isActive && (
-                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-rose-700 rounded-full animate-in fade-in duration-200" />
+                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-pine-600 rounded-full animate-in fade-in duration-200" />
                     )}
                   </a>
                 );
               })}
               <a
                 onClick={(e) => { e.preventDefault(); window.dispatchEvent(new Event('open-checkout')); }}
-                className="bg-rose-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-rose-800 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 transition-all shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                className="bg-pine-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-pine-700 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 transition-all shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
               >
                 Get the System — $27
               </a>
@@ -177,7 +177,7 @@ export default function Header() {
                 aria-expanded={isMenuOpen}
                 aria-controls="mobile-menu"
                 aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-                className="p-2 rounded-lg text-gray-700 hover:text-rose-700 hover:bg-rose-50 focus:outline-none focus:ring-2 focus:ring-rose-500 transition-colors"
+                className="p-2 rounded-lg text-foreground hover:text-pine-600 hover:bg-pine-50 focus:outline-none focus:ring-2 focus:ring-rose-500 transition-colors"
               >
                 <svg
                   className="h-6 w-6 transition-transform duration-200"
@@ -201,7 +201,7 @@ export default function Header() {
         <div
           id="mobile-menu"
           aria-label="Mobile navigation"
-          className={`md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-b border-rose-100 shadow-lg transition-all duration-300 ease-in-out origin-top ${
+          className={`md:hidden absolute top-full left-0 right-0 bg-card/95 backdrop-blur-md border-b border-rose-100 shadow-lg transition-all duration-300 ease-in-out origin-top ${
             isMenuOpen
               ? 'opacity-100 translate-y-0 pointer-events-auto'
               : 'opacity-0 -translate-y-4 pointer-events-none'
@@ -217,8 +217,8 @@ export default function Header() {
                   onClick={(e) => handleScrollTo(e, item.id)}
                   className={`block px-3 py-2.5 rounded-lg text-base font-medium transition-colors ${
                     isActive
-                      ? 'bg-rose-50 text-rose-700 font-semibold border-l-4 border-rose-700'
-                      : 'text-gray-700 hover:bg-gray-50 hover:text-rose-700'
+                      ? 'bg-pine-50 text-pine-600 font-semibold border-l-4 border-pine-600'
+                      : 'text-foreground hover:bg-muted hover:text-pine-600'
                   }`}
                   aria-current={isActive ? 'page' : undefined}
                 >
@@ -229,7 +229,7 @@ export default function Header() {
             <div className="pt-2">
               <a
                 onClick={(e) => { e.preventDefault(); window.dispatchEvent(new Event('open-checkout')); }}
-                className="block w-full text-center bg-rose-700 text-white font-semibold px-5 py-3 rounded-xl hover:bg-rose-800 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 transition-all shadow-sm active:scale-[0.98] cursor-pointer"
+                className="block w-full text-center bg-pine-600 text-white font-semibold px-5 py-3 rounded-xl hover:bg-pine-700 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 transition-all shadow-sm active:scale-[0.98] cursor-pointer"
               >
                 Get the System — $27
               </a>

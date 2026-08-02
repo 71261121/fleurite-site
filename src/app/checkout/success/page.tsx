@@ -69,25 +69,25 @@ function SuccessContent() {
     <main className="min-h-screen bg-cream flex items-center justify-center py-12 px-4">
       <div className="max-w-md w-full text-center">
         {status === 'loading' && (
-          <div className="bg-white rounded-2xl p-8 shadow-lg">
-            <div className="w-12 h-12 border-4 border-rose-200 border-t-rose-600 rounded-full animate-spin mx-auto mb-4" />
-            <p className="text-gray-600">Confirming your order...</p>
+          <div className="bg-card rounded-2xl p-8 shadow-lg">
+            <div className="w-12 h-12 border-4 border-pine-200 border-t-rose-600 rounded-full animate-spin mx-auto mb-4" />
+            <p className="text-muted-foreground">Confirming your order...</p>
           </div>
         )}
 
         {status === 'success' && (
-          <div className="bg-white rounded-2xl p-8 shadow-lg">
+          <div className="bg-card rounded-2xl p-8 shadow-lg">
             <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg className="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
             </div>
-            <h1 className="text-2xl font-bold text-gray-900 mb-2">Payment Successful!</h1>
-            {orderNumber && <p className="text-sm text-gray-500 mb-4">Order #{orderNumber}</p>}
-            <p className="text-gray-600 mb-6">Check your email for your download link.</p>
+            <h1 className="text-2xl font-bold text-foreground mb-2">Payment Successful!</h1>
+            {orderNumber && <p className="text-sm text-muted-foreground mb-4">Order #{orderNumber}</p>}
+            <p className="text-muted-foreground mb-6">Check your email for your download link.</p>
             <Link
               href="/"
-              className="inline-block bg-rose-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-rose-800 transition-colors"
+              className="inline-block bg-pine-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-pine-700 transition-colors"
             >
               Back to Home
             </Link>
@@ -95,17 +95,17 @@ function SuccessContent() {
         )}
 
         {status === 'error' && (
-          <div className="bg-white rounded-2xl p-8 shadow-lg">
+          <div className="bg-card rounded-2xl p-8 shadow-lg">
             <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <svg className="h-8 w-8 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </div>
-            <h1 className="text-2xl font-bold text-gray-900 mb-2">Something went wrong</h1>
-            <p className="text-gray-600 mb-6">Please try again or contact support.</p>
+            <h1 className="text-2xl font-bold text-foreground mb-2">Something went wrong</h1>
+            <p className="text-muted-foreground mb-6">Please try again or contact support.</p>
             <Link
               href="/"
-              className="inline-block bg-rose-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-rose-800 transition-colors"
+              className="inline-block bg-pine-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-pine-700 transition-colors"
             >
               Back to Home
             </Link>
@@ -120,7 +120,7 @@ export default function SuccessPage() {
   return (
     <Suspense fallback={
       <main className="min-h-screen bg-cream flex items-center justify-center">
-        <div className="w-12 h-12 border-4 border-rose-200 border-t-rose-600 rounded-full animate-spin" />
+        <div className="w-12 h-12 border-4 border-pine-200 border-t-rose-600 rounded-full animate-spin" />
       </main>
     }>
       <SuccessContent />

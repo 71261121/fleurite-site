@@ -51,7 +51,7 @@ export default function BookSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="group relative rounded-2xl border border-border/50 bg-white p-8 shadow-sm hover:shadow-md transition-all duration-300"
+            className="group relative rounded-2xl border border-border/50 bg-card p-8 shadow-sm hover:shadow-md transition-all duration-300"
           >
             {/* Badge */}
             <div className="absolute -top-4 left-8 bg-evergreen text-warmWhite text-xs font-bold px-4 py-1.5 rounded-full inline-block">
@@ -123,7 +123,7 @@ export default function BookSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="group relative rounded-2xl border-2 border-clay bg-white p-8 shadow-lg hover:shadow-xl transition-all duration-300 ring-2 ring-clay/10"
+            className="group relative rounded-2xl border-2 border-clay bg-card p-8 shadow-lg hover:shadow-xl transition-all duration-300 ring-2 ring-clay/10"
           >
             {/* Badge */}
             <div className="absolute -top-4 left-8 bg-clay text-warmWhite text-xs font-bold px-4 py-1.5 rounded-full inline-block">
