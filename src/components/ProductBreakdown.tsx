@@ -94,15 +94,15 @@ export default function ProductBreakdown() {
               <ul className="space-y-3 mb-8">
                 <li className="flex items-start gap-3 text-foreground">
                   <span className="text-clay-600 font-bold text-lg mt-0.5">→</span>
-                  <span className="font-medium">47 Scripts (He pulls away, ghosted, needs space, etc.)</span>
+                  <span className="font-medium">47 Scripts (Script #7: When he says "I need space" | Script #12: How to stop texting at 2AM | Script #23: "I deserve consistency")</span>
                 </li>
                 <li className="flex items-start gap-3 text-foreground">
                   <span className="text-clay-600 font-bold text-lg mt-0.5">→</span>
-                  <span className="font-medium">The Binary Question (Will He Actually Change?)</span>
+                  <span className="font-medium">The Binary Question (3 questions that tell you: Stay or go?)</span>
                 </li>
                 <li className="flex items-start gap-3 text-foreground">
                   <span className="text-clay-600 font-bold text-lg mt-0.5">→</span>
-                  <span className="font-medium">The Full 7-Day Reset Protocol (Inside the Book)</span>
+                  <span className="font-medium">The Full 7-Day Reset (90-second panic relief + nervou system training)</span>
                 </li>
               </ul>
 

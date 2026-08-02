@@ -50,25 +50,25 @@ export default function StickyBar() {
       }}
       aria-hidden={!isVisible}
     >
-      <div className="max-w-6xl mx-auto flex items-center justify-between gap-4">
-        {/* Left side: Product name & honest price */}
-        <div className="flex flex-col sm:flex-row sm:items-baseline gap-0.5 sm:gap-2">
-          <span className="font-semibold text-foreground text-sm sm:text-base tracking-tight">
-            Fleurite System
-          </span>
-          <span className="text-pine-600 font-bold text-base sm:text-lg">
-            $27 <span className="text-xs sm:text-sm font-normal text-muted-foreground">one-time</span>
-          </span>
+      <div className="max-w-6xl mx-auto flex items-center justify-between gap-4 flex-wrap">
+        {/* Left side: Urgency message (Level 25 psychology) */}
+        <div className="flex flex-col gap-1 flex-1 min-w-0">
+          <p className="font-bold text-foreground text-sm md:text-base">
+            Stop spiraling at 2AM. Start sleeping tonight.
+          </p>
+          <p className="text-xs md:text-sm text-muted-foreground">
+            Free 3-day nervous system reset + 47 scripts for $27 (limited time)
+          </p>
         </div>
 
         {/* Right side: CTA button */}
-        <a
+        <button
           onClick={() => window.dispatchEvent(new Event("open-checkout"))}
           tabIndex={isVisible ? 0 : -1}
-          className="bg-pine-600 text-white rounded-full px-6 py-3 font-bold text-sm hover:bg-pine-700 transition-colors shadow-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-rose-700 focus:ring-offset-2"
+          className="bg-clay-600 text-white rounded-lg px-5 md:px-6 py-2.5 md:py-3 font-bold text-sm hover:bg-clay-700 transition-colors shadow-md whitespace-nowrap flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-clay-400 focus:ring-offset-2"
         >
-          Get Instant Access
-        </a>
+          Get Access →
+        </button>
       </div>
     </div>
   );

@@ -18,10 +18,15 @@ export default function Hero() {
             </div>
 
             {/* Main Headline - RAW POWER */}
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-black text-foreground mb-6 leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-black text-foreground mb-4 leading-tight">
               You shrink.<br/>
               <span className="text-pine-600">He leaves.</span>
             </h1>
+            
+            {/* Subheadline - VALIDATION */}
+            <p className="text-lg md:text-xl text-clay-600 font-semibold mb-6">
+              Not because you're broken. Because you were trained to be invisible.
+            </p>
 
             {/* Emotional Validation - MORE RAW than competitor */}
             <p className="text-xl text-muted-foreground mb-3 leading-relaxed max-w-lg font-semibold">

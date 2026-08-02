@@ -9,32 +9,32 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
+    question: 'What do I say when he goes silent?',
+    answer: 'That\'s Script #7. The exact text is inside the paid book. It\'s 2-3 sentences that express your needs without anger or desperation. Most women report: "I felt calm sending it" and "He actually responded positively."'
+  },
+  {
+    question: 'How do I know if I should stay or leave?',
+    answer: 'The Binary Question in the paid book asks 3 specific questions about his behavior. Answer honestly, and you\'ll have clarity on whether this is salvageable or if you deserve better. Most women report making a decision within 7 days.'
+  },
+  {
+    question: 'Will this actually work for me?',
+    answer: 'The scripts work on avoidant partners (partners who withdraw due to attachment wounds). If your partner is manipulative or abusive, this system isn\'t appropriate. The free guide helps you figure out which one he is.'
+  },
+  {
+    question: 'How fast will I see results?',
+    answer: 'You\'ll feel calmer within 24 hours (after the 3-day reset). The scripts start working immediately — most women report "He took me seriously for the first time." His actual behavior shift takes 2-4 weeks.'
+  },
+  {
     question: 'Is this manipulation?',
     answer: 'No. These are communication tools, not manipulation tactics. The scripts help you express your needs clearly and calmly. There\'s no "playing games" or "making him jealous" here. It\'s about knowing what to say when anxiety makes you freeze.'
   },
   {
-    question: 'What if my relationship is already over?',
-    answer: 'The internal work (Part 2) is valuable regardless of your relationship status. The scripts can also help with re-engagement if that\'s what you want. But more importantly, the tools help YOU feel calmer and more secure — whether you\'re single or attached.'
-  },
-  {
-    question: 'Will this work on a toxic partner?',
-    answer: 'The Red Flag Filter in Part 1 helps you distinguish between an avoidant partner (who withdraws due to attachment wounds) and a toxic partner (who manipulates intentionally). If your partner is toxic, this system may not be appropriate — and the filter will help you see that.'
-  },
-  {
-    question: 'How fast will I see results?',
-    answer: 'Most women notice internal shifts within 1-2 weeks. The calm from Part 2 often comes sooner — sometimes within days. His response is outside your control — but you\'ll have clearer tools for your own reactions.'
-  },
-  {
     question: 'What format is this in?',
-    answer: 'Both parts are delivered as high-quality PDFs. You can read them on any device — phone, tablet, or computer. They\'re designed for easy reference, with clear sections you can jump to when you need a specific script.'
+    answer: 'Both the free guide and paid book are delivered as high-quality PDFs. You can read them on any device — phone, tablet, or computer. They\'re designed for easy reference, with clear sections you can jump to when you need a specific script.'
   },
   {
     question: 'How long do I have access?',
     answer: 'Lifetime. Once you purchase, the PDFs are yours forever. Download them multiple times, save them anywhere, and refer back whenever you need. No subscription, no recurring fees.'
-  },
-  {
-    question: 'What if it doesn\'t work for me?',
-    answer: 'If it doesn\'t feel helpful, reach out to our support team. We want this to work for you.'
   },
   {
     question: 'Is this a replacement for therapy?',
