@@ -143,7 +143,7 @@ function DownloadContent() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="flex flex-col items-center justify-center py-20 bg-white rounded-3xl border border-border/40 shadow-sm p-8"
+            className="flex flex-col items-center justify-center py-20 bg-card rounded-3xl border border-border/40 shadow-sm p-8"
           >
             <Loader2 className="h-10 w-10 animate-spin text-rose" />
             <p className="mt-4 text-base font-medium text-foreground">
@@ -157,7 +157,7 @@ function DownloadContent() {
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="rounded-3xl border border-rose/20 bg-white p-8 sm:p-10 shadow-sm text-center"
+            className="rounded-3xl border border-rose/20 bg-card p-8 sm:p-10 shadow-sm text-center"
           >
             <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-rose-light text-rose">
               <AlertCircle className="h-8 w-8" />
@@ -198,7 +198,7 @@ function DownloadContent() {
             <motion.div
               initial={{ opacity: 0, y: 15 }}
               animate={{ opacity: 1, y: 0 }}
-              className="rounded-3xl border border-border/40 bg-white p-6 sm:p-10 shadow-sm"
+              className="rounded-3xl border border-border/40 bg-card p-6 sm:p-10 shadow-sm"
             >
               <div className="flex flex-wrap items-center justify-between gap-4 border-b border-border/40 pb-6">
                 <div>

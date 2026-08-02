@@ -21,23 +21,11 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL("https://fleurite.me"),
   title: "You Were Never Too Much | Fleurite",
-  description:
-    "You weren't born a chaser — you were trained to be one. The Rooted Method helps you stop chasing an avoidant partner, quiet the 2am anxiety, and come home to yourself. A gentle, psychology-backed book for women who love too hard.",
-  keywords: [
-    "you were never too much",
-    "anxious attachment healing",
-    "avoidant partner",
-    "stop chasing",
-    "relationship anxiety",
-    "nervous system regulation",
-    "attachment theory",
-    "secure attachment",
-    "the rooted method",
-  ],
+  description: "You weren't born a chaser — you were trained to be one. The Rooted Method helps you stop chasing an avoidant partner, quiet the anxiety, and come home to yourself.",
+  keywords: ["anxious attachment healing", "avoidant partner", "stop chasing", "relationship anxiety", "nervous system regulation", "attachment theory", "secure attachment", "the rooted method"],
   openGraph: {
     title: "You Were Never Too Much | Fleurite",
-    description:
-      "Stop chasing, stop shrinking, and come home to yourself. A gentle, psychology-backed book for women loving an emotionally unavailable partner.",
+    description: "Stop chasing, stop shrinking, and come home to yourself. A gentle, psychology-backed book for women loving an emotionally unavailable partner.",
     type: "website",
     locale: "en_US",
     siteName: "Fleurite",
@@ -45,8 +33,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "You Were Never Too Much | Fleurite",
-    description:
-      "It was never that you were too much. Safety was never available. The Rooted Method — a gentle path back to yourself.",
+    description: "It was never that you were too much. Safety was never available. The Rooted Method — a gentle path back to yourself.",
   },
   robots: {
     index: true,

@@ -11,52 +11,52 @@ interface Question {
 const questions: Question[] = [
   {
     id: 1,
-    question: "When your partner doesn't text back for hours, you...",
+    question: "When he pulls away, does he EVER come back and make genuine effort?",
     options: [
-      "Assume the worst and spiral into anxiety",
-      "Feel annoyed but try to distract yourself",
-      "Figure they're busy and carry on",
-      "Don't notice much either way"
+      "Yes, consistently. He always comes back and tries to repair.",
+      "Sometimes. It's unpredictable but it happens.",
+      "Rarely. I'm always the one who has to reach out.",
+      "Never. He just disappears until he needs something."
     ]
   },
   {
     id: 2,
-    question: "In relationships, you typically...",
+    question: "When you express your needs, does he...",
     options: [
-      "Feel like you need constant reassurance",
-      "Want closeness but also need space",
-      "Prefer to keep things light and fun",
-      "Value independence above all"
+      "Listen, acknowledge, and actually change his behavior",
+      "Listen but nothing really changes",
+      "Dismiss them or turn it back on you",
+      "Get angry or shut down completely"
     ]
   },
   {
     id: 3,
-    question: "When someone pulls away, you...",
+    question: "On a scale of your relationship timeline, how much is he CHOOSING you?",
     options: [
-      "Chase harder to reconnect",
-      "Give space but feel hurt",
-      "Pull away too to protect yourself",
-      "Hardly notice or care"
+      "Most of the time. He shows up consistently.",
+      "About half the time. It's inconsistent.",
+      "Rarely. I'm always the one putting in effort.",
+      "Almost never. I feel like I'm chasing him."
     ]
   },
   {
     id: 4,
-    question: "Your biggest fear in relationships is...",
+    question: "When conflict happens, does he...",
     options: [
-      "Being abandoned or left alone",
-      "Losing your independence",
-      "Being controlled or smothered",
-      "Getting too emotionally involved"
+      "Work through it with you until it's resolved",
+      "Try to resolve it but without real depth",
+      "Avoid it and sweep it under the rug",
+      "Make it worse by being defensive or cruel"
     ]
   },
   {
     id: 5,
-    question: "You feel most secure when...",
+    question: "Can you trust his words?",
     options: [
-      "Your partner is consistently available",
-      "There's a balance of closeness and space",
-      "You have freedom to do your own thing",
-      "Things stay casual and undefined"
+      "Yes. What he says, he means. What he promises, he delivers.",
+      "Mostly yes, but there are inconsistencies.",
+      "Not really. His words don't match his actions.",
+      "No. He lies or constantly breaks promises."
     ]
   }
 ];
@@ -78,71 +78,73 @@ export default function AttachmentStyleQuiz() {
   };
 
   const getAttachmentStyle = () => {
-    const anxiousAnswers = answers.filter(a => a === 0).length;
-    const secureAnswers = answers.filter(a => a === 1 || a === 2).length;
-    const avoidantAnswers = answers.filter(a => a === 3).length;
+    const greenAnswers = answers.filter(a => a === 0).length; // He comes back, listens, chooses, works through conflict, trustworthy
+    const yellowAnswers = answers.filter(a => a === 1).length; // Sometimes, inconsistent, partial effort
+    const redAnswers = answers.filter(a => a === 2 || a === 3).length; // Never, dismisses, avoids, lies
 
-    if (anxiousAnswers >= 3) {
-      return {
-        type: "You May Relate to Anxious Patterns",
-        description: "You tend to seek closeness and reassurance. You may worry about abandonment and need consistent validation. This isn't a flaw—it's just a pattern that can be changed.",
-        color: "rose"
-      };
-    } else if (avoidantAnswers >= 3) {
-      return {
-        type: "You May Relate to Avoidant Patterns",
-        description: "You value independence and may feel uncomfortable with too much closeness. You tend to pull away when things get intense. This is just a protection mechanism.",
-        color: "rose"
-      };
+    let recommendation = "";
+    let actionable = "";
+    let color = "yellow";
+
+    if (greenAnswers >= 4) {
+      recommendation = "He's Showing Up. The Scripts Will Help You Communicate Better.";
+      actionable = "Your relationship has the foundation to rebuild. He's making effort and you can trust his intent. The 47 scripts will help you express your needs clearly, and the binary question will confirm: is this worth fighting for?";
+      color = "green";
+    } else if (greenAnswers >= 2 && yellowAnswers >= 2) {
+      recommendation = "He's Inconsistent. You Need the Binary Question.";
+      actionable = "He shows effort sometimes but it's unpredictable. Before you invest more energy, the Binary Question will tell you: Is he WILLING to change, or are you chasing someone who won't meet you halfway?";
+      color = "yellow";
     } else {
-      return {
-        type: "You May Relate to Secure Patterns",
-        description: "You have a healthy balance of independence and closeness. You feel comfortable with intimacy and don't fear abandonment. This is the goal we're working toward.",
-        color: "green"
-      };
+      recommendation = "He's Not Showing Up. Trust Your Gut.";
+      actionable = "He's not coming back, not listening, not choosing you, avoiding conflict, or breaking promises. The scripts won't fix this—because the problem isn't how you communicate. The problem is his unwillingness. The book has a 'Leaving With Dignity' section.";
+      color = "red";
     }
+
+    return {
+      type: recommendation,
+      description: actionable,
+      color: color
+    };
   };
 
   if (showResult) {
     const result = getAttachmentStyle();
     return (
-      <div className="bg-white rounded-2xl p-8 shadow-xl max-w-2xl mx-auto">
+      <div className="bg-card rounded-2xl p-8 shadow-xl max-w-2xl mx-auto">
         <div className="text-center mb-6">
-          <p className="text-sm text-gray-400 text-center mb-4">An informal self-reflection — not a clinical assessment.</p>
-          <h3 className="text-2xl font-bold text-gray-900 mb-2">Your Attachment Style:</h3>
-          <p className={`text-3xl font-bold ${
-            result.color === 'rose' ? 'text-rose-500' : 'text-green-500'
+          <p className="text-sm font-bold text-clay-600 uppercase tracking-wide mb-4">Your Clarity</p>
+          <h3 className={`text-3xl font-bold mb-2 ${
+            result.color === 'green' ? 'text-green-600' : result.color === 'yellow' ? 'text-clay-600' : 'text-rose-600'
           }`}>
             {result.type}
-          </p>
+          </h3>
         </div>
-        <p className="text-gray-600 text-center mb-6">{result.description}</p>
-        <p className="text-sm text-gray-400 text-center mb-4">Attachment patterns are complex — this is a starting point for reflection, not a diagnosis.</p>
+        <p className="text-foreground text-center mb-6 leading-relaxed text-lg">{result.description}</p>
         <div className="text-center">
-          <a
-            href="#get-access"
-            className="inline-block bg-rose-700 text-white px-8 py-3 rounded-full font-semibold hover:bg-rose-800 transition-colors"
+          <button
+            onClick={() => window.location.href = '/#products'}
+            className="inline-block bg-pine-600 text-white px-8 py-3 rounded-full font-bold hover:bg-pine-700 transition-colors"
           >
-            Get Scripts for Your Style
-          </a>
+            Get Your Next Step →
+          </button>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="bg-white rounded-2xl p-8 shadow-xl max-w-2xl mx-auto">
+    <div className="bg-card rounded-2xl p-8 shadow-xl max-w-2xl mx-auto">
       <div className="text-center mb-6">
-        <p className="text-sm text-gray-400 text-center mb-4">An informal self-reflection — not a clinical assessment.</p>
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">What's Your Attachment Style?</h3>
-        <p className="text-gray-600">Answer 5 quick questions to understand your pattern</p>
+        <p className="text-sm font-bold text-clay-600 uppercase tracking-wide mb-4">Is He Worth Staying For?</p>
+        <h3 className="text-2xl font-bold text-foreground mb-2">5 Questions. Absolute Clarity.</h3>
+        <p className="text-muted-foreground">Answer honestly. You already know the answers—this just makes them real.</p>
         <div className="mt-4 bg-gray-200 rounded-full h-2">
           <div
-            className="bg-rose-500 h-2 rounded-full transition-all duration-300"
+            className="bg-pine-500 h-2 rounded-full transition-all duration-300"
             style={{ width: `${((currentQuestion + 1) / questions.length) * 100}%` }}
           />
         </div>
-        <p className="text-sm text-gray-500 mt-2">Question {currentQuestion + 1} of {questions.length}</p>
+        <p className="text-sm text-muted-foreground mt-2">Question {currentQuestion + 1} of {questions.length}</p>
       </div>
 
       <div className="mb-6">
@@ -152,7 +154,7 @@ export default function AttachmentStyleQuiz() {
             <button
               key={index}
               onClick={() => handleAnswer(index)}
-              className="w-full text-left px-4 py-3 rounded-lg border border-gray-200 hover:border-rose-500 hover:bg-rose-50 transition-colors"
+              className="w-full text-left px-4 py-3 rounded-lg border border-muted hover:border-rose-500 hover:bg-pine-50 transition-colors"
             >
               {option}
             </button>

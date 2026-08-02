@@ -57,13 +57,13 @@ export default function CartSidebar({ onCheckout }: CartSidebarProps) {
     <Sheet open={isOpen} onOpenChange={(open) => !open && closeCart()}>
       <SheetContent
         side="right"
-        className="flex w-full flex-col bg-white sm:max-w-md p-0"
+        className="flex w-full flex-col bg-card sm:max-w-md p-0"
       >
         {/* ── Sticky Header ── */}
-        <SheetHeader className="sticky top-0 z-10 border-b border-border/50 bg-white px-6 pb-4 pt-6">
+        <SheetHeader className="sticky top-0 z-10 border-b border-border/50 bg-card px-6 pb-4 pt-6">
           <SheetTitle className="flex items-center justify-between">
             <div className="flex items-center gap-2.5">
-              <ShoppingBag className="h-5 w-5 text-rose-700" />
+              <ShoppingBag className="h-5 w-5 text-pine-600" />
               <span className="font-[family-name:var(--font-playfair)] text-xl text-foreground">
                 Your Cart
               </span>
@@ -71,7 +71,7 @@ export default function CartSidebar({ onCheckout }: CartSidebarProps) {
                 <motion.span
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
-                  className="flex h-5 w-5 items-center justify-center rounded-full bg-rose-700 text-[10px] font-bold text-white"
+                  className="flex h-5 w-5 items-center justify-center rounded-full bg-pine-600 text-[10px] font-bold text-white"
                 >
                   {itemCount}
                 </motion.span>
@@ -79,7 +79,7 @@ export default function CartSidebar({ onCheckout }: CartSidebarProps) {
             </div>
             <button
               onClick={closeCart}
-              className="flex h-10 w-10 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-rose-50 hover:text-rose-700"
+              className="flex h-10 w-10 items-center justify-center rounded-full text-muted-foreground transition-colors hover:bg-pine-50 hover:text-pine-600"
               aria-label="Close cart"
             >
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -110,7 +110,7 @@ export default function CartSidebar({ onCheckout }: CartSidebarProps) {
                 <Button
                   variant="outline"
                   onClick={closeCart}
-                  className="mt-6 h-10 rounded-full border-rose-700 bg-transparent px-6 font-medium text-rose-700 hover:bg-rose-50 hover:text-rose-700"
+                  className="mt-6 h-10 rounded-full border-pine-600 bg-transparent px-6 font-medium text-pine-600 hover:bg-pine-50 hover:text-pine-600"
                 >
                   Browse Guides
                 </Button>
@@ -126,7 +126,7 @@ export default function CartSidebar({ onCheckout }: CartSidebarProps) {
                       animate="animate"
                       exit="exit"
                       layout
-                      className="flex gap-4 rounded-xl border border-border/30 bg-white p-3 transition-shadow hover:shadow-sm"
+                      className="flex gap-4 rounded-xl border border-border/30 bg-card p-3 transition-shadow hover:shadow-sm"
                     >
                       {/* Product Image */}
                       <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-lg bg-blush">
@@ -150,7 +150,7 @@ export default function CartSidebar({ onCheckout }: CartSidebarProps) {
                           </p>
                         </div>
                         <div className="flex items-center justify-between mt-1">
-                          <span className="text-sm font-bold text-rose-700">
+                          <span className="text-sm font-bold text-pine-600">
                             ${item.product.price}
                           </span>
                           <motion.button
@@ -178,7 +178,7 @@ export default function CartSidebar({ onCheckout }: CartSidebarProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3, ease: 'easeOut' as const }}
-            className="sticky bottom-0 z-10 border-t border-border/50 bg-white px-6 pb-6 pt-4"
+            className="sticky bottom-0 z-10 border-t border-border/50 bg-card px-6 pb-6 pt-4"
           >
             {/* Subtotal */}
             <div className="flex items-center justify-between">
@@ -203,7 +203,7 @@ export default function CartSidebar({ onCheckout }: CartSidebarProps) {
                   closeCart()
                   onCheckout?.()
                 }}
-                className="btn-glow h-12 w-full rounded-xl bg-rose-700 text-base font-semibold text-white shadow-lg transition-colors hover:bg-rose-800"
+                className="btn-glow h-12 w-full rounded-xl bg-pine-600 text-base font-semibold text-white shadow-lg transition-colors hover:bg-pine-700"
               >
                 Checkout — ${total}
                 <ArrowRight className="ml-2 h-4 w-4" />
