@@ -23,16 +23,19 @@ export default function ProblemAgitation() {
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header - RAW */}
+        {/* Section Header - RAW with micro-psychology (Level 100) */}
         <div className="text-center mb-12 md:mb-16">
           <p className="text-xs font-bold text-clay-600 tracking-widest uppercase mb-4">
-            You Know This Pattern
+            You Know This Pattern (And Here's Why)
           </p>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
             The Four Cycles That Keep You Stuck
           </h2>
+          <p className="text-lg font-semibold text-pine-600 mb-3">
+            (And exactly how to break each one)
+          </p>
           <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
-            Every one of these is your nervous system doing exactly what it was trained to do. The problem isn&apos;t you. The problem is the cycle.
+            Every one of these is your nervous system doing exactly what it was trained to do. The problem isn&apos;t you. The problem is the cycle — and cycles can be broken.
           </p>
         </div>
 

@@ -3,6 +3,7 @@ import AnnouncementBar from '@/components/AnnouncementBar';
 import Hero from '@/components/Hero';
 import TrustBadges from '@/components/TrustBadges';
 import ProblemAgitation from '@/components/ProblemAgitation';
+import TrustCredibility from '@/components/TrustCredibility';
 import AttachmentStyleQuiz from '@/components/AttachmentStyleQuiz';
 import ScienceSection from '@/components/ScienceSection';
 import SocialProof from '@/components/SocialProof';
@@ -15,6 +16,7 @@ import CreatorBio from '@/components/CreatorBio';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
 import StickyBar from '@/components/StickyBar';
+import ExitIntentPopup from '@/components/ExitIntentPopup';
 import FadeIn from '@/components/FadeIn';
 import PaymentTrust from '@/components/PaymentTrust';
 
@@ -31,6 +33,7 @@ export default function Home() {
         <FadeIn>
           <ProblemAgitation />
         </FadeIn>
+        <TrustCredibility />
         <AttachmentStyleQuiz />
         <FadeIn>
           <ScienceSection />
@@ -55,6 +58,7 @@ export default function Home() {
       </main>
       <Footer />
       <StickyBar />
+      <ExitIntentPopup />
     </div>
   );
 }
