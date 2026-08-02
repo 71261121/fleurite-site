@@ -1,144 +1,107 @@
 @import "tailwindcss";
 
-/*
-  Fleurite design system — "The Rooted Method"
-  A grounded, literary, emotionally-safe palette.
-  - oat / linen  : warm calm background
-  - pine / evergreen : primary — safety, grounding, being rooted
-  - clay / terracotta : accent — human warmth, tenderness
-  - brass : sparing metallic detail
-  Intentionally NOT the competitor's cream + crimson + gold boutique look.
-*/
-
 :root {
-  --background: #f4efe4;
-  --foreground: #23271f;
-  --card: #fffdf8;
-  --muted: #ebe4d5;
-  --border: #ddd3c0;
-  --dark: #1c231c;
-  --blush: #ecd9cb;
+  --background: #f9f5f0;
+  --foreground: #1a1a1a;
+  --card: #ffffff;
+  --muted: #f3ede7;
+  --border: #e0d8d0;
+  --dark: #2d2a33;
+  --blush: #edd7cd;
 }
 
 @theme inline {
-  /* Core surfaces */
-  --color-cream: #f4efe4;
-  --color-card: #fffdf8;
-  --color-muted: #ebe4d5;
-  --color-border: #ddd3c0;
-  --color-foreground: #23271f;
-  --color-dark: #1c231c;
-  --color-blush: #ecd9cb;
+  --color-cream: #f9f5f0;
+  --color-card: #ffffff;
+  --color-muted: #f3ede7;
+  --color-border: #e0d8d0;
+  --color-foreground: #1a1a1a;
+  --color-dark: #2d2a33;
+  --color-blush: #edd7cd;
 
-  /* Pine / evergreen — primary (grounded, secure) */
-  --color-pine-50: #f1f5f1;
-  --color-pine-100: #dfe9e1;
-  --color-pine-200: #bcd0c1;
-  --color-pine-300: #92b19b;
-  --color-pine-400: #628b70;
-  --color-pine-500: #436a51;
-  --color-pine-600: #2f4a3c;
-  --color-pine-700: #263c31;
-  --color-pine-800: #1f3028;
-  --color-pine-900: #182620;
-  --color-primary: #2f4a3c;
-  --color-primary-foreground: #f4efe4;
+  --color-rose-50: #fef2f2;
+  --color-rose-100: #fee2e2;
+  --color-rose-200: #fecaca;
+  --color-rose-300: #fca5a5;
+  --color-rose-400: #f87171;
+  --color-rose-500: #ef4444;
+  --color-rose-600: #dc2626;
+  --color-rose-700: #9b1c1c;
+  --color-rose-800: #991b1b;
+  --color-rose-900: #7f1d1d;
 
-  /* Clay / terracotta — accent (warmth, tenderness) */
-  --color-clay-50: #fbf1ec;
-  --color-clay-100: #f6ddd0;
-  --color-clay-200: #eebfa8;
-  --color-clay-300: #e29f80;
-  --color-clay-400: #d68260;
-  --color-clay-500: #c6764f;
-  --color-clay-600: #ab5d3a;
-  --color-clay-700: #8a4930;
-  --color-clay-800: #6d3b2a;
-  --color-clay-900: #563024;
-  --color-secondary: #c6764f;
-  --color-secondary-foreground: #fffdf8;
+  --color-gold-50: #fdfbf3;
+  --color-gold-100: #fbf5e6;
+  --color-gold-200: #f6e7be;
+  --color-gold-300: #edd590;
+  --color-gold-400: #d4af37;
+  --color-gold-500: #bfa13a;
+  --color-gold-600: #a18422;
+  --color-gold-700: #85691c;
+  --color-gold-800: #6b5218;
+  --color-gold-900: #4a3811;
 
-  /* Brass — sparing metallic detail */
-  --color-brass-300: #d8bd86;
-  --color-brass-400: #c4a35c;
-  --color-brass-500: #b08a46;
-  --color-brass-600: #927137;
+  --color-primary-50: #fef2f2;
+  --color-primary-100: #fee2e2;
+  --color-primary-200: #fecaca;
+  --color-primary-300: #fca5a5;
+  --color-primary-400: #f87171;
+  --color-primary-500: #ef4444;
+  --color-primary-600: #dc2626;
+  --color-primary-700: #9b1c1c;
+  --color-primary-800: #991b1b;
+  --color-primary-900: #7f1d1d;
+  --color-primary: #9b1c1c;
 
-  /* Backwards-compat aliases → mapped onto the new palette so any
-     not-yet-redesigned component still renders in-brand. */
-  --color-rose-50: #f1f5f1;
-  --color-rose-100: #dfe9e1;
-  --color-rose-200: #bcd0c1;
-  --color-rose-300: #92b19b;
-  --color-rose-400: #628b70;
-  --color-rose-500: #436a51;
-  --color-rose-600: #2f4a3c;
-  --color-rose-700: #263c31;
-  --color-rose-800: #1f3028;
-  --color-rose-900: #182620;
+  --color-secondary-50: #fdfbf3;
+  --color-secondary-100: #fbf5e6;
+  --color-secondary-200: #f6e7be;
+  --color-secondary-300: #edd590;
+  --color-secondary-400: #d4af37;
+  --color-secondary-500: #bfa13a;
+  --color-secondary-600: #a18422;
+  --color-secondary-700: #85691c;
+  --color-secondary-800: #6b5218;
+  --color-secondary-900: #4a3811;
+  --color-secondary: #d4af37;
 
-  --color-gold-50: #fbf1ec;
-  --color-gold-100: #f6ddd0;
-  --color-gold-200: #eebfa8;
-  --color-gold-300: #e29f80;
-  --color-gold-400: #d68260;
-  --color-gold-500: #c6764f;
-  --color-gold-600: #ab5d3a;
-  --color-gold-700: #8a4930;
-  --color-gold-800: #6d3b2a;
-  --color-gold-900: #563024;
+  --color-teal-50: #fef2f2;
+  --color-teal-100: #fee2e2;
+  --color-teal-200: #fecaca;
+  --color-teal-300: #fca5a5;
+  --color-teal-400: #f87171;
+  --color-teal-500: #ef4444;
+  --color-teal-600: #dc2626;
+  --color-teal-700: #9b1c1c;
+  --color-teal-800: #991b1b;
+  --color-teal-900: #7f1d1d;
+  --color-teal: #9b1c1c;
 
-  --color-teal-50: #f1f5f1;
-  --color-teal-100: #dfe9e1;
-  --color-teal-400: #628b70;
-  --color-teal-600: #2f4a3c;
-  --color-teal-700: #263c31;
-  --color-teal: #2f4a3c;
-
-  --color-coral-100: #f6ddd0;
-  --color-coral-300: #e29f80;
-  --color-coral-400: #d68260;
-  --color-coral-500: #c6764f;
-  --color-coral-600: #ab5d3a;
-  --color-coral: #c6764f;
-
-  --color-primary-50: #f1f5f1;
-  --color-primary-100: #dfe9e1;
-  --color-primary-200: #bcd0c1;
-  --color-primary-300: #92b19b;
-  --color-primary-400: #628b70;
-  --color-primary-500: #436a51;
-  --color-primary-600: #2f4a3c;
-  --color-primary-700: #263c31;
-  --color-primary-800: #1f3028;
-  --color-primary-900: #182620;
-
-  --color-secondary-50: #fbf1ec;
-  --color-secondary-100: #f6ddd0;
-  --color-secondary-200: #eebfa8;
-  --color-secondary-300: #e29f80;
-  --color-secondary-400: #d68260;
-  --color-secondary-500: #c6764f;
-  --color-secondary-600: #ab5d3a;
-  --color-secondary-700: #8a4930;
-  --color-secondary-800: #6d3b2a;
-  --color-secondary-900: #563024;
+  --color-coral-50: #fdfbf3;
+  --color-coral-100: #fbf5e6;
+  --color-coral-200: #f6e7be;
+  --color-coral-300: #edd590;
+  --color-coral-400: #d4af37;
+  --color-coral-500: #bfa13a;
+  --color-coral-600: #a18422;
+  --color-coral-700: #85691c;
+  --color-coral-800: #6b5218;
+  --color-coral-900: #4a3811;
+  --color-coral: #d4af37;
 
   --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
-  --font-serif: var(--font-fraunces), 'Fraunces', Georgia, serif;
-  --font-display: var(--font-fraunces), 'Fraunces', Georgia, serif;
-
-  --radius: 0.9rem;
+  --font-display: var(--font-playfair), 'Playfair Display', Georgia, serif;
 }
 
+/* Dark mode is not yet implemented. The boutique cream aesthetic is intentional across themes. */
+
 body {
-  background-color: #f4efe4;
-  background-image:
-    radial-gradient(circle at 12% 18%, rgba(47, 74, 60, 0.06) 0%, transparent 42%),
-    radial-gradient(circle at 88% 82%, rgba(198, 118, 79, 0.05) 0%, transparent 46%),
-    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
-  background-attachment: fixed;
-  color: #23271f;
+  background-color: #f9f5f0;
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(155, 28, 28, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 45%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.015'/%3E%3C/svg%3E");
+  color: #1a1a1a;
   font-family: var(--font-inter), 'Inter', system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -155,22 +118,22 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #ebe4d5;
+  background: #f3ede7;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #bcd0c1;
+  background: #edd7cd;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #2f4a3c;
+  background: #d4af37;
 }
 
 /* Selection color */
 ::selection {
-  background-color: #dfe9e1;
-  color: #2f4a3c;
+  background-color: #fee2e2;
+  color: #9b1c1c;
 }
 
 /* Button Glow Effect */
@@ -193,9 +156,9 @@ html {
   position: absolute;
   inset: -2px;
   border-radius: inherit;
-  background: conic-gradient(from 0deg, #2f4a3c, #c6764f, #b08a46, #2f4a3c);
+  background: conic-gradient(from 0deg, #9b1c1c, #d4af37, #ef4444, #9b1c1c);
   filter: blur(12px);
-  opacity: 0.45;
+  opacity: 0.6;
   z-index: -1;
   animation: spin-glow 6s linear infinite;
 }
