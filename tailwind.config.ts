@@ -43,6 +43,12 @@ const config: Config = {
         foreground: "#1a1a1a",
         dark: "#2d2a33",
         blush: "#edd7cd",
+        // Agent 2's custom colors
+        evergreen: "#2f4a3c",
+        warmWhite: "#fffdf8",
+        destructive: "#dc2626",
+        success: "#16a34a",
+        "muted-foreground": "#71717a",
         // Accents
         rose,
         gold,

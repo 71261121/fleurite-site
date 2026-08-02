@@ -85,7 +85,7 @@ export default function ProductComparison() {
             <p className="text-muted-foreground text-center mb-6">Everything you need to understand WHY you chase.</p>
             <button
               onClick={() => window.location.href = '/api/downloads/free-guide'}
-              className="w-full py-3 rounded-lg bg-muted text-foreground font-bold hover:bg-muted-dark transition"
+              className="w-full py-3 rounded-lg bg-[#f3ede7] border-2 border-[#e0d8d0] text-[#1a1a1a] font-bold hover:bg-[#e0d8d0] transition-all"
             >
               Download Free (No Email)
             </button>
