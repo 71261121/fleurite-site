@@ -78,8 +78,8 @@ export default function Hero() {
               {/* PAID Book - Right, DOMINANT, BIGGER */}
               <div className="absolute right-0 top-0 w-52 aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl z-20 border-3 border-pine-400">
                 <Image
-                  src="/book-covers/paid-book-v1.png"
-                  alt="Complete: You Were Never Too Much - 47 Scripts & Clarity Guide"
+                  src="/book-covers/paid-book-premium-v2.png"
+                  alt="Complete: You Were Never Too Much - Split Design Decision Framework"
                   fill
                   sizes="220px"
                   className="object-cover"
