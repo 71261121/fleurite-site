@@ -41,20 +41,20 @@ const badges = [
 
 export default function TrustBadges() {
   return (
-    <section className="py-12 bg-gray-50" aria-labelledby="trust-badges-heading">
+    <section className="py-12 bg-muted" aria-labelledby="trust-badges-heading">
       <h2 id="trust-badges-heading" className="sr-only">Trust & Guarantee Information</h2>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           {badges.map((badge, index) => (
             <div
               key={index}
-              className="text-center group hover:bg-white rounded-xl p-4 transition-colors"
+              className="text-center group hover:bg-card rounded-xl p-4 transition-colors"
             >
-              <div className="text-rose-700 mb-2 flex justify-center group-hover:scale-110 transition-transform">
+              <div className="text-pine-600 mb-2 flex justify-center group-hover:scale-110 transition-transform">
                 {badge.icon}
               </div>
-              <h3 className="font-semibold text-gray-900 text-sm">{badge.title}</h3>
-              <p className="text-xs text-gray-500">{badge.description}</p>
+              <h3 className="font-semibold text-foreground text-sm">{badge.title}</h3>
+              <p className="text-xs text-muted-foreground">{badge.description}</p>
             </div>
           ))}
         </div>

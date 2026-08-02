@@ -5,24 +5,24 @@ export default function StoryComparison() {
   const [showB, setShowB] = useState(false);
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-card">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
             Same Situation. Different Tools.
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Both women got the same text at 7 PM on a Tuesday.
           </p>
         </div>
 
         {/* Pill Toggle */}
         <div className="flex justify-center mb-12">
-          <div className="bg-gray-100 rounded-full p-1 flex">
+          <div className="bg-muted rounded-full p-1 flex">
             <button
               onClick={() => setShowB(false)}
               className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${
-                !showB ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                !showB ? 'bg-card text-foreground shadow-sm' : 'text-muted-foreground hover:text-foreground'
               }`}
             >
               Without the System
@@ -30,7 +30,7 @@ export default function StoryComparison() {
             <button
               onClick={() => setShowB(true)}
               className={`px-6 py-2 rounded-full text-sm font-semibold transition-all ${
-                showB ? 'bg-rose-700 text-white shadow-sm' : 'text-gray-500 hover:text-gray-700'
+                showB ? 'bg-pine-600 text-white shadow-sm' : 'text-muted-foreground hover:text-foreground'
               }`}
             >
               With the System
@@ -48,8 +48,8 @@ export default function StoryComparison() {
                   <span className="text-red-600 font-bold text-sm">A</span>
                 </div>
                 <div className="text-left">
-                  <p className="font-bold text-gray-900">Sarah</p>
-                  <p className="text-sm text-gray-500">Only has good intentions</p>
+                  <p className="font-bold text-foreground">Sarah</p>
+                  <p className="text-sm text-muted-foreground">Only has good intentions</p>
                 </div>
               </div>
             </div>
@@ -67,7 +67,7 @@ export default function StoryComparison() {
               ].map((item, i) => (
                 <div key={i} className="bg-red-50 rounded-xl p-4 border border-red-100 flex gap-4">
                   <span className="text-xs font-mono text-red-400 whitespace-nowrap mt-1">{item.time}</span>
-                  <p className="text-gray-700 text-sm">{item.text}</p>
+                  <p className="text-foreground text-sm">{item.text}</p>
                 </div>
               ))}
             </div>
@@ -77,12 +77,12 @@ export default function StoryComparison() {
           <div className={`${showB ? 'block' : 'hidden'}`}>
             <div className="text-center mb-8">
               <div className="inline-flex items-center gap-3">
-                <div className="w-10 h-10 bg-rose-100 rounded-full flex items-center justify-center">
-                  <span className="text-rose-700 font-bold text-sm">P</span>
+                <div className="w-10 h-10 bg-pine-100 rounded-full flex items-center justify-center">
+                  <span className="text-pine-600 font-bold text-sm">P</span>
                 </div>
                 <div className="text-left">
-                  <p className="font-bold text-gray-900">Emma</p>
-                  <p className="text-sm text-gray-500">Has the system + scripts</p>
+                  <p className="font-bold text-foreground">Emma</p>
+                  <p className="text-sm text-muted-foreground">Has the system + scripts</p>
                 </div>
               </div>
             </div>
@@ -98,9 +98,9 @@ export default function StoryComparison() {
                 { time: 'That evening', text: 'Has the conversation. Expresses needs calmly. Maintains boundaries.' },
                 { time: 'Result', text: 'He feels safe, not smothered. She feels grounded regardless of his response.' },
               ].map((item, i) => (
-                <div key={i} className="bg-rose-50 rounded-xl p-4 border border-rose-100 flex gap-4">
+                <div key={i} className="bg-pine-50 rounded-xl p-4 border border-rose-100 flex gap-4">
                   <span className="text-xs font-mono text-rose-400 whitespace-nowrap mt-1">{item.time}</span>
-                  <p className="text-gray-700 text-sm">{item.text}</p>
+                  <p className="text-foreground text-sm">{item.text}</p>
                 </div>
               ))}
             </div>
@@ -108,10 +108,10 @@ export default function StoryComparison() {
         </div>
 
         {/* Key Takeaway */}
-        <div className="text-center mt-12 bg-gray-50 rounded-2xl p-8">
-          <p className="text-xl text-gray-700 font-medium">
+        <div className="text-center mt-12 bg-muted rounded-2xl p-8">
+          <p className="text-xl text-foreground font-medium">
             The situation was identical.{' '}
-            <span className="text-rose-700 font-bold">The tools made the difference.</span>
+            <span className="text-pine-600 font-bold">The tools made the difference.</span>
           </p>
         </div>
       </div>
