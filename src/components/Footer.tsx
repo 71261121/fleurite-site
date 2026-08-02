@@ -21,22 +21,22 @@ export default function Footer() {
             <h4 className="font-semibold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <a href="#products" className="text-gray-400 hover:text-white transition-colors">
+                <a href="/products" className="text-gray-400 hover:text-white transition-colors">
                   Products
                 </a>
               </li>
               <li>
-                <a href="#about" className="text-gray-400 hover:text-white transition-colors">
+                <a href="/about" className="text-gray-400 hover:text-white transition-colors">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#faq" className="text-gray-400 hover:text-white transition-colors">
+                <a href="/#faq" className="text-gray-400 hover:text-white transition-colors">
                   FAQ
                 </a>
               </li>
               <li>
-                <a href="mailto:support@fleurite.me" className="text-gray-400 hover:text-white transition-colors">
+                <a href="/contact" className="text-gray-400 hover:text-white transition-colors">
                   Contact
                 </a>
               </li>
@@ -50,16 +50,6 @@ export default function Footer() {
               <li>
                 <a href="/privacy" className="text-gray-400 hover:text-white transition-colors">
                   Privacy Policy
-                </a>
-              </li>
-              <li>
-                <a href="/terms" className="text-gray-400 hover:text-white transition-colors">
-                  Terms of Service
-                </a>
-              </li>
-              <li>
-                <a href="/refund" className="text-gray-400 hover:text-white transition-colors">
-                  Refund Policy
                 </a>
               </li>
             </ul>

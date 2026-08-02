@@ -3,9 +3,9 @@
 import { useState, useEffect } from 'react';
 
 const NAV_ITEMS = [
-  { id: 'products', label: 'Products' },
-  { id: 'about', label: 'About' },
-  { id: 'faq', label: 'FAQ' },
+  { id: 'products', label: 'Products', href: '/products' },
+  { id: 'about', label: 'About', href: '/about' },
+  { id: 'faq', label: 'FAQ', href: '/#faq' },
 ];
 
 export default function Header() {
@@ -147,8 +147,12 @@ export default function Header() {
                 return (
                   <a
                     key={item.id}
-                    href={`#${item.id}`}
-                    onClick={(e) => handleScrollTo(e, item.id)}
+                    href={item.href}
+                    onClick={(e) => {
+                      if (item.href?.startsWith('/#')) {
+                        handleScrollTo(e, item.id);
+                      }
+                    }}
                     className={`text-sm font-medium transition-colors relative py-1 focus:outline-none focus:ring-2 focus:ring-rose-500 rounded-xs ${
                       isActive ? 'text-pine-600 font-semibold' : 'text-muted-foreground hover:text-pine-600'
                     }`}
