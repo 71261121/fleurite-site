@@ -67,8 +67,8 @@ export default function Hero() {
               {/* FREE Guide - Left, Subtle, Smaller */}
               <div className="absolute left-4 top-12 w-32 aspect-[3/4] rounded-lg overflow-hidden shadow-lg z-10 border-2 border-muted hover:shadow-xl transition duration-300">
                 <Image
-                  src="/book-cover-free.png"
-                  alt="Free: Why You Shrink Yourself"
+                  src="/book-covers/free-guide-v2.png"
+                  alt="Free: The 3-Day Reset - Rewire Your Nervous System"
                   fill
                   sizes="140px"
                   className="object-cover"
@@ -78,8 +78,8 @@ export default function Hero() {
               {/* PAID Book - Right, DOMINANT, BIGGER */}
               <div className="absolute right-0 top-0 w-52 aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl z-20 border-3 border-pine-400">
                 <Image
-                  src="/book-cover-paid.png"
-                  alt="Complete: You Were Never Too Much"
+                  src="/book-covers/paid-book-v1.png"
+                  alt="Complete: You Were Never Too Much - 47 Scripts & Clarity Guide"
                   fill
                   sizes="220px"
                   className="object-cover"
