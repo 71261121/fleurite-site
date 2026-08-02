@@ -22,6 +22,7 @@
     "jose": "^6.2.6",
     "lucide-react": "^1.28.0",
     "next": "16.2.12",
+    "pdfkit": "^0.15.2",
     "prisma": "^6.19.3",
     "razorpay": "^2.9.8",
     "react": "19.2.4",
@@ -36,6 +37,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
+    "@types/pdfkit": "^0.17.6",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
