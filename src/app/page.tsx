@@ -5,21 +5,17 @@ import TrustBadges from '@/components/TrustBadges';
 import ProblemAgitation from '@/components/ProblemAgitation';
 import AttachmentStyleQuiz from '@/components/AttachmentStyleQuiz';
 import ScienceSection from '@/components/ScienceSection';
-import TwoAMTest from '@/components/TwoAMTest';
 import SocialProof from '@/components/SocialProof';
 import ProductBreakdown from '@/components/ProductBreakdown';
 import Differentiation from '@/components/Differentiation';
 import TransformationMatrix from '@/components/TransformationMatrix';
-import ValueSummary from '@/components/ValueSummary';
 import FinalCTA from '@/components/FinalCTA';
 import CreatorBio from '@/components/CreatorBio';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
 import StickyBar from '@/components/StickyBar';
 import FadeIn from '@/components/FadeIn';
-import StoryComparison from '@/components/StoryComparison';
 import PaymentTrust from '@/components/PaymentTrust';
-import ClosingPitch from '@/components/ClosingPitch';
 
 export default function Home() {
   return (
@@ -28,6 +24,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <ProductBreakdown />
         <TrustBadges />
         <PaymentTrust />
         <FadeIn>
@@ -38,23 +35,12 @@ export default function Home() {
           <ScienceSection />
         </FadeIn>
         <FadeIn>
-          <TwoAMTest />
-        </FadeIn>
-        <SocialProof />
-        <FadeIn>
-          <ProductBreakdown />
-        </FadeIn>
-        <FadeIn>
           <Differentiation />
         </FadeIn>
-        <StoryComparison />
         <FadeIn>
           <TransformationMatrix />
         </FadeIn>
-        <FadeIn>
-          <ValueSummary />
-        </FadeIn>
-        <ClosingPitch />
+        <SocialProof />
         <FadeIn>
           <FinalCTA />
         </FadeIn>
