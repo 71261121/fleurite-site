@@ -60,6 +60,34 @@
   --color-secondary-400: #d4af37;
   --color-secondary-500: #bfa13a;
   --color-secondary-600: #a18422;
+
+  /* Pine / evergreen — primary (grounded, secure) */
+  --color-pine-50: #f1f5f1;
+  --color-pine-100: #dfe9e1;
+  --color-pine-200: #bcd0c1;
+  --color-pine-300: #92b19b;
+  --color-pine-400: #628b70;
+  --color-pine-500: #436a51;
+  --color-pine-600: #2f4a3c;
+  --color-pine-700: #263c31;
+  --color-pine-800: #1f3028;
+  --color-pine-900: #182620;
+
+  /* Agent 2 custom colors */
+  --color-evergreen: #2f4a3c;
+  --color-warmWhite: #fffdf8;
+
+  /* Clay / terracotta — accent (warmth, tenderness) */
+  --color-clay-50: #fbf1ec;
+  --color-clay-100: #f6ddd0;
+  --color-clay-200: #eebfa8;
+  --color-clay-300: #e29f80;
+  --color-clay-400: #d68260;
+  --color-clay-500: #c6764f;
+  --color-clay-600: #ab5d3a;
+  --color-clay-700: #8a4930;
+  --color-clay-800: #6d3b2a;
+  --color-clay-900: #563024;
   --color-secondary-700: #85691c;
   --color-secondary-800: #6b5218;
   --color-secondary-900: #4a3811;
