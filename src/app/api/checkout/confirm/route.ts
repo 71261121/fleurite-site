@@ -1,15 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { db } from '@/lib/db'
-import { getSessionUser } from '@/lib/auth-utils'
 import { validateBody, checkoutConfirmSchema } from '@/lib/validations'
 
 export async function POST(request: NextRequest) {
   try {
-    const user = await getSessionUser()
-    if (!user) {
-      return NextResponse.json({ error: 'Please sign in to confirm checkout' }, { status: 401 })
-    }
-
     const body = await request.json()
     const validation = validateBody(checkoutConfirmSchema, body)
     if (!validation.success) {
@@ -21,14 +15,11 @@ export async function POST(request: NextRequest) {
     // Look up the checkout session
     const checkoutSession = await db.checkoutSession.findUnique({
       where: { id: sessionId },
+      include: { user: true },
     })
 
     if (!checkoutSession) {
       return NextResponse.json({ error: 'Checkout session not found' }, { status: 404 })
-    }
-
-    if (checkoutSession.userId !== user.id) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 403 })
     }
 
     if (checkoutSession.status === 'completed') {
@@ -79,16 +70,16 @@ export async function POST(request: NextRequest) {
     const order = await db.order.create({
       data: {
         orderNumber: orderNum,
-        userId: user.id,
+        userId: checkoutSession.userId,
         status: 'paid',
         amount: amount || checkoutSession.amount,
         currency: checkoutSession.currency,
         paymentMethod: isSimulated ? 'simulated' : 'stripe',
         paidAt: new Date(),
-        customerEmail: customerEmail || user.email,
-        customerName: customerName || user.name || '',
+        customerEmail: customerEmail || checkoutSession.user?.email || '',
+        customerName: customerName || checkoutSession.user?.name || '',
         items: {
-          create: orderItems.map((item: { productId: string; productName: string; price: number }) => ({
+          create: orderItems.map((item: { productId?: string; productName: string; price: number }) => ({
             productName: item.productName,
             price: item.price,
             productId: item.productId,
@@ -98,17 +89,19 @@ export async function POST(request: NextRequest) {
       include: { items: true },
     })
 
-    // Add to library
+    // Add to library (if product IDs exist)
     for (const item of orderItems) {
-      await db.libraryItem.upsert({
-        where: { userId_productId: { userId: user.id, productId: item.productId } },
-        create: {
-          userId: user.id,
-          productId: item.productId,
-          accessType: 'purchased',
-        },
-        update: {},
-      })
+      if (item.productId) {
+        await db.libraryItem.upsert({
+          where: { userId_productId: { userId: checkoutSession.userId, productId: item.productId } },
+          create: {
+            userId: checkoutSession.userId,
+            productId: item.productId,
+            accessType: 'purchased',
+          },
+          update: {},
+        })
+      }
     }
 
     // Mark checkout session as completed
@@ -118,8 +111,8 @@ export async function POST(request: NextRequest) {
     })
 
     // Send download email (non-blocking)
-    const recipientEmail = customerEmail || user.email
-    const recipientName = customerName || user.name || undefined
+    const recipientEmail = customerEmail || checkoutSession.user?.email
+    const recipientName = customerName || checkoutSession.user?.name || undefined
     if (recipientEmail) {
       import('@/lib/download-email').then(({ createAndSendDownloadEmail }) => {
         createAndSendDownloadEmail({
@@ -131,7 +124,7 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    return NextResponse.json({ success: true, order }, { status: 201 })
+    return NextResponse.json({ success: true, order, orderNumber: orderNum }, { status: 201 })
   } catch (error) {
     console.error('Checkout confirmation error:', error)
     return NextResponse.json({ error: 'Failed to confirm checkout' }, { status: 500 })

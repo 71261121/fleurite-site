@@ -46,7 +46,7 @@ export default function Hero() {
             </div>
 
             <ButtonGlow
-              href="#get-access"
+              onClick={() => window.dispatchEvent(new Event("open-checkout"))}
               className="inline-block bg-rose-700 text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-rose-800 transition-colors shadow-lg"
             >
               Get the System — $27

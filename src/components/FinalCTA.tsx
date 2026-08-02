@@ -61,7 +61,7 @@ export default function FinalCTA() {
 
           {/* CTA Button */}
           <ButtonGlow
-            href="#get-access"
+            onClick={() => window.dispatchEvent(new Event("open-checkout"))}
             className="inline-block bg-rose-700 text-white px-12 py-5 rounded-full text-xl font-bold hover:bg-rose-800 transition-all shadow-xl hover:shadow-2xl mb-6"
           >
             Get Instant Access Now

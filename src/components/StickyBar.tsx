@@ -63,7 +63,7 @@ export default function StickyBar() {
 
         {/* Right side: CTA button */}
         <a
-          href="#get-access"
+          onClick={() => window.dispatchEvent(new Event("open-checkout"))}
           tabIndex={isVisible ? 0 : -1}
           className="bg-rose-700 text-white rounded-full px-6 py-3 font-bold text-sm hover:bg-rose-800 transition-colors shadow-sm whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-rose-700 focus:ring-offset-2"
         >

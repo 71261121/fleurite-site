@@ -162,9 +162,8 @@ export default function Header() {
                 );
               })}
               <a
-                href="#get-access"
-                onClick={(e) => handleScrollTo(e, 'get-access')}
-                className="bg-rose-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-rose-800 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 transition-all shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98]"
+                onClick={(e) => { e.preventDefault(); window.dispatchEvent(new Event('open-checkout')); }}
+                className="bg-rose-700 text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-rose-800 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 transition-all shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
               >
                 Get the System — $27
               </a>
@@ -229,9 +228,8 @@ export default function Header() {
             })}
             <div className="pt-2">
               <a
-                href="#get-access"
-                onClick={(e) => handleScrollTo(e, 'get-access')}
-                className="block w-full text-center bg-rose-700 text-white font-semibold px-5 py-3 rounded-xl hover:bg-rose-800 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 transition-all shadow-sm active:scale-[0.98]"
+                onClick={(e) => { e.preventDefault(); window.dispatchEvent(new Event('open-checkout')); }}
+                className="block w-full text-center bg-rose-700 text-white font-semibold px-5 py-3 rounded-xl hover:bg-rose-800 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 transition-all shadow-sm active:scale-[0.98] cursor-pointer"
               >
                 Get the System — $27
               </a>

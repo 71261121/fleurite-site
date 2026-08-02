@@ -116,7 +116,7 @@ export default function ProductBreakdown() {
         {/* Simple CTA */}
         <div className="text-center">
           <ButtonGlow
-            href="#get-access"
+            onClick={() => window.dispatchEvent(new Event("open-checkout"))}
             className="inline-block bg-rose-700 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-rose-800 transition-all transform hover:scale-105 shadow-lg"
           >
             Get the Complete System - $27
