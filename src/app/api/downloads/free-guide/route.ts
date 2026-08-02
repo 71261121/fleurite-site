@@ -4,7 +4,7 @@ export async function GET() {
   try {
     const pdf = await generateFreePDF();
     
-    return new Response(pdf, {
+    return new Response(pdf as unknown as BodyInit, {
       headers: {
         'Content-Type': 'application/pdf',
         'Content-Disposition': 'attachment; filename="why-you-shrink-yourself.pdf"',

@@ -142,7 +142,7 @@ export async function generateFreePDF(): Promise<Buffer> {
     doc.moveDown(1);
     doc.fontSize(10).text(
       'Get the full book: "Stop Shrinking Yourself: The Exact Words to Say + How to Know If He\'ll Actually Change"',
-      { align: 'center', color: COLORS.clay }
+      { align: 'center' }
     );
 
     doc.end();
@@ -176,13 +176,13 @@ export async function generatePaidPDF(): Promise<Buffer> {
     doc.moveDown(2);
     doc.fontSize(12).text(
       'A Complete Guide to Anxious Attachment & Relationship Clarity',
-      { align: 'center', color: COLORS.clay }
+      { align: 'center' }
     );
 
     doc.moveDown(2);
     doc.fontSize(10).text(
       '47 Scripts You Can Copy & Paste',
-      { align: 'center', color: COLORS.dark }
+      { align: 'center' }
     );
 
     // Part 1 intro

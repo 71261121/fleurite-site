@@ -9,7 +9,7 @@ export async function GET(request: Request) {
     // For now, allow download
     const pdf = await generatePaidPDF();
     
-    return new Response(pdf, {
+    return new Response(pdf as unknown as BodyInit, {
       headers: {
         'Content-Type': 'application/pdf',
         'Content-Disposition': 'attachment; filename="stop-shrinking-yourself.pdf"',
