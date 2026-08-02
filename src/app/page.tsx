@@ -1,5 +1,6 @@
 import Header from '@/components/Header';
 import AnnouncementBar from '@/components/AnnouncementBar';
+import BooksHero from '@/components/BooksHero';
 import Hero from '@/components/Hero';
 import TrustBadges from '@/components/TrustBadges';
 import ProblemAgitation from '@/components/ProblemAgitation';
@@ -23,6 +24,7 @@ export default function Home() {
       <AnnouncementBar />
       <Header />
       <main>
+        <BooksHero />
         <Hero />
         <ProductBreakdown />
         <TrustBadges />
