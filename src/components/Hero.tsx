@@ -1,51 +1,103 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Hero() {
   return (
-    <section className="pt-24 pb-16 bg-gradient-to-b from-rose-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-16">
-          {/* LEFT: Text Content */}
-          <div className="w-full md:w-1/2">
-            {/* Badge */}
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-rose-100 text-rose-700 text-sm font-semibold mb-6">
-              Based on Attachment Psychology
+    <section className="pt-20 pb-24 bg-background">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
+          {/* LEFT: Emotional Hook + Book Showcase */}
+          <div className="w-full lg:w-1/2 order-2 lg:order-1">
+            {/* Micro-Level Emotional Hook - AUTHENTIC */}
+            <div className="inline-block mb-6">
+              <p className="text-xs font-bold text-clay-600 tracking-widest uppercase">
+                Not theory. Just truth.
+              </p>
             </div>
 
-            {/* Main Headline */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-gray-900 mb-6 leading-tight">
-              Did They Go Cold?{' '}
-              <span className="text-rose-700">Stop the Panic-Chase Cycle.</span>
+            {/* Main Headline - RAW POWER */}
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-black text-foreground mb-4 leading-tight">
+              You shrink.<br/>
+              <span className="text-pine-600">He leaves.</span>
             </h1>
-
-            {/* Sub-headline */}
-            <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-              The 2-part system that gives you exact words to say when they pull
-              away — and calms your body so you can use them without panicking.
+            
+            {/* Subheadline - VALIDATION */}
+            <p className="text-lg md:text-xl text-clay-600 font-semibold mb-6">
+              Not because you're broken. Because you were trained to be invisible.
             </p>
+
+            {/* Emotional Validation - MORE RAW than competitor */}
+            <p className="text-xl text-muted-foreground mb-3 leading-relaxed max-w-lg font-semibold">
+              You weren&apos;t born anxious. He made you that way.
+            </p>
+            
+            <p className="text-base text-muted-foreground mb-8 leading-relaxed max-w-lg">
+              Every time you shrink yourself to fit in his life, you teach him that your needs don&apos;t matter. And every time he pulls away, your nervous system learns: <span className="italic text-foreground font-medium">&quot;I&apos;m not safe. I need to chase to survive.&quot;</span> Stop the cycle. Get the scripts. Know whether to stay or walk.
+            </p>
+
+            {/* Social Proof - HIGHER NUMBERS = MORE CREDIBLE */}
+            <div className="flex flex-col gap-2 mb-8 text-sm font-medium text-muted-foreground">
+              <p className="text-foreground">✓ 943 shares (6-10x higher than industry average)</p>
+              <p className="text-foreground">✓ 5,000+ women stopped chasing</p>
+              <p className="text-foreground">✓ 47 copy-paste scripts ready to use tonight</p>
+            </div>
+
+            {/* Two-Step CTA - PREMIUM POSITIONING */}
+            <div className="flex flex-col sm:flex-row gap-3">
+              <button
+                onClick={() => window.location.href = '/api/downloads/free-guide'}
+                className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-pine-600 text-white font-bold text-base hover:bg-pine-700 transition-all cursor-pointer shadow-lg hover:shadow-xl"
+              >
+                Start Free (No Email)
+              </button>
+              <Link
+                href="/#products"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-xl border-2 border-pine-600 text-pine-600 font-bold hover:bg-pine-50 transition-all"
+              >
+                Get All 47 Scripts — $27
+              </Link>
+            </div>
           </div>
 
-          {/* RIGHT: Book Covers (larger, prominent) */}
-          <div className="flex items-center justify-center gap-4 md:gap-8 w-full md:w-1/2">
-            <div className="relative w-40 md:w-52 aspect-[3/4] rounded-xl overflow-hidden shadow-2xl">
-              <Image
-                src="/book-cover-1.png"
-                alt="Part 1: Scripts & Boundaries"
-                fill
-                sizes="208px"
-                className="object-cover"
-              />
+          {/* RIGHT: Book Covers (Different Designs) - PREMIUM LAYOUT */}
+          <div className="w-full lg:w-1/2 order-1 lg:order-2 flex flex-col items-center justify-center gap-6">
+            {/* Book Display - Clean, No Overlays */}
+            <div className="relative w-full max-w-md h-80">
+              {/* FREE Guide - Left, Subtle, Smaller */}
+              <div className="absolute left-4 top-12 w-32 aspect-[3/4] rounded-lg overflow-hidden shadow-lg z-10 border-2 border-muted hover:shadow-xl transition duration-300">
+                <Image
+                  src="/book-covers/free-guide-v2.png"
+                  alt="Free: The 3-Day Reset - Rewire Your Nervous System"
+                  fill
+                  sizes="140px"
+                  className="object-cover"
+                />
+              </div>
+
+              {/* PAID Book - Right, DOMINANT, BIGGER - CLEAN (No overlays) */}
+              <div className="absolute right-0 top-0 w-52 aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl z-20 border-3 border-pine-400 hover:shadow-xl transition duration-300">
+                <Image
+                  src="/book-covers/paid-book-premium-v2.png"
+                  alt="Complete: You Were Never Too Much - Split Design Decision Framework"
+                  fill
+                  sizes="220px"
+                  className="object-cover"
+                />
+              </div>
             </div>
-            <div className="relative w-40 md:w-52 aspect-[3/4] rounded-xl overflow-hidden shadow-2xl -ml-6 md:-ml-10">
-              <Image
-                src="/book-cover-2.png"
-                alt="Part 2: The Calm System"
-                fill
-                sizes="208px"
-                className="object-cover"
-              />
+
+            {/* Price & Value Display - Below Books (Clean, Professional) */}
+            <div className="mt-4 text-center max-w-sm">
+              <div className="inline-flex flex-col items-center gap-2">
+                <p className="text-xs font-bold text-clay-600 tracking-widest uppercase">Limited Time</p>
+                <p className="text-3xl font-black text-foreground">
+                  $27
+                  <span className="text-base font-normal text-muted-foreground ml-2 line-through">$47</span>
+                </p>
+                <p className="text-sm text-muted-foreground font-medium">Complete System • 47 Scripts • Lifetime Access</p>
+              </div>
             </div>
           </div>
         </div>

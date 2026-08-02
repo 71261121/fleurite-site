@@ -11,7 +11,7 @@ const methods = [
 
 export default function PaymentTrust() {
   return (
-    <section className="py-12 bg-white border-t border-gray-100">
+    <section className="py-12 bg-card border-t border-muted">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center gap-6">
           {/* Payment Methods */}
