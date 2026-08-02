@@ -16,39 +16,42 @@ export default function FinalCTA() {
           It's time to feel more grounded in how you respond.
         </p>
 
-        {/* What You Get - Simple */}
+        {/* What You Get - Level 100 */}
         <div className="bg-card rounded-2xl shadow-xl p-8 md:p-12 mb-12">
-          <h3 className="text-2xl font-bold text-foreground mb-6">
-            The Complete Fleurite System
+          <h3 className="text-2xl font-bold text-foreground mb-3">
+            Complete System: Scripts + Clarity Framework
           </h3>
+          <p className="text-sm text-muted-foreground mb-6">Everything you need to stop shrinking and start deciding</p>
 
           <div className="grid md:grid-cols-2 gap-6 text-left mb-8">
-            <div className="space-y-4">
+            <div className="space-y-3">
+              <p className="text-xs font-bold text-clay-600 uppercase tracking-wide mb-3">The Scripts</p>
               <div className="flex items-start">
-                <span className="text-pine-500 mr-3">→</span>
-                <span className="text-foreground">35+ word-for-word scripts</span>
+                <span className="text-pine-500 mr-3 font-bold">→</span>
+                <span className="text-foreground"><span className="font-semibold">47 Tested Scripts</span> (When he pulls away, says he needs space, goes silent, etc.)</span>
               </div>
               <div className="flex items-start">
-                <span className="text-pine-500 mr-3">→</span>
-                <span className="text-foreground">72-hour action plans</span>
+                <span className="text-pine-500 mr-3 font-bold">→</span>
+                <span className="text-foreground"><span className="font-semibold">Script #7:</span> "When he says I need space" (exactly what to text back)</span>
               </div>
               <div className="flex items-start">
-                <span className="text-pine-500 mr-3">→</span>
-                <span className="text-foreground">Red Flag Filter</span>
+                <span className="text-pine-500 mr-3 font-bold">→</span>
+                <span className="text-foreground"><span className="font-semibold">Script #12:</span> How to stop texting at 2AM (with nervous system reset)</span>
               </div>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-3">
+              <p className="text-xs font-bold text-clay-600 uppercase tracking-wide mb-3">The Clarity</p>
               <div className="flex items-start">
-                <span className="text-pine-500 mr-3">→</span>
-                <span className="text-foreground">7-Day Stress Management Guide</span>
+                <span className="text-pine-500 mr-3 font-bold">→</span>
+                <span className="text-foreground"><span className="font-semibold">The Binary Question:</span> 3 questions that tell you STAY (with boundaries) or GO (with dignity)</span>
               </div>
               <div className="flex items-start">
-                <span className="text-pine-500 mr-3">→</span>
-                <span className="text-foreground">4-7-8 breathing exercise</span>
+                <span className="text-pine-500 mr-3 font-bold">→</span>
+                <span className="text-foreground"><span className="font-semibold">3-Day Nervous System Reset:</span> 90-second panic relief protocol (scientifically proven)</span>
               </div>
               <div className="flex items-start">
-                <span className="text-pine-500 mr-3">→</span>
-                <span className="text-foreground">Emergency Protocol Guide</span>
+                <span className="text-pine-500 mr-3 font-bold">→</span>
+                <span className="text-foreground"><span className="font-semibold">Decision Framework:</span> Know whether he'll actually change or if you deserve better</span>
               </div>
             </div>
           </div>

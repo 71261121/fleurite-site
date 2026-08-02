@@ -120,8 +120,8 @@ export default function SocialProof() {
             <div className="text-muted-foreground font-medium">Average rating</div>
           </div>
           <div className="p-6 bg-card/60 backdrop-blur-sm rounded-xl border border-rose-100/50 shadow-sm">
-            <div className="text-3xl md:text-4xl font-bold text-pine-600 mb-2">35+</div>
-            <div className="text-muted-foreground font-medium">Scripts included</div>
+            <div className="text-3xl md:text-4xl font-bold text-pine-600 mb-2">47</div>
+            <div className="text-muted-foreground font-medium">Tested scripts (every scenario)</div>
           </div>
           <div className="p-6 bg-card/60 backdrop-blur-sm rounded-xl border border-rose-100/50 shadow-sm">
             <div className="text-3xl md:text-4xl font-bold text-pine-600 mb-2">$27</div>

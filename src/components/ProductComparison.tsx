@@ -2,18 +2,18 @@
 
 export default function ProductComparison() {
   const features = [
-    { name: 'What He\'s Doing (And Why)', free: true, paid: true },
-    { name: 'Why You Chase (Root Cause)', free: true, paid: true },
-    { name: '3-Day Nervous System Reset', free: true, paid: true },
-    { name: 'Video Guides & Audio', free: false, paid: true },
-    { name: '47 Copy-Paste Scripts', free: false, paid: true },
-    { name: 'Script #1-47 (Specific Scenarios)', free: false, paid: true },
-    { name: 'The Binary Question (Stay or Go?)', free: false, paid: true },
-    { name: 'Leaving With Dignity Guide', free: false, paid: true },
-    { name: '7-Day Deep Reset Protocol', free: false, paid: true },
-    { name: 'Lifetime Email Backup', free: true, paid: true },
-    { name: 'Phone Screenshots Allowed', free: true, paid: true },
-    { name: '30-Day Money-Back Guarantee', free: false, paid: true },
+    { name: 'Understanding: What He\'s Doing (And Why)', free: true, paid: true, description: 'Know his attachment pattern before responding' },
+    { name: 'Understanding: Why You Chase (Root Cause)', free: true, paid: true, description: 'See your nervous system programming clearly' },
+    { name: 'Nervous System Science: 3-Day Reset', free: true, paid: true, description: '90-second protocol to calm your cortisol + amygdala' },
+    { name: 'VIDEO Guides + Breathing Audio', free: false, paid: true, description: 'Watch tutorials, practice exercises, guided meditation' },
+    { name: '47 Copy-Paste Scripts (Named & Specific)', free: false, paid: true, description: 'Script #7 (he needs space), #12 (2AM texting), #23 (I deserve consistency)' },
+    { name: 'Script Strategy: Exact Words For Every Scenario', free: false, paid: true, description: 'When he pulls away • When he goes silent • When he says he\'s confused' },
+    { name: 'The Binary Question: STAY or GO Decision', free: false, paid: true, description: '3 questions reveal whether he\'ll change or you deserve better' },
+    { name: 'Framework: Leaving With Dignity (If You Choose)', free: false, paid: true, description: 'How to end it calmly without shrinking yourself further' },
+    { name: 'Advanced: 7-Day Neural Rewiring Protocol', free: false, paid: true, description: 'Train your nervous system to feel safe WITHOUT him validating you' },
+    { name: 'Lifetime Email Backup + PDF Download', free: true, paid: true, description: 'Access forever, share with trusted friends, works offline' },
+    { name: 'Phone Screenshots Allowed', free: true, paid: true, description: 'Save scripts in notes, screenshot for quick reference' },
+    { name: '30-Day Money-Back Guarantee', free: false, paid: true, description: 'Not helpful? Full refund. No judgment, no questions.' },
   ];
 
   return (
