@@ -62,7 +62,8 @@ export default function Hero() {
           </div>
 
           {/* RIGHT: Book Covers (Different Designs) - PREMIUM LAYOUT */}
-          <div className="w-full lg:w-1/2 order-1 lg:order-2 flex items-center justify-center">
+          <div className="w-full lg:w-1/2 order-1 lg:order-2 flex flex-col items-center justify-center gap-6">
+            {/* Book Display - Clean, No Overlays */}
             <div className="relative w-full max-w-md h-80">
               {/* FREE Guide - Left, Subtle, Smaller */}
               <div className="absolute left-4 top-12 w-32 aspect-[3/4] rounded-lg overflow-hidden shadow-lg z-10 border-2 border-muted hover:shadow-xl transition duration-300">
@@ -75,8 +76,8 @@ export default function Hero() {
                 />
               </div>
 
-              {/* PAID Book - Right, DOMINANT, BIGGER */}
-              <div className="absolute right-0 top-0 w-52 aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl z-20 border-3 border-pine-400">
+              {/* PAID Book - Right, DOMINANT, BIGGER - CLEAN (No overlays) */}
+              <div className="absolute right-0 top-0 w-52 aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl z-20 border-3 border-pine-400 hover:shadow-xl transition duration-300">
                 <Image
                   src="/book-covers/paid-book-premium-v2.png"
                   alt="Complete: You Were Never Too Much - Split Design Decision Framework"
@@ -84,16 +85,18 @@ export default function Hero() {
                   sizes="220px"
                   className="object-cover"
                 />
-                {/* Premium Badge */}
-                <div className="absolute top-4 right-4 bg-gradient-to-r from-clay-600 to-clay-700 text-white px-4 py-2 rounded-full text-xs font-black shadow-lg border border-clay-400">
-                  Limited $27
-                </div>
-                {/* Pricing Footer */}
-                <div className="absolute bottom-3 left-3 right-3 text-center bg-black/40 backdrop-blur-sm rounded-lg py-2.5 border border-white/20">
-                  <p className="text-white text-xs font-bold">
-                    <span className="line-through opacity-70">$47</span> <span className="ml-1">$27</span>
-                  </p>
-                </div>
+              </div>
+            </div>
+
+            {/* Price & Value Display - Below Books (Clean, Professional) */}
+            <div className="mt-4 text-center max-w-sm">
+              <div className="inline-flex flex-col items-center gap-2">
+                <p className="text-xs font-bold text-clay-600 tracking-widest uppercase">Limited Time</p>
+                <p className="text-3xl font-black text-foreground">
+                  $27
+                  <span className="text-base font-normal text-muted-foreground ml-2 line-through">$47</span>
+                </p>
+                <p className="text-sm text-muted-foreground font-medium">Complete System • 47 Scripts • Lifetime Access</p>
               </div>
             </div>
           </div>
