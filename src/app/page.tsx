@@ -10,7 +10,6 @@ import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
 import StickyBar from '@/components/StickyBar';
 import FadeIn from '@/components/FadeIn';
-import CheckoutGateway from '@/components/CheckoutGateway';
 
 export default function Home() {
   return (
@@ -45,7 +44,6 @@ export default function Home() {
       </main>
       <Footer />
       <StickyBar />
-      <CheckoutGateway />
     </div>
   );
 }

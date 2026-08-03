@@ -114,7 +114,7 @@ export default function Hero() {
           <div className="relative rounded-[2rem] bg-gradient-to-br from-pine-100/60 via-blush/40 to-gold-100/50 p-4 sm:p-6">
             <Image
               src="/product/book-cover.png"
-              alt="The Rooted Method — word-for-word scripts for the moment he pulls away"
+              alt="When He Goes Quiet — 47 word-for-word scripts for the moment he pulls away"
               width={460}
               height={460}
               priority

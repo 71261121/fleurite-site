@@ -65,16 +65,16 @@ export default function ProductBreakdown() {
         <div className="relative mx-auto mb-12 max-w-3xl overflow-hidden rounded-3xl shadow-xl ring-1 ring-border">
           <Image
             src="/product/bundle.png"
-            alt="Everything inside The Rooted Method — the book, the reflection workbook, printed script cards, and the audio companion"
+            alt="When He Goes Quiet — the complete script system, readable instantly on your phone, tablet, or laptop"
             width={1024}
             height={1024}
             className="w-full object-cover"
           />
           <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-pine-900/80 to-transparent p-5">
             <p className="text-sm font-black text-cream md:text-base">
-              The book + script cards + reflection workbook + audio companion
+              47 scripts + the stay-or-leave framework + the 7-day reset — in one PDF
             </p>
-            <p className="text-xs text-cream/80">Everything downloads instantly. Yours for life.</p>
+            <p className="text-xs text-cream/80">Downloads instantly to any device. Yours for life.</p>
           </div>
         </div>
 

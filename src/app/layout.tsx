@@ -20,20 +20,20 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fleurite.me"),
-  title: "You Were Never Too Much | Fleurite",
-  description: "You weren't born a chaser — you were trained to be one. The Rooted Method helps you stop chasing an avoidant partner, quiet the anxiety, and come home to yourself.",
-  keywords: ["anxious attachment healing", "avoidant partner", "stop chasing", "relationship anxiety", "nervous system regulation", "attachment theory", "secure attachment", "the rooted method"],
+  title: "When He Goes Quiet — 47 Scripts for the Moment He Pulls Away | Fleurite",
+  description: "He goes quiet and you fall apart. Here's exactly what to send. 47 word-for-word scripts, a stay-or-leave framework, and a 7-day reset so you stop chasing an avoidant partner. Instant PDF.",
+  keywords: ["what to text when he pulls away", "avoidant partner scripts", "stop chasing", "relationship anxiety", "anxious attachment", "stay or leave", "nervous system reset", "the rooted method", "when he goes quiet"],
   openGraph: {
-    title: "You Were Never Too Much | Fleurite",
-    description: "Stop chasing, stop shrinking, and come home to yourself. A gentle, psychology-backed book for women loving an emotionally unavailable partner.",
+    title: "When He Goes Quiet — What to Send When He Pulls Away | Fleurite",
+    description: "47 tested, word-for-word scripts for every moment you freeze, fold, or want to chase — plus a stay-or-leave framework and a 7-day reset. Read it tonight, use it tomorrow.",
     type: "website",
     locale: "en_US",
     siteName: "Fleurite",
   },
   twitter: {
     card: "summary_large_image",
-    title: "You Were Never Too Much | Fleurite",
-    description: "It was never that you were too much. Safety was never available. The Rooted Method — a gentle path back to yourself.",
+    title: "When He Goes Quiet — 47 Scripts for the Moment He Pulls Away",
+    description: "You don't need another page telling you to 'just relax.' You need the words. 47 scripts, a decision framework, and a 7-day reset.",
   },
   robots: {
     index: true,
