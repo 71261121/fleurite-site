@@ -9,36 +9,36 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    question: 'What do I say when he goes silent?',
-    answer: 'That\'s Script #7. The exact text is inside the paid book. It\'s 2-3 sentences that express your needs without anger or desperation. Most women report: "I felt calm sending it" and "He actually responded positively."'
+    question: 'Is this just another diet or wellness program?',
+    answer: 'No. This is a reset—meaning it breaks the pattern your body is stuck in, then teaches you how to maintain it. Not a diet (no calorie counting). Not a supplement routine (no pills). Just psychology, daily practices, and alignment with your actual cycle.'
   },
   {
-    question: 'How do I know if I should stay or leave?',
-    answer: 'The Binary Question in the paid book asks 3 specific questions about his behavior. Answer honestly, and you\'ll have clarity on whether this is salvageable or if you deserve better. Most women report making a decision within 7 days.'
+    question: 'Will this work if I\'m on hormonal birth control?',
+    answer: 'Yes. The reset works on the nervous system level, which operates independently of hormonal contraception. That said, if you\'re tracking your cycle, hormonal birth control changes the pattern. I address this in the guide.'
   },
   {
-    question: 'Will this actually work for me?',
-    answer: 'The scripts work on avoidant partners (partners who withdraw due to attachment wounds). If your partner is manipulative or abusive, this system isn\'t appropriate. The free guide helps you figure out which one he is.'
+    question: 'How fast will I feel different?',
+    answer: 'Most women report feeling calmer and more grounded within 24-48 hours. Real energy shifts (not just feeling less tired) take about 7 days. The bigger transformation—where you stop fighting your cycle entirely—happens over 2-3 weeks once you apply it.'
   },
   {
-    question: 'How fast will I see results?',
-    answer: 'You\'ll feel calmer within 24 hours (after the 3-day reset). The scripts start working immediately — most women report "He took me seriously for the first time." His actual behavior shift takes 2-4 weeks.'
+    question: 'I\'ve tried SO many programs. Why is this different?',
+    answer: 'Because most programs treat symptoms (energy crashes, mood swings). This treats the root: your nervous system being out of sync with your cycle. Once that\'s aligned, everything else follows naturally. You\'re not forcing your body into a mold—you\'re learning to work with it.'
   },
   {
-    question: 'Is this manipulation?',
-    answer: 'No. These are communication tools, not manipulation tactics. The scripts help you express your needs clearly and calmly. There\'s no "playing games" or "making him jealous" here. It\'s about knowing what to say when anxiety makes you freeze.'
+    question: 'What if I don\'t have a regular cycle?',
+    answer: 'The system still works. Whether your cycle is irregular, you\'re perimenopause, or you don\'t menstruate—your body still operates in phases. The reset teaches you to notice those phases and work with them, regardless of what they look like.'
   },
   {
-    question: 'What format is this in?',
-    answer: 'Both the free guide and paid book are delivered as high-quality PDFs. You can read them on any device — phone, tablet, or computer. They\'re designed for easy reference, with clear sections you can jump to when you need a specific script.'
+    question: 'Is this a replacement for medical help?',
+    answer: 'No. If you\'re dealing with diagnosed hormonal imbalances, PCOS, endometriosis, or other medical conditions, talk to your doctor first. This system complements medical care—it doesn\'t replace it. Think of it as the psychology and lifestyle piece your doctor can\'t provide.'
   },
   {
-    question: 'How long do I have access?',
-    answer: 'Lifetime. Once you purchase, the PDFs are yours forever. Download them multiple times, save them anywhere, and refer back whenever you need. No subscription, no recurring fees.'
+    question: 'What format do I get?',
+    answer: 'A high-quality PDF guide with daily practices, an energy tracker, and my founder notes on the psychology behind why this works. You download it instantly and can access it forever on any device. No app. No subscription. Just the guide, anytime you need it.'
   },
   {
-    question: 'Is this a replacement for therapy?',
-    answer: 'No. The Fleurite System is designed to complement professional therapy, not replace it. If you\'re dealing with severe anxiety or trauma, we recommend working with a licensed therapist alongside these tools.'
+    question: 'What if it doesn\'t work for me?',
+    answer: 'I offer a full money-back guarantee. Try it for 7 days. If you don\'t feel more grounded or energized, I refund you completely. No questions, no hassle. I\'ve tested this on thousands of women—but I know it won\'t work for everyone.'
   }
 ];
 

@@ -6,58 +6,50 @@ export default function CreatorBio() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-            Why I Created This
+            Why I Built This
           </h2>
+          <p className="text-lg text-muted-foreground">My 9-year journey from exhausted to aligned</p>
         </div>
 
         <div className="max-w-3xl mx-auto">
-          {/* Author Card */}
-          <div className="flex items-center gap-4 mb-8 bg-muted rounded-2xl p-6 border border-muted">
-            <div className="w-16 h-16 bg-gradient-to-br from-clay-400 to-clay-400 rounded-full flex items-center justify-center flex-shrink-0">
-              <span className="text-white font-bold text-xl">S</span>
+          {/* Founder Introduction */}
+          <div className="flex items-center gap-4 mb-8 bg-muted rounded-2xl p-6 border border-rose-200">
+            <div className="w-16 h-16 bg-gradient-to-br from-rose-400 to-rose-500 rounded-full flex items-center justify-center flex-shrink-0">
+              <span className="text-white font-bold text-2xl">E</span>
             </div>
             <div>
-              <p className="font-bold text-foreground">The Fleurite Team</p>
-              <p className="text-sm text-muted-foreground">Created by people who&apos;ve been there</p>
+              <p className="font-bold text-foreground text-lg">Eliza</p>
+              <p className="text-sm text-muted-foreground">Founder, 9 years research into feminine energy cycles</p>
             </div>
           </div>
 
           {/* Story Content */}
           <div className="text-muted-foreground space-y-6 text-lg leading-relaxed">
             <p>
-              Three years ago, I was the person refreshing my phone at 2 AM, wondering
-              what I did wrong. I was in a relationship where one day felt perfect and
-              the next felt like he disappeared.
+              Nine years ago, I was exhausted all the time. Like, bone-deep tired. I thought I was broken. Lazy. Maybe depressed.
             </p>
             <p>
-              I tried everything. I tried being &ldquo;chill.&rdquo; I tried giving space. I tried
-              playing it cool. Nothing worked because I was treating symptoms, not the
-              root cause.
+              I tried everything. More sleep didn&apos;t fix it. More exercise made it worse. Supplements, meditation, productivity hacks—nothing stuck because I was treating symptoms, not the pattern.
             </p>
             <p>
-              Then I discovered attachment theory. I learned that his withdrawal wasn&apos;t
-              about my worth — it was about his nervous system. And my anxiety wasn&apos;t a
-              character flaw — it was something I could begin working on.
+              Then I realized: <span className="font-semibold text-rose-600">my body wasn&apos;t broken—it was out of sync</span>. I wasn&apos;t living WITH my cycle. I was living AGAINST it. Every week felt like I was fighting myself.
             </p>
             <p>
-              The problem? All the advice was either too clinical or too vague. &ldquo;Communicate
-              better&rdquo; isn&apos;t a strategy. &ldquo;Just leave&rdquo; isn&apos;t helpful when you love someone.
+              So I spent the next nine years learning. Psychology. Neuroscience. Talking to thousands of women. Testing what actually works (not what sounds good in theory).
             </p>
             <p>
-              So I created the tools I wished I had: <span className="font-semibold text-pine-600">exact words for exact moments</span>.
-              Not manipulation tactics. Not pickup lines. Just clear, calm ways to express
-              what you need without panic or people-pleasing.
+              What I discovered changed everything: a seven-day reset that actually works. Not because it&apos;s magic. Because it finally aligns you with how your body actually operates.
             </p>
             <p className="font-medium text-foreground">
-              The Fleurite System isn&apos;t magic. It&apos;s practice. And it works.
+              The Feminine Bloom Reset isn&apos;t another productivity system. It&apos;s permission to stop fighting yourself.
             </p>
           </div>
 
-          {/* Disclaimer */}
-          <div className="mt-8 bg-muted rounded-xl p-4 border border-muted">
-            <p className="text-sm text-muted-foreground italic">
-              <strong>A note:</strong> These tools are educational, not therapy.
-              They&apos;re designed to complement your journey, not replace professional help.
+          {/* Why This Matters */}
+          <div className="mt-10 bg-rose-50 rounded-2xl p-6 border border-rose-200">
+            <p className="text-sm font-semibold text-rose-600 uppercase tracking-wide mb-3">My Promise to You</p>
+            <p className="text-muted-foreground leading-relaxed">
+              This system is built by someone who&apos;s lived this. Not by a team in a boardroom. Every word, every practice—I&apos;ve tested on myself and my community. If it doesn&apos;t work for you, I give your money back. No questions.
             </p>
           </div>
         </div>

@@ -51,13 +51,13 @@ export default function StickyBar() {
       aria-hidden={!isVisible}
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between gap-4 flex-wrap">
-        {/* Left side: Urgency message (Level 25 psychology) */}
+        {/* Left side: Value message */}
         <div className="flex flex-col gap-1 flex-1 min-w-0">
           <p className="font-bold text-foreground text-sm md:text-base">
-            Stop spiraling at 2AM. Start sleeping tonight.
+            Reclaim your energy in 7 days.
           </p>
           <p className="text-xs md:text-sm text-muted-foreground">
-            Free 3-day nervous system reset + 47 scripts for $27 (limited time)
+            The Feminine Bloom Reset System — $27, instant download
           </p>
         </div>
 
@@ -65,9 +65,9 @@ export default function StickyBar() {
         <button
           onClick={() => window.dispatchEvent(new Event("open-checkout"))}
           tabIndex={isVisible ? 0 : -1}
-          className="bg-clay-600 text-white rounded-lg px-5 md:px-6 py-2.5 md:py-3 font-bold text-sm hover:bg-clay-700 transition-colors shadow-md whitespace-nowrap flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-clay-400 focus:ring-offset-2"
+          className="bg-rose-600 text-white rounded-lg px-5 md:px-6 py-2.5 md:py-3 font-bold text-sm hover:bg-rose-700 transition-colors shadow-md whitespace-nowrap flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-rose-400 focus:ring-offset-2"
         >
-          Get Access →
+          Get The System →
         </button>
       </div>
     </div>

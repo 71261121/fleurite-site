@@ -87,23 +87,23 @@ function renderBlock(doc: PDFKit.PDFDocument, block: Block) {
       })
       doc.moveDown(0.3)
       break
-    case "script": {
+    case "practice": {
       const x = doc.x
       const width = doc.page.width - PAGE.margin - x
       const padY = doc.y
       // label
-      doc.font("Helvetica-Bold").fontSize(8.5).fillColor(CLAY).text(block.when.toUpperCase(), x + 14, padY + 12, {
+      doc.font("Helvetica-Bold").fontSize(8.5).fillColor(CLAY).text(block.name.toUpperCase(), x + 14, padY + 12, {
         width: width - 28,
         characterSpacing: 0.5,
       })
       doc.moveDown(0.3)
-      doc.font("Times-Italic").fontSize(12.5).fillColor(PINE).text(block.say, x + 14, doc.y, {
+      doc.font("Times-Italic").fontSize(12.5).fillColor(PINE).text(block.description, x + 14, doc.y, {
         width: width - 28,
         lineGap: 3,
       })
-      if (block.why) {
+      if (block.when) {
         doc.moveDown(0.3)
-        doc.font("Helvetica").fontSize(9.5).fillColor(MUTE).text("Why it works: " + block.why, x + 14, doc.y, {
+        doc.font("Helvetica").fontSize(9.5).fillColor(MUTE).text("When: " + block.when, x + 14, doc.y, {
           width: width - 28,
           lineGap: 2,
         })

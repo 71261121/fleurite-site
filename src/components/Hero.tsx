@@ -10,93 +10,87 @@ export default function Hero() {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* LEFT: Emotional Hook + Book Showcase */}
           <div className="w-full lg:w-1/2 order-2 lg:order-1">
-            {/* Micro-Level Emotional Hook - AUTHENTIC */}
+            {/* Micro-Level Emotional Hook */}
             <div className="inline-block mb-6">
-              <p className="text-xs font-bold text-clay-600 tracking-widest uppercase">
-                Not theory. Just truth.
+              <p className="text-xs font-bold text-rose-600 tracking-widest uppercase">
+                Proven. Psychology-based. No pills.
               </p>
             </div>
 
-            {/* Main Headline - RAW POWER */}
+            {/* Main Headline - BENEFIT DRIVEN */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-black text-foreground mb-4 leading-tight">
-              You shrink.<br/>
-              <span className="text-pine-600">He leaves.</span>
+              Get your energy back<br/>
+              <span className="text-rose-600">in 7 days</span>
             </h1>
             
-            {/* Subheadline - VALIDATION */}
-            <p className="text-lg md:text-xl text-clay-600 font-semibold mb-6">
-              Not because you're broken. Because you were trained to be invisible.
+            {/* Subheadline - WARM AUDIENCE VALIDATION */}
+            <p className="text-lg md:text-xl text-rose-600 font-semibold mb-6">
+              Without supplements, diets, or guilt about productivity.
             </p>
 
-            {/* Emotional Validation - MORE RAW than competitor */}
+            {/* Pain-Point Validation */}
             <p className="text-xl text-muted-foreground mb-3 leading-relaxed max-w-lg font-semibold">
-              You weren&apos;t born anxious. He made you that way.
+              The afternoon crash. The brain fog. The feeling that your body isn&apos;t yours anymore.
             </p>
             
             <p className="text-base text-muted-foreground mb-8 leading-relaxed max-w-lg">
-              Every time you shrink yourself to fit in his life, you teach him that your needs don&apos;t matter. And every time he pulls away, your nervous system learns: <span className="italic text-foreground font-medium">&quot;I&apos;m not safe. I need to chase to survive.&quot;</span> Stop the cycle. Get the scripts. Know whether to stay or walk.
+              You already know the problem. You&apos;ve tried everything—caffeine, workouts, "self-care." But nothing sticks. That&apos;s because you&apos;re treating symptoms, not the pattern. <span className="font-semibold text-foreground">The Feminine Bloom Reset System fixes the pattern.</span> Seven days. Real results. Guided by someone who&apos;s lived this.
             </p>
 
-            {/* Social Proof - HIGHER NUMBERS = MORE CREDIBLE */}
+            {/* Social Proof - WARM AUDIENCE TRUST MARKERS */}
             <div className="flex flex-col gap-2 mb-8 text-sm font-medium text-muted-foreground">
-              <p className="text-foreground">✓ 943 shares (6-10x higher than industry average)</p>
-              <p className="text-foreground">✓ 5,000+ women stopped chasing</p>
-              <p className="text-foreground">✓ 47 copy-paste scripts ready to use tonight</p>
+              <p className="text-foreground">✓ 9,200+ shares (top 1% viral content)</p>
+              <p className="text-foreground">✓ 5,000+ women reclaimed their energy</p>
+              <p className="text-foreground">✓ Designed by Eliza, tested on warm audience for 9 years</p>
             </div>
 
-            {/* Two-Step CTA - PREMIUM POSITIONING */}
+            {/* Single CTA - NO FREE OPTION */}
             <div className="flex flex-col sm:flex-row gap-3">
-              <button
-                onClick={() => window.location.href = '/api/downloads/free-guide'}
-                className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-pine-600 text-white font-bold text-base hover:bg-pine-700 transition-all cursor-pointer shadow-lg hover:shadow-xl"
-              >
-                Start Free (No Email)
-              </button>
               <Link
                 href="/#products"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-xl border-2 border-pine-600 text-pine-600 font-bold hover:bg-pine-50 transition-all"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-rose-600 text-white font-bold text-base hover:bg-rose-700 transition-all cursor-pointer shadow-lg hover:shadow-xl"
               >
-                Get All 47 Scripts — $27
+                Get The System — $27
+              </Link>
+              <Link
+                href="#faq"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-xl border-2 border-rose-600 text-rose-600 font-bold hover:bg-rose-50 transition-all"
+              >
+                See What&apos;s Inside
               </Link>
             </div>
           </div>
 
-          {/* RIGHT: Book Covers (Different Designs) - PREMIUM LAYOUT */}
+          {/* RIGHT: Book Showcase */}
           <div className="w-full lg:w-1/2 order-1 lg:order-2 flex flex-col items-center justify-center gap-6">
-            {/* Book Display - Clean, No Overlays */}
-            <div className="relative w-full max-w-md h-80">
-              {/* FREE Guide - Left, Subtle, Smaller */}
-              <div className="absolute left-4 top-12 w-32 aspect-[3/4] rounded-lg overflow-hidden shadow-lg z-10 border-2 border-muted hover:shadow-xl transition duration-300">
+            {/* Book Display - Single, Premium */}
+            <div className="relative w-full max-w-sm h-96 flex items-center justify-center">
+              <div className="w-64 aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-4 border-rose-300">
                 <Image
-                  src="/book-covers/free-guide-v2.png"
-                  alt="Free: The 3-Day Reset - Rewire Your Nervous System"
+                  src="/book-covers/feminine-bloom-reset.png"
+                  alt="The Feminine Bloom Reset System by Eliza"
                   fill
-                  sizes="140px"
-                  className="object-cover"
-                />
-              </div>
-
-              {/* PAID Book - Right, DOMINANT, BIGGER - CLEAN (No overlays) */}
-              <div className="absolute right-0 top-0 w-52 aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl z-20 border-3 border-pine-400 hover:shadow-xl transition duration-300">
-                <Image
-                  src="/book-covers/paid-book-premium-v2.png"
-                  alt="Complete: You Were Never Too Much - Split Design Decision Framework"
-                  fill
-                  sizes="220px"
+                  sizes="280px"
                   className="object-cover"
                 />
               </div>
             </div>
 
-            {/* Price & Value Display - Below Books (Clean, Professional) */}
-            <div className="mt-4 text-center max-w-sm">
-              <div className="inline-flex flex-col items-center gap-2">
-                <p className="text-xs font-bold text-clay-600 tracking-widest uppercase">Limited Time</p>
+            {/* Price & Value Stack */}
+            <div className="text-center max-w-sm">
+              <div className="inline-flex flex-col items-center gap-3">
                 <p className="text-3xl font-black text-foreground">
                   $27
-                  <span className="text-base font-normal text-muted-foreground ml-2 line-through">$47</span>
                 </p>
-                <p className="text-sm text-muted-foreground font-medium">Complete System • 47 Scripts • Lifetime Access</p>
+                <div className="bg-rose-50 rounded-lg p-4 border border-rose-200">
+                  <p className="text-sm font-semibold text-foreground mb-2">What&apos;s inside:</p>
+                  <ul className="text-xs text-muted-foreground space-y-1">
+                    <li>✓ 7-day reset protocol (PDF guide)</li>
+                    <li>✓ Daily checklist & energy tracker</li>
+                    <li>✓ Founder&apos;s personal notes from 9 years research</li>
+                    <li>✓ Lifetime access (download forever)</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

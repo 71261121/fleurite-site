@@ -20,9 +20,9 @@ export default function AnnouncementBar() {
   if (!isVisible) return null;
 
   return (
-    <div data-announcement-bar className="w-full bg-pine-600 text-white py-2.5 px-4 text-center text-xs md:text-sm font-medium tracking-wide relative">
-      <a href="#get-access" className="hover:underline">
-        Join women who stopped chasing — Learn how ↓
+    <div data-announcement-bar className="w-full bg-rose-600 text-white py-2.5 px-4 text-center text-xs md:text-sm font-medium tracking-wide relative">
+      <a href="#products" className="hover:underline">
+        5,000+ women regained their energy. See what&apos;s inside ↓
       </a>
       <button
         onClick={dismiss}
