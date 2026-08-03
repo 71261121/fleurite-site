@@ -57,7 +57,7 @@ export default function StickyBar() {
             Reclaim your energy in 7 days.
           </p>
           <p className="text-xs md:text-sm text-muted-foreground">
-            The Feminine Bloom Reset System — $27, instant download
+            The Fleurite Reset System — $27, instant download
           </p>
         </div>
 
@@ -65,7 +65,7 @@ export default function StickyBar() {
         <button
           onClick={() => window.dispatchEvent(new Event("open-checkout"))}
           tabIndex={isVisible ? 0 : -1}
-          className="bg-rose-600 text-white rounded-lg px-5 md:px-6 py-2.5 md:py-3 font-bold text-sm hover:bg-rose-700 transition-colors shadow-md whitespace-nowrap flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-rose-400 focus:ring-offset-2"
+          className="bg-black text-white rounded-lg px-5 md:px-6 py-2.5 md:py-3 font-bold text-sm hover:bg-gray-900 transition-colors shadow-md whitespace-nowrap flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
         >
           Get The System →
         </button>

@@ -14,7 +14,7 @@ export default function ProductsPage() {
         <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
           <div className="text-center">
             <h1 className="text-5xl md:text-6xl font-display font-bold text-foreground mb-6">
-              The Feminine Bloom Reset System
+              The Fleurite Reset System
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Everything you need to reclaim your energy in 7 days. One clear offer. No complicated tiers.
@@ -29,42 +29,42 @@ export default function ProductsPage() {
               <h2 className="text-3xl font-bold text-foreground mb-8">What's Inside ($27)</h2>
               <ul className="space-y-4">
                 <li className="flex items-start gap-4">
-                  <span className="text-rose-600 font-bold text-xl flex-shrink-0">✓</span>
+                  <span className="text-black font-bold text-xl flex-shrink-0">✓</span>
                   <div>
                     <p className="font-semibold text-foreground">7-Day Reset Protocol</p>
                     <p className="text-sm text-muted-foreground mt-1">Daily practices designed to break the exhaustion pattern and rewire your nervous system back to alignment.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <span className="text-rose-600 font-bold text-xl flex-shrink-0">✓</span>
+                  <span className="text-black font-bold text-xl flex-shrink-0">✓</span>
                   <div>
                     <p className="font-semibold text-foreground">Cycle Alignment Guide</p>
                     <p className="text-sm text-muted-foreground mt-1">Understand your four phases and how to schedule your work and rest to match them, not fight them.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <span className="text-rose-600 font-bold text-xl flex-shrink-0">✓</span>
+                  <span className="text-black font-bold text-xl flex-shrink-0">✓</span>
                   <div>
                     <p className="font-semibold text-foreground">Energy Tracker</p>
                     <p className="text-sm text-muted-foreground mt-1">Monitor your energy and patterns so you can see exactly what's working and what's not.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <span className="text-rose-600 font-bold text-xl flex-shrink-0">✓</span>
+                  <span className="text-black font-bold text-xl flex-shrink-0">✓</span>
                   <div>
                     <p className="font-semibold text-foreground">Nervous System Science (Simplified)</p>
                     <p className="text-sm text-muted-foreground mt-1">Why your body does what it does, explained without the textbook. Psychology, not biology.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <span className="text-rose-600 font-bold text-xl flex-shrink-0">✓</span>
+                  <span className="text-black font-bold text-xl flex-shrink-0">✓</span>
                   <div>
                     <p className="font-semibold text-foreground">Founder's Personal Notes</p>
                     <p className="text-sm text-muted-foreground mt-1">9 years of research, testing, and real-life application. Eliza's insights throughout the system.</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
-                  <span className="text-rose-600 font-bold text-xl flex-shrink-0">✓</span>
+                  <span className="text-black font-bold text-xl flex-shrink-0">✓</span>
                   <div>
                     <p className="font-semibold text-foreground">Lifetime Access</p>
                     <p className="text-sm text-muted-foreground mt-1">Download it once, it's yours forever. No subscription. No recurring fees. Pure ownership.</p>
@@ -73,8 +73,8 @@ export default function ProductsPage() {
               </ul>
             </div>
             
-            <div className="bg-rose-50 rounded-2xl p-8 border border-rose-200">
-              <p className="text-sm font-semibold text-rose-600 uppercase tracking-wide mb-4">The Format</p>
+            <div className="bg-white rounded-2xl p-8 border border-gray-300">
+              <p className="text-sm font-semibold text-black uppercase tracking-wide mb-4">The Format</p>
               <p className="text-muted-foreground mb-6">
                 High-quality PDF delivered instantly. Works on phone, tablet, or desktop. Designed for easy reference when you need it.
               </p>
@@ -96,7 +96,7 @@ export default function ProductsPage() {
 
               <button
                 onClick={() => window.dispatchEvent(new Event("open-checkout"))}
-                className="w-full py-4 px-6 rounded-xl bg-rose-600 text-white font-bold text-lg hover:bg-rose-700 transition shadow-lg hover:shadow-xl"
+                className="w-full py-4 px-6 rounded-xl bg-black text-white font-bold text-lg hover:bg-gray-900 transition shadow-lg hover:shadow-xl"
               >
                 Get The System — $27
               </button>
@@ -116,15 +116,15 @@ export default function ProductsPage() {
           
           <div className="grid md:grid-cols-3 gap-8">
             <div className="bg-background rounded-xl p-6">
-              <p className="text-sm font-semibold text-rose-600 uppercase mb-3">{'Psychology > Willpower'}</p>
+              <p className="text-sm font-semibold text-black uppercase mb-3">{'Psychology > Willpower'}</p>
               <p className="text-muted-foreground">Understanding why your body crashes is more powerful than forcing yourself to push through.</p>
             </div>
             <div className="bg-background rounded-xl p-6">
-              <p className="text-sm font-semibold text-rose-600 uppercase mb-3">{'Alignment > Discipline'}</p>
+              <p className="text-sm font-semibold text-black uppercase mb-3">{'Alignment > Discipline'}</p>
               <p className="text-muted-foreground">When you work WITH your cycle instead of against it, energy flows naturally. No more fighting yourself.</p>
             </div>
             <div className="bg-background rounded-xl p-6">
-              <p className="text-sm font-semibold text-rose-600 uppercase mb-3">Founder-Tested</p>
+              <p className="text-sm font-semibold text-black uppercase mb-3">Founder-Tested</p>
               <p className="text-muted-foreground">Built by Eliza over 9 years, tested on thousands of women. This isn&apos;t theory. It&apos;s proven practice.</p>
             </div>
           </div>

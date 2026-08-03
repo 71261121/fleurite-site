@@ -15,9 +15,9 @@ export default function ScienceSection() {
 
         <div className="grid md:grid-cols-3 gap-8">
           {/* Discovery 1 */}
-          <div className="bg-rose-50 rounded-2xl p-6 border border-rose-100">
-            <div className="w-12 h-12 bg-rose-100 rounded-xl flex items-center justify-center mb-4">
-              <span className="text-rose-600 text-xl font-bold">1</span>
+          <div className="bg-white rounded-2xl p-6 border border-gray-300">
+            <div className="w-12 h-12 bg-gray-200 rounded-xl flex items-center justify-center mb-4">
+              <span className="text-black text-xl font-bold">1</span>
             </div>
             <h3 className="font-bold text-foreground mb-2">Your Cycle Is Real</h3>
             <p className="text-muted-foreground text-sm">
@@ -26,9 +26,9 @@ export default function ScienceSection() {
           </div>
 
           {/* Discovery 2 */}
-          <div className="bg-rose-50 rounded-2xl p-6 border border-rose-100">
-            <div className="w-12 h-12 bg-rose-100 rounded-xl flex items-center justify-center mb-4">
-              <span className="text-rose-600 text-xl font-bold">2</span>
+          <div className="bg-white rounded-2xl p-6 border border-gray-300">
+            <div className="w-12 h-12 bg-gray-200 rounded-xl flex items-center justify-center mb-4">
+              <span className="text-black text-xl font-bold">2</span>
             </div>
             <h3 className="font-bold text-foreground mb-2">Reset Works Fast</h3>
             <p className="text-muted-foreground text-sm">
@@ -37,9 +37,9 @@ export default function ScienceSection() {
           </div>
 
           {/* Discovery 3 */}
-          <div className="bg-rose-50 rounded-2xl p-6 border border-rose-100">
-            <div className="w-12 h-12 bg-rose-100 rounded-xl flex items-center justify-center mb-4">
-              <span className="text-rose-600 text-xl font-bold">3</span>
+          <div className="bg-white rounded-2xl p-6 border border-gray-300">
+            <div className="w-12 h-12 bg-gray-200 rounded-xl flex items-center justify-center mb-4">
+              <span className="text-black text-xl font-bold">3</span>
             </div>
             <h3 className="font-bold text-foreground mb-2">{'Psychology > Willpower'}</h3>
             <p className="text-muted-foreground text-sm">

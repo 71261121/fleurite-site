@@ -134,7 +134,7 @@ export default function Header() {
             <div className="flex-shrink-0">
               <a
                 href="/"
-                className="font-display text-2xl font-bold text-rose-600 hover:text-rose-700 transition-colors tracking-tight focus:outline-none focus:ring-2 focus:ring-rose-500 rounded-sm"
+                className="font-display text-2xl font-bold text-black hover:text-rose-700 transition-colors tracking-tight focus:outline-none focus:ring-2 focus:ring-rose-500 rounded-sm"
               >
                 Fleurite.me
               </a>
@@ -154,20 +154,20 @@ export default function Header() {
                       }
                     }}
                     className={`text-sm font-medium transition-colors relative py-1 focus:outline-none focus:ring-2 focus:ring-rose-500 rounded-xs ${
-                      isActive ? 'text-rose-600 font-semibold' : 'text-muted-foreground hover:text-rose-600'
+                      isActive ? 'text-black font-semibold' : 'text-muted-foreground hover:text-black'
                     }`}
                     aria-current={isActive ? 'page' : undefined}
                   >
                     {item.label}
                     {isActive && (
-                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-rose-600 rounded-full animate-in fade-in duration-200" />
+                      <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-black rounded-full animate-in fade-in duration-200" />
                     )}
                   </a>
                 );
               })}
               <a
                 onClick={(e) => { e.preventDefault(); window.dispatchEvent(new Event('open-checkout')); }}
-                className="bg-rose-600 text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 transition-all shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                className="bg-black text-white text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 transition-all shadow-sm hover:shadow-md hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
               >
                 Get the System — $27
               </a>
@@ -181,7 +181,7 @@ export default function Header() {
                 aria-expanded={isMenuOpen}
                 aria-controls="mobile-menu"
                 aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
-                className="p-2 rounded-lg text-foreground hover:text-rose-600 hover:bg-rose-50 focus:outline-none focus:ring-2 focus:ring-rose-500 transition-colors"
+                className="p-2 rounded-lg text-foreground hover:text-black hover:bg-white focus:outline-none focus:ring-2 focus:ring-rose-500 transition-colors"
               >
                 <svg
                   className="h-6 w-6 transition-transform duration-200"
@@ -221,8 +221,8 @@ export default function Header() {
                   onClick={(e) => handleScrollTo(e, item.id)}
                   className={`block px-3 py-2.5 rounded-lg text-base font-medium transition-colors ${
                     isActive
-                      ? 'bg-rose-50 text-rose-600 font-semibold border-l-4 border-rose-600'
-                      : 'text-foreground hover:bg-muted hover:text-rose-600'
+                      ? 'bg-white text-black font-semibold border-l-4 border-rose-600'
+                      : 'text-foreground hover:bg-muted hover:text-black'
                   }`}
                   aria-current={isActive ? 'page' : undefined}
                 >
@@ -233,7 +233,7 @@ export default function Header() {
             <div className="pt-2">
               <a
                 onClick={(e) => { e.preventDefault(); window.dispatchEvent(new Event('open-checkout')); }}
-                className="block w-full text-center bg-rose-600 text-white font-semibold px-5 py-3 rounded-xl hover:bg-rose-700 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 transition-all shadow-sm active:scale-[0.98] cursor-pointer"
+                className="block w-full text-center bg-black text-white font-semibold px-5 py-3 rounded-xl hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:ring-offset-2 transition-all shadow-sm active:scale-[0.98] cursor-pointer"
               >
                 Get the System — $27
               </a>

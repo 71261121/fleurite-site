@@ -13,8 +13,8 @@ export default function CreatorBio() {
 
         <div className="max-w-3xl mx-auto">
           {/* Founder Introduction */}
-          <div className="flex items-center gap-4 mb-8 bg-muted rounded-2xl p-6 border border-rose-200">
-            <div className="w-16 h-16 bg-gradient-to-br from-rose-400 to-rose-500 rounded-full flex items-center justify-center flex-shrink-0">
+          <div className="flex items-center gap-4 mb-8 bg-muted rounded-2xl p-6 border border-gray-300">
+            <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center flex-shrink-0">
               <span className="text-white font-bold text-2xl">E</span>
             </div>
             <div>
@@ -32,7 +32,7 @@ export default function CreatorBio() {
               I tried everything. More sleep didn&apos;t fix it. More exercise made it worse. Supplements, meditation, productivity hacks—nothing stuck because I was treating symptoms, not the pattern.
             </p>
             <p>
-              Then I realized: <span className="font-semibold text-rose-600">my body wasn&apos;t broken—it was out of sync</span>. I wasn&apos;t living WITH my cycle. I was living AGAINST it. Every week felt like I was fighting myself.
+              Then I realized: <span className="font-semibold text-black">my body wasn&apos;t broken—it was out of sync</span>. I wasn&apos;t living WITH my cycle. I was living AGAINST it. Every week felt like I was fighting myself.
             </p>
             <p>
               So I spent the next nine years learning. Psychology. Neuroscience. Talking to thousands of women. Testing what actually works (not what sounds good in theory).
@@ -41,13 +41,13 @@ export default function CreatorBio() {
               What I discovered changed everything: a seven-day reset that actually works. Not because it&apos;s magic. Because it finally aligns you with how your body actually operates.
             </p>
             <p className="font-medium text-foreground">
-              The Feminine Bloom Reset isn&apos;t another productivity system. It&apos;s permission to stop fighting yourself.
+              The Fleurite Reset isn&apos;t another productivity system. It&apos;s permission to stop fighting yourself.
             </p>
           </div>
 
           {/* Why This Matters */}
-          <div className="mt-10 bg-rose-50 rounded-2xl p-6 border border-rose-200">
-            <p className="text-sm font-semibold text-rose-600 uppercase tracking-wide mb-3">My Promise to You</p>
+          <div className="mt-10 bg-white rounded-2xl p-6 border border-black">
+            <p className="text-sm font-semibold text-black uppercase tracking-wide mb-3">My Promise to You</p>
             <p className="text-muted-foreground leading-relaxed">
               This system is built by someone who&apos;s lived this. Not by a team in a boardroom. Every word, every practice—I&apos;ve tested on myself and my community. If it doesn&apos;t work for you, I give your money back. No questions.
             </p>

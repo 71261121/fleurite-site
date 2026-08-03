@@ -114,7 +114,7 @@ export default function AttachmentStyleQuiz() {
         <div className="text-center mb-6">
           <p className="text-sm font-bold text-clay-600 uppercase tracking-wide mb-4">Your Clarity</p>
           <h3 className={`text-3xl font-bold mb-2 ${
-            result.color === 'green' ? 'text-green-600' : result.color === 'yellow' ? 'text-clay-600' : 'text-rose-600'
+            result.color === 'green' ? 'text-green-600' : result.color === 'yellow' ? 'text-clay-600' : 'text-black'
           }`}>
             {result.type}
           </h3>

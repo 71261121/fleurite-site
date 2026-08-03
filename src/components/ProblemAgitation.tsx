@@ -25,13 +25,13 @@ export default function ProblemAgitation() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
-          <p className="text-xs font-bold text-rose-600 tracking-widest uppercase mb-4">
+          <p className="text-xs font-bold text-black tracking-widest uppercase mb-4">
             You Know This Already
           </p>
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
             The Real Energy Drains
           </h2>
-          <p className="text-lg font-semibold text-rose-600 mb-3">
+          <p className="text-lg font-semibold text-black mb-3">
             (And why willpower won&apos;t fix them)
           </p>
           <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
@@ -44,7 +44,7 @@ export default function ProblemAgitation() {
           {problems.map((problem, index) => (
             <div
               key={index}
-              className="bg-card rounded-xl p-5 md:p-7 hover:shadow-md transition-all border border-muted hover:border-rose-200"
+              className="bg-card rounded-xl p-5 md:p-7 hover:shadow-md transition-all border border-muted hover:border-black"
             >
               <h3 className="text-base md:text-lg font-bold text-foreground mb-2">{problem.title}</h3>
               <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{problem.description}</p>
@@ -53,12 +53,12 @@ export default function ProblemAgitation() {
         </div>
 
         {/* The Truth Section */}
-        <div className="bg-muted rounded-2xl p-8 md:p-12 border border-rose-200">
+        <div className="bg-muted rounded-2xl p-8 md:p-12 border border-gray-300">
           <p className="text-lg md:text-xl text-foreground font-semibold mb-4">
-            You&apos;ve tried <span className="text-rose-600">more sleep</span>. Tried <span className="text-rose-600">more workouts</span>. Tried <span className="text-rose-600">better diets</span>.
+            You&apos;ve tried <span className="text-black">more sleep</span>. Tried <span className="text-black">more workouts</span>. Tried <span className="text-black">better diets</span>.
           </p>
           <p className="text-xl md:text-2xl font-bold text-foreground leading-tight">
-            But your body isn&apos;t broken—it&apos;s just <span className="text-rose-600">out of sync</span>. You need a reset, not another hack.
+            But your body isn&apos;t broken—it&apos;s just <span className="text-black">out of sync</span>. You need a reset, not another hack.
           </p>
         </div>
       </div>

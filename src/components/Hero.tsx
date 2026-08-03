@@ -12,7 +12,7 @@ export default function Hero() {
           <div className="w-full lg:w-1/2 order-2 lg:order-1">
             {/* Micro-Level Emotional Hook */}
             <div className="inline-block mb-6">
-              <p className="text-xs font-bold text-rose-600 tracking-widest uppercase">
+              <p className="text-xs font-bold text-black tracking-widest uppercase">
                 Proven. Psychology-based. No pills.
               </p>
             </div>
@@ -20,11 +20,11 @@ export default function Hero() {
             {/* Main Headline - BENEFIT DRIVEN */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-black text-foreground mb-4 leading-tight">
               Get your energy back<br/>
-              <span className="text-rose-600">in 7 days</span>
+              <span className="text-black">in 7 days</span>
             </h1>
             
             {/* Subheadline - WARM AUDIENCE VALIDATION */}
-            <p className="text-lg md:text-xl text-rose-600 font-semibold mb-6">
+            <p className="text-lg md:text-xl text-black font-semibold mb-6">
               Without supplements, diets, or guilt about productivity.
             </p>
 
@@ -34,7 +34,7 @@ export default function Hero() {
             </p>
             
             <p className="text-base text-muted-foreground mb-8 leading-relaxed max-w-lg">
-              You already know the problem. You&apos;ve tried everything—caffeine, workouts, "self-care." But nothing sticks. That&apos;s because you&apos;re treating symptoms, not the pattern. <span className="font-semibold text-foreground">The Feminine Bloom Reset System fixes the pattern.</span> Seven days. Real results. Guided by someone who&apos;s lived this.
+              You already know the problem. You&apos;ve tried everything—caffeine, workouts, "self-care." But nothing sticks. That&apos;s because you&apos;re treating symptoms, not the pattern. <span className="font-semibold text-foreground">The Fleurite Reset System fixes the pattern.</span> Seven days. Real results. Guided by someone who&apos;s lived this.
             </p>
 
             {/* Social Proof - WARM AUDIENCE TRUST MARKERS */}
@@ -48,13 +48,13 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href="/#products"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-rose-600 text-white font-bold text-base hover:bg-rose-700 transition-all cursor-pointer shadow-lg hover:shadow-xl"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-xl bg-black text-white font-bold text-base hover:bg-gray-900 transition-all cursor-pointer shadow-lg hover:shadow-xl"
               >
                 Get The System — $27
               </Link>
               <Link
                 href="#faq"
-                className="inline-flex items-center justify-center px-8 py-4 rounded-xl border-2 border-rose-600 text-rose-600 font-bold hover:bg-rose-50 transition-all"
+                className="inline-flex items-center justify-center px-8 py-4 rounded-xl border-2 border-black text-black font-bold hover:bg-gray-100 transition-all"
               >
                 See What&apos;s Inside
               </Link>
@@ -65,10 +65,10 @@ export default function Hero() {
           <div className="w-full lg:w-1/2 order-1 lg:order-2 flex flex-col items-center justify-center gap-6">
             {/* Book Display - Single, Premium */}
             <div className="relative w-full max-w-sm h-96 flex items-center justify-center">
-              <div className="w-64 aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-4 border-rose-300">
+              <div className="w-64 aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl border-4 border-black">
                 <Image
-                  src="/book-covers/feminine-bloom-reset.png"
-                  alt="The Feminine Bloom Reset System by Eliza"
+                  src="/book-covers/fleurite-reset.png"
+                  alt="The Fleurite Reset System by Eliza"
                   fill
                   sizes="280px"
                   className="object-cover"
@@ -82,7 +82,7 @@ export default function Hero() {
                 <p className="text-3xl font-black text-foreground">
                   $27
                 </p>
-                <div className="bg-rose-50 rounded-lg p-4 border border-rose-200">
+                <div className="bg-white rounded-lg p-4 border border-gray-300">
                   <p className="text-sm font-semibold text-foreground mb-2">What&apos;s inside:</p>
                   <ul className="text-xs text-muted-foreground space-y-1">
                     <li>✓ 7-day reset protocol (PDF guide)</li>
