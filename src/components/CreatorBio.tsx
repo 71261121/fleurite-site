@@ -13,7 +13,7 @@ export default function CreatorBio() {
           <div className="relative">
             <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-xl border border-muted">
               <Image
-                src="/images/creator-photo.png"
+                src="/creator.png"
                 alt="The Fleurite founder"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
@@ -55,7 +55,7 @@ export default function CreatorBio() {
                 Everything I had to figure out the hard and expensive way.
               </p>
               <p className="font-black text-foreground text-lg md:text-xl">
-                5,247 women have used it since. This is not a philosophy book.
+                7,700+ women have used it since. This is not a philosophy book.
                 It is a toolkit. And it is ready for you tonight.
               </p>
             </div>

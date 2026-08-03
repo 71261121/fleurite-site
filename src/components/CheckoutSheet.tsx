@@ -97,14 +97,14 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
                 {/* Product Display */}
                 <div className="rounded-2xl border border-muted bg-card p-5">
                   <div className="flex gap-4">
-                    <div className="relative w-20 h-28 rounded-lg overflow-hidden shadow-md flex-shrink-0">
-                      <Image src="/book-cover-1.png" alt="Fleurite System" fill className="object-cover" sizes="80px" />
+                    <div className="relative w-24 h-24 rounded-lg overflow-hidden flex-shrink-0 flex items-center justify-center">
+                      <Image src="/product/book-cover.png" alt="The Rooted Method" fill className="object-contain" sizes="96px" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-foreground">Fleurite — Stop Chasing System</h3>
-                      <p className="text-sm text-muted-foreground mt-1">2-Part System + Bonuses — Instant Digital Download</p>
+                      <h3 className="font-bold text-foreground">The Rooted Method</h3>
+                      <p className="text-sm text-muted-foreground mt-1">47 scripts + framework + reset — Instant digital download</p>
                       <div className="mt-3 space-y-1">
-                        {['Part 1: Scripts & Boundaries', 'Part 2: The Calm System', '35+ communication scripts', 'BONUS: Emergency Protocol Guide', 'BONUS: Printable Quick-Reference Cards'].map((item, i) => (
+                        {['47 word-for-word scripts', 'Stay-or-leave Decision Framework', '7-day nervous system reset', 'BONUS: 90-second panic protocol', 'BONUS: Printable script cards'].map((item, i) => (
                           <div key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
                             <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-green-500 mt-0.5" />
                             <span>{item}</span>

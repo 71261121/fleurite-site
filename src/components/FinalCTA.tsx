@@ -62,7 +62,7 @@ export default function FinalCTA() {
           <div className="text-center mb-6">
             <div className="flex items-baseline justify-center gap-3">
               <span className="text-5xl font-black text-white">$27</span>
-              <span className="text-xl text-white/50 line-through">$47</span>
+              <span className="text-xl text-white/50 line-through">$89</span>
             </div>
             <p className="text-pine-200 text-sm mt-1">One payment. Lifetime access. No subscription.</p>
           </div>

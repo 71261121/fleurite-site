@@ -61,18 +61,35 @@ export default function ProductBreakdown() {
           </p>
         </div>
 
+        {/* Bundle showcase */}
+        <div className="relative mx-auto mb-12 max-w-3xl overflow-hidden rounded-3xl shadow-xl ring-1 ring-border">
+          <Image
+            src="/product/bundle.png"
+            alt="Everything inside The Rooted Method — the book, the reflection workbook, printed script cards, and the audio companion"
+            width={1024}
+            height={1024}
+            className="w-full object-cover"
+          />
+          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-pine-900/80 to-transparent p-5">
+            <p className="text-sm font-black text-cream md:text-base">
+              The book + script cards + reflection workbook + audio companion
+            </p>
+            <p className="text-xs text-cream/80">Everything downloads instantly. Yours for life.</p>
+          </div>
+        </div>
+
         {/* Book + sections layout */}
         <div className="grid lg:grid-cols-[260px_1fr] gap-10 lg:gap-16 items-start">
 
           {/* Book cover column */}
           <div className="flex flex-col items-center gap-5 lg:sticky lg:top-24">
-            <div className="relative w-[200px] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl ring-2 ring-pine-400/60">
+            <div className="relative w-[220px]">
               <Image
-                src="/book-covers/fleurite-main-cover.png"
-                alt="You Were Never Too Much — 47 Scripts + Decision Framework"
-                fill
-                sizes="200px"
-                className="object-cover"
+                src="/product/book-cover.png"
+                alt="The Rooted Method — 47 Scripts + Decision Framework"
+                width={440}
+                height={440}
+                className="w-full drop-shadow-2xl"
               />
             </div>
 
