@@ -13,35 +13,35 @@ export default function Hero() {
             {/* Micro-Level Emotional Hook */}
             <div className="inline-block mb-6">
               <p className="text-xs font-bold text-black tracking-widest uppercase">
-                Proven. Psychology-based. No pills.
+                You weren&apos;t born this way. You were trained.
               </p>
             </div>
 
-            {/* Main Headline - BENEFIT DRIVEN */}
+            {/* Main Headline - CORE PAIN POINT #1: 2am panic spiral */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-black text-foreground mb-4 leading-tight">
-              Get your energy back<br/>
-              <span className="text-black">in 7 days</span>
+              Stop panic-texting<br/>
+              <span className="text-black">at 2am</span>
             </h1>
             
-            {/* Subheadline - WARM AUDIENCE VALIDATION */}
+            {/* Subheadline - The nervous system truth */}
             <p className="text-lg md:text-xl text-black font-semibold mb-6">
-              Without supplements, diets, or guilt about productivity.
+              Your anxiety isn&apos;t weakness. It&apos;s a pattern you can break.
             </p>
 
-            {/* Pain-Point Validation */}
+            {/* Core Pain-Point: The cycle of chasing */}
             <p className="text-xl text-muted-foreground mb-3 leading-relaxed max-w-lg font-semibold">
-              The afternoon crash. The brain fog. The feeling that your body isn&apos;t yours anymore.
+              He pulls away. Your nervous system enters panic mode. You text. You chase. He withdraws more.
             </p>
             
             <p className="text-base text-muted-foreground mb-8 leading-relaxed max-w-lg">
-              You already know the problem. You&apos;ve tried everything—caffeine, workouts, "self-care." But nothing sticks. That&apos;s because you&apos;re treating symptoms, not the pattern. <span className="font-semibold text-foreground">The Fleurite Reset System fixes the pattern.</span> Seven days. Real results. Guided by someone who&apos;s lived this.
+              This isn&apos;t about you being &quot;too much.&quot; It&apos;s about your nervous system being trained to believe: <span className="italic">&quot;If I don&apos;t chase, I&apos;ll be abandoned.&quot;</span> You need to rewire that belief. <span className="font-semibold text-foreground">The Clarity System teaches you exactly how.</span> Plus 35+ scripts for every moment you freeze or fold.
             </p>
 
-            {/* Social Proof - WARM AUDIENCE TRUST MARKERS */}
+            {/* Social Proof - Real numbers from viral content */}
             <div className="flex flex-col gap-2 mb-8 text-sm font-medium text-muted-foreground">
-              <p className="text-foreground">✓ 9,200+ shares (top 1% viral content)</p>
-              <p className="text-foreground">✓ 5,000+ women reclaimed their energy</p>
-              <p className="text-foreground">✓ Designed by Eliza, tested on warm audience for 9 years</p>
+              <p className="text-foreground">✓ 12,400+ shares (viral psychology content)</p>
+              <p className="text-foreground">✓ 4,800+ women stopped the chase cycle</p>
+              <p className="text-foreground">✓ Created by Eliza after 6 years with an avoidant partner</p>
             </div>
 
             {/* Single CTA - NO FREE OPTION */}
