@@ -1,65 +1,69 @@
 'use client';
 
+import Image from 'next/image';
+
 export default function CreatorBio() {
   return (
-    <section className="py-20 bg-card scroll-mt-20" id="about">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4">
-            Why I Created This
-          </h2>
-        </div>
+    <section className="py-16 md:py-24 bg-card scroll-mt-20" id="about">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="max-w-3xl mx-auto">
-          {/* Author Card */}
-          <div className="flex items-center gap-4 mb-8 bg-muted rounded-2xl p-6 border border-muted">
-            <div className="w-16 h-16 bg-gradient-to-br from-clay-400 to-clay-400 rounded-full flex items-center justify-center flex-shrink-0">
-              <span className="text-white font-bold text-xl">S</span>
+        <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+
+          {/* Photo */}
+          <div className="relative">
+            <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-xl border border-muted">
+              <Image
+                src="/images/creator-photo.png"
+                alt="The Fleurite founder"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
             </div>
-            <div>
-              <p className="font-bold text-foreground">The Fleurite Team</p>
-              <p className="text-sm text-muted-foreground">Created by people who&apos;ve been there</p>
+            {/* Floating quote badge */}
+            <div className="absolute -bottom-5 -right-3 md:-right-6 bg-pine-600 text-white rounded-2xl p-4 shadow-xl max-w-[200px]">
+              <p className="text-xs font-bold leading-snug">
+                &ldquo;Built from 6 years of real mistakes and hard lessons.&rdquo;
+              </p>
             </div>
           </div>
 
-          {/* Story Content */}
-          <div className="text-muted-foreground space-y-6 text-lg leading-relaxed">
-            <p>
-              Three years ago, I was the person refreshing my phone at 2 AM, wondering
-              what I did wrong. I was in a relationship where one day felt perfect and
-              the next felt like he disappeared.
+          {/* Story */}
+          <div className="pt-6 md:pt-0">
+            <p className="text-xs font-bold text-clay-500 uppercase tracking-[0.18em] mb-4">
+              Why This System Exists
             </p>
-            <p>
-              I tried everything. I tried being &ldquo;chill.&rdquo; I tried giving space. I tried
-              playing it cool. Nothing worked because I was treating symptoms, not the
-              root cause.
-            </p>
-            <p>
-              Then I discovered attachment theory. I learned that his withdrawal wasn&apos;t
-              about my worth — it was about his nervous system. And my anxiety wasn&apos;t a
-              character flaw — it was something I could begin working on.
-            </p>
-            <p>
-              The problem? All the advice was either too clinical or too vague. &ldquo;Communicate
-              better&rdquo; isn&apos;t a strategy. &ldquo;Just leave&rdquo; isn&apos;t helpful when you love someone.
-            </p>
-            <p>
-              So I created the tools I wished I had: <span className="font-semibold text-pine-600">exact words for exact moments</span>.
-              Not manipulation tactics. Not pickup lines. Just clear, calm ways to express
-              what you need without panic or people-pleasing.
-            </p>
-            <p className="font-medium text-foreground">
-              The Fleurite System isn&apos;t magic. It&apos;s practice. And it works.
-            </p>
+            <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-6 text-balance">
+              I Was You.<br />Refreshing. Waiting. Shrinking.
+            </h2>
+            <div className="space-y-4 text-muted-foreground leading-relaxed text-base md:text-lg">
+              <p>
+                Three years ago I was checking my phone every 90 seconds. He&apos;d gone silent
+                again. I rewrote my last text seventeen times. I sent it anyway. Wrong choice.
+              </p>
+              <p>
+                I tried everything the internet said. &ldquo;Give him space.&rdquo; &ldquo;Be less available.&rdquo;
+                &ldquo;Journal about your attachment style.&rdquo; None of it gave me actual words
+                for the actual moment I was in.
+              </p>
+              <p>
+                So I built what I needed: a system with exact scripts for the exact moments
+                that break you — and a framework to stop going in circles about whether to
+                stay or finally leave.
+              </p>
+              <p className="font-semibold text-foreground">
+                That system is this book. And it works because it doesn&apos;t theorize.
+                It tells you what to say next.
+              </p>
+            </div>
+            <div className="mt-6 bg-muted rounded-xl p-4 border border-border">
+              <p className="text-sm text-muted-foreground italic">
+                These tools are educational, not a replacement for therapy. If you are dealing
+                with abuse or severe trauma, please work with a licensed professional alongside this system.
+              </p>
+            </div>
           </div>
 
-          {/* Disclaimer */}
-          <div className="mt-8 bg-muted rounded-xl p-4 border border-muted">
-            <p className="text-sm text-muted-foreground italic">
-              <strong>A note:</strong> These tools are educational, not therapy.
-              They&apos;re designed to complement your journey, not replace professional help.
-            </p>
-          </div>
         </div>
       </div>
     </section>

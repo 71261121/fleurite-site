@@ -1,64 +1,73 @@
 'use client';
 
+import Image from 'next/image';
+
 export default function ProblemAgitation() {
-  const problems = [
-    {
-      title: 'The Midnight Spiral',
-      description: 'He didn\'t reply. Your body is now in survival mode. Heart racing. Catastrophizing. Replaying every word you said. You can\'t sleep.'
-    },
-    {
-      title: 'The Shrinking Cycle',
-      description: 'You ask for less. You need less. You text less. He gets more comfortable with every boundary you remove. You\'ve erased yourself to fit his comfort.'
-    },
-    {
-      title: 'The Chase Response',
-      description: 'He pulls away, so you chase. Every chase teaches your nervous system: "I\'m not valuable unless I pursue him." Every chase teaches him: "She\'ll always come back."'
-    },
-    {
-      title: 'The Shame Spiral',
-      description: 'You blame yourself. "If I was more secure... more interesting... less needy..." But the problem isn\'t you. It\'s that he trained your nervous system to self-abandon.'
-    }
-  ];
-
   return (
-    <section className="py-16 md:py-24 bg-background">
+    <section className="py-16 md:py-24 bg-card">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header - RAW with micro-psychology (Level 100) */}
-        <div className="text-center mb-12 md:mb-16">
-          <p className="text-xs font-bold text-clay-600 tracking-widest uppercase mb-4">
-            You Know This Pattern (And Here's Why)
-          </p>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-            The Four Cycles That Keep You Stuck
+
+        {/* Header */}
+        <div className="text-center md:text-left mb-12 md:mb-16">
+          <h2 className="font-display font-bold text-foreground text-3xl md:text-5xl leading-tight mb-4 text-balance">
+            Does This Sound Painfully Familiar?
           </h2>
-          <p className="text-lg font-semibold text-pine-600 mb-3">
-            (And exactly how to break each one)
-          </p>
-          <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
-            Every one of these is your nervous system doing exactly what it was trained to do. The problem isn&apos;t you. The problem is the cycle — and cycles can be broken.
+          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto md:mx-0">
+            If any of these made your stomach drop, you&apos;re in the right place.
           </p>
         </div>
 
-        {/* Problems Grid - MOBILE OPTIMIZED */}
-        <div className="grid md:grid-cols-2 gap-4 md:gap-6 mb-12">
-          {problems.map((problem, index) => (
-            <div
-              key={index}
-              className="bg-card rounded-xl p-5 md:p-7 hover:shadow-md transition-all border border-muted hover:border-pine-200"
-            >
-              <h3 className="text-base md:text-lg font-bold text-foreground mb-2">{problem.title}</h3>
-              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">{problem.description}</p>
+        {/* Two-column layout */}
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+
+          {/* LEFT — pain scenarios */}
+          <div className="space-y-5">
+            {[
+              'Your partner said "I need space" and your stomach dropped',
+              'You check if they&apos;re online... then feel ashamed for checking',
+              'You send "something casual" that took 20 minutes to write',
+              'You know you should "give them space" but panic takes over',
+              'You&apos;re reading this at 2 AM, analyzing what went wrong',
+            ].map((text, i) => (
+              <div key={i} className="flex items-start gap-3 group">
+                <div className="mt-0.5 w-8 h-8 rounded-lg bg-clay-100 flex items-center justify-center flex-shrink-0 group-hover:bg-clay-200 transition-colors">
+                  <svg className="w-4 h-4 text-clay-600" viewBox="0 0 20 20" fill="currentColor">
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <p className="text-base md:text-lg text-foreground font-medium leading-relaxed pt-1">{text}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* RIGHT — photo */}
+          <div className="relative">
+            <div className="relative w-full aspect-[4/5] md:aspect-[3/4] rounded-2xl overflow-hidden shadow-xl border border-muted">
+              <Image
+                src="/images/woman-phone-night.png"
+                alt="Woman looking at phone anxiously at night"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
             </div>
-          ))}
+          </div>
+
         </div>
 
-        {/* The Truth Section - POWERFUL */}
-        <div className="bg-muted rounded-2xl p-8 md:p-12 border border-pine-200">
-          <p className="text-lg md:text-xl text-foreground font-semibold mb-4">
-            You&apos;ve tried <span className="text-pine-600">being more chill</span>. Tried <span className="text-pine-600">giving space</span>. Tried <span className="text-pine-600">being less needy</span>.
+        {/* Bottom truth punch */}
+        <div className="mt-12 md:mt-16 bg-muted rounded-2xl p-6 md:p-10 border border-pine-200">
+          <p className="text-lg md:text-2xl font-bold text-foreground leading-tight text-balance">
+            You&apos;ve tried <span className="text-pine-600">being more chill</span>.
+            You&apos;ve tried <span className="text-pine-600">giving space</span>.
+            You&apos;ve tried <span className="text-pine-600">not being so needy</span>.
           </p>
-          <p className="text-xl md:text-2xl font-bold text-foreground leading-tight">
-            But you can&apos;t think your way out of a nervous system problem. You need to <span className="text-clay-600">rewire it</span>.
+          <p className="text-xl md:text-3xl font-black text-foreground leading-tight mt-4 text-balance">
+            But you can&apos;t think your way out of a nervous system problem.
           </p>
         </div>
       </div>
