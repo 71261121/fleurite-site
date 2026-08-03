@@ -100,13 +100,13 @@ export default function AboutPage() {
           <section className="text-center bg-card rounded-2xl p-12 border border-muted">
             <h2 className="text-3xl font-bold text-foreground mb-4">Ready for Clarity?</h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Start with the free guide. If you're ready to go deeper, the complete system has the scripts and framework to guide every decision.
+              The complete system has 47 scripts and the clarity framework to guide every decision — whether you stay or walk away with your dignity intact.
             </p>
             <a
               href="/#products"
               className="inline-block bg-pine-600 text-white px-8 py-4 rounded-full font-bold hover:bg-pine-700 transition-colors"
             >
-              See Our Products
+              Get the Complete System — $27
             </a>
           </section>
         </div>

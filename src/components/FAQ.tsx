@@ -18,7 +18,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'Will this actually work for me?',
-    answer: 'The scripts work on avoidant partners (partners who withdraw due to attachment wounds). If your partner is manipulative or abusive, this system isn\'t appropriate. The free guide helps you figure out which one he is.'
+    answer: 'The scripts work on avoidant partners (partners who withdraw due to attachment wounds). If your partner is manipulative or abusive, this system isn\'t appropriate. The book opens with a clear framework to help you identify which one he is.'
   },
   {
     question: 'How fast will I see results?',
@@ -30,7 +30,7 @@ const faqs: FAQItem[] = [
   },
   {
     question: 'What format is this in?',
-    answer: 'Both the free guide and paid book are delivered as high-quality PDFs. You can read them on any device — phone, tablet, or computer. They\'re designed for easy reference, with clear sections you can jump to when you need a specific script.'
+    answer: 'The book is delivered as a high-quality PDF. You can read it on any device — phone, tablet, or computer. It\'s designed for easy reference, with clear sections you can jump to when you need a specific script fast.'
   },
   {
     question: 'How long do I have access?',
