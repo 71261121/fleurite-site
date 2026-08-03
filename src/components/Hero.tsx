@@ -4,61 +4,55 @@ import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="pt-16 pb-20 bg-background">
+    <section className="pt-28 pb-20 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-20">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
 
-          {/* LEFT */}
+          {/* LEFT — Copy */}
           <div className="w-full lg:w-[55%] order-2 lg:order-1">
 
-            {/* Audience line */}
-            <p className="text-xs font-bold text-clay-500 tracking-[0.18em] uppercase mb-5">
-              For women who are exhausted from chasing someone who keeps pulling away
+            <p className="text-xs font-black text-clay-600 tracking-[0.2em] uppercase mb-5">
+              For women who are done losing themselves
             </p>
 
-            {/* Headline — femin-bloom style: direct, heavy, problem-state */}
-            <h1 className="font-display font-black text-foreground leading-[1.05] mb-6 text-balance"
-              style={{ fontSize: 'clamp(2.6rem, 5.5vw, 4.2rem)' }}>
-              He Pulled Away.<br />
-              You&apos;re Spiraling.<br />
-              <span className="text-pine-600">Here&apos;s the System</span><br />
-              That Changes It.
+            {/* Headline — direct pain, no fluff */}
+            <h1 className="font-display font-black text-foreground leading-[1.06] mb-6 text-balance" style={{ fontSize: 'clamp(2.8rem, 5.5vw, 4.4rem)' }}>
+              He pulls away.<br />
+              You spiral.<br />
+              <span className="text-pine-600">It stops today.</span>
             </h1>
 
-            {/* Direct product pitch — no philosophy */}
-            <p className="text-lg md:text-xl font-semibold text-foreground mb-3 leading-relaxed max-w-xl">
-              47 copy-paste scripts for every moment you freeze, fold, or want to chase —
-              plus a complete clarity framework so you stop going in circles.
+            {/* Sub — what they GET immediately */}
+            <p className="text-lg md:text-xl text-foreground font-semibold mb-2 leading-snug max-w-xl">
+              47 word-for-word scripts. Every situation. Tonight.
+            </p>
+            <p className="text-base text-muted-foreground mb-8 leading-relaxed max-w-xl">
+              Ghosting. &ldquo;I need space.&rdquo; The 2AM silence. Cancelled plans. Walking away with
+              your head held high. You will know exactly what to send — and how to stay calm doing it.
             </p>
 
-            <p className="text-base text-muted-foreground mb-7 leading-relaxed max-w-xl">
-              When he goes silent. When he says &ldquo;I need space.&rdquo; When you&apos;re about to send
-              a message at 2 AM that you&apos;ll regret. When you need to walk away without
-              begging. There is a script for every one of those moments. Inside this book.
-            </p>
-
-            {/* What you get — scannable, direct */}
-            <div className="space-y-2.5 mb-8">
+            {/* Bullet list — scannable product facts */}
+            <div className="space-y-3 mb-9">
               {[
-                '47 tested scripts — exact words for the exact moment',
-                'The Decision Framework: 3 questions that end the confusion (stay or go)',
-                '7-day nervous system reset — so you can respond, not react',
-                'Instant PDF. Read it tonight.',
+                '47 tested scripts — exact words, ready to copy',
+                'The Decision Framework: 3 questions that end the confusion',
+                '7-day nervous system reset — respond instead of react',
+                'Instant PDF download. Read it tonight.',
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3">
-                  <svg className="w-4 h-4 text-pine-600 mt-0.5 flex-shrink-0" viewBox="0 0 16 16" fill="currentColor">
-                    <path d="M13.5 3.5L6 11 2.5 7.5" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                  <svg className="w-5 h-5 text-pine-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                   </svg>
-                  <span className="text-sm md:text-base font-semibold text-foreground">{item}</span>
+                  <span className="text-sm md:text-base font-medium text-foreground">{item}</span>
                 </div>
               ))}
             </div>
 
-            {/* CTA — single, bold */}
+            {/* Single bold CTA */}
             <div className="flex flex-col gap-3">
               <button
                 onClick={() => window.dispatchEvent(new Event('open-checkout'))}
-                className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-pine-600 text-white font-bold text-base md:text-lg hover:bg-pine-700 active:scale-[0.98] transition-all cursor-pointer shadow-lg w-full sm:w-auto"
+                className="inline-flex items-center justify-center gap-2 px-9 py-4 rounded-xl bg-pine-600 text-white font-black text-base md:text-lg hover:bg-pine-700 active:scale-[0.98] transition-all cursor-pointer shadow-xl w-full sm:w-auto"
               >
                 Get Instant Access — $27
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,42 +60,59 @@ export default function Hero() {
                 </svg>
               </button>
               <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted-foreground">
-                <span>30-day money-back guarantee</span>
-                <span className="hidden sm:inline text-border">|</span>
-                <span>Instant PDF download</span>
-                <span className="hidden sm:inline text-border">|</span>
+                <span><span className="line-through">$47</span> → $27 today</span>
+                <span className="text-border hidden sm:inline">|</span>
+                <span>30-day guarantee</span>
+                <span className="text-border hidden sm:inline">|</span>
+                <span>Instant PDF</span>
+                <span className="text-border hidden sm:inline">|</span>
                 <span>Discreet billing</span>
               </div>
             </div>
 
-            {/* Social proof number */}
-            <p className="mt-6 text-sm font-semibold text-pine-600">
+            <p className="mt-5 text-sm font-bold text-pine-700">
               5,000+ women have already stopped chasing.
             </p>
           </div>
 
-          {/* RIGHT — book cover + price */}
-          <div className="w-full lg:w-[45%] order-1 lg:order-2 flex flex-col items-center gap-5">
-            <div className="relative w-[220px] md:w-[260px] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl ring-2 ring-pine-400/60">
-              <Image
-                src="/book-covers/fleurite-main-cover.png"
-                alt="You Were Never Too Much — 47 Scripts + Decision Framework by Fleurite"
-                fill
-                sizes="(max-width: 768px) 220px, 260px"
-                className="object-cover"
-                priority
-              />
+          {/* RIGHT — Book cover */}
+          <div className="w-full lg:w-[45%] order-1 lg:order-2 flex flex-col items-center gap-6">
+            <div className="relative">
+              {/* Soft glow */}
+              <div className="absolute inset-0 -m-10 rounded-full bg-pine-600/8 blur-3xl pointer-events-none" />
+              {/* Book */}
+              <div className="relative w-[230px] md:w-[270px] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl ring-2 ring-pine-500/30">
+                <Image
+                  src="/book-covers/fleurite-main-cover.png"
+                  alt="You Were Never Too Much — 47 Scripts + Decision Framework by Fleurite"
+                  fill
+                  sizes="(max-width: 768px) 230px, 270px"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+              {/* Floating price badge */}
+              <div className="absolute -bottom-5 -right-4 bg-pine-600 text-white rounded-2xl px-5 py-3 shadow-xl text-center">
+                <p className="text-xs font-bold opacity-75 uppercase tracking-widest">One Payment</p>
+                <p className="text-3xl font-black leading-none">$27</p>
+                <p className="text-xs font-medium opacity-75 line-through">was $47</p>
+              </div>
             </div>
 
-            {/* Price badge */}
-            <div className="bg-card border border-border rounded-2xl px-7 py-5 text-center shadow-sm w-full max-w-[260px]">
-              <p className="text-xs font-bold text-clay-600 uppercase tracking-widest mb-1">Today&apos;s Price</p>
-              <div className="flex items-baseline justify-center gap-2">
-                <span className="text-4xl font-black text-foreground">$27</span>
-                <span className="text-base text-muted-foreground line-through">$47</span>
-              </div>
-              <p className="text-xs text-muted-foreground mt-1">One payment. Lifetime access.</p>
-              <p className="text-xs font-semibold text-pine-600 mt-2">You save $20 today.</p>
+            {/* Trust mini row below book */}
+            <div className="flex items-center gap-4 text-xs text-muted-foreground pt-4">
+              <span className="flex items-center gap-1.5">
+                <svg className="w-3.5 h-3.5 text-pine-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+                SSL Encrypted
+              </span>
+              <span className="flex items-center gap-1.5">
+                <svg className="w-3.5 h-3.5 text-pine-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+                Instant Access
+              </span>
+              <span className="flex items-center gap-1.5">
+                <svg className="w-3.5 h-3.5 text-pine-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                30-Day Guarantee
+              </span>
             </div>
           </div>
 

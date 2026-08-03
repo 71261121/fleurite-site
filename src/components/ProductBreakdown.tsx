@@ -4,31 +4,39 @@ import Image from 'next/image';
 
 const sections = [
   {
-    tag: 'STOP WASTING TIME',
-    title: 'The Decision Framework',
+    number: '01',
+    tag: 'The Scripts',
+    title: '47 Word-for-Word Scripts',
+    description: 'For every scenario where you freeze, fold, or want to chase.',
     items: [
-      'The "Red Flag" Filter: Know if your partner is avoidant (worth the work) or toxic (leave now)',
-      'The Decision Checklist: Make the stay-or-leave call with clarity, not panic',
-      'Stop guessing. Start knowing exactly where you stand.',
+      'Script 3 — When he cancels last minute (again)',
+      'Script 7 — When he says "I need space" and you want to scream',
+      'Script 12 — The 2AM message you will NOT send (and what to send instead)',
+      'Script 23 — How to ask for consistency without sounding desperate',
+      'Script 35 — When you\'re being breadcrumbed and done tolerating it',
+      'Script 41 — The walk-away text. Dignity intact. No door left open.',
     ],
   },
   {
-    tag: 'STOP THE PANIC BEFORE YOU TEXT',
-    title: 'Scripts for When He Pulls Away',
+    number: '02',
+    tag: 'The Clarity',
+    title: 'The Stay-or-Leave Decision Framework',
+    description: 'Three questions that cut through months of confusion in one sitting.',
     items: [
-      'Script 7: The exact words when he says "I need space"',
-      'Script 12: What to do instead of texting at 2AM',
-      'Script 23: How to ask for consistency without sounding desperate',
-      'Script 41: The 28-word walk-away text that keeps your dignity intact',
+      'Is this avoidant attachment or is this just a man who doesn\'t care?',
+      'Is his behavior changing — or are you just adapting to it?',
+      'What would you tell your best friend to do right now?',
     ],
   },
   {
-    tag: 'STOP THE OVERTHINKING',
+    number: '03',
+    tag: 'The Reset',
     title: '7-Day Nervous System Reset',
+    description: 'So you can respond like the version of you who has standards — not the one who panics.',
     items: [
-      'Day 1-2: Understand WHY you panic (it\'s not weakness, it\'s biology)',
-      'Day 3-4: Replace the spiral with a 90-second protocol that actually works',
-      'Day 5-7: Lock in the calm — sleep, triggers, your personal emergency plan',
+      'Day 1–2: Why you spiral (biology, not weakness) — and how to interrupt it',
+      'Day 3–4: The 90-second panic protocol. Tested. Science-backed.',
+      'Day 5–7: Build your own emergency plan for the next time he goes quiet',
     ],
   },
 ];
@@ -82,20 +90,22 @@ export default function ProductBreakdown() {
           </div>
 
           {/* Sections column */}
-          <div className="space-y-6">
+          <div className="space-y-5">
             {sections.map((section, i) => (
               <div key={i} className="bg-background border border-border rounded-2xl p-6 md:p-8">
-                <p className="text-xs font-black text-pine-600 uppercase tracking-[0.15em] mb-2">
-                  {section.tag}
-                </p>
-                <h3 className="font-display font-bold text-xl md:text-2xl text-foreground mb-5">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-xs font-black text-pine-600/40 font-mono">{section.number}</span>
+                  <span className="text-xs font-black text-pine-600 uppercase tracking-[0.15em]">{section.tag}</span>
+                </div>
+                <h3 className="font-display font-black text-xl md:text-2xl text-foreground mb-1">
                   {section.title}
                 </h3>
+                <p className="text-sm text-muted-foreground mb-5">{section.description}</p>
                 <ul className="space-y-3">
                   {section.items.map((item, j) => (
                     <li key={j} className="flex items-start gap-3">
-                      <span className="text-pine-500 mt-0.5 font-black text-sm flex-shrink-0">→</span>
-                      <span className="text-sm md:text-base text-foreground leading-relaxed">{item}</span>
+                      <span className="text-clay-500 mt-0.5 font-black text-sm flex-shrink-0">→</span>
+                      <span className="text-sm md:text-base text-foreground leading-relaxed font-medium">{item}</span>
                     </li>
                   ))}
                 </ul>

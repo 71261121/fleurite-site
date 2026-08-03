@@ -7,14 +7,15 @@ export default function FinalCTA() {
 
         {/* Headline */}
         <h2 className="font-display font-black text-3xl md:text-5xl text-white mb-5 leading-tight text-balance">
-          You can keep guessing.<br />
-          Or you can know exactly<br />
-          what to do next.
+          You can keep staring<br />
+          at that screen.<br />
+          <span className="text-clay-300">Or you can know what to send.</span>
         </h2>
 
         <p className="text-pine-100 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
-          The next time he pulls away, you&apos;ll have the exact words ready.
-          And the calm to say them without panic.
+          47 scripts. Every scenario. The next time he pulls away,
+          you won&apos;t freeze. You won&apos;t send the wrong thing.
+          You&apos;ll know exactly what to do.
         </p>
 
         {/* Price block */}

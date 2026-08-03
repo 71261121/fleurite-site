@@ -43,31 +43,28 @@ export default function StickyBar() {
 
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 z-50 bg-[#f9f5f0]/95 backdrop-blur-md border-t border-[#e0d8d0] shadow-lg py-3 px-4 sm:px-6 pb-[env(safe-area-inset-bottom)]"
+      className="fixed bottom-0 left-0 right-0 z-50 bg-pine-700 border-t border-pine-600 shadow-2xl py-3 px-4 sm:px-6 pb-[env(safe-area-inset-bottom)]"
       style={{
         transform: isVisible ? 'translateY(0)' : 'translateY(100%)',
         transition: 'transform 0.3s ease-out',
       }}
       aria-hidden={!isVisible}
     >
-      <div className="max-w-6xl mx-auto flex items-center justify-between gap-4 flex-wrap">
-        {/* Left side: Urgency message (Level 25 psychology) */}
-        <div className="flex flex-col gap-1 flex-1 min-w-0">
-          <p className="font-bold text-foreground text-sm md:text-base">
-            47 scripts. Every situation. $27.
+      <div className="max-w-6xl mx-auto flex items-center justify-between gap-4">
+        <div className="flex flex-col gap-0.5 flex-1 min-w-0">
+          <p className="font-black text-white text-sm md:text-base leading-snug">
+            Stop freezing. Start saying exactly the right thing.
           </p>
-          <p className="text-xs md:text-sm text-muted-foreground">
-            The exact words to hold your ground — without chasing, without shrinking.
+          <p className="text-xs text-pine-200 hidden sm:block">
+            47 scripts &bull; Decision Framework &bull; 7-Day Reset &bull; $27 one-time
           </p>
         </div>
-
-        {/* Right side: CTA button */}
         <button
-          onClick={() => window.dispatchEvent(new Event("open-checkout"))}
+          onClick={() => window.dispatchEvent(new Event('open-checkout'))}
           tabIndex={isVisible ? 0 : -1}
-          className="bg-clay-600 text-white rounded-lg px-5 md:px-6 py-2.5 md:py-3 font-bold text-sm hover:bg-clay-700 transition-colors shadow-md whitespace-nowrap flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-clay-400 focus:ring-offset-2"
+          className="bg-clay-500 hover:bg-clay-400 active:scale-[0.97] text-white rounded-xl px-5 md:px-7 py-3 font-black text-sm md:text-base transition-all shadow-lg whitespace-nowrap flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-white/50"
         >
-          Get Access →
+          Get Access — $27 →
         </button>
       </div>
     </div>

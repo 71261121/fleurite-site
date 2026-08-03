@@ -38,28 +38,27 @@ export default function CreatorBio() {
             </h2>
             <div className="space-y-4 text-muted-foreground leading-relaxed text-base md:text-lg">
               <p>
-                Three years ago I was checking my phone every 90 seconds. He&apos;d gone silent
-                again. I rewrote my last text seventeen times. I sent it anyway. Wrong choice.
+                Three years ago, I was refreshing our conversation thread every four minutes.
+                He&apos;d gone silent again. I had seventeen unsent drafts and zero clarity.
               </p>
               <p>
-                I tried everything the internet said. &ldquo;Give him space.&rdquo; &ldquo;Be less available.&rdquo;
-                &ldquo;Journal about your attachment style.&rdquo; None of it gave me actual words
-                for the actual moment I was in.
+                The internet told me to &ldquo;give him space,&rdquo; &ldquo;be less available,&rdquo;
+                and &ldquo;work on my attachment style.&rdquo; Helpful theory. Useless at 11PM
+                when I needed actual words.
               </p>
               <p>
-                So I built what I needed: a system with exact scripts for the exact moments
-                that break you — and a framework to stop going in circles about whether to
-                stay or finally leave.
+                So I built the system I needed. One that skips the theory and goes straight to:
+                what do I say right now, in this exact moment, without losing myself.
               </p>
-              <p className="font-semibold text-foreground">
-                That system is this book. And it works because it doesn&apos;t theorize.
-                It tells you what to say next.
+              <p className="font-black text-foreground text-lg md:text-xl">
+                47 scripts. A decision framework. A 7-day reset.
+                Everything I wish someone had handed me.
               </p>
             </div>
-            <div className="mt-6 bg-muted rounded-xl p-4 border border-border">
-              <p className="text-sm text-muted-foreground italic">
-                These tools are educational, not a replacement for therapy. If you are dealing
-                with abuse or severe trauma, please work with a licensed professional alongside this system.
+            <div className="mt-6 p-4 border-l-4 border-pine-500 bg-pine-50 rounded-r-xl">
+              <p className="text-sm text-pine-700 font-medium italic">
+                These tools are educational and not a substitute for licensed therapy.
+                If you&apos;re dealing with abuse or trauma, please work with a professional alongside this system.
               </p>
             </div>
           </div>

@@ -9,36 +9,32 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    question: 'What do I say when he goes silent?',
-    answer: 'That\'s Script #7. The exact text is inside the paid book. It\'s 2-3 sentences that express your needs without anger or desperation. Most women report: "I felt calm sending it" and "He actually responded positively."'
+    question: 'He just went silent. What do I actually say?',
+    answer: 'That is Script 7. It is 2 sentences. It communicates your needs without panic, desperation, or blame. The women who have used it say two things: "I felt calm sending it" and "he actually responded." Both of those are in the book.'
   },
   {
     question: 'How do I know if I should stay or leave?',
-    answer: 'The Binary Question in the paid book asks 3 specific questions about his behavior. Answer honestly, and you\'ll have clarity on whether this is salvageable or if you deserve better. Most women report making a decision within 7 days.'
+    answer: 'The Decision Framework inside the book walks you through 3 specific questions about his behaviour — not his potential, not your feelings about him, his actual behaviour. Most women who use it report making a clear decision within 7 days. Not because someone told them what to do, but because they finally had clarity.'
   },
   {
-    question: 'Will this actually work for me?',
-    answer: 'The scripts work on avoidant partners (partners who withdraw due to attachment wounds). If your partner is manipulative or abusive, this system isn\'t appropriate. The book opens with a clear framework to help you identify which one he is.'
+    question: 'Is this just about texting better?',
+    answer: 'No. The scripts handle communication, yes — but the Decision Framework handles the bigger question of whether to stay, and the 7-day reset handles why you panic in the first place. It is a complete system, not a texting guide.'
   },
   {
-    question: 'How fast will I see results?',
-    answer: 'You\'ll feel calmer within 24 hours (after the 3-day reset). The scripts start working immediately — most women report "He took me seriously for the first time." His actual behavior shift takes 2-4 weeks.'
+    question: 'Will this work if he is very avoidant?',
+    answer: 'The system is built specifically for avoidant attachment dynamics — partners who pull away, go silent, or send mixed signals due to attachment wounds. It will not work if your partner is actively manipulative or abusive. The book opens with a tool to tell the difference.'
   },
   {
     question: 'Is this manipulation?',
-    answer: 'No. These are communication tools, not manipulation tactics. The scripts help you express your needs clearly and calmly. There\'s no "playing games" or "making him jealous" here. It\'s about knowing what to say when anxiety makes you freeze.'
+    answer: 'No. These scripts help you express your actual needs with clarity and calm — they do not play games, create jealousy, or hide what you want. If anything, they are the opposite of manipulation: they stop you from performing smallness to keep someone around.'
   },
   {
-    question: 'What format is this in?',
-    answer: 'The book is delivered as a high-quality PDF. You can read it on any device — phone, tablet, or computer. It\'s designed for easy reference, with clear sections you can jump to when you need a specific script fast.'
+    question: 'What do I get and how do I get it?',
+    answer: 'You get a single PDF delivered instantly after purchase. It works on your phone, tablet, or computer. It is designed so you can jump directly to the script you need in under 30 seconds. No app, no login, no subscription. Yours forever.'
   },
   {
-    question: 'How long do I have access?',
-    answer: 'Lifetime. Once you purchase, the PDFs are yours forever. Download them multiple times, save them anywhere, and refer back whenever you need. No subscription, no recurring fees.'
-  },
-  {
-    question: 'Is this a replacement for therapy?',
-    answer: 'No. The Fleurite System is designed to complement professional therapy, not replace it. If you\'re dealing with severe anxiety or trauma, we recommend working with a licensed therapist alongside these tools.'
+    question: 'What if it does not work for me?',
+    answer: '30-day full refund. No questions, no hoops. Email support@fleurite.me and you will be refunded the same day. The guarantee exists because the book works — and because you should never feel trapped by a $27 purchase.'
   }
 ];
 

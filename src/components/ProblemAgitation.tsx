@@ -2,51 +2,25 @@
 
 import Image from 'next/image';
 
+const scenarios = [
+  { text: 'He went quiet. Your stomach dropped. You\'ve checked his "last seen" six times in the last hour.' },
+  { text: 'You typed and deleted the same message ten times. You sent a watered-down version. He hasn\'t replied.' },
+  { text: 'You know you should give him space. You physically cannot stop yourself from reaching out.' },
+  { text: 'You rehearsed the whole conversation in your head. In real life you froze and said nothing.' },
+  { text: 'It\'s 2AM. You\'re still awake, still analysing, still wondering what you did wrong.' },
+  { text: 'He came back. You were so relieved you said yes to things you didn\'t even want.' },
+];
+
 export default function ProblemAgitation() {
   return (
     <section className="py-16 md:py-24 bg-card">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Header */}
-        <div className="text-center md:text-left mb-12 md:mb-16">
-          <h2 className="font-display font-bold text-foreground text-3xl md:text-5xl leading-tight mb-4 text-balance">
-            Does This Sound Painfully Familiar?
-          </h2>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto md:mx-0">
-            If any of these made your stomach drop, you&apos;re in the right place.
-          </p>
-        </div>
+        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
 
-        {/* Two-column layout */}
-        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
-
-          {/* LEFT — pain scenarios */}
-          <div className="space-y-5">
-            {[
-              'Your partner said "I need space" and your stomach dropped',
-              'You check if they&apos;re online... then feel ashamed for checking',
-              'You send "something casual" that took 20 minutes to write',
-              'You know you should "give them space" but panic takes over',
-              'You&apos;re reading this at 2 AM, analyzing what went wrong',
-            ].map((text, i) => (
-              <div key={i} className="flex items-start gap-3 group">
-                <div className="mt-0.5 w-8 h-8 rounded-lg bg-clay-100 flex items-center justify-center flex-shrink-0 group-hover:bg-clay-200 transition-colors">
-                  <svg className="w-4 h-4 text-clay-600" viewBox="0 0 20 20" fill="currentColor">
-                    <path
-                      fillRule="evenodd"
-                      d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </div>
-                <p className="text-base md:text-lg text-foreground font-medium leading-relaxed pt-1">{text}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* RIGHT — photo */}
-          <div className="relative">
-            <div className="relative w-full aspect-[4/5] md:aspect-[3/4] rounded-2xl overflow-hidden shadow-xl border border-muted">
+          {/* LEFT — photo first, like femin-bloom */}
+          <div className="relative order-2 md:order-1">
+            <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-xl border border-muted">
               <Image
                 src="/images/woman-phone-night.png"
                 alt="Woman looking at phone anxiously at night"
@@ -55,20 +29,47 @@ export default function ProblemAgitation() {
                 className="object-cover"
               />
             </div>
+            {/* Overlay quote */}
+            <div className="absolute bottom-4 left-4 right-4 bg-foreground/85 backdrop-blur-sm rounded-xl p-4">
+              <p className="text-white text-sm font-semibold leading-snug italic">
+                &ldquo;I rewrote that text seventeen times. I sent it anyway. Wrong choice.&rdquo;
+              </p>
+              <p className="text-white/60 text-xs mt-1">— every woman who needed this book</p>
+            </div>
           </div>
 
-        </div>
+          {/* RIGHT — scenarios */}
+          <div className="order-1 md:order-2">
+            <p className="text-xs font-black text-clay-600 tracking-[0.2em] uppercase mb-4">
+              Be Honest With Yourself
+            </p>
+            <h2 className="font-display font-black text-3xl md:text-[2.6rem] text-foreground leading-[1.1] mb-8 text-balance">
+              Does Any of This Sound Like You?
+            </h2>
 
-        {/* Bottom truth punch */}
-        <div className="mt-12 md:mt-16 bg-muted rounded-2xl p-6 md:p-10 border border-pine-200">
-          <p className="text-lg md:text-2xl font-bold text-foreground leading-tight text-balance">
-            You&apos;ve tried <span className="text-pine-600">being more chill</span>.
-            You&apos;ve tried <span className="text-pine-600">giving space</span>.
-            You&apos;ve tried <span className="text-pine-600">not being so needy</span>.
-          </p>
-          <p className="text-xl md:text-3xl font-black text-foreground leading-tight mt-4 text-balance">
-            But you can&apos;t think your way out of a nervous system problem.
-          </p>
+            <div className="space-y-4">
+              {scenarios.map((s, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <div className="mt-1 flex-shrink-0 w-5 h-5 rounded-full bg-clay-100 border border-clay-300 flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-clay-500" />
+                  </div>
+                  <p className="text-base text-foreground font-medium leading-relaxed">{s.text}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Truth punch */}
+            <div className="mt-8 bg-pine-600 rounded-2xl p-6 text-white">
+              <p className="text-lg font-black leading-snug mb-2 text-balance">
+                You don&apos;t have a &ldquo;neediness&rdquo; problem.
+              </p>
+              <p className="text-pine-100 text-sm leading-relaxed">
+                You have a &ldquo;no one gave you the actual words&rdquo; problem.
+                That is exactly what this book fixes.
+              </p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

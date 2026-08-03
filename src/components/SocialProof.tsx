@@ -8,24 +8,27 @@ const testimonials = [
     location: 'New York, NY',
     photo: '/images/testimonial-1.png',
     rating: 5,
+    headline: 'First time in 2 years I felt calm.',
     quote:
-      '"I didn\'t reply right away. Not playing games. Just... could. For the first time in two years I felt calm instead of panicked. These scripts gave me something to actually hold onto."',
+      'He went quiet again. Old me would have sent five texts by now. Instead I opened the book, used Script 7, and just... waited. He replied. Calmly. I cried.',
   },
   {
     name: 'Maya R.',
     location: 'Los Angeles, CA',
     photo: '/images/testimonial-2.png',
     rating: 5,
+    headline: 'I stopped the 2AM spiral.',
     quote:
-      '"I knew I was spiraling. Couldn\'t stop. Used Script 7 when he went silent. He came back calmer than I\'ve ever seen. Worth way more than $27."',
+      'I was literally typing at 2AM. Saw the book on my phone. Read Script 12. Put my phone down and went to sleep. First time in months. That alone was worth $27.',
   },
   {
     name: 'Lauren M.',
     location: 'Chicago, IL',
     photo: '/images/testimonial-3.png',
     rating: 5,
+    headline: 'I walked away with my dignity.',
     quote:
-      '"I was skeptical about scripts — felt too scripted. But these aren\'t lines. They\'re boundaries with words. I finally felt like I was choosing how I show up."',
+      'I used Script 41 and left. No begging. No "let\'s talk about this." He texted three days later saying he was wrong. I didn\'t go back. First time I chose myself.',
   },
 ];
 
@@ -74,8 +77,11 @@ export default function SocialProof() {
               className="bg-card border border-border rounded-2xl p-6 flex flex-col gap-4 shadow-sm hover:shadow-md transition-shadow"
             >
               <Stars count={t.rating} />
-              <p className="text-foreground font-medium leading-relaxed flex-1 italic text-sm md:text-base">
-                {t.quote}
+              <p className="font-black text-foreground text-base leading-snug">
+                {t.headline}
+              </p>
+              <p className="text-muted-foreground leading-relaxed flex-1 text-sm md:text-base">
+                &ldquo;{t.quote}&rdquo;
               </p>
               <div className="flex items-center gap-3 pt-3 border-t border-border">
                 <div className="relative w-11 h-11 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-pine-100">
@@ -100,7 +106,7 @@ export default function SocialProof() {
         </div>
 
         {/* Stats row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
           {[
             { number: '5,000+', label: 'Women helped' },
             { number: '4.9/5', label: 'Average rating' },
@@ -112,6 +118,17 @@ export default function SocialProof() {
               <p className="text-sm text-muted-foreground font-medium">{label}</p>
             </div>
           ))}
+        </div>
+
+        {/* Mid-page CTA */}
+        <div className="text-center">
+          <button
+            onClick={() => window.dispatchEvent(new Event('open-checkout'))}
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-pine-600 text-white font-black text-base hover:bg-pine-700 active:scale-[0.98] transition-all cursor-pointer shadow-lg"
+          >
+            Get Instant Access — $27
+          </button>
+          <p className="text-xs text-muted-foreground mt-3">30-day guarantee &bull; Instant PDF</p>
         </div>
 
       </div>
