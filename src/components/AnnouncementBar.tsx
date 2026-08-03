@@ -20,10 +20,16 @@ export default function AnnouncementBar() {
   if (!isVisible) return null;
 
   return (
-    <div data-announcement-bar className="w-full bg-pine-600 text-white py-2.5 px-4 text-center text-xs md:text-sm font-medium tracking-wide relative">
-      <a href="#get-access" className="hover:underline">
-        Join women who stopped chasing — Learn how ↓
-      </a>
+    <div
+      data-announcement-bar
+      className="w-full bg-pine-600 text-white py-2.5 px-4 text-center text-xs md:text-sm font-medium tracking-wide relative"
+    >
+      <button
+        onClick={() => window.dispatchEvent(new Event('open-checkout'))}
+        className="hover:underline cursor-pointer"
+      >
+        47 scripts &bull; Instant PDF &bull; $27 today &mdash; Get access now &darr;
+      </button>
       <button
         onClick={dismiss}
         className="absolute right-3 top-1/2 -translate-y-1/2 text-white/70 hover:text-white transition-colors"

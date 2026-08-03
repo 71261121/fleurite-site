@@ -54,10 +54,10 @@ export default function StickyBar() {
         {/* Left side: Urgency message (Level 25 psychology) */}
         <div className="flex flex-col gap-1 flex-1 min-w-0">
           <p className="font-bold text-foreground text-sm md:text-base">
-            Stop spiraling at 2AM. Start sleeping tonight.
+            47 scripts. Every situation. $27.
           </p>
           <p className="text-xs md:text-sm text-muted-foreground">
-            Free 3-day nervous system reset + 47 scripts for $27 (limited time)
+            The exact words to hold your ground — without chasing, without shrinking.
           </p>
         </div>
 
