@@ -19,11 +19,12 @@ export default function CreatorBio() {
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
             </div>
             {/* Floating quote badge */}
-            <div className="absolute -bottom-5 -right-3 md:-right-6 bg-pine-600 text-white rounded-2xl p-4 shadow-xl max-w-[200px]">
+            <div className="absolute -bottom-5 -right-3 md:-right-6 bg-pine-600 text-white rounded-2xl p-4 shadow-xl max-w-[210px]">
               <p className="text-xs font-bold leading-snug">
-                &ldquo;Built from 6 years of real mistakes and hard lessons.&rdquo;
+                &ldquo;I built this because I needed it. No one handed it to me.&rdquo;
               </p>
             </div>
           </div>
@@ -31,34 +32,40 @@ export default function CreatorBio() {
           {/* Story */}
           <div className="pt-6 md:pt-0">
             <p className="text-xs font-bold text-clay-500 uppercase tracking-[0.18em] mb-4">
-              Why This System Exists
+              Why This Exists
             </p>
             <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-6 text-balance">
-              I Was You.<br />Refreshing. Waiting. Shrinking.
+              I Was You. Refreshing.<br />Waiting. Disappearing.
             </h2>
-            <div className="space-y-4 text-muted-foreground leading-relaxed text-base md:text-lg">
+            <div className="space-y-4 text-foreground leading-relaxed text-base md:text-lg">
               <p>
-                Three years ago, I was refreshing our conversation thread every four minutes.
-                He&apos;d gone silent again. I had seventeen unsent drafts and zero clarity.
+                Three years ago I was refreshing a conversation thread every four minutes.
+                He had gone quiet again — no explanation, no timeline. I had seventeen unsent drafts open
+                and zero clarity. My chest hurt the way it hurts when you already know the answer
+                but are too terrified to hear it.
               </p>
               <p>
-                The internet told me to &ldquo;give him space,&rdquo; &ldquo;be less available,&rdquo;
-                and &ldquo;work on my attachment style.&rdquo; Helpful theory. Useless at 11PM
-                when I needed actual words.
+                The internet told me to &ldquo;be less available,&rdquo; &ldquo;work on myself,&rdquo;
+                and &ldquo;give him space.&rdquo; Fine advice. Completely useless at 11PM when I needed
+                to know what to actually say — or whether to say anything at all.
               </p>
               <p>
-                So I built the system I needed. One that skips the theory and goes straight to:
-                what do I say right now, in this exact moment, without losing myself.
+                So I built the system I needed. Not theory. Not a mindset shift.
+                The exact words, the exact framework, the exact daily reset.
+                Everything I had to figure out the hard and expensive way.
               </p>
               <p className="font-black text-foreground text-lg md:text-xl">
-                47 scripts. A decision framework. A 7-day reset.
-                Everything I wish someone had handed me.
+                5,247 women have used it since. This is not a philosophy book.
+                It is a toolkit. And it is ready for you tonight.
               </p>
             </div>
+
+            {/* Trust / disclaimer — honest, not defensive */}
             <div className="mt-6 p-4 border-l-4 border-pine-500 bg-pine-50 rounded-r-xl">
               <p className="text-sm text-pine-700 font-medium italic">
-                These tools are educational and not a substitute for licensed therapy.
-                If you&apos;re dealing with abuse or trauma, please work with a professional alongside this system.
+                These tools are educational — not a substitute for licensed therapy.
+                If you are experiencing abuse or crisis, please work with a professional
+                alongside this resource. Your safety matters more than any book.
               </p>
             </div>
           </div>

@@ -5,7 +5,6 @@ import { useState, useEffect } from 'react';
 export default function StickyBar() {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Throttle scroll listener using requestAnimationFrame for smooth performance
   useEffect(() => {
     let ticking = false;
 
@@ -19,26 +18,16 @@ export default function StickyBar() {
       }
     };
 
-    // Check initial scroll position on mount
     handleScroll();
-
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
-  // Update body padding-bottom so the sticky bar doesn't obscure content
   useEffect(() => {
-    if (isVisible) {
-      document.body.style.paddingBottom = '72px';
-    } else {
-      document.body.style.paddingBottom = '0';
-    }
-
-    return () => {
-      document.body.style.paddingBottom = '0';
-    };
+    document.body.style.paddingBottom = isVisible ? '72px' : '0';
+    return () => { document.body.style.paddingBottom = '0'; };
   }, [isVisible]);
 
   return (
@@ -50,9 +39,13 @@ export default function StickyBar() {
       }}
       aria-hidden={!isVisible}
     >
-      <div className="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <div className="max-w-6xl mx-auto flex items-center justify-between gap-3">
         <div className="flex flex-col gap-0.5 flex-1 min-w-0">
-          <p className="font-black text-white text-sm md:text-base leading-snug">
+          {/* Mobile: short pain hook. Desktop: full product line */}
+          <p className="font-black text-white text-sm leading-snug sm:hidden">
+            Stop freezing. Know what to send.
+          </p>
+          <p className="font-black text-white text-sm md:text-base leading-snug hidden sm:block">
             Stop freezing. Start saying exactly the right thing.
           </p>
           <p className="text-xs text-pine-200 hidden sm:block">
@@ -62,9 +55,9 @@ export default function StickyBar() {
         <button
           onClick={() => window.dispatchEvent(new Event('open-checkout'))}
           tabIndex={isVisible ? 0 : -1}
-          className="bg-clay-500 hover:bg-clay-400 active:scale-[0.97] text-white rounded-xl px-5 md:px-7 py-3 font-black text-sm md:text-base transition-all shadow-lg whitespace-nowrap flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-white/50"
+          className="bg-clay-500 hover:bg-clay-400 active:scale-[0.97] text-white rounded-xl px-4 md:px-7 py-3 font-black text-sm transition-all shadow-lg whitespace-nowrap flex-shrink-0 focus:outline-none focus:ring-2 focus:ring-white/50"
         >
-          Get Access — $27 →
+          Get Access — $27
         </button>
       </div>
     </div>

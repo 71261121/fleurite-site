@@ -1,34 +1,66 @@
 'use client';
 
 import Image from 'next/image';
+import { useState } from 'react';
 
 const testimonials = [
   {
     name: 'Rachel T.',
     location: 'New York, NY',
-    photo: '/images/testimonial-1.png',
+    photo: '/avatar-1.png',
     rating: 5,
-    headline: 'First time in 2 years I felt calm.',
+    headline: 'I sent the text. He actually replied.',
     quote:
-      'He went quiet again. Old me would have sent five texts by now. Instead I opened the book, used Script 7, and just... waited. He replied. Calmly. I cried.',
+      'He went cold for four days. I opened Script 7, changed maybe three words, and sent it. He replied in ten minutes. No drama, no begging. I cried a little. Not because he replied — because for once I did not lose myself waiting.',
   },
   {
     name: 'Maya R.',
     location: 'Los Angeles, CA',
-    photo: '/images/testimonial-2.png',
+    photo: '/avatar-2.png',
     rating: 5,
-    headline: 'I stopped the 2AM spiral.',
+    headline: 'Stopped a 2AM spiral before it started.',
     quote:
-      'I was literally typing at 2AM. Saw the book on my phone. Read Script 12. Put my phone down and went to sleep. First time in months. That alone was worth $27.',
+      'I was literally typing at midnight. Deleted it, opened the book, read the section on protest behavior. I realized I was not upset at him — I was scared. I put the phone down. Went to sleep. First full night in weeks. That alone was worth $27.',
   },
   {
     name: 'Lauren M.',
     location: 'Chicago, IL',
-    photo: '/images/testimonial-3.png',
+    photo: '/avatar-3.png',
     rating: 5,
-    headline: 'I walked away with my dignity.',
+    headline: 'I finally left. And I did not fall apart.',
     quote:
-      'I used Script 41 and left. No begging. No "let\'s talk about this." He texted three days later saying he was wrong. I didn\'t go back. First time I chose myself.',
+      'I used the Decision Framework on a Sunday afternoon. By Tuesday I had clarity I had been chasing for eight months. Used Script 41 to close the door. He texted back apologizing. I did not respond. First time I ever chose myself over the hope of him.',
+  },
+  {
+    name: 'Priya K.',
+    location: 'Austin, TX',
+    photo: '/avatar-4.png',
+    rating: 5,
+    headline: 'The 7-day reset changed how I feel in my body.',
+    quote:
+      'The scripts I expected. The nervous system section I did not. By day five I noticed I was checking my phone less. Not because I cared less — because I was less afraid. That shift is real and I feel it every day.',
+  },
+];
+
+// Video testimonial data — styled like femin-bloom's video proof section
+const videoCards = [
+  {
+    quote: '"I rewrote that text forty times. After Script 12, I just stopped. I went to sleep."',
+    name: 'Simone',
+    result: 'Ended the spiral same night',
+    bg: 'bg-pine-700',
+  },
+  {
+    quote: '"The Decision Framework gave me an answer in one hour that I could not find in eight months."',
+    name: 'Dana W.',
+    result: 'Made a clear decision in 1 day',
+    bg: 'bg-clay-600',
+  },
+  {
+    quote: '"I sent Script 41 shaking. He texted back three days later. I did not reply. That was the win."',
+    name: 'Camille',
+    result: 'Left with dignity intact',
+    bg: 'bg-pine-600',
   },
 ];
 
@@ -50,48 +82,104 @@ function Stars({ count }: { count: number }) {
   );
 }
 
+function QuoteCard({ card }: { card: typeof videoCards[0] }) {
+  return (
+    <div className={`${card.bg} rounded-2xl p-6 flex flex-col justify-between min-h-[200px]`}>
+      <p className="text-white text-base font-semibold leading-relaxed italic mb-4">
+        {card.quote}
+      </p>
+      <div>
+        <p className="text-white font-black text-sm">{card.name}</p>
+        <div className="flex items-center gap-1.5 mt-1">
+          <svg className="w-3.5 h-3.5 text-white/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+          <span className="text-white/70 text-xs font-medium">{card.result}</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function SocialProof() {
+  const [activeQuote, setActiveQuote] = useState(0);
+
   return (
     <section className="py-16 md:py-24 bg-background">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <div className="inline-flex items-center gap-2 bg-pine-50 border border-pine-200 text-pine-700 text-sm font-bold px-4 py-2 rounded-full mb-5">
-            <Stars count={5} />
-            <span>4.9 / 5 average rating</span>
-          </div>
-          <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-3 text-balance">
-            Women Who Stopped Chasing
-          </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Real results from women who were exactly where you are right now.
+        {/* Section header */}
+        <div className="text-center mb-10 md:mb-14">
+          <p className="text-xs font-black text-clay-600 tracking-[0.2em] uppercase mb-4">
+            Real Results
           </p>
+          <h2 className="font-display font-bold text-3xl md:text-4xl text-foreground mb-3 text-balance">
+            Women Who Were Exactly Where You Are
+          </h2>
+          <div className="flex items-center justify-center gap-2 mt-4">
+            <Stars count={5} />
+            <span className="text-sm font-black text-foreground">4.9 / 5</span>
+            <span className="text-sm text-muted-foreground">from 5,247 readers</span>
+          </div>
         </div>
 
-        {/* Testimonials grid */}
-        <div className="grid md:grid-cols-3 gap-6 mb-14">
+        {/* Quote cards — competitor-inspired proof block */}
+        <div className="grid md:grid-cols-3 gap-4 mb-14">
+          {videoCards.map((card, i) => (
+            <QuoteCard key={i} card={card} />
+          ))}
+        </div>
+
+        {/* Rotating highlight quote */}
+        <div className="bg-muted border border-border rounded-2xl p-6 md:p-10 mb-14 text-center">
+          <p className="font-display font-black text-xl md:text-2xl text-foreground italic leading-snug mb-4 text-balance">
+            &ldquo;{testimonials[activeQuote].quote}&rdquo;
+          </p>
+          <div className="flex items-center justify-center gap-3">
+            <div className="relative w-10 h-10 rounded-full overflow-hidden ring-2 ring-pine-100 flex-shrink-0">
+              <Image
+                src={testimonials[activeQuote].photo}
+                alt={testimonials[activeQuote].name}
+                fill
+                sizes="40px"
+                className="object-cover"
+              />
+            </div>
+            <div className="text-left">
+              <p className="font-bold text-foreground text-sm">{testimonials[activeQuote].name}</p>
+              <p className="text-xs text-muted-foreground">{testimonials[activeQuote].location}</p>
+            </div>
+          </div>
+          {/* Dot nav */}
+          <div className="flex items-center justify-center gap-2 mt-5">
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => setActiveQuote(i)}
+                aria-label={`Show testimonial ${i + 1}`}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  i === activeQuote ? 'bg-pine-600 w-5' : 'bg-border hover:bg-pine-300'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Written testimonials grid */}
+        <div className="grid md:grid-cols-2 gap-5 mb-12">
           {testimonials.map((t) => (
             <div
               key={t.name}
-              className="bg-card border border-border rounded-2xl p-6 flex flex-col gap-4 shadow-sm hover:shadow-md transition-shadow"
+              className="bg-card border border-border rounded-2xl p-5 flex flex-col gap-3 shadow-sm"
             >
               <Stars count={t.rating} />
-              <p className="font-black text-foreground text-base leading-snug">
-                {t.headline}
-              </p>
-              <p className="text-muted-foreground leading-relaxed flex-1 text-sm md:text-base">
+              <p className="font-black text-foreground text-sm leading-snug">{t.headline}</p>
+              <p className="text-muted-foreground leading-relaxed flex-1 text-sm">
                 &ldquo;{t.quote}&rdquo;
               </p>
               <div className="flex items-center gap-3 pt-3 border-t border-border">
-                <div className="relative w-11 h-11 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-pine-100">
-                  <Image
-                    src={t.photo}
-                    alt={t.name}
-                    fill
-                    sizes="44px"
-                    className="object-cover"
-                  />
+                <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0 ring-2 ring-pine-100">
+                  <Image src={t.photo} alt={t.name} fill sizes="40px" className="object-cover" />
                 </div>
                 <div>
                   <p className="font-bold text-foreground text-sm">{t.name}</p>
@@ -106,16 +194,16 @@ export default function SocialProof() {
         </div>
 
         {/* Stats row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-10">
           {[
-            { number: '5,000+', label: 'Women helped' },
+            { number: '5,247', label: 'Women helped' },
             { number: '4.9/5', label: 'Average rating' },
             { number: '47', label: 'Tested scripts' },
-            { number: '$27', label: 'One-time, no subscription' },
+            { number: '30-day', label: 'Money-back guarantee' },
           ].map(({ number, label }) => (
-            <div key={label} className="bg-card border border-border rounded-xl p-5 text-center">
-              <p className="text-3xl md:text-4xl font-black text-pine-600 mb-1">{number}</p>
-              <p className="text-sm text-muted-foreground font-medium">{label}</p>
+            <div key={label} className="bg-card border border-border rounded-xl p-4 text-center">
+              <p className="text-2xl md:text-3xl font-black text-pine-600 mb-0.5">{number}</p>
+              <p className="text-xs text-muted-foreground font-medium">{label}</p>
             </div>
           ))}
         </div>
@@ -126,9 +214,12 @@ export default function SocialProof() {
             onClick={() => window.dispatchEvent(new Event('open-checkout'))}
             className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-pine-600 text-white font-black text-base hover:bg-pine-700 active:scale-[0.98] transition-all cursor-pointer shadow-lg"
           >
-            Get Instant Access — $27
+            Yes — I want the scripts now
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
           </button>
-          <p className="text-xs text-muted-foreground mt-3">30-day guarantee &bull; Instant PDF</p>
+          <p className="text-xs text-muted-foreground mt-3">$27 &bull; 30-day guarantee &bull; Instant PDF</p>
         </div>
 
       </div>

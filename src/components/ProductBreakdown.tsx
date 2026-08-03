@@ -7,36 +7,38 @@ const sections = [
     number: '01',
     tag: 'The Scripts',
     title: '47 Word-for-Word Scripts',
-    description: 'For every scenario where you freeze, fold, or want to chase.',
+    description:
+      'Copy. Adjust two words. Send. No more staring at a blank screen at midnight wondering if you sound too needy.',
     items: [
-      'Script 3 — When he cancels last minute (again)',
-      'Script 7 — When he says "I need space" and you want to scream',
-      'Script 12 — The 2AM message you will NOT send (and what to send instead)',
-      'Script 23 — How to ask for consistency without sounding desperate',
-      'Script 35 — When you\'re being breadcrumbed and done tolerating it',
-      'Script 41 — The walk-away text. Dignity intact. No door left open.',
+      'Script 7 — He says "I need space." You stop performing calm and say this instead.',
+      'Script 12 — The exact message that ends the 2AM spiral before you send the wrong thing.',
+      'Script 23 — How to ask for consistency without sounding like you are auditioning for his love.',
+      'Script 35 — When you are done being breadcrumbed and need to say it without losing your dignity.',
+      'Script 41 — The walk-away. Two sentences. Door closed. No drama.',
     ],
   },
   {
     number: '02',
     tag: 'The Clarity',
     title: 'The Stay-or-Leave Decision Framework',
-    description: 'Three questions that cut through months of confusion in one sitting.',
+    description:
+      'Three questions about his actual behavior — not his potential, not your feelings — that produce a clear answer most women find in a single afternoon.',
     items: [
-      'Is this avoidant attachment or is this just a man who doesn\'t care?',
-      'Is his behavior changing — or are you just adapting to it?',
-      'What would you tell your best friend to do right now?',
+      'Is this avoidant attachment, or is this just a man who does not want to show up?',
+      'Is his behavior improving, or are you just adjusting to it?',
+      'What would you tell your best friend to do — and why have you not done it?',
     ],
   },
   {
     number: '03',
     tag: 'The Reset',
     title: '7-Day Nervous System Reset',
-    description: 'So you can respond like the version of you who has standards — not the one who panics.',
+    description:
+      'So the next time he goes quiet, you do not spiral. You respond from the version of yourself who has standards.',
     items: [
-      'Day 1–2: Why you spiral (biology, not weakness) — and how to interrupt it',
-      'Day 3–4: The 90-second panic protocol. Tested. Science-backed.',
-      'Day 5–7: Build your own emergency plan for the next time he goes quiet',
+      'Days 1–2: Why you panic (nervous system science, not personal weakness) — and how to stop it mid-spiral.',
+      'Days 3–4: The 90-second protocol. Tested. Science-backed. Works when you are already activated.',
+      'Days 5–7: Build your own emergency plan so the next silence does not catch you unprepared.',
     ],
   },
 ];
@@ -47,45 +49,62 @@ export default function ProductBreakdown() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
-          <p className="text-xs font-bold text-clay-500 uppercase tracking-[0.18em] mb-4">
-            What You Get Inside
+        <div className="text-center mb-10 md:mb-14">
+          <p className="text-xs font-black text-clay-600 uppercase tracking-[0.18em] mb-4">
+            What Is Inside
           </p>
           <h2 className="font-display font-bold text-3xl md:text-5xl text-foreground text-balance">
-            Everything You Need.<br />Nothing You Don&apos;t.
+            Every page is a script,<br />a tool, or a technique.
           </h2>
           <p className="text-muted-foreground text-lg mt-4 max-w-xl mx-auto">
-            Every page is a script, a tool, or a technique. No filler.
+            No philosophy. No filler. You can jump to what you need in under 30 seconds.
           </p>
         </div>
 
         {/* Book + sections layout */}
-        <div className="grid lg:grid-cols-[280px_1fr] gap-10 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-[260px_1fr] gap-10 lg:gap-16 items-start">
 
           {/* Book cover column */}
           <div className="flex flex-col items-center gap-5 lg:sticky lg:top-24">
-            <div className="relative w-[220px] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl ring-2 ring-pine-400/60">
+            <div className="relative w-[200px] aspect-[3/4] rounded-2xl overflow-hidden shadow-2xl ring-2 ring-pine-400/60">
               <Image
                 src="/book-covers/fleurite-main-cover.png"
                 alt="You Were Never Too Much — 47 Scripts + Decision Framework"
                 fill
-                sizes="220px"
+                sizes="200px"
                 className="object-cover"
               />
             </div>
-            <div className="text-center">
-              <div className="flex items-baseline justify-center gap-2 mb-1">
-                <span className="text-4xl font-black text-foreground">$27</span>
-                <span className="text-base text-muted-foreground line-through">$47</span>
+
+            {/* Value stack */}
+            <div className="w-full bg-background border border-border rounded-2xl p-5">
+              <p className="text-xs font-black text-pine-600 uppercase tracking-widest mb-4 text-center">
+                What You Get
+              </p>
+              <div className="space-y-3 mb-5">
+                {[
+                  { label: '47 Scripts', value: '$47' },
+                  { label: 'Decision Framework', value: '$29' },
+                  { label: '7-Day Reset', value: '$29' },
+                  { label: 'Lifetime access', value: 'Free' },
+                ].map(({ label, value }) => (
+                  <div key={label} className="flex items-center justify-between text-sm">
+                    <span className="text-foreground font-medium">{label}</span>
+                    <span className="text-muted-foreground line-through text-xs">{value}</span>
+                  </div>
+                ))}
+                <div className="border-t border-border pt-3 flex items-center justify-between">
+                  <span className="font-black text-foreground">Today</span>
+                  <span className="font-black text-pine-600 text-lg">$27</span>
+                </div>
               </div>
-              <p className="text-xs text-muted-foreground mb-4">Instant PDF. One payment. Yours forever.</p>
               <button
                 onClick={() => window.dispatchEvent(new Event('open-checkout'))}
-                className="w-full px-6 py-3.5 rounded-xl bg-pine-600 text-white font-bold text-sm hover:bg-pine-700 active:scale-[0.98] transition-all cursor-pointer shadow-md"
+                className="w-full px-5 py-3.5 rounded-xl bg-pine-600 text-white font-bold text-sm hover:bg-pine-700 active:scale-[0.98] transition-all cursor-pointer shadow-md"
               >
-                Get Instant Access — $27
+                Yes — I want this now
               </button>
-              <p className="text-xs text-muted-foreground mt-2">30-day money-back guarantee</p>
+              <p className="text-xs text-muted-foreground mt-2 text-center">30-day money-back guarantee</p>
             </div>
           </div>
 
@@ -100,7 +119,7 @@ export default function ProductBreakdown() {
                 <h3 className="font-display font-black text-xl md:text-2xl text-foreground mb-1">
                   {section.title}
                 </h3>
-                <p className="text-sm text-muted-foreground mb-5">{section.description}</p>
+                <p className="text-sm text-muted-foreground mb-5 leading-relaxed">{section.description}</p>
                 <ul className="space-y-3">
                   {section.items.map((item, j) => (
                     <li key={j} className="flex items-start gap-3">
@@ -112,7 +131,7 @@ export default function ProductBreakdown() {
               </div>
             ))}
 
-            {/* Trust line at the bottom */}
+            {/* Trust line */}
             <div className="flex flex-wrap gap-6 text-sm text-muted-foreground pt-2">
               <span className="flex items-center gap-2">
                 <svg className="w-4 h-4 text-pine-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -124,13 +143,13 @@ export default function ProductBreakdown() {
                 <svg className="w-4 h-4 text-pine-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                 </svg>
-                Instant digital download
+                Instant PDF on your device
               </span>
               <span className="flex items-center gap-2">
                 <svg className="w-4 h-4 text-pine-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                 </svg>
-                Works on all devices
+                Works on phone, tablet, laptop
               </span>
             </div>
           </div>
