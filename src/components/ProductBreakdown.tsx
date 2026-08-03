@@ -9,10 +9,10 @@ export default function ProductBreakdown() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6">
-            The System That Works
+            The Clarity System
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto font-medium">
-            Everything you need to reset your energy in 7 days. The guide. The daily checklist. The psychology behind why it works. All in one simple system.
+            35+ scripts for avoidant moments. A 7-day nervous system reset. The Binary Question that tells you: stay or go. Everything you need to stop chasing and start choosing.
           </p>
         </div>
 
@@ -36,13 +36,13 @@ export default function ProductBreakdown() {
             <div className="w-full md:w-3/5 flex flex-col">
               <div className="mb-6">
                 <h3 className="text-3xl md:text-4xl font-bold text-foreground mb-2">
-                  The Fleurite<br/>Reset System
+                  The Clarity<br/>System
                 </h3>
-                <p className="text-black font-semibold">By Eliza</p>
+                <p className="text-black font-semibold">By Eliza • $27</p>
               </div>
 
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                Seven days designed to break the energy crash pattern. This isn&apos;t theory. It&apos;s the exact process I used to go from exhausted to sustainable. Now tested on thousands of women.
+                Built after 6 years with an avoidant. I figured out how to break the chase cycle and rewire my nervous system. Now thousands of women have used this exact system to stop pursuing and start choosing.
               </p>
 
               {/* What's Inside */}
@@ -51,19 +51,19 @@ export default function ProductBreakdown() {
                 <div className="space-y-2">
                   <div className="flex items-start gap-3">
                     <span className="text-black font-bold mt-0.5 flex-shrink-0">✓</span>
-                    <span className="text-muted-foreground"><span className="font-semibold text-foreground">7-Day Reset Protocol</span> – Daily practices you can do in 10 minutes</span>
+                    <span className="text-muted-foreground"><span className="font-semibold text-foreground">35+ Scripts</span> – For every avoidant scenario (he pulls away, doesn't reply, ghosts)</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="text-black font-bold mt-0.5 flex-shrink-0">✓</span>
-                    <span className="text-muted-foreground"><span className="font-semibold text-foreground">Energy Tracker</span> – Know exactly what's affecting your cycle</span>
+                    <span className="text-muted-foreground"><span className="font-semibold text-foreground">7-Day Nervous System Reset</span> – Rewire your chase response in one week</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="text-black font-bold mt-0.5 flex-shrink-0">✓</span>
-                    <span className="text-muted-foreground"><span className="font-semibold text-foreground">Founder Notes</span> – Why this works (the psychology, not the biology textbook)</span>
+                    <span className="text-muted-foreground"><span className="font-semibold text-foreground">The Binary Question</span> – Three questions that tell you: rebuild with boundaries or leave</span>
                   </div>
                   <div className="flex items-start gap-3">
                     <span className="text-black font-bold mt-0.5 flex-shrink-0">✓</span>
-                    <span className="text-muted-foreground"><span className="font-semibold text-foreground">Lifetime Access</span> – Download forever, no subscription</span>
+                    <span className="text-muted-foreground"><span className="font-semibold text-foreground">Lifetime Access</span> – PDF download. Yours forever. No subscription.</span>
                   </div>
                 </div>
               </div>
