@@ -16,7 +16,6 @@ import CreatorBio from '@/components/CreatorBio';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
 import StickyBar from '@/components/StickyBar';
-import ExitIntentPopup from '@/components/ExitIntentPopup';
 import FadeIn from '@/components/FadeIn';
 import PaymentTrust from '@/components/PaymentTrust';
 
@@ -58,7 +57,6 @@ export default function Home() {
       </main>
       <Footer />
       <StickyBar />
-      <ExitIntentPopup />
     </div>
   );
 }
