@@ -88,29 +88,42 @@ function renderBlock(doc: PDFKit.PDFDocument, block: Block) {
       doc.moveDown(0.3)
       break
     case "script": {
+      // Keep a script card from straddling a page break where possible.
+      if (doc.y > doc.page.height - PAGE.margin - 150) {
+        doc.addPage()
+      }
       const x = doc.x
       const width = doc.page.width - PAGE.margin - x
+      const startPage = doc.bufferedPageRange().count - 1
       const padY = doc.y
-      // label
-      doc.font("Helvetica-Bold").fontSize(8.5).fillColor(CLAY).text(block.when.toUpperCase(), x + 14, padY + 12, {
+      // label — includes the script number when present ("SCRIPT 07 · <situation>")
+      const label = block.num
+        ? "SCRIPT " + String(block.num).padStart(2, "0") + "  \u00b7  " + block.when
+        : block.when
+      doc.font("Helvetica-Bold").fontSize(8.5).fillColor(CLAY).text(label.toUpperCase(), x + 14, padY + 12, {
         width: width - 28,
         characterSpacing: 0.5,
+        lineGap: 1,
       })
-      doc.moveDown(0.3)
+      doc.moveDown(0.35)
       doc.font("Times-Italic").fontSize(12.5).fillColor(PINE).text(block.say, x + 14, doc.y, {
         width: width - 28,
         lineGap: 3,
       })
       if (block.why) {
         doc.moveDown(0.3)
-        doc.font("Helvetica").fontSize(9.5).fillColor(MUTE).text("Why it works: " + block.why, x + 14, doc.y, {
+        doc.font("Helvetica-Oblique").fontSize(9.5).fillColor(MUTE).text("Why it works — " + block.why, x + 14, doc.y, {
           width: width - 28,
           lineGap: 2,
         })
       }
       const endY = doc.y + 12
-      // card background drawn behind: emulate by a left accent + top/bottom rules
-      doc.save().fillColor(CLAY).rect(x, padY, 3, endY - padY).fill().restore()
+      const endPage = doc.bufferedPageRange().count - 1
+      // Left accent bar. Only draw it when the card stayed on one page so the
+      // rectangle math can't invert across a page break.
+      if (endPage === startPage && endY > padY) {
+        doc.save().fillColor(CLAY).rect(x, padY, 3, endY - padY).fill().restore()
+      }
       doc.x = x
       doc.y = endY
       doc.moveDown(0.7)

@@ -3,6 +3,8 @@ import { db } from '@/lib/db'
 import crypto from 'crypto'
 import { sendEmail } from '@/lib/email'
 import { getDownloadEmailHtml } from '@/lib/download-email'
+import { generateBookPdf } from '@/lib/pdf'
+import { BOOK } from '@/content/book'
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3005'
 
@@ -159,45 +161,15 @@ export async function GET(request: NextRequest) {
       )
     }
 
-    // If action=file is requested, return the PDF download or sample PDF response
+    // If action=file is requested, generate and return the real, full book PDF.
     if (action === 'file') {
-      const pdfContent = `%PDF-1.4
-1 0 obj
-<< /Type /Catalog /Pages 2 0 R >>
-endobj
-2 0 obj
-<< /Type /Pages /Kids [3 0 R] /Count 1 >>
-endobj
-3 0 obj
-<< /Type /Page /Parent 2 0 R /Resources << /Font << /F1 << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> >> >> /MediaBox [0 0 612 792] /Contents 4 0 R >>
-endobj
-4 0 obj
-<< /Length 75 >>
-stream
-BT
-/F1 24 Tf
-100 700 Td
-(Fleurite Digital Guide - Order ${order.orderNumber}) Tj
-ET
-endstream
-endobj
-xref
-0 5
-0000000000 65535 f 
-0000000009 00000 n 
-0000000058 00000 n 
-0000000115 00000 n 
-0000000272 00000 n 
-trailer
-<< /Size 5 /Root 1 0 R >>
-startxref
-377
-%%OF`
+      const pdf = await generateBookPdf(BOOK)
 
-      return new NextResponse(pdfContent, {
+      return new NextResponse(pdf as unknown as BodyInit, {
         headers: {
           'Content-Type': 'application/pdf',
-          'Content-Disposition': `attachment; filename="Fleurite-Guide-${order.orderNumber}.pdf"`,
+          'Content-Disposition': `attachment; filename="${BOOK.slug}.pdf"`,
+          'Cache-Control': 'no-cache, no-store, must-revalidate',
         },
       })
     }
