@@ -3,20 +3,20 @@
 export default function ProblemAgitation() {
   const problems = [
     {
-      title: '3 PM Energy Crash',
-      description: 'Mid-afternoon hits and you hit a wall. Brain fog. Exhaustion. Nothing left for the people you love or the work you care about. You feel broken.'
+      title: 'He Withdraws After Intimacy',
+      description: 'One day he\'s close. The next day he\'s distant. No explanation. No timeline. Your nervous system learns: closeness = abandonment. So you panic every time he pulls away.'
     },
     {
-      title: 'Hormonal Mood Swings',
-      description: 'One week you&apos;re thriving. Next week, everything hurts—your relationships, your productivity, your self-worth. You can&apos;t predict yourself anymore.'
+      title: 'You\'re Texting Him Three Times a Day',
+      description: 'He doesn\'t reply for hours. So you text again. And again. Each message is an attempt to get him back. You\'re chasing your own safety through your phone.'
     },
     {
-      title: 'The Exhaustion Guilt Loop',
-      description: 'You know you "should" have more energy. More discipline. More drive. So you blame yourself for being tired. But the problem isn&apos;t laziness—it&apos;s your cycle.'
+      title: 'All the Emotional Labor Falls on You',
+      description: 'You ask how his day was. You remember his mother\'s name. You apologize first. He contributes nothing except his inconsistency. And you keep trying to make it work anyway.'
     },
     {
-      title: 'Disconnected from Your Body',
-      description: 'You&apos;ve ignored your body so long that you don&apos;t even feel it anymore. No idea what it needs. No idea how to listen. You&apos;re operating on fumes.'
+      title: 'You\'ve Disappeared Into Yourself',
+      description: 'Your needs became "too much." Your boundaries became "controlling." So you stopped asking for anything. Now he gets everything, and you get crumbs.'
     }
   ];
 
@@ -26,16 +26,16 @@ export default function ProblemAgitation() {
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <p className="text-xs font-bold text-black tracking-widest uppercase mb-4">
-            You Know This Already
+            The Avoidant Cycle
           </p>
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-            The Real Energy Drains
+            Four Patterns You Can&apos;t Stop
           </h2>
           <p className="text-lg font-semibold text-black mb-3">
-            (And why willpower won&apos;t fix them)
+            (Until you understand why your nervous system does them)
           </p>
           <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto">
-            These aren&apos;t personal failings. They&apos;re patterns your body creates based on how you live. And patterns can be reset.
+            These aren&apos;t character flaws. They&apos;re trained responses to inconsistent behavior. Your nervous system learned these patterns to survive with an avoidant. You can unlearn them.
           </p>
         </div>
 
@@ -55,10 +55,10 @@ export default function ProblemAgitation() {
         {/* The Truth Section */}
         <div className="bg-muted rounded-2xl p-8 md:p-12 border border-gray-300">
           <p className="text-lg md:text-xl text-foreground font-semibold mb-4">
-            You&apos;ve tried <span className="text-black">more sleep</span>. Tried <span className="text-black">more workouts</span>. Tried <span className="text-black">better diets</span>.
+            You&apos;ve tried <span className="text-black">leaving him</span>. Tried <span className="text-black">ignoring him</span>. Tried <span className="text-black">being more independent</span>.
           </p>
           <p className="text-xl md:text-2xl font-bold text-foreground leading-tight">
-            But your body isn&apos;t broken—it&apos;s just <span className="text-black">out of sync</span>. You need a reset, not another hack.
+            But you keep coming back. Because your nervous system is wired to chase, not leave. <span className="text-black">You need to rewire that wiring.</span> Not just willpower.
           </p>
         </div>
       </div>

@@ -17,24 +17,24 @@ export default function Hero() {
               </p>
             </div>
 
-            {/* Main Headline - CORE PAIN POINT #1: 2am panic spiral */}
+            {/* Main Headline - CORE PAIN POINT #1: Stop chasing avoidants */}
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-black text-foreground mb-4 leading-tight">
-              Stop panic-texting<br/>
-              <span className="text-black">at 2am</span>
+              Stop chasing<br/>
+              <span className="text-black">avoidant partners</span>
             </h1>
             
             {/* Subheadline - The nervous system truth */}
             <p className="text-lg md:text-xl text-black font-semibold mb-6">
-              Your anxiety isn&apos;t weakness. It&apos;s a pattern you can break.
+              You weren&apos;t born a chaser. You were trained to be one.
             </p>
 
-            {/* Core Pain-Point: The cycle of chasing */}
+            {/* Core Pain-Point: The avoidant withdrawal cycle - SPECIFIC */}
             <p className="text-xl text-muted-foreground mb-3 leading-relaxed max-w-lg font-semibold">
-              He pulls away. Your nervous system enters panic mode. You text. You chase. He withdraws more.
+              He withdraws. You panic. You text three times. You apologize. You shrink yourself. He vanishes.
             </p>
             
             <p className="text-base text-muted-foreground mb-8 leading-relaxed max-w-lg">
-              This isn&apos;t about you being &quot;too much.&quot; It&apos;s about your nervous system being trained to believe: <span className="italic">&quot;If I don&apos;t chase, I&apos;ll be abandoned.&quot;</span> You need to rewire that belief. <span className="font-semibold text-foreground">The Clarity System teaches you exactly how.</span> Plus 35+ scripts for every moment you freeze or fold.
+              He doesn&apos;t want a partner. He wants emotional labor. And your nervous system learned to provide it because leaving feels like death. <span className="font-semibold text-foreground">The Clarity System breaks this cycle</span> with 35+ scripts that stop you from chasing, plus a 7-day nervous system reset so you can finally stay calm when he pulls away.
             </p>
 
             {/* Social Proof - Real numbers from viral content */}
@@ -85,10 +85,10 @@ export default function Hero() {
                 <div className="bg-white rounded-lg p-4 border border-gray-300">
                   <p className="text-sm font-semibold text-foreground mb-2">What&apos;s inside:</p>
                   <ul className="text-xs text-muted-foreground space-y-1">
-                    <li>✓ 7-day reset protocol (PDF guide)</li>
-                    <li>✓ Daily checklist & energy tracker</li>
-                    <li>✓ Founder&apos;s personal notes from 9 years research</li>
-                    <li>✓ Lifetime access (download forever)</li>
+                    <li>✓ 35+ scripts (every avoidant scenario)</li>
+                    <li>✓ 7-day nervous system reset</li>
+                    <li>✓ "The Binary Question" (stay or leave framework)</li>
+                    <li>✓ Lifetime access (PDF download)</li>
                   </ul>
                 </div>
               </div>
