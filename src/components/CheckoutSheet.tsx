@@ -31,7 +31,7 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           items: [{
-            productName: 'Fleurite — Stop Chasing System',
+            productName: "The Avoidant's Unwritten Rules",
             price: 27,
           }],
           amount: 27,
@@ -59,7 +59,7 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           sessionId: data.sessionId,
-          items: [{ productName: 'Fleurite — Stop Chasing System', price: 27 }],
+          items: [{ productName: "The Avoidant's Unwritten Rules", price: 27 }],
           amount: 27,
         }),
       })
@@ -98,13 +98,19 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
                 <div className="rounded-2xl border border-muted bg-card p-5">
                   <div className="flex gap-4">
                     <div className="relative w-24 h-24 rounded-lg overflow-hidden flex-shrink-0 flex items-center justify-center">
-                      <Image src="/product/book-cover.png" alt="The Rooted Method" fill className="object-contain" sizes="96px" />
+                      <Image src="/product/book-cover.png" alt="The Avoidant's Unwritten Rules" fill className="object-contain" sizes="96px" />
                     </div>
                     <div>
-                      <h3 className="font-bold text-foreground">The Rooted Method</h3>
-                      <p className="text-sm text-muted-foreground mt-1">47 scripts + framework + reset — Instant digital download</p>
+                      <h3 className="font-bold text-foreground">The Avoidant&apos;s Unwritten Rules</h3>
+                      <p className="text-sm text-muted-foreground mt-1">5 rules + 47 scripts + framework + reset — Instant digital download</p>
                       <div className="mt-3 space-y-1">
-                        {['47 word-for-word scripts', 'Stay-or-leave Decision Framework', '7-day nervous system reset', 'BONUS: 90-second panic protocol', 'BONUS: Printable script cards'].map((item, i) => (
+                        {[
+                          'The 5 Unwritten Rules decoded',
+                          '47 word-for-word scripts (silence, space, ghosting, walk-away)',
+                          'The 3-Question Stay-or-Leave Framework',
+                          'The 90-Second Calm Protocol',
+                          'The Walk-Away Script — 19 words, dignity intact',
+                        ].map((item, i) => (
                           <div key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
                             <CheckCircle2 className="h-3.5 w-3.5 shrink-0 text-green-500 mt-0.5" />
                             <span>{item}</span>

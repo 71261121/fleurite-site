@@ -56,7 +56,7 @@ export default function AnnouncementBar() {
   const { hours, minutes, seconds } = useCountdown();
 
   useEffect(() => {
-    const dismissed = localStorage.getItem('fleurite-bar-v3-dismissed');
+    const dismissed = localStorage.getItem('fleurite-bar-v4-dismissed');
     if (!dismissed) setVisible(true);
   }, []);
 
@@ -72,13 +72,13 @@ export default function AnnouncementBar() {
         className="flex items-center gap-2.5 hover:opacity-90 transition-opacity cursor-pointer"
         aria-label="Get the scripts — offer ends soon"
       >
-        {/* Mobile: shorter copy */}
+        {/* Mobile: shorter copy — resentment hook */}
         <span className="text-xs font-semibold tracking-wide sm:hidden">
-          Get the scripts — $27
+          The rules he never told you — $27
         </span>
-        {/* Desktop: full copy */}
+        {/* Desktop: full copy — social proof + resentment */}
         <span className="hidden sm:inline text-xs md:text-sm font-semibold tracking-wide">
-          Launch price ends in
+          🔒 7,700+ women discovered the rules he never explained — ends in
         </span>
         <div className="flex items-center gap-1 bg-white/10 rounded px-2 py-1">
           <Digit value={hours} label="hr" />
@@ -88,13 +88,13 @@ export default function AnnouncementBar() {
           <Digit value={seconds} label="sec" />
         </div>
         <span className="hidden sm:inline text-xs font-bold text-clay-200 uppercase tracking-widest border border-clay-200/40 rounded px-2 py-0.5">
-          Get $27 Access
+          Get $27 Access →
         </span>
       </button>
       <button
         onClick={() => {
           setVisible(false);
-          localStorage.setItem('fleurite-bar-v3-dismissed', '1');
+          localStorage.setItem('fleurite-bar-v4-dismissed', '1');
         }}
         className="absolute right-3 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors"
         aria-label="Dismiss"
@@ -105,4 +105,4 @@ export default function AnnouncementBar() {
       </button>
     </div>
   );
-}
+}

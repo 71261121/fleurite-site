@@ -59,8 +59,8 @@ export default function AboutPage() {
                 <p className="text-muted-foreground">of research and real-world application</p>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-black text-pine-600 mb-2">45K+</div>
-                <p className="text-muted-foreground">women have used our system</p>
+                <div className="text-4xl font-black text-pine-600 mb-2">7,700+</div>
+                <p className="text-muted-foreground">women have used this system</p>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-black text-pine-600 mb-2">943</div>

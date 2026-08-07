@@ -198,7 +198,7 @@ export async function generateBookPdf(book: Book): Promise<Buffer> {
         doc.moveTo(x, yb).lineTo(x + 4, yb + 4).lineTo(x, yb + 8).lineTo(x - 4, yb + 4).fill()
       }
       doc.restore()
-      doc.font("Helvetica").fontSize(10).fillColor("#bcd0c1").text("The Rooted Method", 0, doc.page.height - 120, {
+      doc.font("Helvetica").fontSize(10).fillColor("#bcd0c1").text("The Avoidant's Unwritten Rules", 0, doc.page.height - 120, {
         align: "center",
         characterSpacing: 2,
       })

@@ -41,7 +41,7 @@ function SuccessContent() {
           body: JSON.stringify({
             sessionId,
             items: [{
-              productName: 'Fleurite — Stop Chasing System',
+              productName: "The Avoidant's Unwritten Rules",
               price: 27,
             }],
             amount: 27,

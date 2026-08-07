@@ -11,8 +11,8 @@ export default function Footer() {
               Fleurite.me
             </h3>
             <p className="text-gray-400 mb-4 max-w-md">
-              Digital guides for understanding attachment patterns and building
-              healthier relationships. Real tools, not just validation.
+              Psychology meets practical tools. No platitudes. No &ldquo;just leave him.&rdquo;
+              Real frameworks for real avoidant dynamics — built by someone who lived through it.
             </p>
           </div>
 
@@ -66,4 +66,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+}

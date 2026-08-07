@@ -15,7 +15,7 @@ export default function TrustCredibility() {
 
           {/* Credibility 2 */}
           <div className="text-center">
-            <div className="text-4xl font-black text-pine-600 mb-2">45K+</div>
+                <div className="text-4xl font-black text-pine-600 mb-2">7,700+</div>
             <p className="text-sm text-muted-foreground font-medium">
               Women have downloaded this system
             </p>

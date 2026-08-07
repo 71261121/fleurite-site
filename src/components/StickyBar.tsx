@@ -41,15 +41,16 @@ export default function StickyBar() {
     >
       <div className="max-w-6xl mx-auto flex items-center justify-between gap-3">
         <div className="flex flex-col gap-0.5 flex-1 min-w-0">
-          {/* Mobile: short pain hook. Desktop: full product line */}
+          {/* Mobile: resentment hook */}
           <p className="font-black text-white text-sm leading-snug sm:hidden">
-            Stop freezing. Know what to send.
+            The rules he never told you — $27
           </p>
+          {/* Desktop: full product line */}
           <p className="font-black text-white text-sm md:text-base leading-snug hidden sm:block">
-            Stop freezing. Start saying exactly the right thing.
+            The Avoidant&apos;s Unwritten Rules — know what&apos;s happening and what to do.
           </p>
           <p className="text-xs text-pine-200 hidden sm:block">
-            47 scripts &bull; Decision Framework &bull; 7-Day Reset &bull; $27 one-time
+            5 Unwritten Rules &bull; 47 Scripts &bull; Decision Framework &bull; $27 one-time
           </p>
         </div>
         <button
@@ -62,4 +63,4 @@ export default function StickyBar() {
       </div>
     </div>
   );
-}
+}

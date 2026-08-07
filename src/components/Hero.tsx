@@ -11,10 +11,10 @@ const AVATARS = [
 ];
 
 const PROOF_POINTS = [
-  '47 word-for-word scripts — copy, paste, send tonight',
-  'The exact 3 questions that end months of confusion',
-  'A 7-day reset so you respond instead of spiral',
-  'Instant PDF — on your phone in 60 seconds',
+  '5 unwritten rules decoded — understand the dynamic, not just the symptoms',
+  '47 word-for-word scripts — silence, "I need space," ghosting, walk-away',
+  'The 3-Question Framework — stay or go, decided by you, not his silence',
+  'The 90-Second Calm Protocol — stop the spiral before you reach for your phone',
 ];
 
 export default function Hero() {
@@ -29,39 +29,27 @@ export default function Hero() {
       <div className="relative mx-auto grid max-w-6xl grid-cols-1 items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16 lg:px-8">
         {/* LEFT — copy */}
         <div className="order-2 text-center lg:order-1 lg:text-left">
-          {/* social proof chip */}
-          <div className="mx-auto mb-5 flex w-fit items-center gap-2 lg:mx-0">
-            <div className="flex -space-x-2">
-              {AVATARS.map((src) => (
-                <span
-                  key={src}
-                  className="relative h-7 w-7 overflow-hidden rounded-full ring-2 ring-background"
-                >
-                  <Image src={src} alt="" fill sizes="28px" className="object-cover" />
-                </span>
-              ))}
-            </div>
-            <p className="text-xs font-bold text-pine-700">7,700+ women already stopped chasing</p>
-          </div>
+          {/* eyebrow — audience qualifier, resentment-first */}
+          <p className="mx-auto mb-4 max-w-sm text-xs font-bold uppercase tracking-[0.15em] text-clay-600 lg:mx-0">
+            For women who've been doing all the emotional work in a one-sided relationship
+          </p>
 
-          {/* headline — straight into the pain she already knows */}
+          {/* headline — avoidant hook format, resentment validation */}
           <h1
             className="mb-5 text-balance font-display font-black leading-[1.06] tracking-tight text-foreground"
-            style={{ fontSize: 'clamp(2.5rem, 5.5vw, 4rem)' }}
+            style={{ fontSize: 'clamp(2.4rem, 5.2vw, 3.75rem)' }}
           >
-            He goes quiet.
+            The avoidant plays
             <br />
-            You fall apart.
+            a game he never
             <br />
-            <span className="text-pine-600">Here&apos;s what to send.</span>
+            <span className="text-pine-600">told you the rules to.</span>
           </h1>
 
-          {/* sub — outcome, not philosophy */}
+          {/* sub — all segments: texters, leavers, fence-sitters */}
           <p className="mx-auto mb-6 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg lg:mx-0">
-            You don&apos;t need another page telling you to &quot;just relax.&quot; You need the
-            words. <strong className="text-foreground">47 tested scripts</strong> for every moment
-            you freeze, fold, or want to chase — plus a stay-or-leave framework and a 7-day reset.
-            Read it tonight. Use it tomorrow.
+            5 hidden dynamics. 47 word-for-word scripts. The framework to decide: stay or go.{' '}
+            <strong className="text-foreground">On your terms — not his silence.</strong>
           </p>
 
           {/* proof bullets */}
@@ -88,17 +76,17 @@ export default function Hero() {
           <div className="flex flex-col items-center gap-3 lg:items-start">
             <button
               onClick={openCheckout}
-              className="btn-glow group relative w-full rounded-full bg-gold-400 px-8 py-4 text-base font-black text-pine-900 shadow-lg transition-all hover:bg-gold-300 hover:shadow-xl active:scale-[0.98] sm:w-auto"
+              className="group relative w-full rounded-full bg-pine-600 px-8 py-4 text-base font-black text-white shadow-lg transition-all hover:bg-pine-700 hover:shadow-xl active:scale-[0.98] sm:w-auto"
             >
-              Yes — I want the scripts now
+              Get Instant Access — $27
               <span className="ml-1.5 inline-block transition-transform group-hover:translate-x-1">
-                &rarr;
+                →
               </span>
             </button>
 
             <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-muted-foreground lg:justify-start">
               <span className="text-sm font-black text-foreground">$27</span>
-              <span className="text-muted-foreground line-through">$89</span>
+              <span className="text-muted-foreground line-through">$47</span>
               <span className="hidden text-border sm:inline">|</span>
               <span>30-day guarantee</span>
               <span className="hidden text-border sm:inline">|</span>
@@ -107,6 +95,21 @@ export default function Hero() {
               <span>Discreet billing</span>
             </div>
           </div>
+
+          {/* social proof chip — moved below CTA */}
+          <div className="mx-auto mt-6 flex w-fit items-center gap-2 lg:mx-0">
+            <div className="flex -space-x-2">
+              {AVATARS.map((src) => (
+                <span
+                  key={src}
+                  className="relative h-7 w-7 overflow-hidden rounded-full ring-2 ring-background"
+                >
+                  <Image src={src} alt="" fill sizes="28px" className="object-cover" />
+                </span>
+              ))}
+            </div>
+            <p className="text-xs font-bold text-pine-700">7,700+ women learned the rules. Stopped waiting.</p>
+          </div>
         </div>
 
         {/* RIGHT — product */}
@@ -114,7 +117,7 @@ export default function Hero() {
           <div className="relative rounded-[2rem] bg-gradient-to-br from-pine-100/60 via-blush/40 to-gold-100/50 p-4 sm:p-6">
             <Image
               src="/product/book-cover.png"
-              alt="The Rooted Method — word-for-word scripts for the moment he pulls away"
+              alt="The Avoidant's Unwritten Rules — by Fleurite.me"
               width={460}
               height={460}
               priority
@@ -126,11 +129,11 @@ export default function Hero() {
                 one payment
               </p>
               <p className="font-display text-2xl font-black leading-none">$27</p>
-              <p className="text-[0.6rem] font-medium text-cream/70 line-through">was $89</p>
+              <p className="text-[0.6rem] font-medium text-cream/70 line-through">was $47</p>
             </div>
           </div>
         </div>
       </div>
     </section>
   );
-}
+}

@@ -18,27 +18,27 @@ export default function Home() {
       <AnnouncementBar />
       <Header />
       <main>
-        {/* 1. Hook — pain-first direct attack */}
+        {/* ACT 1: HOOK — Resentment validation, avoidant hook format */}
         <Hero />
-        {/* 2. Mirror — "does this sound like you?" */}
+        {/* ACT 2: MIRROR — 8 pain points, resentment-first */}
         <FadeIn>
           <ProblemAgitation />
         </FadeIn>
-        {/* 3. Social proof — testimonials + stats */}
+        {/* ACT 3: PROOF — 5 testimonials, 3 different outcome types */}
         <FadeIn>
           <SocialProof />
         </FadeIn>
-        {/* 4. Product — what's inside, exactly */}
+        {/* ACT 4: SOLUTION — 4 pillars + named techniques + Zara/Aisha story */}
         <FadeIn>
           <ProductBreakdown />
         </FadeIn>
-        {/* 5. Who made this + why trust it */}
+        {/* ACT 5: TRUST — Lena identity + 6-year story */}
         <FadeIn>
           <CreatorBio />
         </FadeIn>
-        {/* 6. Final buy CTA */}
+        {/* ACT 6: CLOSE — Decision energy, all audience segments */}
         <FinalCTA />
-        {/* 7. FAQ — kill the last objections */}
+        {/* ACT 7: OBJECTION KILL — 8 questions including "what are the unwritten rules?" */}
         <FadeIn>
           <FAQ />
         </FadeIn>

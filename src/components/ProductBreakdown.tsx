@@ -2,43 +2,61 @@
 
 import Image from 'next/image';
 
-const sections = [
+const pillars = [
   {
     number: '01',
-    tag: 'The Scripts',
-    title: '47 Word-for-Word Scripts',
+    tag: 'SEE',
+    title: 'The 5 Unwritten Rules',
     description:
-      'Copy. Adjust two words. Send. No more staring at a blank screen at midnight wondering if you sound too needy.',
+      "The rules he was never forced to explain — because you were absorbing the consequences without knowing they existed. Understanding the mechanics changes everything about how you respond.",
     items: [
-      'Script 7 — He says "I need space." You stop performing calm and say this instead.',
-      'Script 12 — The exact message that ends the 2AM spiral before you send the wrong thing.',
-      'Script 23 — How to ask for consistency without sounding like you are auditioning for his love.',
-      'Script 35 — When you are done being breadcrumbed and need to say it without losing your dignity.',
-      'Script 41 — The walk-away. Two sentences. Door closed. No drama.',
+      "Rule 1 — Why he 'pulls away' isn't random. It's a predictable defensive cycle with predictable tells.",
+      'Rule 2 — Why the more you explain your feelings, the less emotionally safe he feels to stay.',
+      "Rule 3 — Why his silence isn't neutral. It's a regulation strategy that costs you — not him.",
+      'Rule 4 — Why he comes back after distance and expects nothing to have changed.',
+      "Rule 5 — Why you keep getting blamed for reacting to behavior he won't acknowledge.",
     ],
   },
   {
     number: '02',
-    tag: 'The Clarity',
-    title: 'The Stay-or-Leave Decision Framework',
+    tag: 'CALM',
+    title: 'The Nervous System Protocol',
     description:
-      'Three questions about his actual behavior — not his potential, not your feelings — that produce a clear answer most women find in a single afternoon.',
+      'Before you can send the right thing, your body has to be in a state where you can send the right thing. This is the part every other book skips.',
     items: [
-      'Is this avoidant attachment, or is this just a man who does not want to show up?',
-      'Is his behavior improving, or are you just adjusting to it?',
-      'What would you tell your best friend to do — and why have you not done it?',
+      'The 90-Second Interrupt — stops the panic spiral before you reach for your phone',
+      "The Reality Anchor — shuts down 'they hate me' interpretations the moment they start",
+      'The Sleep Protocol — specifically for nights when his silence feels like abandonment',
+      'The Phone Ban Rule — when you cannot trust yourself to text, and what to do instead',
+      'Days 1–7: Build your personal emergency plan so the next silence never catches you unprepared',
     ],
   },
   {
     number: '03',
-    tag: 'The Reset',
-    title: '7-Day Nervous System Reset',
+    tag: 'STAND',
+    title: '47 Word-for-Word Scripts',
     description:
-      'So the next time he goes quiet, you do not spiral. You respond from the version of yourself who has standards.',
+      'Exact words for every moment you freeze, fold, or want to chase. Not templates — specific, tested, ready to send.',
     items: [
-      'Days 1–2: Why you panic (nervous system science, not personal weakness) — and how to stop it mid-spiral.',
-      'Days 3–4: The 90-second protocol. Tested. Science-backed. Works when you are already activated.',
-      'Days 5–7: Build your own emergency plan so the next silence does not catch you unprepared.',
+      "The Mirror Text (Script 3) — de-escalates his mood without you apologizing for existing",
+      "The Space Acceptance Script (Script 7) — what to say to 'I need space' without sounding desperate or angry",
+      'The Ghosting Protocol (Scripts 8–11) — hour-by-hour plan when he goes completely dark',
+      "The Re-entry Script (Script 23) — when he comes back and you don't want to say the wrong thing",
+      'The Walk-Away Text (Script 41) — 19 words. Door closed. With your dignity fully intact.',
+    ],
+  },
+  {
+    number: '04',
+    tag: 'CHOOSE',
+    title: 'The 3-Question Decision Framework',
+    description:
+      "The question is not 'will he change?' The question is: based on his actual behavior — not his words, not his potential — does this relationship have a future you actually want?",
+    items: [
+      'Question 1 — Behavioral: What has he consistently done? Not what he said. What he did.',
+      'Question 2 — Pattern: Is this improving, or are you adjusting your standards downward?',
+      'Question 3 — Direction: Where is this realistically headed in 6 months if nothing changes?',
+      'Result: Stay, leave, or stand — decided by you, from your side, not waiting on his silence',
+      'Most women who complete it report clarity within 7 days. Not because someone told them what to do.',
     ],
   },
 ];
@@ -51,42 +69,26 @@ export default function ProductBreakdown() {
         {/* Header */}
         <div className="text-center mb-10 md:mb-14">
           <p className="text-xs font-black text-clay-600 uppercase tracking-[0.18em] mb-4">
-            What Is Inside
+            What&apos;s Actually Inside
           </p>
           <h2 className="font-display font-bold text-3xl md:text-5xl text-foreground text-balance">
-            Every page is a script,<br />a tool, or a technique.
+            The Avoidant&apos;s Unwritten Rules
           </h2>
           <p className="text-muted-foreground text-lg mt-4 max-w-xl mx-auto">
-            No philosophy. No filler. You can jump to what you need in under 30 seconds.
+            Not theory. Not &ldquo;work on yourself&rdquo; advice. Every page is a rule decoded,
+            a script ready to send, or a tool to stay grounded.
           </p>
         </div>
 
-        {/* Bundle showcase */}
-        <div className="relative mx-auto mb-12 max-w-3xl overflow-hidden rounded-3xl shadow-xl ring-1 ring-border">
-          <Image
-            src="/product/bundle.png"
-            alt="Everything inside The Rooted Method — the book, the reflection workbook, printed script cards, and the audio companion"
-            width={1024}
-            height={1024}
-            className="w-full object-cover"
-          />
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-pine-900/80 to-transparent p-5">
-            <p className="text-sm font-black text-cream md:text-base">
-              The book + script cards + reflection workbook + audio companion
-            </p>
-            <p className="text-xs text-cream/80">Everything downloads instantly. Yours for life.</p>
-          </div>
-        </div>
-
-        {/* Book + sections layout */}
+        {/* Book cover + pillars layout */}
         <div className="grid lg:grid-cols-[260px_1fr] gap-10 lg:gap-16 items-start">
 
-          {/* Book cover column */}
+          {/* Sticky book cover column */}
           <div className="flex flex-col items-center gap-5 lg:sticky lg:top-24">
             <div className="relative w-[220px]">
               <Image
                 src="/product/book-cover.png"
-                alt="The Rooted Method — 47 Scripts + Decision Framework"
+                alt="The Avoidant's Unwritten Rules — by Fleurite.me"
                 width={440}
                 height={440}
                 className="w-full drop-shadow-2xl"
@@ -96,13 +98,14 @@ export default function ProductBreakdown() {
             {/* Value stack */}
             <div className="w-full bg-background border border-border rounded-2xl p-5">
               <p className="text-xs font-black text-pine-600 uppercase tracking-widest mb-4 text-center">
-                What You Get
+                Complete System
               </p>
               <div className="space-y-3 mb-5">
                 {[
-                  { label: '47 Scripts', value: '$47' },
-                  { label: 'Decision Framework', value: '$29' },
-                  { label: '7-Day Reset', value: '$29' },
+                  { label: 'The 5 Unwritten Rules', value: '$19' },
+                  { label: 'Nervous System Protocol', value: '$19' },
+                  { label: '47 Word-for-Word Scripts', value: '$47' },
+                  { label: 'The Decision Framework', value: '$19' },
                   { label: 'Lifetime access', value: 'Free' },
                 ].map(({ label, value }) => (
                   <div key={label} className="flex items-center justify-between text-sm">
@@ -112,33 +115,38 @@ export default function ProductBreakdown() {
                 ))}
                 <div className="border-t border-border pt-3 flex items-center justify-between">
                   <span className="font-black text-foreground">Today</span>
-                  <span className="font-black text-pine-600 text-lg">$27</span>
+                  <div className="flex items-baseline gap-2">
+                    <span className="font-black text-pine-600 text-lg">$27</span>
+                    <span className="text-xs text-muted-foreground line-through">$47</span>
+                  </div>
                 </div>
               </div>
               <button
                 onClick={() => window.dispatchEvent(new Event('open-checkout'))}
                 className="w-full px-5 py-3.5 rounded-xl bg-pine-600 text-white font-bold text-sm hover:bg-pine-700 active:scale-[0.98] transition-all cursor-pointer shadow-md"
               >
-                Yes — I want this now
+                Get Instant Access — $27
               </button>
               <p className="text-xs text-muted-foreground mt-2 text-center">30-day money-back guarantee</p>
             </div>
           </div>
 
-          {/* Sections column */}
+          {/* Pillars column */}
           <div className="space-y-5">
-            {sections.map((section, i) => (
+            {pillars.map((pillar, i) => (
               <div key={i} className="bg-background border border-border rounded-2xl p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-4">
-                  <span className="text-xs font-black text-pine-600/40 font-mono">{section.number}</span>
-                  <span className="text-xs font-black text-pine-600 uppercase tracking-[0.15em]">{section.tag}</span>
+                  <span className="text-xs font-black text-pine-600/40 font-mono">{pillar.number}</span>
+                  <span className="text-xs font-black text-pine-600 uppercase tracking-[0.15em] bg-pine-50 px-2 py-0.5 rounded-full">
+                    {pillar.tag}
+                  </span>
                 </div>
                 <h3 className="font-display font-black text-xl md:text-2xl text-foreground mb-1">
-                  {section.title}
+                  {pillar.title}
                 </h3>
-                <p className="text-sm text-muted-foreground mb-5 leading-relaxed">{section.description}</p>
+                <p className="text-sm text-muted-foreground mb-5 leading-relaxed">{pillar.description}</p>
                 <ul className="space-y-3">
-                  {section.items.map((item, j) => (
+                  {pillar.items.map((item, j) => (
                     <li key={j} className="flex items-start gap-3">
                       <span className="text-clay-500 mt-0.5 font-black text-sm flex-shrink-0">→</span>
                       <span className="text-sm md:text-base text-foreground leading-relaxed font-medium">{item}</span>
@@ -148,30 +156,57 @@ export default function ProductBreakdown() {
               </div>
             ))}
 
+            {/* WHY THIS IS A SYSTEM — Zara vs Aisha story */}
+            <div className="bg-pine-900 rounded-2xl p-6 md:p-8 text-white">
+              <p className="text-xs font-black text-clay-300 uppercase tracking-[0.18em] mb-5">
+                Why This Is A System — Not Just Scripts
+              </p>
+              <div className="grid md:grid-cols-2 gap-5 mb-6">
+                <div className="bg-white/10 rounded-xl p-4">
+                  <p className="text-xs font-black text-white/50 uppercase tracking-wider mb-3">Without Pillar 2</p>
+                  <p className="text-sm text-white/90 leading-relaxed">
+                    Zara reads Script 7. Sends it. 6 hours of silence follow.<br /><br />
+                    She opens her phone again. Sends a follow-up. Then another.<br />
+                    <em className="text-white/60">&ldquo;Sorry — I didn&apos;t mean to pressure you.&rdquo;</em><br /><br />
+                    He pulls back further. Zara blames the script.<br />
+                    <span className="text-white/60">The script wasn&apos;t wrong. Her nervous system was still activated.</span>
+                  </p>
+                </div>
+                <div className="bg-white/10 rounded-xl p-4 border border-clay-400/30">
+                  <p className="text-xs font-black text-clay-300 uppercase tracking-wider mb-3">With All 4 Pillars</p>
+                  <p className="text-sm text-white/90 leading-relaxed">
+                    Aisha has everything. Same Script 7. Same 6 hours.<br /><br />
+                    She uses the 90-Second Interrupt. Heart rate slows.<br />
+                    Reality Anchor: <em className="text-white/70">&ldquo;He&apos;s overwhelmed. This isn&apos;t about me.&rdquo;</em><br /><br />
+                    She puts the phone down.<br />
+                    Next morning: <em className="text-clay-300">&ldquo;Hey. Can we talk tonight?&rdquo;</em>
+                  </p>
+                </div>
+              </div>
+              <p className="text-center text-sm font-black text-clay-300">
+                Same script. Same silence. Different nervous system. Different result.<br />
+                <span className="text-white mt-1 block">That&apos;s why the pillars work together — not separately.</span>
+              </p>
+            </div>
+
             {/* Trust line */}
             <div className="flex flex-wrap gap-6 text-sm text-muted-foreground pt-2">
-              <span className="flex items-center gap-2">
-                <svg className="w-4 h-4 text-pine-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-                Secure checkout
-              </span>
-              <span className="flex items-center gap-2">
-                <svg className="w-4 h-4 text-pine-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                </svg>
-                Instant PDF on your device
-              </span>
-              <span className="flex items-center gap-2">
-                <svg className="w-4 h-4 text-pine-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
-                Works on phone, tablet, laptop
-              </span>
+              {[
+                { icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z', label: 'Secure checkout' },
+                { icon: 'M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4', label: 'Instant PDF on your device' },
+                { icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z', label: 'Works on phone, tablet, laptop' },
+              ].map(({ icon, label }) => (
+                <span key={label} className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-pine-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={icon} />
+                  </svg>
+                  {label}
+                </span>
+              ))}
             </div>
           </div>
         </div>
       </div>
     </section>
   );
-}
+}
