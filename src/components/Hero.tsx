@@ -114,14 +114,14 @@ export default function Hero() {
 
         {/* RIGHT — product */}
         <div className="order-1 flex justify-center lg:order-2">
-          <div className="relative rounded-[2rem] bg-gradient-to-br from-pine-100/60 via-blush/40 to-gold-100/50 p-4 sm:p-6">
+          <div className="relative rounded-[2rem] bg-gradient-to-br from-pine-100/50 via-cream/30 to-pine-50/40 p-4 sm:p-6">
             <Image
               src="/product/book-cover.png"
               alt="The Avoidant's Unwritten Rules — by Fleurite.me"
-              width={460}
-              height={460}
+              width={520}
+              height={520}
               priority
-              className="w-56 mix-blend-multiply drop-shadow-2xl sm:w-64 lg:w-[22rem]"
+              className="w-64 mix-blend-multiply drop-shadow-2xl sm:w-72 lg:w-[26rem]"
             />
             {/* floating price badge */}
             <div className="absolute -bottom-3 -left-3 rotate-[-6deg] rounded-2xl bg-clay-600 px-4 py-2 text-center text-cream shadow-lg sm:-left-5">
