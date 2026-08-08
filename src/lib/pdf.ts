@@ -11,10 +11,20 @@ import type { Book, Block, Chapter } from "@/content/book"
 // Fleurite palette (matches the site design tokens)
 const PINE = "#2f4a3c"
 const PINE_SOFT = "#436a51"
+const PINE_DARK = "#1e3228"
 const CLAY = "#c6764f"
 const INK = "#23271f"
 const MUTE = "#5f6b5c"
 const OAT = "#f4efe4"
+const SAND = "#f7f2ed"
+
+// Section tint colors for chapter openers
+const SECTION_COLORS: Record<string, string> = {
+  see: PINE_DARK,
+  calm: "#4a3728",
+  stand: "#2d3a4a",
+  choose: "#3a2d4a",
+}
 
 const PAGE = { margin: 72 } // 1 inch
 
@@ -57,18 +67,20 @@ function renderBlock(doc: PDFKit.PDFDocument, block: Block) {
       doc.moveDown(0.3)
       const startX = doc.x
       const startY = doc.y
+      // oat background box
+      doc.save().fillColor(OAT).rect(startX, startY, doc.page.width - PAGE.margin * 2, 0).fill().restore()
       // clay accent bar
       doc.save().fillColor(CLAY).rect(startX, startY + 2, 3, 0).fill().restore()
-      doc.font("Times-Italic").fontSize(13.5).fillColor(PINE_SOFT)
+      doc.font("Times-Italic").fontSize(15).fillColor(PINE_SOFT)
       const barX = startX
       const textX = startX + 16
-      const beforeY = doc.y
       doc.text(block.text, textX, doc.y, {
         width: doc.page.width - PAGE.margin - textX,
         lineGap: 3,
+        characterSpacing: 0.5,
       })
       const afterY = doc.y
-      doc.save().fillColor(CLAY).rect(barX, beforeY, 3, afterY - beforeY).fill().restore()
+      doc.save().fillColor(CLAY).rect(barX, startY, 4, afterY - startY + 4).fill().restore()
       doc.x = startX
       doc.moveDown(0.8)
       break
@@ -90,30 +102,85 @@ function renderBlock(doc: PDFKit.PDFDocument, block: Block) {
     case "script": {
       const x = doc.x
       const width = doc.page.width - PAGE.margin - x
-      const padY = doc.y
-      // label
-      doc.font("Helvetica-Bold").fontSize(8.5).fillColor(CLAY).text(block.when.toUpperCase(), x + 14, padY + 12, {
+      const cardY = doc.y
+
+      // 1. OAT card background — full height estimated after content
+      // We draw the left CLAY accent bar after content is placed
+
+      // 2. PINE top label strip
+      doc.save()
+        .fillColor(PINE)
+        .rect(x, cardY, width, 22)
+        .fill()
+        .restore()
+
+      doc.font("Helvetica-Bold").fontSize(8).fillColor(OAT).text(block.when.toUpperCase(), x + 14, cardY + 6, {
         width: width - 28,
         characterSpacing: 0.5,
       })
-      doc.moveDown(0.3)
-      doc.font("Times-Italic").fontSize(12.5).fillColor(PINE).text(block.say, x + 14, doc.y, {
+      doc.y = cardY + 22 + 10
+
+      // 3. Script text (italic, PINE_SOFT)
+      doc.font("Times-Italic").fontSize(12).fillColor(PINE_SOFT).text(block.say, x + 14, doc.y, {
         width: width - 28,
         lineGap: 3,
       })
+
+      // 4. Why separator + why text
       if (block.why) {
         doc.moveDown(0.3)
-        doc.font("Helvetica").fontSize(9.5).fillColor(MUTE).text("Why it works: " + block.why, x + 14, doc.y, {
+        const sepY = doc.y
+        doc.save().fillColor(CLAY).rect(x + 14, sepY, width - 28, 0.5).fill().restore()
+        doc.moveDown(0.4)
+        doc.font("Helvetica").fontSize(9.5).fillColor(MUTE).text("WHY IT WORKS: " + block.why, x + 14, doc.y, {
           width: width - 28,
           lineGap: 2,
         })
       }
-      const endY = doc.y + 12
-      // card background drawn behind: emulate by a left accent + top/bottom rules
-      doc.save().fillColor(CLAY).rect(x, padY, 3, endY - padY).fill().restore()
+
+      const endY = doc.y + 14
+
+      // 5. CLAY left accent bar (full card height)
+      doc.save().fillColor(CLAY).rect(x, cardY, 3, endY - cardY).fill().restore()
+
+      // 6. OAT background rectangle (behind everything, draw last as transparent overlay approximation)
+      // PDFKit limitation: we draw a subtle OAT tint as a border frame instead
+      doc.save().strokeColor(OAT).lineWidth(1).rect(x + 4, cardY, width - 4, endY - cardY).stroke().restore()
+
       doc.x = x
       doc.y = endY
       doc.moveDown(0.7)
+      break
+    }
+    case "reader_map": {
+      const x = doc.x
+      const width = doc.page.width - PAGE.margin - x
+      const startY = doc.y
+
+      // PINE header
+      doc.save()
+        .fillColor(PINE)
+        .rect(x, startY, width, 24)
+        .fill()
+        .restore()
+      doc.font("Helvetica-Bold").fontSize(9).fillColor(OAT)
+        .text(block.title.toUpperCase(), x + 12, startY + 6, { width: width - 24, characterSpacing: 0.8 })
+
+      let y = startY + 24
+      block.items.forEach((item, i) => {
+        const bg = i % 2 === 0 ? OAT : "#ffffff"
+        doc.save().fillColor(bg).rect(x, y, width, 22).fill().restore()
+        doc.font("Times-Roman").fontSize(10).fillColor(INK)
+          .text(item.situation, x + 12, y + 5, { width: width * 0.6, continued: false })
+        doc.font("Helvetica-Bold").fontSize(10).fillColor(CLAY)
+          .text(item.page, x + width * 0.6 + 10, y + 5, { width: width * 0.35, align: "right" })
+        doc.y = y + 22
+        y += 22
+      })
+
+      // Border
+      doc.save().strokeColor(PINE).lineWidth(1).rect(x, startY, width, y - startY).stroke().restore()
+      doc.moveDown(1)
       break
     }
     case "divider":
@@ -124,22 +191,41 @@ function renderBlock(doc: PDFKit.PDFDocument, block: Block) {
 
 function addChapter(doc: PDFKit.PDFDocument, chapter: Chapter, isFirst: boolean) {
   doc.addPage()
+
+  // Determine section color from part text
+  let sectionTint = PINE_DARK
+  const partLower = (chapter.part || "").toLowerCase()
+  if (partLower.includes("see")) sectionTint = SECTION_COLORS.see
+  else if (partLower.includes("calm")) sectionTint = SECTION_COLORS.calm
+  else if (partLower.includes("stand")) sectionTint = SECTION_COLORS.stand
+  else if (partLower.includes("choose")) sectionTint = SECTION_COLORS.choose
+
+  // Full-width dark section block at top
+  doc.save().fillColor(sectionTint).rect(0, 0, doc.page.width, 80).fill().restore()
+
   if (chapter.part) {
-    doc.font("Helvetica-Bold").fontSize(9).fillColor(CLAY).text(chapter.part.toUpperCase(), {
+    doc.font("Helvetica-Bold").fontSize(9).fillColor(OAT).text(chapter.part.toUpperCase(), PAGE.margin, 28, {
       characterSpacing: 1,
+      width: doc.page.width - PAGE.margin * 2,
     })
-    doc.moveDown(0.4)
+    doc.y = 28
   }
   if (chapter.number) {
-    doc.font("Times-Italic").fontSize(12).fillColor(MUTE).text("Chapter " + chapter.number)
-    doc.moveDown(0.1)
+    doc.font("Times-Italic").fontSize(11).fillColor("#bcd0c1")
+      .text("Chapter " + chapter.number, PAGE.margin, 44, {
+        width: doc.page.width - PAGE.margin * 2,
+      })
+    doc.y = 44
   }
-  doc.font("Times-Bold").fontSize(26).fillColor(PINE).text(chapter.title, { lineGap: 2 })
-  doc.moveDown(0.2)
-  // clay underline
-  const uy = doc.y
-  doc.save().fillColor(CLAY).rect(doc.x, uy, 54, 2).fill().restore()
-  doc.moveDown(1)
+  // Chapter title on dark background
+  doc.font("Times-Bold").fontSize(24).fillColor(OAT).text(chapter.title, PAGE.margin, 58, {
+    lineGap: 2,
+    width: doc.page.width - PAGE.margin * 2,
+  })
+
+  doc.y = 90
+  doc.fillColor(INK)
+
   chapter.blocks.forEach((b) => renderBlock(doc, b))
 }
 
@@ -198,7 +284,7 @@ export async function generateBookPdf(book: Book): Promise<Buffer> {
         doc.moveTo(x, yb).lineTo(x + 4, yb + 4).lineTo(x, yb + 8).lineTo(x - 4, yb + 4).fill()
       }
       doc.restore()
-      doc.font("Helvetica").fontSize(10).fillColor("#bcd0c1").text("The Avoidant's Unwritten Rules", 0, doc.page.height - 120, {
+      doc.font("Helvetica").fontSize(10).fillColor("#bcd0c1").text(book.title, 0, doc.page.height - 120, {
         align: "center",
         characterSpacing: 2,
       })

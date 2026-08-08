@@ -145,14 +145,28 @@ export default function ProductBreakdown() {
                   {pillar.title}
                 </h3>
                 <p className="text-sm text-muted-foreground mb-5 leading-relaxed">{pillar.description}</p>
-                <ul className="space-y-3">
-                  {pillar.items.map((item, j) => (
-                    <li key={j} className="flex items-start gap-3">
-                      <span className="text-clay-500 mt-0.5 font-black text-sm flex-shrink-0">→</span>
-                      <span className="text-sm md:text-base text-foreground leading-relaxed font-medium">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-sm text-muted-foreground mb-5 leading-relaxed">{pillar.description}</p>
+                                <ul className="space-y-3">
+                                  {pillar.items.map((item, j) => (
+                                    <li key={j} className="flex items-start gap-3">
+                                      <span className="text-clay-500 mt-0.5 font-black text-sm flex-shrink-0">→</span>
+                                      <span className="text-sm md:text-base text-foreground leading-relaxed font-medium">{item}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                                {pillar.tag === 'STAND' && (
+                                  <div className="mt-6 bg-muted/50 border border-border rounded-xl p-4">
+                                    <p className="text-[10px] font-black text-pine-600 uppercase tracking-widest mb-2">
+                                      SCRIPT 7 — WHEN YOU NEED A DIRECT ANSWER
+                                    </p>
+                                    <p className="text-sm italic text-foreground leading-relaxed">
+                                      &ldquo;I don&apos;t know if we&apos;re working through something or if this is you stepping back entirely. I&apos;m not going to keep guessing. Can you tell me which one it is?&rdquo;
+                                    </p>
+                                    <p className="text-[10px] text-muted-foreground mt-2">
+                                      47 more scripts like this inside the book.
+                                    </p>
+                                  </div>
+                                )}
               </div>
             ))}
 
@@ -209,4 +223,4 @@ export default function ProductBreakdown() {
       </div>
     </section>
   );
-}
+}

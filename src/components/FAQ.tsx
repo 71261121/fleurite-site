@@ -9,6 +9,11 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
+    question: "Is this for my specific situation?",
+    answer:
+      "Yes. The book serves 5 different situations: (1) Still in the relationship trying to understand, (2) Want to know if it's fixable, (3) Want to leave but feel stuck, (4) Already left but still emotionally hooked, (5) Know the theory but can't stop chasing. The book opens with a Reader Map that directs you to your section in under 2 minutes.",
+  },
+  {
     question: "What are the 'unwritten rules' exactly?",
     answer:
       "They're the hidden behavioral patterns that define how an avoidant person operates — patterns they don't articulate, sometimes don't even consciously know, but that you feel the consequences of every day. Rule 1, for example, explains why emotional closeness actually triggers withdrawal instead of closeness. Understanding the mechanism changes how you respond to it — completely.",
@@ -155,4 +160,4 @@ export default function FAQ() {
       </div>
     </section>
   );
-}
+}
