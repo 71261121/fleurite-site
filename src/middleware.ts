@@ -7,7 +7,12 @@ export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
   const response = NextResponse.next()
 
-  // ─── Security Headers ───
+  // Skip ALL middleware for static assets — let Vercel/Next.js serve with correct headers
+  if (pathname.match(/\.(png|jpg|jpeg|webp|svg|ico|css|js|woff|woff2|ttf|eot|mp4|mp3|pdf)$/i)) {
+    return response
+  }
+
+  // ─── Security Headers (HTML/API only) ───
   response.headers.set('X-Frame-Options', 'DENY')
   response.headers.set('X-Content-Type-Options', 'nosniff')
   response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin')
