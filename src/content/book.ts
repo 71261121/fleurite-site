@@ -10,7 +10,7 @@
  *   BACK MATTER (19-20)  — 7-Day Implementation Map + Final Word
  */
 
-import type { Book, Block, Chapter } from "./types";
+import type { Book } from "./types";
 import { FRONT_MATTER, SEE_CHAPTERS } from "./part-see";
 import { SEE_CHAPTERS_2_5 } from "./part-see-2-5";
 import { CALM_CHAPTERS } from "./part-calm";
