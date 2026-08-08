@@ -21,7 +21,7 @@ const faqs: FAQItem[] = [
   {
     question: 'He just went silent. What do I actually say right now?',
     answer:
-      "That's Script 7. It's 12 words. It communicates your position without panic, desperation, or blame. Women who've used it consistently report two things: 'I felt calm sending it' and 'he actually responded differently.' Both are inside the book. Open it, find Script 7, send it. That's it.",
+      "That's Script 17. It's 17 words. It communicates your position without panic, desperation, or blame. Women who've used it consistently report two things: 'I felt calm sending it' and 'he actually responded differently.' Both are inside the book. Open it, find Script 17, send it. That's it.",
   },
   {
     question: 'How do I know if I should stay or leave?',

@@ -39,8 +39,8 @@ const pillars = [
       'Exact words for every moment you freeze, fold, or want to chase. Not templates — specific, tested, ready to send.',
     items: [
       "The Mirror Text (Script 3) — de-escalates his mood without you apologizing for existing",
-      "The Space Acceptance Script (Script 7) — what to say to 'I need space' without sounding desperate or angry",
-      'The Ghosting Protocol (Scripts 8–11) — hour-by-hour plan when he goes completely dark',
+      "The Space Acceptance Script (Script 4) — what to say to 'I need space' without sounding desperate or angry",
+            'The Ghosting Protocol (Scripts 17–24) — hour-by-hour plan when he goes completely dark',
       "The Re-entry Script (Script 23) — when he comes back and you don't want to say the wrong thing",
       'The Walk-Away Text (Script 41) — 19 words. Door closed. With your dignity fully intact.',
     ],
@@ -179,7 +179,7 @@ export default function ProductBreakdown() {
                 <div className="bg-white/10 rounded-xl p-4">
                   <p className="text-xs font-black text-white/50 uppercase tracking-wider mb-3">Without Pillar 2</p>
                   <p className="text-sm text-white/90 leading-relaxed">
-                    Zara reads Script 7. Sends it. 6 hours of silence follow.<br /><br />
+                    Zara reads Script 17. Sends it. 6 hours of silence follow.<br /><br />
                     She opens her phone again. Sends a follow-up. Then another.<br />
                     <em className="text-white/60">&ldquo;Sorry — I didn&apos;t mean to pressure you.&rdquo;</em><br /><br />
                     He pulls back further. Zara blames the script.<br />
@@ -189,7 +189,7 @@ export default function ProductBreakdown() {
                 <div className="bg-white/10 rounded-xl p-4 border border-clay-400/30">
                   <p className="text-xs font-black text-clay-300 uppercase tracking-wider mb-3">With All 4 Pillars</p>
                   <p className="text-sm text-white/90 leading-relaxed">
-                    Aisha has everything. Same Script 7. Same 6 hours.<br /><br />
+                    Aisha has everything. Same Script 17. Same 6 hours.<br /><br />
                     She uses the 90-Second Interrupt. Heart rate slows.<br />
                     Reality Anchor: <em className="text-white/70">&ldquo;He&apos;s overwhelmed. This isn&apos;t about me.&rdquo;</em><br /><br />
                     She puts the phone down.<br />
