@@ -159,8 +159,24 @@ export async function GET(request: NextRequest) {
       )
     }
 
-    // If action=file is requested, generate and serve the real book PDF
+    // If action=file is requested, serve the static book PDF (product artifact)
     if (action === 'file') {
+      const fs = await import('fs')
+      const path = await import('path')
+      const pdfPath = path.join(process.cwd(), 'public', 'book', 'the-avoidants-unwritten-rules.pdf')
+
+      if (fs.existsSync(pdfPath)) {
+        const pdfBuffer = fs.readFileSync(pdfPath)
+        return new Response(pdfBuffer as unknown as BodyInit, {
+          headers: {
+            'Content-Type': 'application/pdf',
+            'Content-Disposition': `attachment; filename="the-avoidants-unwritten-rules.pdf"`,
+            'Cache-Control': 'no-cache, no-store, must-revalidate',
+          },
+        })
+      }
+
+      // Fallback: generate at runtime only if static file missing
       const { generateBookPdf } = await import('@/lib/pdf')
       const { BOOK } = await import('@/content/book')
       const pdfBuffer = await generateBookPdf(BOOK)
