@@ -16,7 +16,6 @@ const CLAY = "#c6764f"
 const INK = "#23271f"
 const MUTE = "#5f6b5c"
 const OAT = "#f4efe4"
-const SAND = "#f7f2ed"
 
 // Section tint colors for chapter openers
 const SECTION_COLORS: Record<string, string> = {
@@ -189,7 +188,7 @@ function renderBlock(doc: PDFKit.PDFDocument, block: Block) {
   }
 }
 
-function addChapter(doc: PDFKit.PDFDocument, chapter: Chapter, isFirst: boolean) {
+function addChapter(doc: PDFKit.PDFDocument, chapter: Chapter) {
   doc.addPage()
 
   // Determine section color from part text
@@ -294,7 +293,7 @@ export async function generateBookPdf(book: Book): Promise<Buffer> {
       book.frontMatter.forEach((b) => renderBlock(doc, b))
 
       // ---- CHAPTERS ----
-      book.chapters.forEach((ch, i) => addChapter(doc, ch, i === 0))
+      book.chapters.forEach((ch) => addChapter(doc, ch))
 
       // ---- PAGE NUMBERS / FOOTER (skip cover) ----
       const range = doc.bufferedPageRange()

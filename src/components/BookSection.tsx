@@ -104,7 +104,7 @@ export default function BookSection() {
 
               {/* CTA */}
               <div className="pt-6 border-t border-border/40">
-                <a href="/api/downloads/free-guide" download="why-you-shrink-yourself.pdf">
+                <a href="/api/downloads/free-guide" download="the-3am-text-rescue.pdf">
                   <Button className="w-full h-12 rounded-xl bg-evergreen text-warmWhite font-semibold hover:bg-evergreen/90 transition-all group/btn flex items-center justify-center gap-2">
                     <Download className="h-5 w-5" />
                     Download Free PDF
@@ -134,7 +134,7 @@ export default function BookSection() {
             <div className="relative mb-6 overflow-hidden rounded-xl h-64 bg-gradient-to-br from-clay to-oat">
               <Image
                 src="/book-cover.png"
-                alt="The Avoidant's Unwritten Rules — by Fleurite.me"
+                alt="The Avoidant&apos;s Unwritten Rules — by Fleurite.me"
                 fill
                 className="object-cover"
               />
@@ -145,7 +145,7 @@ export default function BookSection() {
             <div className="flex items-center justify-between mb-4">
               <div>
                 <h3 className="font-serif text-xl sm:text-2xl font-bold text-foreground">
-                  The Avoidant's Unwritten Rules
+                  The Avoidant&apos;s Unwritten Rules
                 </h3>
                 <p className="text-sm text-clay font-medium mt-1">
                   The Complete Guide with 47 Scripts
@@ -185,7 +185,7 @@ export default function BookSection() {
 
             {/* CTA */}
             <div className="pt-6 border-t border-border/40 space-y-3">
-              <Link href="/checkout?product=paid-book-stop-shrinking">
+              <Link href="/checkout?product=the-avoidants-unwritten-rules">
                 <Button className="w-full h-12 rounded-xl bg-clay text-warmWhite font-semibold hover:bg-clay/90 transition-all flex items-center justify-center gap-2">
                   <Lock className="h-5 w-5" />
                   Get Full Access Now
