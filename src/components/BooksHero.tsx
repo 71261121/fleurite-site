@@ -113,7 +113,7 @@ export default function BooksHero() {
               <div className="relative w-40 h-56 mx-auto mb-8 rounded-lg overflow-hidden shadow-lg">
                 <Image
                   src="/book-cover.png"
-                  alt="Stop Shrinking Yourself - Complete Guide"
+                  alt="The Avoidant's Unwritten Rules — by Fleurite.me"
                   fill
                   className="object-cover"
                   sizes="160px"
@@ -123,7 +123,7 @@ export default function BooksHero() {
 
               {/* Content */}
               <h3 className="font-display text-2xl font-bold text-[#1a1a1a] mb-2">
-                Stop Shrinking Yourself
+                The Avoidant's Unwritten Rules
               </h3>
               
               <p className="text-[#9b1c1c] font-semibold text-sm mb-2">

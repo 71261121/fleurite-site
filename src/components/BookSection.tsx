@@ -134,7 +134,7 @@ export default function BookSection() {
             <div className="relative mb-6 overflow-hidden rounded-xl h-64 bg-gradient-to-br from-clay to-oat">
               <Image
                 src="/book-cover.png"
-                alt="Stop Shrinking Yourself - Complete Guide"
+                alt="The Avoidant's Unwritten Rules — by Fleurite.me"
                 fill
                 className="object-cover"
               />
@@ -145,7 +145,7 @@ export default function BookSection() {
             <div className="flex items-center justify-between mb-4">
               <div>
                 <h3 className="font-serif text-xl sm:text-2xl font-bold text-foreground">
-                  Stop Shrinking Yourself
+                  The Avoidant's Unwritten Rules
                 </h3>
                 <p className="text-sm text-clay font-medium mt-1">
                   The Complete Guide with 47 Scripts
