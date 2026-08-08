@@ -20,7 +20,20 @@ function useCountdown() {
     const tick = () => {
       const diff = end - Date.now();
       if (diff <= 0) {
-        setTimeLeft({ hours: 0, minutes: 0, seconds: 0 });
+        // Auto-reset: create new 23h47m deadline when old one expires
+        const newD = new Date();
+        newD.setHours(newD.getHours() + 23);
+        newD.setMinutes(newD.getMinutes() + 47);
+        const newDeadline = newD.toISOString();
+        localStorage.setItem(key, newDeadline);
+        // Update end time for this session
+        const newEnd = newD.getTime();
+        const newDiff = newEnd - Date.now();
+        setTimeLeft({
+          hours: Math.floor(newDiff / 3600000),
+          minutes: Math.floor((newDiff % 3600000) / 60000),
+          seconds: Math.floor((newDiff % 60000) / 1000),
+        });
         return;
       }
       setTimeLeft({
