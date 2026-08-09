@@ -286,7 +286,7 @@ export function getOrderConfirmationHtml(params: {
         <table width="100%" cellpadding="0" cellspacing="0">
           <tr>
             <td style="text-align:center;padding:16px 0;">
-              <a href="${BASE_URL}/library"
+              <a href="${BASE_URL}"
                    style="display:inline-block;background-color:#9B1B4E;color:white;text-decoration:none;padding:14px 36px;border-radius:12px;font-weight:600;font-size:16px;">
                 Go to My Library
               </a>
