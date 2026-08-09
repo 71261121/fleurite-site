@@ -129,6 +129,8 @@ function SuccessContent() {
               <div className="mb-6 space-y-3">
                 <a
                   href={downloadUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 bg-pine-600 text-white px-6 py-4 rounded-xl font-bold hover:bg-pine-700 transition-colors shadow-lg"
                 >
                   <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

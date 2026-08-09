@@ -113,7 +113,7 @@ export async function createAndSendDownloadEmail(params: {
       },
     })
 
-    const downloadUrl = `${BASE_URL}/download?token=${token}`
+    const downloadUrl = `${BASE_URL}/api/download?token=${token}&action=file`
 
     await sendEmail({
       to: customerEmail,
@@ -124,6 +124,8 @@ export async function createAndSendDownloadEmail(params: {
         downloadUrl,
         productNames: productNames && productNames.length > 0 ? productNames : ['Fleurite Digital Guide'],
       }),
+    }).catch((e) => {
+      console.error('[Download Email Error] Resend failing (might need Domain Verification):', e)
     })
 
     return downloadUrl
