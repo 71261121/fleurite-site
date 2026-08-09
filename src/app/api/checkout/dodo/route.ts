@@ -36,9 +36,12 @@ export async function POST(request: NextRequest) {
 
     if (!res.ok) {
       const errText = await res.text()
-      console.error('[DodoCheckout] API Error:', errText)
+      console.error('[DodoCheckout] API Error:', res.status, errText)
       return NextResponse.json({
         error: `DodoPayments API error: ${res.status}`,
+        details: errText,
+        environment: environment,
+        baseUrl: baseUrl,
       }, { status: res.status })
     }
 
