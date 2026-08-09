@@ -14,6 +14,7 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
   const [orderNumber, setOrderNumber] = useState('')
   const [email, setEmail] = useState('')
   const [emailError, setEmailError] = useState('')
+  const [downloadUrl, setDownloadUrl] = useState('')
 
   const handleOpenChange = useCallback((open: boolean) => {
     if (!open && step !== 'processing') {
@@ -36,70 +37,80 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
     setStep('processing')
 
     try {
-      const res = await fetch('/api/checkout/dodo', {
+      // Try DodoPayments first
+      let checkoutUrl = null
+      try {
+        const dodoRes = await fetch('/api/checkout/dodo', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            product_cart: [{ product_id: 'pdt_test', quantity: 1 }],
+            customer: { email: email, name: '' },
+            return_url: 'https://www.fleurite.me/checkout/success',
+          }),
+        })
+        const dodoData = await dodoRes.json()
+        if (dodoData.checkout_url) {
+          checkoutUrl = dodoData.checkout_url
+        }
+      } catch (dodoError) {
+        console.log('[Checkout] DodoPayments not available, using fallback')
+      }
+
+      if (checkoutUrl) {
+        window.location.href = checkoutUrl
+        return
+      }
+
+      // Fallback to existing Stripe/simulated flow
+      const res = await fetch('/api/checkout/create', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          product_cart: [{ product_id: process.env.NEXT_PUBLIC_DODO_PRODUCT_ID || 'pdt_test', quantity: 1 }],
-          customer: { email: email, name: '' },
-          return_url: 'https://www.fleurite.me/checkout/success',
+          items: [{
+            productName: "The Avoidant's Unwritten Rules",
+            price: 27,
+          }],
+          amount: 27,
+          customerEmail: email,
         }),
       })
 
       const data = await res.json()
 
-      if (!res.ok || !data.checkout_url) {
-        // Fallback to simulated mode for testing
-        console.log('[Checkout] DodoPayments not available, using simulated mode')
-        const createRes = await fetch('/api/checkout/create', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            items: [{
-              productName: "The Avoidant's Unwritten Rules",
-              price: 27,
-            }],
-            amount: 27,
-            customerEmail: email,
-          }),
-        })
-        const createData = await createRes.json()
-
-        if (!createRes.ok || !createData.success) {
-          setError(createData.error || 'Failed to create checkout session')
-          setStep('review')
-          return
-        }
-
-        if (createData.mode === 'stripe' && createData.stripeUrl) {
-          window.location.href = createData.stripeUrl
-          return
-        }
-
-        // Simulated mode
-        await new Promise((r) => setTimeout(r, 2000))
-        const confirmRes = await fetch('/api/checkout/confirm', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            sessionId: createData.sessionId,
-            items: [{ productName: "The Avoidant's Unwritten Rules", price: 27 }],
-            amount: 27,
-          }),
-        })
-        const confirmData = await confirmRes.json()
-        if (confirmData.success) {
-          setOrderNumber(confirmData.orderNumber || '')
-          setStep('success')
-        } else {
-          setError(confirmData.error || 'Payment failed')
-          setStep('error')
-        }
+      if (!res.ok || !data.success) {
+        setError(data.error || 'Failed to create checkout session')
+        setStep('review')
         return
       }
 
-      // DodoPayments success — redirect to checkout
-      window.location.href = data.checkout_url
+      if (data.mode === 'stripe' && data.stripeUrl) {
+        window.location.href = data.stripeUrl
+        return
+      }
+
+      // Simulated mode
+      await new Promise((r) => setTimeout(r, 2000))
+      const confirmRes = await fetch('/api/checkout/confirm', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          sessionId: data.sessionId,
+          items: [{ productName: "The Avoidant's Unwritten Rules", price: 27 }],
+          amount: 27,
+        }),
+      })
+      const confirmData = await confirmRes.json()
+      if (confirmData.success) {
+        setOrderNumber(confirmData.orderNumber || '')
+        if (confirmData.downloadUrl) {
+          setDownloadUrl(confirmData.downloadUrl)
+        }
+        setStep('success')
+      } else {
+        setError(confirmData.error || 'Payment failed')
+        setStep('error')
+      }
     } catch {
       setError('Network error. Please try again.')
       setStep('review')
