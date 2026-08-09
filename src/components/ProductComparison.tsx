@@ -1,16 +1,15 @@
 'use client';
 
 const features = [
-  { name: '47 Copy-Paste Scripts (Named & Specific)', description: 'Script #7 (he needs space), #12 (2AM texting), #23 (I deserve consistency), #41 (walking away with dignity)' },
-  { name: 'Script Strategy: Exact Words For Every Scenario', description: 'When he pulls away · When he goes silent · When he says he\'s confused · When you want to walk away' },
-  { name: 'The Binary Question: STAY or GO Decision', description: '3 questions reveal whether he\'ll change or whether you deserve better — no more going in circles' },
-  { name: 'Framework: Leaving With Dignity', description: 'How to end it calmly without shrinking yourself or begging for closure' },
-  { name: 'Understanding: What He\'s Doing (And Why)', description: 'Know his attachment pattern before responding — so you stop guessing' },
-  { name: 'Understanding: Why You Chase (Root Cause)', description: 'See your nervous system programming clearly so you can interrupt the pattern' },
-  { name: '7-Day Neural Rewiring Protocol', description: 'Train your nervous system to feel safe WITHOUT his validation' },
-  { name: 'VIDEO Guides + Breathing Audio', description: 'Watch tutorials, practice exercises, guided meditation — not just reading' },
+  { name: '5 Unwritten Rules Decoded', description: 'Why he pulls away, why explanations backfire, why his silence costs you, and why the blame falls on you' },
+  { name: '47 Copy-Paste Scripts (Named & Specific)', description: 'Script 4 (space acceptance), Script 7 (clarity demand), Script 23 (re-entry), Script 41 (walk-away with dignity)' },
+  { name: 'The 3-Question Decision Framework', description: 'Three behavioral questions that cut through anxiety and produce a clear answer: stay, stand, or go' },
+  { name: 'The 90-Second Calm Protocol', description: 'Stop the panic spiral before you reach for your phone — works in under two minutes' },
+  { name: 'The Reality Anchor', description: 'Separate what you know from what you fear — when the story takes over at 2AM' },
+  { name: 'The Sleep Protocol', description: 'Three rules for nights when his silence feels like abandonment' },
+  { name: 'Days 1-7 Emergency Plan', description: 'One action per day to stabilize your nervous system and regain clarity' },
   { name: '30-Day Money-Back Guarantee', description: 'Not helpful? Full refund. No judgment, no questions asked.' },
-  { name: 'Lifetime PDF + Email Backup', description: 'Download immediately. Yours forever. Read on any device, save offline.' },
+  { name: 'Lifetime PDF Access', description: 'Download immediately. Yours forever. Read on any device, save offline.' },
 ];
 
 export default function ProductComparison() {

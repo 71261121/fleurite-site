@@ -163,7 +163,7 @@ export async function GET(request: NextRequest) {
     if (action === 'file') {
       const fs = await import('fs')
       const path = await import('path')
-      const pdfPath = path.join(process.cwd(), 'public', 'book', 'the-avoidants-unwritten-rules.pdf')
+      const pdfPath = path.join(process.cwd(), 'private', 'the-avoidants-unwritten-rules.pdf')
 
       if (fs.existsSync(pdfPath)) {
         const pdfBuffer = fs.readFileSync(pdfPath)

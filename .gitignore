@@ -43,3 +43,4 @@ next-env.d.ts
 .vercel
 public/generated-assets/
 test_out.pdf
+private/
