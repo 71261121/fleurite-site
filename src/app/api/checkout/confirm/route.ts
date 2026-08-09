@@ -12,18 +12,11 @@ export async function POST(request: NextRequest) {
 
     const { sessionId, items, amount, customerEmail, customerName } = validation.data
 
-    // Look up the checkout session — try DB id first, then Stripe id
-    let checkoutSession = await db.checkoutSession.findUnique({
+    // Look up the checkout session
+    const checkoutSession = await db.checkoutSession.findUnique({
       where: { id: sessionId },
       include: { user: true },
     })
-
-    if (!checkoutSession && sessionId.startsWith('cs_')) {
-      checkoutSession = await db.checkoutSession.findUnique({
-        where: { stripeSessionId: sessionId },
-        include: { user: true },
-      })
-    }
 
     if (!checkoutSession) {
       return NextResponse.json({ error: 'Checkout session not found' }, { status: 404 })
@@ -40,25 +33,6 @@ export async function POST(request: NextRequest) {
         data: { status: 'expired' },
       })
       return NextResponse.json({ error: 'Checkout session has expired' }, { status: 400 })
-    }
-
-    // Verify Stripe session if applicable
-    const stripeSecretKey = process.env.STRIPE_SECRET_KEY
-    const isSimulated = !stripeSecretKey || stripeSecretKey === 'sk_test_placeholder'
-
-    if (!isSimulated && checkoutSession.stripeSessionId) {
-      const stripe = (await import('stripe')).default
-      const stripeClient = new stripe(stripeSecretKey, {
-        apiVersion: '2026-07-29.dahlia',
-      })
-
-      const stripeSession = await stripeClient.checkout.sessions.retrieve(
-        checkoutSession.stripeSessionId
-      )
-
-      if (stripeSession.payment_status !== 'paid') {
-        return NextResponse.json({ error: 'Payment not completed' }, { status: 400 })
-      }
     }
 
     const orderItems = items || []
@@ -81,7 +55,7 @@ export async function POST(request: NextRequest) {
         status: 'paid',
         amount: amount || checkoutSession.amount,
         currency: checkoutSession.currency,
-        paymentMethod: isSimulated ? 'simulated' : 'stripe',
+        paymentMethod: 'dodo',
         paidAt: new Date(),
         customerEmail: customerEmail || checkoutSession.user?.email || '',
         customerName: customerName || checkoutSession.user?.name || '',
@@ -96,28 +70,13 @@ export async function POST(request: NextRequest) {
       include: { items: true },
     })
 
-    // Add to library (if product IDs exist)
-    for (const item of orderItems) {
-      if (item.productId) {
-        await db.libraryItem.upsert({
-          where: { userId_productId: { userId: checkoutSession.userId, productId: item.productId } },
-          create: {
-            userId: checkoutSession.userId,
-            productId: item.productId,
-            accessType: 'purchased',
-          },
-          update: {},
-        })
-      }
-    }
-
     // Mark checkout session as completed
     await db.checkoutSession.update({
       where: { id: checkoutSession.id },
       data: { status: 'completed' },
     })
 
-    // Send download email and get the download URL
+    // Send download email
     const recipientEmail = customerEmail || checkoutSession.user?.email
     const recipientName = customerName || checkoutSession.user?.name || undefined
     let downloadUrl: string | null = null

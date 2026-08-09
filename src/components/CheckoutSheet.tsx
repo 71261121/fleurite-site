@@ -37,82 +37,28 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
     setStep('processing')
 
     try {
-      // Try DodoPayments first
-      let checkoutUrl = null
-      try {
-        const dodoRes = await fetch('/api/checkout/dodo', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            product_cart: [{ product_id: 'pdt_test', quantity: 1 }],
-            customer: { email: email, name: '' },
-            return_url: 'https://www.fleurite.me/checkout/success',
-          }),
-        })
-        const dodoData = await dodoRes.json()
-        if (dodoData.checkout_url) {
-          checkoutUrl = dodoData.checkout_url
-        }
-      } catch (dodoError) {
-        console.log('[Checkout] DodoPayments not available, using fallback')
-      }
-
-      if (checkoutUrl) {
-        window.location.href = checkoutUrl
-        return
-      }
-
-      // Fallback to existing Stripe/simulated flow
-      const res = await fetch('/api/checkout/create', {
+      // Try DodoPayments checkout
+      const dodoRes = await fetch('/api/checkout/dodo', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          items: [{
-            productName: "The Avoidant's Unwritten Rules",
-            price: 27,
-          }],
-          amount: 27,
-          customerEmail: email,
+          product_cart: [{ product_id: 'pdt_test', quantity: 1 }],
+          customer: { email: email, name: '' },
+          return_url: 'https://www.fleurite.me/checkout/success',
         }),
       })
+      const dodoData = await dodoRes.json()
 
-      const data = await res.json()
-
-      if (!res.ok || !data.success) {
-        setError(data.error || 'Failed to create checkout session')
-        setStep('review')
+      if (dodoData.checkout_url) {
+        window.location.href = dodoData.checkout_url
         return
       }
 
-      if (data.mode === 'stripe' && data.stripeUrl) {
-        window.location.href = data.stripeUrl
-        return
-      }
-
-      // Simulated mode
-      await new Promise((r) => setTimeout(r, 2000))
-      const confirmRes = await fetch('/api/checkout/confirm', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          sessionId: data.sessionId,
-          items: [{ productName: "The Avoidant's Unwritten Rules", price: 27 }],
-          amount: 27,
-        }),
-      })
-      const confirmData = await confirmRes.json()
-      if (confirmData.success) {
-        setOrderNumber(confirmData.orderNumber || '')
-        if (confirmData.downloadUrl) {
-          setDownloadUrl(confirmData.downloadUrl)
-        }
-        setStep('success')
-      } else {
-        setError(confirmData.error || 'Payment failed')
-        setStep('error')
-      }
+      // DodoPayments not ready — show message
+      setError('Payment system is being set up. Please try again in a few minutes.')
+      setStep('review')
     } catch {
-      setError('Network error. Please try again.')
+      setError('Payment system is being set up. Please try again in a few minutes.')
       setStep('review')
     }
   }, [email])
@@ -222,7 +168,7 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
             <motion.div key="processing" initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="flex flex-col items-center justify-center min-h-[400px] gap-6">
               <Loader2 className="h-10 w-10 animate-spin text-pine-600" />
               <p className="text-lg font-medium text-foreground">Redirecting to payment...</p>
-              <p className="text-sm text-muted-foreground">You&apos;ll complete payment on Stripe&apos;s secure page</p>
+              <p className="text-sm text-muted-foreground">You&apos;ll complete payment on our secure checkout</p>
             </motion.div>
           )}
 

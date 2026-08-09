@@ -31,7 +31,7 @@ export default function PrivacyPage() {
               <p className="text-muted-foreground mb-4">We may collect information about you in the following ways:</p>
               <ul className="list-disc pl-6 space-y-2 text-muted-foreground">
                 <li><strong>Email Address:</strong> When you download our free guide or purchase our complete system</li>
-                <li><strong>Payment Information:</strong> Processed securely through Stripe (we don't store full card details)</li>
+                <li><strong>Payment Information:</strong> Processed securely through DodoPayments (we don&apos;t store full card details)</li>
                 <li><strong>Usage Data:</strong> Which pages you visit, how long you stay, and what you click (via analytics)</li>
                 <li><strong>Device Information:</strong> Browser type, operating system, and IP address</li>
               </ul>
@@ -51,7 +51,7 @@ export default function PrivacyPage() {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-foreground mb-4">4. Data Security</h2>
               <p className="text-muted-foreground leading-relaxed">
-                We implement appropriate security measures to protect your personal information. All payment processing is handled by Stripe, a PCI DSS Level 1 certified payment processor. We do not store sensitive payment information on our servers.
+                We implement appropriate security measures to protect your personal information. All payment processing is handled by DodoPayments, a PCI DSS Level 1 certified payment processor. We do not store sensitive payment information on our servers.
               </p>
             </section>
 
@@ -69,7 +69,7 @@ export default function PrivacyPage() {
             <section className="mb-8">
               <h2 className="text-2xl font-bold text-foreground mb-4">6. Third-Party Services</h2>
               <p className="text-muted-foreground mb-4">
-                We use third-party services including Stripe (payments) and analytics providers. We are not responsible for their privacy practices. Please review their privacy policies independently.
+                We use third-party services including DodoPayments (payments) and analytics providers. We are not responsible for their privacy practices. Please review their privacy policies independently.
               </p>
             </section>
 
