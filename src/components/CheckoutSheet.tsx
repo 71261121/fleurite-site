@@ -38,6 +38,7 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
 
     try {
       // Try DodoPayments checkout
+      console.log('[Checkout] Calling /api/checkout/dodo...')
       const dodoRes = await fetch('/api/checkout/dodo', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -47,17 +48,22 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
           return_url: 'https://www.fleurite.me/checkout/success',
         }),
       })
+      console.log('[Checkout] DodoPayments response status:', dodoRes.status)
       const dodoData = await dodoRes.json()
+      console.log('[Checkout] DodoPayments response:', JSON.stringify(dodoData).substring(0, 200))
 
       if (dodoData.checkout_url) {
+        console.log('[Checkout] Redirecting to:', dodoData.checkout_url)
         window.location.href = dodoData.checkout_url
         return
       }
 
       // DodoPayments not ready — show message
+      console.log('[Checkout] No checkout_url in response')
       setError('Payment system is being set up. Please try again in a few minutes.')
       setStep('review')
-    } catch {
+    } catch (e) {
+      console.error('[Checkout] Error:', e)
       setError('Payment system is being set up. Please try again in a few minutes.')
       setStep('review')
     }
