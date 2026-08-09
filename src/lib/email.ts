@@ -1,11 +1,7 @@
-import { Resend } from 'resend'
+const BREVO_API_KEY = process.env.BREVO_API_KEY || null
 
-const resend = process.env.RESEND_API_KEY
-  ? new Resend(process.env.RESEND_API_KEY)
-  : null
-
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev'
-const FROM_DISPLAY = process.env.EMAIL_FROM || 'Fleurite'
+const FROM_EMAIL = 'noreply@fleurite.me'
+const FROM_DISPLAY = 'Fleurite'
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3005'
 
 export interface SendEmailOptions {
@@ -15,24 +11,33 @@ export interface SendEmailOptions {
 }
 
 export async function sendEmail({ to, subject, html }: SendEmailOptions): Promise<boolean> {
-  // If Resend is not configured, just log
-  if (!resend) {
-    console.log(`[Email] Resend not configured. Would send to: ${to}`)
+  // If Brevo is not configured, just log
+  if (!BREVO_API_KEY) {
+    console.log(`[Email] Brevo not configured. Would send to: ${to}`)
     console.log(`[Email] Subject: ${subject}`)
-    console.log(`[Email] HTML: ${html}`)
     return false
   }
 
   try {
-    const { data, error } = await resend.emails.send({
-      from: FROM_EMAIL.includes('<') ? FROM_EMAIL : `${FROM_DISPLAY} <${FROM_EMAIL}>`,
-      to: [to],
-      subject,
-      html,
+    const response = await fetch('https://api.brevo.com/v3/smtp/email', {
+      method: 'POST',
+      headers: {
+        'accept': 'application/json',
+        'api-key': BREVO_API_KEY,
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        sender: { name: FROM_DISPLAY, email: FROM_EMAIL },
+        to: [{ email: to }],
+        subject,
+        htmlContent: html,
+      }),
     })
 
-    if (error) {
-      console.error('[Email] Send error:', error)
+    const data = await response.json()
+
+    if (!response.ok) {
+      console.error('[Email] Brevo error:', response.status, data)
       return false
     }
 
@@ -51,7 +56,7 @@ export async function sendEmail({ to, subject, html }: SendEmailOptions): Promis
       // Non-blocking
     }
 
-    console.log(`[Email] Sent to ${to}: ${data?.id}`)
+    console.log(`[Email] Sent to ${to}: ${data.messageId}`)
     return true
   } catch (err) {
     console.error('[Email] Exception:', err)
