@@ -118,7 +118,7 @@
   --color-coral: #d4af37;
 
   --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
-  --font-display: var(--font-playfair), 'Playfair Display', Georgia, serif;
+  --font-display: var(--font-fraunces), 'Fraunces', Georgia, serif;
 }
 
 /* Dark mode is not yet implemented. The boutique cream aesthetic is intentional across themes. */

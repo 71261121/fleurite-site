@@ -2,7 +2,7 @@
  * "The 3am Text Rescue" — Fleurite free lead magnet.
  * A short, high-value guide delivered by email in exchange for a signup.
  * Purpose: give a real quick win (stop the panic-text spiral tonight) and
- * nurture the reader toward the paid book "You Were Never Too Much".
+ * nurture the reader toward the paid book "The Avoidant's Unwritten Rules".
  */
 
 import type { Book } from "./book"
@@ -68,7 +68,7 @@ export const FREE_GUIDE: Book = {
       blocks: [
         {
           type: "p",
-          text: "This rescue calms the moment. But the pattern underneath — the chasing, the shrinking, the belief that you're 'too much' — has roots, and it can be healed for good. That's what our book, You Were Never Too Much, is for: the full nervous-system science of why you chase, the exact scripts to stay whole, the boundaries that reveal the truth, and a 7-day return to yourself.",
+          text: "This rescue calms the moment. But the pattern underneath — the chasing, the shrinking, the belief that you're 'too much' — has roots, and it can be healed for good. That's what our book, The Avoidant's Unwritten Rules, is for: the full nervous-system science of why you chase, the exact scripts to stay whole, the boundaries that reveal the truth, and a 7-day return to yourself.",
         },
         {
           type: "quote",

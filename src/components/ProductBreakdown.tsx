@@ -145,7 +145,6 @@ export default function ProductBreakdown() {
                   {pillar.title}
                 </h3>
                 <p className="text-sm text-muted-foreground mb-5 leading-relaxed">{pillar.description}</p>
-                <p className="text-sm text-muted-foreground mb-5 leading-relaxed">{pillar.description}</p>
                                 <ul className="space-y-3">
                                   {pillar.items.map((item, j) => (
                                     <li key={j} className="flex items-start gap-3">

@@ -59,7 +59,7 @@ export default function ProductsPage() {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-clay-600 font-bold">→</span>
-                  <span className="text-muted-foreground"><strong>The Binary Question</strong> - Three questions that reveal his true intentions</span>
+                  <span className="text-muted-foreground"><strong>The 3-Question Decision Framework</strong> - Three questions that reveal his true intentions</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-clay-600 font-bold">→</span>
