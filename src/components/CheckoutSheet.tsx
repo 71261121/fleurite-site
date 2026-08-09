@@ -43,7 +43,7 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          product_cart: [{ product_id: 'pdt_0Nl0tDPCDBQkR4G2I6lfS', quantity: 1 }],
+          product_cart: [{ product_id: process.env.NEXT_PUBLIC_DODO_PRODUCT_ID || 'pdt_0Nl23SnmF2NApxxJ6hrQK', quantity: 1 }],
           customer: { email: email, name: '' },
           return_url: 'https://www.fleurite.me/checkout/success',
         }),
