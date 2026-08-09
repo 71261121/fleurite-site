@@ -7,14 +7,16 @@ import { Suspense } from 'react'
 
 function SuccessContent() {
   const searchParams = useSearchParams()
-  const sessionId = searchParams.get('session_id')
+  const sessionId = searchParams.get('session_id') || searchParams.get('payment_id') || searchParams.get('checkout_session_id')
   const [status, setStatus] = useState<'loading' | 'success' | 'error'>('loading')
   const [orderNumber, setOrderNumber] = useState('')
   const [downloadUrl, setDownloadUrl] = useState('')
 
   useEffect(() => {
     if (!sessionId) {
-      setStatus('error')
+      // DodoPayments may return without session_id — webhook handles order
+      // Show success anyway
+      setStatus('success')
       return
     }
 
