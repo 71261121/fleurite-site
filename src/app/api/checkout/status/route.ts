@@ -10,9 +10,16 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Missing session ID' }, { status: 400 })
     }
 
-    const checkoutSession = await db.checkoutSession.findUnique({
+    let checkoutSession = await db.checkoutSession.findUnique({
       where: { id },
     })
+
+    // Stripe IDs start with "cs_" — try stripeSessionId column
+    if (!checkoutSession && id.startsWith('cs_')) {
+      checkoutSession = await db.checkoutSession.findUnique({
+        where: { stripeSessionId: id },
+      })
+    }
 
     if (!checkoutSession) {
       return NextResponse.json({ error: 'Checkout session not found' }, { status: 404 })

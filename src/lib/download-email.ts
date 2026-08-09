@@ -73,7 +73,7 @@ export function getDownloadEmailHtml(params: DownloadEmailParams): string {
       <td style="text-align:center;padding-top:30px;color:#999;font-size:12px;line-height:1.6;">
         <p>
           <a href="${BASE_URL}" style="color:#9B1B4E;text-decoration:none;margin:0 10px;">Home</a> |
-          <a href="${BASE_URL}/library" style="color:#9B1B4E;text-decoration:none;margin:0 10px;">My Library</a> |
+          <a href="mailto:support@fleurite.me" style="color:#9B1B4E;text-decoration:none;margin:0 10px;">Support</a> |
           <a href="${BASE_URL}/terms" style="color:#9B1B4E;text-decoration:none;margin:0 10px;">Terms</a>
         </p>
         <p style="margin-top:12px;">With care, the Fleurite team</p>

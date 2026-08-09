@@ -12,11 +12,18 @@ export async function POST(request: NextRequest) {
 
     const { sessionId, items, amount, customerEmail, customerName } = validation.data
 
-    // Look up the checkout session
-    const checkoutSession = await db.checkoutSession.findUnique({
+    // Look up the checkout session — try DB id first, then Stripe id
+    let checkoutSession = await db.checkoutSession.findUnique({
       where: { id: sessionId },
       include: { user: true },
     })
+
+    if (!checkoutSession && sessionId.startsWith('cs_')) {
+      checkoutSession = await db.checkoutSession.findUnique({
+        where: { stripeSessionId: sessionId },
+        include: { user: true },
+      })
+    }
 
     if (!checkoutSession) {
       return NextResponse.json({ error: 'Checkout session not found' }, { status: 404 })
@@ -29,7 +36,7 @@ export async function POST(request: NextRequest) {
     // Check expiration
     if (checkoutSession.expiresAt && checkoutSession.expiresAt < new Date()) {
       await db.checkoutSession.update({
-        where: { id: sessionId },
+        where: { id: checkoutSession.id },
         data: { status: 'expired' },
       })
       return NextResponse.json({ error: 'Checkout session has expired' }, { status: 400 })
@@ -106,25 +113,29 @@ export async function POST(request: NextRequest) {
 
     // Mark checkout session as completed
     await db.checkoutSession.update({
-      where: { id: sessionId },
+      where: { id: checkoutSession.id },
       data: { status: 'completed' },
     })
 
-    // Send download email (non-blocking)
+    // Send download email and get the download URL
     const recipientEmail = customerEmail || checkoutSession.user?.email
     const recipientName = customerName || checkoutSession.user?.name || undefined
+    let downloadUrl: string | null = null
     if (recipientEmail) {
-      import('@/lib/download-email').then(({ createAndSendDownloadEmail }) => {
-        createAndSendDownloadEmail({
+      try {
+        const { createAndSendDownloadEmail } = await import('@/lib/download-email')
+        downloadUrl = await createAndSendDownloadEmail({
           orderNumber: orderNum,
           customerEmail: recipientEmail,
           customerName: recipientName,
           productNames: orderItems.map((i: { productName: string }) => i.productName),
-        }).catch(err => console.error('[Checkout Confirm] Download email error:', err))
-      })
+        })
+      } catch (err) {
+        console.error('[Checkout Confirm] Download email error:', err)
+      }
     }
 
-    return NextResponse.json({ success: true, order, orderNumber: orderNum }, { status: 201 })
+    return NextResponse.json({ success: true, order, orderNumber: orderNum, downloadUrl }, { status: 201 })
   } catch (error) {
     console.error('Checkout confirmation error:', error)
     return NextResponse.json({ error: 'Failed to confirm checkout' }, { status: 500 })

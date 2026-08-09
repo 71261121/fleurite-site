@@ -12,16 +12,26 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
   const [step, setStep] = useState<CheckoutStep>('review')
   const [error, setError] = useState('')
   const [orderNumber, setOrderNumber] = useState('')
+  const [email, setEmail] = useState('')
+  const [emailError, setEmailError] = useState('')
 
   const handleOpenChange = useCallback((open: boolean) => {
     if (!open && step !== 'processing') {
       setStep('review')
       setError('')
+      setEmail('')
+      setEmailError('')
     }
     onOpenChange(open)
   }, [onOpenChange, step])
 
   const handlePayNow = useCallback(async () => {
+    // Validate email first
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setEmailError('Please enter a valid email address')
+      return
+    }
+    setEmailError('')
     setError('')
     setStep('processing')
 
@@ -35,7 +45,7 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
             price: 27,
           }],
           amount: 27,
-          customerEmail: 'guest@fleurite.me',
+          customerEmail: email,
         }),
       })
 
@@ -127,7 +137,29 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
                   <span className="text-2xl font-black text-pine-600">$27</span>
                 </div>
 
-                {/* Pay Button — no email required */}
+                {/* Email Input — required for delivery */}
+                <div className="space-y-1.5">
+                  <label className="text-sm font-medium text-foreground">
+                    Your email <span className="text-red-400">*</span>
+                  </label>
+                  <p className="text-xs text-muted-foreground">We'll send your download link here</p>
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value)
+                      setEmailError('')
+                    }}
+                    placeholder="you@example.com"
+                    className="w-full rounded-xl border border-muted bg-card px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-pine-500 focus:border-pine-500 transition-colors"
+                    required
+                  />
+                  {emailError && (
+                    <p className="text-xs text-red-500">{emailError}</p>
+                  )}
+                </div>
+
+                {/* Pay Button */}
                 <button
                   onClick={handlePayNow}
                   className="w-full h-14 rounded-xl bg-pine-600 text-white text-base font-bold shadow-lg hover:bg-pine-700 transition-colors flex items-center justify-center gap-2"

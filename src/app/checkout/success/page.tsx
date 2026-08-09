@@ -10,6 +10,7 @@ function SuccessContent() {
   const sessionId = searchParams.get('session_id')
   const [status, setStatus] = useState<'loading' | 'success' | 'error'>('loading')
   const [orderNumber, setOrderNumber] = useState('')
+  const [downloadUrl, setDownloadUrl] = useState('')
 
   useEffect(() => {
     if (!sessionId) {
@@ -52,6 +53,9 @@ function SuccessContent() {
 
         if (confirmRes.ok && confirmData.success) {
           setOrderNumber(confirmData.orderNumber || '')
+          if (confirmData.downloadUrl) {
+            setDownloadUrl(confirmData.downloadUrl)
+          }
           setStatus('success')
         } else {
           setStatus('error')
@@ -85,6 +89,18 @@ function SuccessContent() {
             <h1 className="text-2xl font-bold text-foreground mb-2">Payment Successful!</h1>
             {orderNumber && <p className="text-sm text-muted-foreground mb-4">Order #{orderNumber}</p>}
             <p className="text-muted-foreground mb-6">Check your email for your download link.</p>
+            {downloadUrl && (
+              <a
+                href={downloadUrl}
+                className="inline-flex items-center gap-2 bg-pine-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-pine-700 transition-colors mb-4"
+              >
+                <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                Download Your Book
+              </a>
+            )}
+            <p className="text-xs text-muted-foreground">Link expires in 24 hours.</p>
             <Link
               href="/"
               className="inline-block bg-pine-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-pine-700 transition-colors"

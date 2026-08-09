@@ -9,7 +9,11 @@ export async function POST(request: NextRequest) {
     if (!validation.success) {
       return NextResponse.json({ error: validation.error }, { status: 400 })
     }
-    const { items, amount, customerEmail, customerName } = validation.data
+    const { customerEmail, customerName } = validation.data
+
+    // Server-side price — NEVER trust client-supplied amount
+    const amount = 27
+    const items = [{ productName: "The Avoidant's Unwritten Rules", price: 27 }]
 
     // Auto-create or find guest user (email optional — Stripe collects it)
     const email = customerEmail || `guest-${Date.now()}@fleurite.me`

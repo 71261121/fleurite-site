@@ -268,7 +268,7 @@ export function getOrderConfirmationHtml(params: {
           <p style="color:#999;font-size:13px;">Order ${orderNumber}</p>
         </div>
         <p style="color:#666;line-height:1.7;margin:0 0 24px 0;">${greeting},<br/><br/>
-          Thank you for your purchase! Your healing guides are now available in your <a href="${BASE_URL}/library" style="color:#9B1B4E;font-weight:500;">library</a>. You can access them anytime.
+          Thank you for your purchase! Your download link is in the separate email we just sent. If you need help, contact <a href="mailto:support@fleurite.me" style="color:#9B1B4E;font-weight:500;">support@fleurite.me</a>.
         </p>
         <div style="background:#FFFBF7;border-radius:12px;padding:20px;margin:0 0 24px 0;">
           <table width="100%" cellpadding="0" cellspacing="0">
