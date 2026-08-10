@@ -85,13 +85,13 @@ export default function AnnouncementBar() {
         className="flex items-center gap-2.5 hover:opacity-90 transition-opacity cursor-pointer"
         aria-label="Get the scripts — offer ends soon"
       >
-        {/* Mobile: shorter copy — resentment hook */}
+        {/* Mobile: shorter copy — format + price */}
         <span className="text-xs font-semibold tracking-wide sm:hidden">
-          The rules he never told you — $27
+          Instant PDF download — $27
         </span>
-        {/* Desktop: full copy — social proof + resentment */}
+        {/* Desktop: full copy — social proof + format */}
         <span className="hidden sm:inline text-xs md:text-sm font-semibold tracking-wide">
-          🔒 7,700+ women discovered the rules he never explained — ends in
+          🔒 7,700+ women downloaded the rules — Instant PDF &bull; ends in
         </span>
         <div className="flex items-center gap-1 bg-white/10 rounded px-2 py-1">
           <Digit value={hours} label="hr" />

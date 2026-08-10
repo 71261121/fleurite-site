@@ -154,9 +154,9 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
                 <div className="flex items-center justify-center gap-4 text-xs text-gray-400">
                   <span className="flex items-center gap-1"><Lock className="h-3.5 w-3.5" /> SSL Encrypted</span>
                   <span>•</span>
-                  <span>Instant Access</span>
+                  <span>Instant PDF Download</span>
                   <span>•</span>
-                  <span>Instant Access</span>
+                  <span>Secure Payment</span>
                 </div>
 
                 {error && (

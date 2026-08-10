@@ -78,17 +78,15 @@ export default function Hero() {
               onClick={openCheckout}
               className="group relative w-full rounded-full bg-pine-600 px-8 py-4 text-base font-black text-white shadow-lg transition-all hover:bg-pine-700 hover:shadow-xl active:scale-[0.98] sm:w-auto"
             >
-              Get Instant Access — $27
-              <span className="ml-1.5 inline-block transition-transform group-hover:translate-x-1">
-                →
-              </span>
+              <span className="mr-2">↓</span>
+              Download Instantly — $27
             </button>
 
             <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-muted-foreground lg:justify-start">
               <span className="text-sm font-black text-foreground">$27</span>
               <span className="text-muted-foreground line-through">$47</span>
               <span className="hidden text-border sm:inline">|</span>
-              <span>Instant PDF</span>
+              <span className="font-semibold text-pine-600">Instant PDF download</span>
               <span className="hidden text-border sm:inline">|</span>
               <span>Lifetime access</span>
               <span className="hidden text-border sm:inline">|</span>
@@ -125,8 +123,8 @@ export default function Hero() {
             />
             {/* floating price badge */}
             <div className="absolute -bottom-3 -left-3 rotate-[-6deg] rounded-2xl bg-clay-600 px-4 py-2 text-center text-cream shadow-lg sm:-left-5">
-              <p className="text-[0.6rem] font-medium uppercase tracking-wider text-cream/80">
-                one payment
+              <p className="text-[0.6rem] font-bold uppercase tracking-wider text-cream/90">
+                INSTANT PDF DOWNLOAD
               </p>
               <p className="font-display text-2xl font-black leading-none">$27</p>
               <p className="text-[0.6rem] font-medium text-cream/70 line-through">was $47</p>

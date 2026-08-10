@@ -27,7 +27,7 @@ const pillars = [
       'The 90-Second Interrupt — stops the panic spiral before you reach for your phone',
       "The Reality Anchor — shuts down 'they hate me' interpretations the moment they start",
       'The Sleep Protocol — specifically for nights when his silence feels like abandonment',
-      'The Phone Ban Rule — when you cannot trust yourself to text, and what to do instead',
+      'The 10pm Boundary — protect your decision-making from your own biology',
       'Days 1–7: Build your personal emergency plan so the next silence never catches you unprepared',
     ],
   },
@@ -93,6 +93,11 @@ export default function ProductBreakdown() {
                 height={440}
                 className="w-full drop-shadow-2xl"
               />
+            </div>
+            {/* Device compatibility badge */}
+            <div className="flex items-center gap-2 text-xs text-muted-foreground bg-muted/50 rounded-full px-3 py-1.5">
+              <span>📱💻</span>
+              <span>Read on phone, tablet, or laptop</span>
             </div>
 
             {/* Value stack */}
