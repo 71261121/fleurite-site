@@ -5,7 +5,6 @@ import ProblemAgitation from '@/components/ProblemAgitation';
 import SocialProof from '@/components/SocialProof';
 import ProductBreakdown from '@/components/ProductBreakdown';
 import CreatorBio from '@/components/CreatorBio';
-import FinalCTA from '@/components/FinalCTA';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
 import StickyBar from '@/components/StickyBar';
@@ -35,9 +34,7 @@ export default function Home() {
         <FadeIn>
           <CreatorBio />
         </FadeIn>
-        {/* ACT 6: CLOSE — Decision energy, all audience segments */}
-        <FinalCTA />
-        {/* ACT 7: OBJECTION KILL — 8 questions including "what are the unwritten rules?" */}
+        {/* ACT 6: OBJECTION KILL — 8 questions including "what are the unwritten rules?" */}
         <FadeIn>
           <FAQ />
         </FadeIn>
