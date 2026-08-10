@@ -186,7 +186,7 @@ export default function SocialProof() {
             { number: '7,700+', label: 'Women helped' },
             { number: '4.9/5', label: 'Average rating' },
             { number: '47', label: 'Word-for-word scripts' },
-            { number: '30-day', label: 'Money-back guarantee' },
+            { number: 'Instant', label: 'PDF delivery' },
           ].map(({ number, label }) => (
             <div key={label} className="rounded-xl border border-border bg-card p-4 text-center">
               <p className="mb-0.5 text-2xl font-black text-pine-600 md:text-3xl">{number}</p>
@@ -203,7 +203,7 @@ export default function SocialProof() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
           </button>
-          <p className="mt-3 text-xs text-muted-foreground">$47 → $27 today &bull; 30-day guarantee &bull; Instant PDF</p>
+          <p className="mt-3 text-xs text-muted-foreground">$47 → $27 today &bull; Instant access &bull; Lifetime PDF</p>
         </div>
 
       </div>

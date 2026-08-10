@@ -8,7 +8,7 @@ const features = [
   { name: 'The Reality Anchor', description: 'Separate what you know from what you fear — when the story takes over at 2AM' },
   { name: 'The Sleep Protocol', description: 'Three rules for nights when his silence feels like abandonment' },
   { name: 'Days 1-7 Emergency Plan', description: 'One action per day to stabilize your nervous system and regain clarity' },
-  { name: '30-Day Money-Back Guarantee', description: 'Not helpful? Full refund. No judgment, no questions asked.' },
+  { name: 'Instant Access + Lifetime PDF', description: 'Download immediately after purchase. Read on any device. Yours forever.' },
   { name: 'Lifetime PDF Access', description: 'Download immediately. Yours forever. Read on any device, save offline.' },
 ];
 
@@ -66,7 +66,7 @@ export default function ProductComparison() {
           >
             Get Instant Access — $27
           </button>
-          <p className="text-xs text-muted-foreground mt-3">30-day money-back guarantee · Discreet billing · Instant PDF</p>
+          <p className="text-xs text-muted-foreground mt-3">Instant access · Lifetime PDF · Secure checkout</p>
         </div>
 
         {/* Trust row */}
@@ -80,8 +80,8 @@ export default function ProductComparison() {
             <p className="text-xs text-muted-foreground">Save scripts to your phone notes for quick access</p>
           </div>
           <div>
-            <p className="text-sm font-semibold text-pine-600 mb-1">Money-Back Guarantee</p>
-            <p className="text-xs text-muted-foreground">30 days. Full refund if it does not help.</p>
+            <p className="text-sm font-semibold text-pine-600 mb-1">Lifetime Access</p>
+            <p className="text-xs text-muted-foreground">Yours forever. Read on any device.</p>
           </div>
         </div>
 

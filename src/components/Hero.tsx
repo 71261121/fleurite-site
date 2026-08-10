@@ -88,11 +88,11 @@ export default function Hero() {
               <span className="text-sm font-black text-foreground">$27</span>
               <span className="text-muted-foreground line-through">$47</span>
               <span className="hidden text-border sm:inline">|</span>
-              <span>30-day guarantee</span>
-              <span className="hidden text-border sm:inline">|</span>
               <span>Instant PDF</span>
               <span className="hidden text-border sm:inline">|</span>
-              <span>Discreet billing</span>
+              <span>Lifetime access</span>
+              <span className="hidden text-border sm:inline">|</span>
+              <span>One-time payment</span>
             </div>
           </div>
 

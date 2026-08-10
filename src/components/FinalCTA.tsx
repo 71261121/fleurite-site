@@ -77,14 +77,14 @@ export default function FinalCTA() {
             Get The Avoidant&apos;s Unwritten Rules — $27
           </button>
           <p className="text-white/50 text-xs mt-3">
-            30-day money-back guarantee &bull; Instant PDF &bull; Discreet billing
+            Instant access &bull; Lifetime PDF &bull; Secure checkout
           </p>
         </div>
 
         {/* Final objection kill */}
         <p className="text-pine-300 text-sm">
-          If it does not help, email us within 30 days and we refund you the same day.
-          No questions. No hoops. You should never feel trapped by a $27 purchase.
+          Every script is immediately usable. Digital delivery. One-time payment, no subscription.
+          If you have any technical issues, email support@fleurite.me — we&apos;re here to help.
         </p>
 
       </div>

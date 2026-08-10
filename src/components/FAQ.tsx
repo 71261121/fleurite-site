@@ -51,7 +51,7 @@ const faqs: FAQItem[] = [
   {
     question: 'What if it does not work for me?',
     answer:
-      "30-day full refund. No questions, no hoops. Email support@fleurite.me and you'll be refunded the same day. The guarantee exists because the system works — and because you should never feel trapped by a $27 purchase.",
+      "Every script is immediately usable — designed for real transformation, not theory. If you have any technical issues with your purchase, email support@fleurite.me and we'll help resolve them. Digital products are delivered instantly and are non-refundable once downloaded.",
   },
 ];
 
@@ -135,7 +135,7 @@ export default function FAQ() {
             You now know what the rules are.<br />You can start using them tonight.
           </h3>
           <p className="text-muted-foreground text-base mb-6 max-w-sm mx-auto leading-relaxed">
-            $27. Instant PDF. 30-day guarantee. That&apos;s the entire proposition.
+            $27. Instant PDF. Lifetime access. That&apos;s the entire proposition.
           </p>
           <button
             onClick={() => window.dispatchEvent(new Event('open-checkout'))}
@@ -144,7 +144,7 @@ export default function FAQ() {
             Get Instant Access — $27
           </button>
           <p className="text-xs text-muted-foreground mt-3">
-            30-day guarantee &bull; Instant PDF &bull; Or email us for a same-day refund
+            Instant access &bull; Lifetime PDF &bull; Secure checkout
           </p>
         </div>
 

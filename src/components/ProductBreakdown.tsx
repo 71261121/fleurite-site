@@ -127,7 +127,7 @@ export default function ProductBreakdown() {
               >
                 Get Instant Access — $27
               </button>
-              <p className="text-xs text-muted-foreground mt-2 text-center">30-day money-back guarantee</p>
+              <p className="text-xs text-muted-foreground mt-2 text-center">Instant access · Lifetime PDF · One-time payment</p>
             </div>
           </div>
 
