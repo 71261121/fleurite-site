@@ -63,26 +63,6 @@ const testimonials = [
   },
 ];
 
-const quoteCards = [
-  {
-    quote: '"For the first time I felt calm sending a text — instead of sick to my stomach."',
-    name: 'Maya R.',
-    result: 'Stopped the 2AM spiral',
-    bg: 'bg-pine-700',
-  },
-  {
-    quote: '"I stopped performing for someone who kept me guessing. That was the whole shift."',
-    name: 'Camille',
-    result: 'Left with dignity intact',
-    bg: 'bg-clay-600',
-  },
-  {
-    quote: "\"I hadn't checked his Instagram in days. I just forgot to. The book gave me back myself.\"",
-    name: 'Priya K.',
-    result: 'Finished the 7-day reset',
-    bg: 'bg-pine-600',
-  },
-];
 
 function Stars({ count = 5 }: { count?: number }) {
   return (
@@ -133,24 +113,6 @@ export default function SocialProof() {
                   <span className="ml-auto rounded-full border border-pine-100 bg-pine-50 px-2 py-0.5 text-[10px] font-bold text-pine-700">Verified</span>
                 </div>
                 <span className={`inline-block rounded-full border px-2.5 py-0.5 text-[10px] font-bold ${t.outcomeBg}`}>{t.outcome}</span>
-              </div>
-            </div>
-          ))}
-        </div>
-
-        {/* quote cards */}
-        <div className="mb-10 grid gap-4 md:grid-cols-3">
-          {quoteCards.map((card) => (
-            <div key={card.name} className={`${card.bg} flex min-h-[180px] flex-col justify-between rounded-2xl p-6`}>
-              <p className="mb-4 text-base font-semibold italic leading-relaxed text-cream">{card.quote}</p>
-              <div>
-                <p className="text-sm font-black text-cream">{card.name}</p>
-                <div className="mt-1 flex items-center gap-1.5">
-                  <svg className="h-3.5 w-3.5 text-cream/70" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                  <span className="text-xs font-medium text-cream/70">{card.result}</span>
-                </div>
               </div>
             </div>
           ))}
