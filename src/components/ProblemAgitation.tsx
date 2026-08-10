@@ -18,31 +18,11 @@ export default function ProblemAgitation() {
     <section className="py-16 md:py-24 bg-card">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
-        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+        {/* Desktop: 2-column grid | Mobile: linear flow */}
+        <div className="grid gap-8 md:gap-16 md:grid-cols-2">
 
-          {/* LEFT — Photo */}
-          <div className="relative order-2 md:order-1">
-            <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-xl border border-muted">
-              <Image
-                src="/images/woman-phone-night.png"
-                alt="Woman looking at phone anxiously"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-            </div>
-            {/* Overlay quote — the universal inner monologue */}
-            <div className="absolute bottom-4 left-4 right-4 rounded-xl p-4">
-              <p className="text-white text-sm font-semibold leading-snug italic">
-                &ldquo;Why does it always feel like I&apos;m the only one actually trying?&rdquo;
-              </p>
-              <p className="text-white/60 text-xs mt-1">— the thought no one ever validates</p>
-            </div>
-          </div>
-
-          {/* RIGHT — Scenarios */}
-          <div className="order-1 md:order-2">
+          {/* HEADING — Mobile: 1st | Desktop: right column row 1 */}
+          <div className="md:col-start-2 md:row-start-1">
             <p className="text-xs font-black text-clay-600 tracking-[0.2em] uppercase mb-4">
               Be Honest With Yourself
             </p>
@@ -53,7 +33,31 @@ export default function ProblemAgitation() {
               This is not about being needy. This is what happens when someone keeps
               moving the goalposts — and never explains where they moved them.
             </p>
+          </div>
 
+          {/* IMAGE — Mobile: 2nd | Desktop: left column */}
+          <div className="order-2 md:order-1 md:col-start-1 md:row-start-1">
+            <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-xl border border-muted">
+              <Image
+                src="/images/woman-phone-night.png"
+                alt="Woman looking at phone anxiously"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            </div>
+            {/* Overlay quote */}
+            <div className="absolute bottom-4 left-4 right-4 rounded-xl p-4">
+              <p className="text-white text-sm font-semibold leading-snug italic">
+                &ldquo;Why does it always feel like I&apos;m the only one actually trying?&rdquo;
+              </p>
+              <p className="text-white/60 text-xs mt-1">— the thought no one ever validates</p>
+            </div>
+          </div>
+
+          {/* PAIN POINTS + REFRAME — Mobile: 3rd | Desktop: right column row 2 */}
+          <div className="order-3 md:col-start-2 md:row-start-2">
             <div className="space-y-3.5">
               {scenarios.map((s, i) => (
                 <div key={i} className="flex items-start gap-3 bg-background border border-border rounded-xl px-4 py-3">
@@ -65,7 +69,7 @@ export default function ProblemAgitation() {
               ))}
             </div>
 
-            {/* Truth punch — resentment validated → product bridge */}
+            {/* Reframe box */}
             <div className="mt-7 bg-pine-600 rounded-2xl p-6 text-white">
               <p className="text-lg font-black leading-snug mb-2 text-balance">
                 This isn&apos;t neediness.<br />
@@ -82,4 +86,4 @@ export default function ProblemAgitation() {
       </div>
     </section>
   );
-}
+}
