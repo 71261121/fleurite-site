@@ -161,7 +161,7 @@ export const BACK_CHAPTERS: Chapter[] = [
       },
       {
         type: "p",
-        text: "If you want to revisit the foundation, the free '3am Text Rescue' guide is available at fleurite.me",
+        text: "If you want to revisit the foundation, the 3-Day Reset guide is available at fleurite.me",
       },
       { type: "divider" },
       {
