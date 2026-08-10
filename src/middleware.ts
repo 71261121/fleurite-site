@@ -38,11 +38,6 @@ export function middleware(request: NextRequest) {
     }
   }
 
-  // ─── Bypass auth for webhook ───
-  if (pathname === '/api/checkout/webhook') {
-    return response
-  }
-
   // ─── Trailing Slash Redirect ───
   if (pathname !== '/' && pathname.endsWith('/')) {
     const newUrl = pathname.slice(0, -1)

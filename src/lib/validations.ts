@@ -1,16 +1,5 @@
 import { z } from 'zod'
 
-export const checkoutCreateSchema = z.object({
-  items: z.array(z.object({
-    productId: z.string().optional(),
-    productName: z.string().min(1),
-    price: z.number().positive(),
-  })).min(1, 'At least one item is required'),
-  amount: z.number().positive('Amount must be greater than 0'),
-  customerEmail: z.string().email('Invalid email').optional(),
-  customerName: z.string().max(100).optional(),
-})
-
 export const checkoutConfirmSchema = z.object({
   sessionId: z.string().min(1, 'Session ID is required'),
   items: z.array(z.object({
