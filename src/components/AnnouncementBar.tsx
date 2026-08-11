@@ -85,9 +85,9 @@ export default function AnnouncementBar() {
         className="flex items-center gap-2.5 hover:opacity-90 transition-opacity cursor-pointer"
         aria-label="Get the scripts — offer ends soon"
       >
-        {/* Mobile: shorter copy — format + price */}
+        {/* Mobile: shorter copy — social proof + format */}
         <span className="text-xs font-semibold tracking-wide sm:hidden">
-          Instant PDF download — $27
+          🔒 1,247 women downloaded — Instant PDF &bull; $27
         </span>
         {/* Desktop: full copy — social proof + format */}
         <span className="hidden sm:inline text-xs md:text-sm font-semibold tracking-wide">
