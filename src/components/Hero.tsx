@@ -121,14 +121,11 @@ export default function Hero() {
               priority
               className="w-64 mix-blend-multiply drop-shadow-2xl sm:w-72 lg:w-[26rem]"
             />
-            {/* floating price badge */}
-            <div className="absolute -bottom-3 -left-3 rotate-[-6deg] rounded-2xl bg-clay-600 px-4 py-2 text-center text-cream shadow-lg sm:-left-5">
-              <p className="text-[0.6rem] font-bold uppercase tracking-wider text-cream/90">
-                INSTANT PDF DOWNLOAD
-              </p>
-              <p className="font-display text-2xl font-black leading-none">$27</p>
-              <p className="text-[0.6rem] font-medium text-cream/70 line-through">was $47</p>
-            </div>
+          </div>
+          {/* Format text below book — like femin-bloom */}
+          <div className="mt-4 flex flex-col items-center lg:items-start gap-1 text-center lg:text-left">
+            <p className="text-sm font-bold text-foreground">Instant PDF Download</p>
+            <p className="text-xs text-muted-foreground">Lifetime access &bull; Works on any device</p>
           </div>
         </div>
       </div>
