@@ -91,7 +91,7 @@ export default function AnnouncementBar() {
         </span>
         {/* Desktop: full copy — social proof + format */}
         <span className="hidden sm:inline text-xs md:text-sm font-semibold tracking-wide">
-          🔒 7,700+ women downloaded the rules — Instant PDF &bull; ends in
+          🔒 1,247 women downloaded the rules — Instant PDF &bull; ends in
         </span>
         <div className="flex items-center gap-1 bg-white/10 rounded px-2 py-1">
           <Digit value={hours} label="hr" />

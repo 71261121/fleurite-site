@@ -53,7 +53,7 @@ export default function CreatorBio() {
                 As someone who lived through it and built the tools I desperately needed.
               </p>
               <p className="font-black text-foreground text-lg md:text-xl">
-                7,700+ women have used it since. This is not a philosophy book.
+                1,247 women have used it since. This is not a philosophy book.
                 It&apos;s a toolkit. And it&apos;s ready for you tonight.
               </p>
             </div>

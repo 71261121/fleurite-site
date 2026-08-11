@@ -85,12 +85,12 @@ export default function SocialProof() {
         <div className="mb-10 text-center md:mb-14">
           <p className="mb-4 text-xs font-black uppercase tracking-[0.2em] text-clay-600">Real Results</p>
           <h2 className="mb-3 text-balance font-display text-3xl font-bold text-foreground md:text-4xl">
-            7,700 women learned the rules.<br />Here&apos;s what happened.
+            1,247 women learned the rules.<br />Here&apos;s what happened.
           </h2>
           <div className="mt-4 flex items-center justify-center gap-2">
             <Stars />
             <span className="text-sm font-black text-foreground">4.9 / 5</span>
-            <span className="text-sm text-muted-foreground">from 7,700+ readers</span>
+            <span className="text-sm text-muted-foreground">from 1,247+ readers</span>
           </div>
         </div>
 
@@ -145,7 +145,7 @@ export default function SocialProof() {
         {/* stats — unified 7,700+ */}
         <div className="mb-10 grid grid-cols-2 gap-3 md:grid-cols-4">
           {[
-            { number: '7,700+', label: 'Women helped' },
+            { number: '1,247', label: 'Women helped' },
             { number: '4.9/5', label: 'Average rating' },
             { number: '47', label: 'Word-for-word scripts' },
             { number: 'Digital', label: 'PDF • instant download' },
