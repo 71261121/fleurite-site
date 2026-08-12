@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "The Avoidant Plays a Game He Never Told You the Rules To | Fleurite.me",
     description: "5 unwritten rules of every avoidant dynamic — and the framework to respond with calm, set real boundaries, and decide: stay or go. Yours forever. $27.",
+    images: ["/og-image.png"],
     type: "website",
     locale: "en_US",
     siteName: "Fleurite.me",
@@ -49,6 +50,11 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  icons: {
+    icon: "/favicon.png",
+    shortcut: "/favicon.png",
+    apple: "/apple-touch-icon.png",
   },
   verification: {
     google: "qj_uh6kS7VsUUhi-8CVBIbVQ849HzZjG8unzsymq0Ow",
