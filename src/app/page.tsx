@@ -6,6 +6,7 @@ import SocialProof from '@/components/SocialProof';
 import ProductBreakdown from '@/components/ProductBreakdown';
 import CreatorBio from '@/components/CreatorBio';
 import FAQ from '@/components/FAQ';
+import FinalCTA from '@/components/FinalCTA';
 import Footer from '@/components/Footer';
 import StickyBar from '@/components/StickyBar';
 import FadeIn from '@/components/FadeIn';
@@ -37,6 +38,10 @@ export default function Home() {
         {/* ACT 6: OBJECTION KILL — 8 questions including "what are the unwritten rules?" */}
         <FadeIn>
           <FAQ />
+        </FadeIn>
+        {/* ACT 7: THE FINAL PUSH — Close the sale */}
+        <FadeIn>
+          <FinalCTA />
         </FadeIn>
       </main>
       <Footer />

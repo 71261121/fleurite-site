@@ -63,6 +63,20 @@ export default function Hero() {
               </li>
             ))}
           </ul>
+
+          {/* CTA button */}
+          <div className="mx-auto mt-8 max-w-xl text-left lg:mx-0 flex flex-col items-start">
+            <button
+              onClick={() => window.dispatchEvent(new Event('open-checkout'))}
+              className="w-full sm:w-auto px-10 py-4 rounded-xl bg-clay-500 hover:bg-clay-400 active:scale-[0.98] text-white font-black text-lg transition-all shadow-xl"
+            >
+              Get The Rules — $27
+            </button>
+            <div className="mt-3 flex items-center gap-2 text-sm font-medium text-muted-foreground">
+              <span className="flex text-amber-500 text-lg">★★★★★</span>
+              <span>Trusted by 10,000+ women</span>
+            </div>
+          </div>
         </div>
 
         {/* RIGHT — product (bigger) */}

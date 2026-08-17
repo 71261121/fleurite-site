@@ -39,8 +39,7 @@ export default function CreatorBio() {
             </h2>
             <div className="space-y-4 text-foreground leading-relaxed text-base md:text-lg">
               <p>
-                For six years, I was in a relationship with someone avoidant. I gave 100% and spent
-                most of that time convinced the problem was me. Too emotional. Too needy. Too much.
+                For six years, my nervous system was in overdrive. I spent nights crying on the bathroom floor, googling &apos;why does he pull away&apos; at 3 AM, convinced I was fundamentally unlovable, too much, and too broken.
               </p>
               <p>
                 The turning point wasn&apos;t a breakup. It was a realization: I had been playing a game
@@ -48,9 +47,7 @@ export default function CreatorBio() {
                 But nobody had ever explained the actual mechanics — and without them, I kept losing.
               </p>
               <p>
-                Everything I learned the hard way — the patterns, the scripts, the framework for
-                deciding whether to stay or go — I put into this system. Not as a therapist.
-                As someone who lived through it and built the tools I desperately needed.
+                I didn&apos;t just read about this in a textbook. I lived the trauma. I paid the therapy bills. And I engineered the exact somatic and verbal toolkit that pulled me out of the abyss.
               </p>
               <p className="font-black text-foreground text-lg md:text-xl">
                 1,247 women have used it since. This is not a philosophy book.

@@ -5,9 +5,9 @@ import Image from 'next/image';
 const scenarios = [
   { text: "You're always the one texting first. Every single time." },
   { text: 'He goes quiet for days — then comes back expecting things to be completely fine.' },
-  { text: 'Your message was read. No reply. You have checked back six times since.' },
+  { text: 'Your message was read 14 hours ago. You feel that familiar tightness in your chest every time you check your screen.' },
   { text: "You're constantly available. He's available when it's convenient for him." },
-  { text: "You've apologized for things that weren't your fault — just to keep the peace." },
+  { text: "You've apologized for reacting to his disrespect—convincing yourself your anxiety is the problem." },
   { text: 'You rehearsed what you wanted to say for hours. When the moment came, you went blank.' },
   { text: 'He called you "too much." And part of you believed him.' },
   { text: "You know this dynamic is unfair. You just don't know what to do about it." },
@@ -46,7 +46,7 @@ export default function ProblemAgitation() {
               Be Honest With Yourself
             </p>
             <h2 className="font-display font-black text-3xl md:text-[2.6rem] text-foreground leading-[1.1] mb-2 text-balance">
-              Does Any of This Feel<br />Painfully Familiar?
+              Are You Exhausted From<br />Managing His Emotions?
             </h2>
             <p className="text-muted-foreground text-base mb-8 leading-relaxed">
               This is not about being needy. This is what happens when someone keeps
@@ -64,8 +64,8 @@ export default function ProblemAgitation() {
             </div>
             <div className="mt-7 bg-pine-600 rounded-2xl p-6 text-white">
               <p className="text-lg font-black leading-snug mb-2 text-balance">
-                This isn&apos;t neediness.<br />
-                The rules of this dynamic were never explained to you.
+                This isn&apos;t &quot;anxious attachment&quot; or neediness.<br />
+                This is a normal nervous system response to chronic emotional whiplash.
               </p>
               <p className="text-pine-100 text-sm leading-relaxed">
                 The Avoidant&apos;s Unwritten Rules decodes exactly what&apos;s been happening —
@@ -83,7 +83,7 @@ export default function ProblemAgitation() {
               Be Honest With Yourself
             </p>
             <h2 className="font-display font-black text-3xl text-foreground leading-[1.1] mb-2 text-balance">
-              Does Any of This Feel<br />Painfully Familiar?
+              Are You Exhausted From<br />Managing His Emotions?
             </h2>
             <p className="text-muted-foreground text-base mb-8 leading-relaxed">
               This is not about being needy. This is what happens when someone keeps
@@ -125,8 +125,8 @@ export default function ProblemAgitation() {
             </div>
             <div className="mt-7 bg-pine-600 rounded-2xl p-6 text-white">
               <p className="text-lg font-black leading-snug mb-2 text-balance">
-                This isn&apos;t neediness.<br />
-                The rules of this dynamic were never explained to you.
+                This isn&apos;t &quot;anxious attachment&quot; or neediness.<br />
+                This is a normal nervous system response to chronic emotional whiplash.
               </p>
               <p className="text-pine-100 text-sm leading-relaxed">
                 The Avoidant&apos;s Unwritten Rules decodes exactly what&apos;s been happening —

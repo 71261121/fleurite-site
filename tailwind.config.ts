@@ -26,6 +26,32 @@ const gold = {
   900: "#4a3811",
 };
 
+const pine = {
+  50: '#f2f7f5',
+  100: '#e1efe9',
+  200: '#c5e0d4',
+  300: '#9ac9b8',
+  400: '#69ab97',
+  500: '#478f7a',
+  600: '#357260',
+  700: '#2d5b4e',
+  800: '#264a41',
+  900: '#203d36',
+};
+
+const clay = {
+  50: '#fbf9f8',
+  100: '#f5f0ef',
+  200: '#efe6e3',
+  300: '#e5d5cf',
+  400: '#d7bcba',
+  500: '#c59d99',
+  600: '#b17e79',
+  700: '#95635f',
+  800: '#7d5451',
+  900: '#684745',
+};
+
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -52,6 +78,8 @@ const config: Config = {
         // Accents
         rose,
         gold,
+        pine,
+        clay,
         // Aliases for backwards compatibility
         primary: {
           DEFAULT: "#9b1c1c",

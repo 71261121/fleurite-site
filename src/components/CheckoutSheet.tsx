@@ -60,11 +60,11 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
 
       // DodoPayments not ready — show message
       console.log('[Checkout] No checkout_url in response')
-      setError('Payment system is being set up. Please try again in a few minutes.')
+      setError('Our secure gateway is currently upgrading to handle high volume. Please hold tight and try again in 3 minutes.')
       setStep('review')
     } catch (e) {
       console.error('[Checkout] Error:', e)
-      setError('Payment system is being set up. Please try again in a few minutes.')
+      setError('Our secure gateway is currently upgrading to handle high volume. Please hold tight and try again in 3 minutes.')
       setStep('review')
     }
   }, [email])
@@ -122,7 +122,7 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
                 {/* Email Input — required for delivery */}
                 <div className="space-y-1.5">
                   <label className="text-sm font-medium text-foreground">
-                    Your email <span className="text-red-400">*</span>
+                    Where should we send your private access link? <span className="text-red-400">*</span>
                   </label>
                   <p className="text-xs text-muted-foreground">We'll send your download link here</p>
                   <input
@@ -132,7 +132,7 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
                       setEmail(e.target.value)
                       setEmailError('')
                     }}
-                    placeholder="you@example.com"
+                    placeholder="Enter your best email..."
                     className="w-full rounded-xl border border-muted bg-card px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-pine-500 focus:border-pine-500 transition-colors"
                     required
                   />
@@ -147,7 +147,7 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
                   className="w-full h-14 rounded-xl bg-pine-600 text-white text-base font-bold shadow-lg hover:bg-pine-700 transition-colors flex items-center justify-center gap-2"
                 >
                   <CreditCard className="h-5 w-5" />
-                  Pay Now — $27
+                  Unlock The Scripts & Frameworks — $27
                 </button>
 
                 {/* Trust */}
