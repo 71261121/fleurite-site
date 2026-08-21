@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { X, Lock, CheckCircle2, Loader2, CreditCard, AlertCircle } from 'lucide-react'
 import { Sheet, SheetContent, SheetTitle } from '@/components/ui/sheet'
 import Image from 'next/image'
+import { checkoutMetadata, readAttribution } from '@/lib/attribution'
 
 type CheckoutStep = 'review' | 'processing' | 'success' | 'error'
 
@@ -37,6 +38,11 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
     setStep('processing')
 
     try {
+      // Attribution captured from the DM link, if any. Read at pay time rather
+      // than at mount so a visitor who arrives, browses, then buys is still
+      // credited to the post that sent them.
+      const attribution = readAttribution()
+
       // Try DodoPayments checkout
       console.log('[Checkout] Calling /api/checkout/dodo...')
       const dodoRes = await fetch('/api/checkout/dodo', {
@@ -46,6 +52,7 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
           product_cart: [{ product_id: process.env.NEXT_PUBLIC_DODO_PRODUCT_ID || 'pdt_0Nl2Gc1kVSNP7fyfBYvWv', quantity: 1 }],
           customer: { email: email, name: email.split('@')[0] || 'Customer' },
           return_url: 'https://www.fleurite.me/checkout/success',
+          metadata: checkoutMetadata(attribution),
         }),
       })
       console.log('[Checkout] DodoPayments response status:', dodoRes.status)

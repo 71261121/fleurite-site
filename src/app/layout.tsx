@@ -2,8 +2,10 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Fraunces } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
+import { Suspense } from "react";
 import "./globals.css";
 import CheckoutGateway from "@/components/CheckoutGateway";
+import AttributionCapture from "@/components/AttributionCapture";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -95,6 +97,11 @@ export default function RootLayout({
         </Script>
       </head>
       <body className="min-h-full flex flex-col">
+        {/* Captures ?ref= from Instagram DM links on any entry page. Renders
+            nothing; wrapped in Suspense because useSearchParams requires it. */}
+        <Suspense fallback={null}>
+          <AttributionCapture />
+        </Suspense>
         {children}
         <CheckoutGateway />
       </body>

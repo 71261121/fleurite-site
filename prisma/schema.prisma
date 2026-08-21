@@ -80,12 +80,31 @@ model Order {
   paidAt                DateTime?
   customerEmail         String?
   customerName          String?
+  // Attribution: which Instagram DM link produced this sale. Read from the Dodo
+  // payment metadata in the webhook. Null for organic or direct purchases.
+  attributionRef        String?
+  attributionPost       String?
+  attributionSource     String?
   createdAt             DateTime @default(now())
   updatedAt             DateTime @updatedAt
   user                  User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   items                 OrderItem[]
   @@index([userId])
   @@index([orderNumber])
+  @@index([attributionRef])
+}
+
+// One row per click on an attributed DM link, recorded before any purchase, so
+// click-through is measurable even when nobody buys.
+model AttributionClick {
+  id        String   @id @default(cuid())
+  ref       String
+  post      String?
+  userAgent String?
+  referer   String?
+  createdAt DateTime @default(now())
+  @@index([ref])
+  @@index([createdAt])
 }
 
 model OrderItem {

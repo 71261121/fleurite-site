@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { Webhooks } from '@dodopayments/nextjs'
 import { db } from '@/lib/db'
+import { sanitizePost, sanitizeRef } from '@/lib/attribution'
 
 export const POST = Webhooks({
   webhookKey: process.env.DODO_PAYMENTS_WEBHOOK_SECRET!,
@@ -14,6 +15,19 @@ export const POST = Webhooks({
       const customerName = data.customer?.name
       const amount = data.total_amount || 27
       const paymentId = data.payment_id || 'unknown'
+
+      // Attribution set at checkout is echoed back here. This is the step that
+      // finally answers "which post produced this sale". Re-validated because
+      // metadata is free-form on Dodo's side.
+      const metadata = (data.metadata || {}) as Record<string, unknown>
+      const attributionRef = sanitizeRef(metadata.attribution_ref) || null
+      const attributionPost = sanitizePost(metadata.attribution_post) || null
+      const attributionSource = attributionRef
+        ? String(metadata.attribution_source ?? 'unknown').slice(0, 40)
+        : null
+      if (attributionRef) {
+        console.log('[DodoWebhook] attributed sale:', attributionRef, attributionPost)
+      }
 
       if (!customerEmail) {
         console.error('[DodoWebhook] No customer email in payload')
@@ -62,6 +76,9 @@ export const POST = Webhooks({
           paidAt: new Date(),
           customerEmail: customerEmail.toLowerCase(),
           customerName: customerName || '',
+          attributionRef,
+          attributionPost,
+          attributionSource,
           items: {
             create: [{
               productName: "The Avoidant's Unwritten Rules",
