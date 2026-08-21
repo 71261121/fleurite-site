@@ -11,6 +11,8 @@ export default function ContactPage() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [sending, setSending] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -19,13 +21,26 @@ export default function ContactPage() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // In production, this would send to a backend service
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setTimeout(() => {
+    setError(null);
+    setSending(true);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        throw new Error(data.error || 'Something went wrong. Please email us directly.');
+      }
+      setSubmitted(true);
       setFormData({ name: '', email: '', message: '' });
-      setSubmitted(false);
-    }, 3000);
+      setTimeout(() => setSubmitted(false), 6000);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong.');
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -131,15 +146,25 @@ export default function ContactPage() {
 
                   <button
                     type="submit"
-                    className="w-full bg-pine-600 text-white py-3 rounded-lg font-bold hover:bg-pine-700 transition-colors"
+                    disabled={sending}
+                    className="w-full bg-pine-600 text-white py-3 rounded-lg font-bold hover:bg-pine-700 transition-colors disabled:opacity-60"
                   >
-                    Send Message
+                    {sending ? 'Sending…' : 'Send Message'}
                   </button>
 
                   {submitted && (
                     <div className="bg-green-50 border border-green-200 rounded-lg p-4">
                       <p className="text-green-800 font-medium">
-                        Thank you! We've received your message and will get back to you soon.
+                        Thank you! We&apos;ve received your message and will get back to you within 24-48 hours.
+                      </p>
+                    </div>
+                  )}
+
+                  {error && (
+                    <div className="bg-red-50 border border-red-200 rounded-lg p-4">
+                      <p className="text-red-800 font-medium">
+                        {error} You can also email{' '}
+                        <a className="underline" href="mailto:support@fleurite.me">support@fleurite.me</a>.
                       </p>
                     </div>
                   )}

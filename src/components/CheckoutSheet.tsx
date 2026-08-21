@@ -159,6 +159,14 @@ export default function CheckoutSheet({ isOpen, onOpenChange }: { isOpen: boolea
                   <span>Secure Payment</span>
                 </div>
 
+                <p className="text-center text-xs text-gray-400">
+                  One-time $27 charge. Instant digital download — see our{' '}
+                  <a href="/refunds" className="underline hover:text-gray-600" target="_blank" rel="noopener noreferrer">
+                    Refunds &amp; Terms
+                  </a>
+                  .
+                </p>
+
                 {error && (
                   <div className="flex items-center gap-2 rounded-xl bg-red-50 p-3 text-sm text-red-600 border border-red-200">
                     <AlertCircle className="h-4 w-4 shrink-0" />

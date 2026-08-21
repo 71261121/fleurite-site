@@ -55,16 +55,16 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold text-foreground mb-8 text-center">By the Numbers</h2>
             <div className="grid md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-4xl font-black text-pine-600 mb-2">9 Years</div>
-                <p className="text-muted-foreground">of research and real-world application</p>
+                <div className="text-4xl font-black text-pine-600 mb-2">6 Years</div>
+                <p className="text-muted-foreground">inside the dynamic this book decodes</p>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-black text-pine-600 mb-2">1,247</div>
                 <p className="text-muted-foreground">women have used this system</p>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-black text-pine-600 mb-2">943</div>
-                <p className="text-muted-foreground">organic shares (word-of-mouth)</p>
+                <div className="text-4xl font-black text-pine-600 mb-2">5</div>
+                <p className="text-muted-foreground">unwritten rules decoded in full</p>
               </div>
               <div className="text-center">
                 <div className="text-4xl font-black text-pine-600 mb-2">47</div>

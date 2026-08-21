@@ -2,11 +2,17 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "standalone",
-  // Include private/ (PDF download) in standalone build so the download
-  // route's fs.readFileSync(process.cwd()/private/...) works on Vercel.
+  // Include private/ (the product PDF) in the standalone build so the download
+  // route's fs read of process.cwd()/private/... works in production.
   // WITHOUT this, paying customers get "Book file not found" (404).
-  // Fix per micro_07 BREAKPOINT 2 (2026-08-12, still unfixed).
-  outputFileTracingInclude: ["private/**"],
+  //
+  // The correct key is `outputFileTracingIncludes` (plural) and it maps a route
+  // to the globs that route needs. The previous singular spelling
+  // (`outputFileTracingInclude`) was silently ignored by Next and then failed
+  // type checking, so the PDF was never traced into the build at all.
+  outputFileTracingIncludes: {
+    "/api/download": ["private/**"],
+  },
 };
 
 export default nextConfig;

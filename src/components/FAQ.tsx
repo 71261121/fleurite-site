@@ -56,7 +56,7 @@ const faqs: FAQItem[] = [
   {
     question: 'What if it does not work for me?',
     answer:
-      "Every script is immediately usable — designed for real transformation, not theory. If you have any technical issues with your purchase, email support@fleurite.me and we'll help resolve them. Digital products are delivered instantly and are non-refundable once downloaded.",
+      "Every script is immediately usable — designed for real transformation, not theory. Because this is an instant digital download, it is non-refundable once accessed, but we always refund duplicate charges, missing download links, or a corrupted file. See the Refunds & Terms page for the full policy, or email support@fleurite.me and we'll help resolve any issue.",
   },
 ];
 

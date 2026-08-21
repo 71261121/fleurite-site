@@ -43,7 +43,7 @@ const testimonials = [
     name: 'Priya M.',
     age: '29',
     location: 'London, UK',
-    photo: '/testimonials/woman-1.png',
+    photo: '/images/testimonial-1.png',
     headline: 'Still with him. But I show up completely differently now.',
     story:
       "I'm still in the relationship — but who I am in it changed. I don't over-explain. I don't apologize when he withdraws. Last week he cancelled plans. I used Rule 2 instead of spiralling. He actually noticed and said so. The book didn't change him. It changed what I'm willing to accept.",
@@ -54,7 +54,7 @@ const testimonials = [
     name: 'Maya R.',
     age: '44',
     location: 'Denver, CO',
-    photo: '/testimonials/woman-2.png',
+    photo: '/images/testimonial-2.png',
     headline: 'I finally understood what was actually happening.',
     story:
       "I thought I knew about avoidant attachment — I'd read all the articles. But Rule 1 in this book was something I'd never seen explained this way. 'Unwritten' is exactly the right word. I was playing a game where someone else knew all the rules and I didn't have a single one. Once I saw it, I couldn't unsee it.",

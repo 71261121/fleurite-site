@@ -74,7 +74,7 @@ export default function Hero() {
             </button>
             <div className="mt-3 flex items-center gap-2 text-sm font-medium text-muted-foreground">
               <span className="flex text-amber-500 text-lg">★★★★★</span>
-              <span>Trusted by 10,000+ women</span>
+              <span>Trusted by 1,247+ women</span>
             </div>
           </div>
         </div>
