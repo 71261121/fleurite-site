@@ -63,30 +63,47 @@ export const POST = Webhooks({
         date.getDate().toString().padStart(2, '0')
       const orderNum = `FL-${dateStr}-${Math.floor(1000 + Math.random() * 9000)}`
 
-      // Create order
-      const order = await db.order.create({
-        data: {
-          orderNumber: orderNum,
-          userId: user.id,
-          status: 'paid',
-          amount: amount || 27,
-          currency: 'USD',
-          paymentMethod: 'dodo',
-          stripePaymentIntentId: paymentId,
-          paidAt: new Date(),
-          customerEmail: customerEmail.toLowerCase(),
-          customerName: customerName || '',
-          attributionRef,
-          attributionPost,
-          attributionSource,
-          items: {
-            create: [{
-              productName: "The Avoidant's Unwritten Rules",
-              price: 27,
-            }],
-          },
+      // Create order.
+      //
+      // Attribution is written on a best-effort basis. If the attribution
+      // columns are not present in the database yet (code deployed ahead of the
+      // migration), Prisma throws on the first attempt — and the outer catch
+      // would swallow it, leaving a PAID customer with no Order row and no
+      // download email. So the write is retried without the attribution fields.
+      // Losing an attribution tag is acceptable; losing a paid customer's book
+      // is not.
+      const baseOrder = {
+        orderNumber: orderNum,
+        userId: user.id,
+        status: 'paid',
+        amount: amount || 27,
+        currency: 'USD',
+        paymentMethod: 'dodo',
+        stripePaymentIntentId: paymentId,
+        paidAt: new Date(),
+        customerEmail: customerEmail.toLowerCase(),
+        customerName: customerName || '',
+        items: {
+          create: [{
+            productName: "The Avoidant's Unwritten Rules",
+            price: 27,
+          }],
         },
-      })
+      }
+
+      let order
+      try {
+        order = await db.order.create({
+          data: { ...baseOrder, attributionRef, attributionPost, attributionSource },
+        })
+      } catch (attributionError) {
+        console.error(
+          '[DodoWebhook] order create with attribution failed; retrying without it '
+          + '(is the attribution migration applied?):',
+          attributionError,
+        )
+        order = await db.order.create({ data: baseOrder })
+      }
 
       // Send download email
       try {

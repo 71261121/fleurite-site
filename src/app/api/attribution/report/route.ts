@@ -54,12 +54,18 @@ export async function GET(request: NextRequest) {
 
     // Aggregate in the app rather than SQL: the volumes here are tiny, and
     // keeping the shape explicit makes the join to Cortex's DM ledger obvious.
+    //
+    // UNITS: Order.amount is stored in MINOR units (cents). Production data
+    // confirms this — a $27 sale is recorded as 2700. Reporting that number as
+    // "revenue" would overstate income by 100x, so both are returned: the raw
+    // minor value and an explicit major-unit figure.
     const byRef = new Map<string, {
       ref: string
       post: string | null
       clicks: number
       orders: number
       refunded: number
+      revenue_minor: number
       revenue: number
       currency: string
     }>()
@@ -71,7 +77,8 @@ export async function GET(request: NextRequest) {
         return existing
       }
       const created = {
-        ref, post, clicks: 0, orders: 0, refunded: 0, revenue: 0, currency: 'USD',
+        ref, post, clicks: 0, orders: 0, refunded: 0,
+        revenue_minor: 0, revenue: 0, currency: 'USD',
       }
       byRef.set(ref, created)
       return created
@@ -86,9 +93,12 @@ export async function GET(request: NextRequest) {
         entry.refunded += 1
       } else {
         entry.orders += 1
-        entry.revenue += order.amount
+        entry.revenue_minor += order.amount
       }
       entry.currency = order.currency || entry.currency
+    }
+    for (const entry of byRef.values()) {
+      entry.revenue = Math.round(entry.revenue_minor) / 100
     }
 
     const rows = [...byRef.values()].sort((a, b) => b.revenue - a.revenue)
@@ -97,14 +107,18 @@ export async function GET(request: NextRequest) {
         clicks: acc.clicks + row.clicks,
         orders: acc.orders + row.orders,
         refunded: acc.refunded + row.refunded,
+        revenue_minor: acc.revenue_minor + row.revenue_minor,
         revenue: acc.revenue + row.revenue,
       }),
-      { clicks: 0, orders: 0, refunded: 0, revenue: 0 },
+      { clicks: 0, orders: 0, refunded: 0, revenue_minor: 0, revenue: 0 },
     )
 
     return NextResponse.json({
       since_days: sinceDays,
       generated_at: new Date().toISOString(),
+      // `revenue` is in major units (dollars); `revenue_minor` is the raw stored
+      // value in cents. Consumers should read `revenue`.
+      currency_unit: 'major (revenue) / minor (revenue_minor)',
       totals: {
         ...totals,
         conversion_rate: totals.clicks ? totals.orders / totals.clicks : null,

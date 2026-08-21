@@ -4,8 +4,12 @@ generator client {
 
 datasource db {
   provider  = "postgresql"
+  // directUrl must name the env var that actually exists. Both .env and the
+  // Vercel production environment supply DIRECT_URL (the unpooled Neon
+  // endpoint); DATABASE_URL_UNPOOLED was never set anywhere, which would have
+  // left directUrl unresolved and pushed migrations through the pooler.
   url       = env("DATABASE_URL")
-  directUrl = env("DATABASE_URL_UNPOOLED")
+  directUrl = env("DIRECT_URL")
 }
 
 model User {
